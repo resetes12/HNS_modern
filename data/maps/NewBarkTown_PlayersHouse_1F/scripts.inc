@@ -174,7 +174,7 @@ NewBarkTown_PlayersHouse_1F_Text_ExplainPokeGear:
 	.string "Gee, isn't that convenient?$"
 
 NewBarkTown_PlayersHouse_1F_Text_WearTheseRunningShoes:
-	.string "Oh, and don't forget your\n"
+	.string "Oh and don't forget your\n"
 	.string "RUNNING SHOES!$"
 
 NewBarkTown_PlayersHouse_1F_Text_SwitchShoesWithRunningShoes:
@@ -182,7 +182,7 @@ NewBarkTown_PlayersHouse_1F_Text_SwitchShoesWithRunningShoes:
 	.string "RUNNING SHOES.$"
 
 NewBarkTown_PlayersHouse_1F_Text_ExplainRunningShoes:
-	.string "MOM: {PLAYER}, press the B Button\n"
+	.string "MOM: {PLAYER}, Press the B Button\n"
 	.string "while wearing these to run fast!$"
 
 NewBarkTown_PlayersHouse_1F_Text_MomHurryUpElmIsWaiting:

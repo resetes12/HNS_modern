@@ -63,5 +63,5 @@ CeladonGameCorner_Text_GymGuide:
 
 CeladonGameCorner_Text_Gramps:
 	.string "Hmmm… The odds are surely better\n"
-	.string "better for PIKACHU's line,\l"
-	.string "but... what to do?$"
+	.string "for PIKACHU's line, but… What to\n"
+	.string "do?$"

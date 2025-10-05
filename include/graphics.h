@@ -3341,15 +3341,6 @@ extern const u32 gTrainerFrontPic_RubySapphireMay[];
 extern const u32 gTrainerFrontPic_Nurse[];
 extern const u32 gTrainerFrontPic_Tate[];
 extern const u32 gTrainerFrontPic_Liza[];
-extern const u32 gTrainerFrontPic_AromaLady_Em[];
-extern const u32 gTrainerFrontPic_TuberF[];
-extern const u32 gTrainerFrontPic_TuberM[];
-extern const u32 gTrainerFrontPic_CyclingTriathleteF[];
-extern const u32 gTrainerFrontPic_CyclingTriathleteM[];
-extern const u32 gTrainerFrontPic_RunningTriathleteF[];
-extern const u32 gTrainerFrontPic_RunningTriathleteM[];
-extern const u32 gTrainerFrontPic_SwimmingTriathleteM[];
-
 
 extern const u32 gTrainerPalette_Hiker[];
 extern const u32 gTrainerPalette_RocketGruntM[];
@@ -3447,14 +3438,6 @@ extern const u32 gTrainerPalette_Leaf[];
 extern const u32 gTrainerPalette_RubySapphireBrendan[];
 extern const u32 gTrainerPalette_RubySapphireMay[];
 extern const u32 gTrainerPalette_Nurse[];
-extern const u32 gTrainerPalette_AromaLady_Em[];
-extern const u32 gTrainerPalette_TuberF[];
-extern const u32 gTrainerPalette_TuberM[];
-extern const u32 gTrainerPalette_CyclingTriathleteF[];
-extern const u32 gTrainerPalette_CyclingTriathleteM[];
-extern const u32 gTrainerPalette_RunningTriathleteF[];
-extern const u32 gTrainerPalette_RunningTriathleteM[];
-extern const u32 gTrainerPalette_SwimmingTriathleteM[];
 
 extern const u8 gTrainerBackPic_Brendan[];
 extern const u8 gTrainerBackPic_May[];
@@ -5706,5 +5689,9 @@ extern const u32 gBattleAnimSpritePal_PurpleJab[];
 
 extern const u8 gMonMarkingsMenu_Gfx[];
 extern const u16 gMonMarkingsMenu_Pal[];
+
+extern const u32 gItemIcon_HealingHeart[];
+extern const u32 gItemIconPalette_HealingHeart[];
+
 
 #endif //GUARD_GRAPHICS_H

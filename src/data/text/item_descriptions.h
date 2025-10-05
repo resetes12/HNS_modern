@@ -91,13 +91,13 @@ static const u8 sMoonBallDesc[] = _(
 
 static const u8 sLevelBallDesc[] = _(
     "Works well on\n"
-    "NORMAL, FLYING\n"
-    "and ICE POKéMON.");
+    "ELECTRIC, FIGHTING\n"
+    "and FIRE POKéMON.");
 
 static const u8 sFastBallDesc[] = _(
     "Works well on\n"
-    "ELECTRIC, FIGHTING\n"
-    "and FIRE POKéMON.");
+    "NORMAL, FLYING\n"
+    "and ICE POKéMON.");
 
 static const u8 sGSBallDesc[] = _(
     "A mysterious ball.\n"
@@ -818,8 +818,8 @@ static const u8 sChoiceBandDesc[] = _(
 
 static const u8 sKingsRockDesc[] = _(
     "Makes foe flinch.\n"
-    "Evolves SLOWPOKE\n"
-    "and POLIWHIRL.");
+    "Evolves SLOWPOKE,\n"
+    "POLIWHIRL, RHYDON.");
 
 static const u8 sSilverPowderDesc[] = _(
     "A hold item that\n"
@@ -1793,3 +1793,8 @@ static const u8 sInfiniteRareCandy[] = _(
     "Gives 999 RARE\n"
     "CANDIES for your\n"
     "personal uses.");
+
+static const u8 sHealingHeart[] = _(
+    "This soft heart\n"
+    "fully heals your\n"
+    "POKéMON party.");

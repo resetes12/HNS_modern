@@ -898,7 +898,7 @@ u8 LoadGameSave(u8 saveType)
         break;
     }
 
-#if !DEBUG
+#ifdef RELEASE
     VarSet(VAR_DEBUG_OPTIONS, 0);
 #endif
 

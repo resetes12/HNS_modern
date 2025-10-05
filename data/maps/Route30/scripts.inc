@@ -107,7 +107,7 @@ Route30_EventScript_Mailbox::
 	end
 
 Route30_Text_Mailbox:
-	.string "MR.POKéMON's House$"
+	.string "MR.POKéMON's house.$"
 
 Route30_Text_UseTackle:
 	.string "Go, RATTATA!\p"

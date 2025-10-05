@@ -361,14 +361,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SaffronCity_EventScript_GymSign"
-    },
-    {
-      "type": "sign",
-      "x": 46,
-      "y": 25,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SaffronCity_EventScript_CitySign"
     }
   ]
 }

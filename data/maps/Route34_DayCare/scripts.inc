@@ -163,11 +163,7 @@ Route34_DayCare_Text_ClerkQuestion:
 	.string "How do you feel about this ODD EGG?$"
 
 Route34_DayCare_Text_Rejection:
-	.string "Hmm, I think this egg isn't for you.\p"
-	.string "It would be irresponsible of me to\n"
-	.string "give out a precious EGG like this\l"
-	.string "to someone who isn't as well-read\l"
-	.string "on the subject of Pokémon breeding!$"
+	.string "Hmm, I think this egg isn't for you.$"
 
 Route34_DayCare_Text_ReceivedOddEgg:
 	.string "{PLAYER} Received the ODD EGG.$"

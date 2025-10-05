@@ -29,8 +29,8 @@ MahoganyTown_PokemonCenter_Text_PokefanM:
 MahoganyTown_PokemonCenter_Text_Youngster:
     .string "I stop my POKéMON from evolving too\n"
     .string "early.\p"
-    .string "I make them learn certain moves\n"
-    .string "before I let them evolve.$"
+    .string "I make them learn certain moves be-\n"
+    .string "fore I let them evolve.$"
 
 MahoganyTown_PokemonCenter_Text_CooltrainerF:
     .string "POKéMON do become stronger when they\n"

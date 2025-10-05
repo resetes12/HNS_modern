@@ -5768,7 +5768,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = NO_ITEM_CUSTOM_MOVES(sParty_Rival_Chikorita2),
+        .party = NO_ITEM_DEFAULT_MOVES(sParty_Rival_Chikorita2),
     },
 
 
@@ -5781,7 +5781,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_SUPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = NO_ITEM_CUSTOM_MOVES(sParty_Rival_Chikorita3),
+        .party = ITEM_CUSTOM_MOVES(sParty_Rival_Chikorita3),
     },
 
 
@@ -5859,7 +5859,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = NO_ITEM_CUSTOM_MOVES(sParty_Rival_Cyndaquil2),
+        .party = NO_ITEM_DEFAULT_MOVES(sParty_Rival_Cyndaquil2),
     },
 
 
@@ -5872,7 +5872,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_SUPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = NO_ITEM_CUSTOM_MOVES(sParty_Rival_Cyndaquil3),
+        .party = ITEM_CUSTOM_MOVES(sParty_Rival_Cyndaquil3),
     },
 
 
@@ -5950,7 +5950,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = NO_ITEM_CUSTOM_MOVES(sParty_Rival_Totodile2),
+        .party = NO_ITEM_DEFAULT_MOVES(sParty_Rival_Totodile2),
     },
 
 
@@ -5963,7 +5963,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_SUPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = NO_ITEM_CUSTOM_MOVES(sParty_Rival_Totodile3),
+        .party = ITEM_CUSTOM_MOVES(sParty_Rival_Totodile3),
     },
 
 

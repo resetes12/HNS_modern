@@ -581,7 +581,7 @@ const u8 gText_PkmnGotOverInfatuation[] = _("{STR_VAR_1} got over its\ninfatuati
 const u8 gText_ThrowAwayItem[] = _("Throw away this\n{STR_VAR_1}?");
 const u8 gText_ItemThrownAway[] = _("The {STR_VAR_1}\nwas thrown away.{PAUSE_UNTIL_PRESS}");
 const u8 gText_TeachWhichPokemon2[] = _("Teach which POKéMON?"); // Unused
-const u8 gText_ChoosePokemon[] = _("Choose POKéMON for {STR_VAR_2}.");
+const u8 gText_ChoosePokemon[] = _("Choose a POKéMON.");
 const u8 gText_MoveToWhere[] = _("Move to where?");
 const u8 gText_TeachWhichPokemon[] = _("Teach which POKéMON?");
 const u8 gText_UseOnWhichPokemon[] = _("Use on which POKéMON?");
@@ -1707,6 +1707,7 @@ const u8 gText_SavingDontTurnOff2[] = _("SAVING…\nDON'T TURN OFF THE POWER.");
 const u8 gText_BlenderMaxSpeedRecord[] = _("BERRY BLENDER\nMAXIMUM SPEED RECORD!");
 const u8 gText_234Players[] = _("2 PLAYERS\n3 PLAYERS\n4 PLAYERS");
 const u8 gText_YesNo[] = _("YES\nNO");
+const u8 gText_3031[] = _("31\n30");
 const u8 gText_SelectorArrow3[] = _("▶");
 const u8 gText_Peekaboo[] = _("PEEKABOO!");
 const u8 gText_CommErrorCheckConnections[] = _("Communication error…\nPlease check all connections,\nthen turn the power OFF and ON.");
@@ -2083,6 +2084,7 @@ const u8 gText_infiniteRepelOn[] = _("Turned on the Inf. Repel.{PAUSE_UNTIL_PRES
 const u8 gText_infiniteRepelOff[] = _("Turned off the Inf. Repel.{PAUSE_UNTIL_PRESS}");
 // Inf. Candies
 const u8 gText_infiniteCandies[] = _("You obtained 999 RARE\nCANDIES!{PAUSE_UNTIL_PRESS}");
+const u8 gText_HealingHeart[] = _("The soft HEALING HEART\nfully healed your party!{PAUSE 120}{WAIT_SE}");
 
 //tx_randomizer_and_challenges
 const u8 gText_NuzlockeCantThrowPokeBallRoute[]             = _("You have already used your encounter\nfor this area!{PAUSE_UNTIL_PRESS}");
@@ -2187,7 +2189,8 @@ const u8 gText_EVO_LEVEL_FEMALE[]                   = _("LvlUp to {STR_VAR_2}, i
 const u8 gText_EVO_LEVEL_MALE[]                     = _("LvlUp to {STR_VAR_2}, is male");
 const u8 gText_EVO_LEVEL_NIGHT[]                    = _("LvlUp to {STR_VAR_2}, night");
 const u8 gText_EVO_LEVEL_DAY[]                      = _("LvlUp to {STR_VAR_2}, day");
-const u8 gText_EVO_LEVEL_DUSK[]                     = _("LvlUp to {STR_VAR_2}, morning (6-9AM)");
+const u8 gText_EVO_LEVEL_TIME_MALE[]                = _("LvlUp to {STR_VAR_2},♂,morning (6-9AM)");
+const u8 gText_EVO_LEVEL_TIME_FEMALE[]              = _("LvlUp to {STR_VAR_2}, ♀, morning (6-9AM)");
 const u8 gText_EVO_ITEM_HOLD_DAY[]                  = _("LvlUp, holds {STR_VAR_2}, day");
 const u8 gText_EVO_ITEM_HOLD_NIGHT[]                = _("LvlUp, holds {STR_VAR_2}, night");
 const u8 gText_EVO_ITEM_HOLD[]                      = _("LvlUp, holds {STR_VAR_2}");

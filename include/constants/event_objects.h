@@ -33,13 +33,13 @@
 #define OBJ_EVENT_GFX_OLD_MAN_2                     29
 #define OBJ_EVENT_GFX_ATTENDANT                   30
 #define OBJ_EVENT_GFX_CAMPER                      31
-#define OBJ_EVENT_GFX_SWIMMER_LAND_F                   32
+#define OBJ_EVENT_GFX_PICNICKER2                   32
 #define OBJ_EVENT_GFX_MAN                       33
 #define OBJ_EVENT_GFX_WORKER_F                     34
 #define OBJ_EVENT_GFX_YOUNGSTER                   35
 #define OBJ_EVENT_GFX_BUG_CATCHER                 36
 #define OBJ_EVENT_GFX_TRAINER_TOWER_DUDE                   37
-#define OBJ_EVENT_GFX_SWIMMER_LAND_M                38
+#define OBJ_EVENT_GFX_LITTLE_BOY2                38
 #define OBJ_EVENT_GFX_SUPER_NERD                      39
 #define OBJ_EVENT_GFX_CHANNELER                  40
 #define OBJ_EVENT_GFX_RAYQUAZA_STILL              41
@@ -80,7 +80,7 @@
 #define OBJ_EVENT_GFX_SHINY_GYARADOS            76
 #define OBJ_EVENT_GFX_UNUSED_MAGNEMITE_DOLL       77
 #define OBJ_EVENT_GFX_UNUSED_SQUIRTLE_DOLL        78
-#define OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M          79
+#define OBJ_EVENT_GFX_UNUSED_WOOPER_DOLL          79
 #define OBJ_EVENT_GFX_UNUSED_PIKACHU_DOLL         80
 #define OBJ_EVENT_GFX_UNUSED_PORYGON2_DOLL        81
 #define OBJ_EVENT_GFX_CUTTABLE_TREE               82
@@ -281,12 +281,22 @@
 #define OBJ_EVENT_GFX_SPECIES_BITS 11
 #define OBJ_EVENT_GFX_SPECIES_MASK ((1 << OBJ_EVENT_GFX_SPECIES_BITS) - 1)
 
+// Used to call a specific species' follower graphics. Useful for static encounters.
+#define OBJ_EVENT_GFX_SPECIES(name)       (SPECIES_##name + OBJ_EVENT_GFX_MON_BASE)
+#define OBJ_EVENT_GFX_SPECIES_SHINY(name) (SPECIES_##name + OBJ_EVENT_GFX_MON_BASE + SPECIES_SHINY_TAG)
+
 #define OW_SPECIES(x) (((x)->graphicsId & OBJ_EVENT_GFX_SPECIES_MASK) - OBJ_EVENT_GFX_MON_BASE)
 #define OW_FORM(x) ((x)->graphicsId >> OBJ_EVENT_GFX_SPECIES_BITS)
+
+// Whether Object Event is an OW pokemon
+#define IS_OW_MON_OBJ(obj) ((obj)->graphicsId >= OBJ_EVENT_GFX_MON_BASE)
 
 // If true, follower pokemon will bob up and down
 // during their idle & walking animations
 #define OW_MON_BOBBING  TRUE
+// If true, OW pokemon with `MOVEMENT_TYPE_WANDER*`
+// will walk-in-place in between steps
+#define OW_MON_WANDER_WALK TRUE
 
 // If true, adds a small amount of overhead
 // to OW code so that large (48x48, 64x64) OWs
@@ -301,6 +311,13 @@
 // Followers will emerge from the pokeball they are stored in,
 // instead of a normal pokeball
 #define OW_MON_POKEBALLS TRUE
+
+// New/old handling for followers during scripts;
+// TRUE: Script collisions hide follower, FLAG_SAFE_FOLLOWER_MOVEMENT on by default
+// (scripted player movement moves follower too!)
+// FALSE: Script collisions unhandled, FLAG_SAFE_FOLLOWER_MOVEMENT off by default
+#define OW_MON_SCRIPT_MOVEMENT FALSE
+
 
 #define SHADOW_SIZE_S   0
 #define SHADOW_SIZE_M   1
@@ -324,6 +341,9 @@
 #define OBJ_KIND_CLONE  255 // Exclusive to FRLG
 
 // Special object event local ids
+// Used for link player OWs in CreateLinkPlayerSprite
+#define OBJ_EVENT_ID_DYNAMIC_BASE 0xF0
+
 #define OBJ_EVENT_ID_PLAYER 0xFF
 #define OBJ_EVENT_ID_CAMERA 0x7F
 #define OBJ_EVENT_ID_FOLLOWER 0xFE

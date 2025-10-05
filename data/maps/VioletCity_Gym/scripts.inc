@@ -60,9 +60,9 @@ VioletGym_Text_Falkner_Intro:
 	.string "People say you can clip\n"
 	.string "FLYING-type POKéMON's wings\p"
 	.string "with a jolt of electricity…\n"
-	.string "I won't allow such insults to bird\l"
-	.string "POKéMON!\p"
-	.string "I'll show you the real power\n"
+	.string "I won't allow such insults to bird\p"
+	.string "POKéMON!\n"
+	.string "I'll show you the real power\p"
 	.string "of the magnificent bird POKéMON!$"
 
 VioletGym_Text_Falkner_WinLoss:
@@ -76,7 +76,7 @@ VioletGym_Text_ReceivedZephyrBadge:
 	.string "{PLAYER} received ZEPHYRBADGE.$"
 
 VioletGym_Text_Falkner_BadgeExplain:
-	.string "ZEPHYRBADGE raises the ATTACK\n"
+	.string "ZEPHYRBADGE raises the attack\n"
 	.string "power of POKéMON.\p"
 	.string "It also enables POKéMON to use\n"
 	.string "FLASH, if they have it, anytime.\p"

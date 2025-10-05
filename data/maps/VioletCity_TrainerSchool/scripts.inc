@@ -152,9 +152,10 @@ VioletCity_TrainerSchool_Text_GameboyKid2:
 
 VioletCity_TrainerSchool_Text_Youngster2:
 	.string "Be aware that your opponents\n"
-	.string "now use teams with better type\l"
-	.string "coverage,so expect a much\l"
-	.string "more challenging journey ahead.$"
+	.string "now use teams with better type\p"
+	.string "coverage,\n"
+	.string "so expect a much more\p"
+	.string "challenging journey ahead.$"
 
 VioletCity_TrainerSchool_Text_Blackboard:
 	.string "The blackboard describes\n"

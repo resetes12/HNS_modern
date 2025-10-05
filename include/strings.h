@@ -338,6 +338,7 @@ extern const u8 gText_FemaleSymbol[];
 
 extern const u8 gText_SelectorArrow3[];
 extern const u8 gText_YesNo[];
+extern const u8 gText_3031[];
 
 // main menu/birch speech text
 extern const u8 gText_SaveFileErased[];
@@ -652,7 +653,8 @@ extern const u8 gText_EVO_LEVEL_FEMALE[];
 extern const u8 gText_EVO_LEVEL_MALE[];
 extern const u8 gText_EVO_LEVEL_NIGHT[];
 extern const u8 gText_EVO_LEVEL_DAY[];
-extern const u8 gText_EVO_LEVEL_DUSK[];
+extern const u8 gText_EVO_LEVEL_TIME_MALE[];
+extern const u8 gText_EVO_LEVEL_TIME_FEMALE[];
 extern const u8 gText_EVO_ITEM_HOLD_DAY[];
 extern const u8 gText_EVO_ITEM_HOLD_NIGHT[];
 extern const u8 gText_EVO_ITEM_HOLD[];
@@ -3265,6 +3267,7 @@ extern const u8 gText_ExpShareOff[];
 extern const u8 gText_infiniteRepelOn[];
 extern const u8 gText_infiniteRepelOff[];
 extern const u8 gText_infiniteCandies[];
+extern const u8 gText_HealingHeart[];
 
 //tx_randomizer_and_challenges
 extern const u8 gText_NuzlockeCantThrowPokeBallRoute[];

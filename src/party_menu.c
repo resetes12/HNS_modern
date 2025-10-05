@@ -1512,18 +1512,21 @@ static u16 PartyMenuButtonHandler(s8 *slotPtr)
     if (JOY_NEW(START_BUTTON))
         return START_BUTTON;
 
-    if (JOY_NEW(SELECT_BUTTON) && CalculatePlayerPartyCount() >= 2 && !IsInvalidPartyMenuActionType(gPartyMenu.action))
+    if (!InBattlePike())
     {
-        if (gPartyMenu.menuType != PARTY_MENU_TYPE_FIELD)
-            return 0;
-        if (*slotPtr == PARTY_SIZE + 1)
-            return 0;
-        if (gPartyMenu.action != PARTY_ACTION_SWITCH)
+        if (JOY_NEW(SELECT_BUTTON) && CalculatePlayerPartyCount() >= 2 && !IsInvalidPartyMenuActionType(gPartyMenu.action))
         {
-            CreateTask(CursorCb_Switch, 1);
-            return SELECT_BUTTON;
+            if (gPartyMenu.menuType != PARTY_MENU_TYPE_FIELD)
+                return 0;
+            if (*slotPtr == PARTY_SIZE + 1)
+                return 0;
+            if (gPartyMenu.action != PARTY_ACTION_SWITCH)
+            {
+                CreateTask(CursorCb_Switch, 1);
+                return SELECT_BUTTON;
+            }
+            return A_BUTTON; // Select is allowed to act as the A Button while CursorCb_Switch is active.
         }
-        return A_BUTTON; // Select is allowed to act as the A Button while CursorCb_Switch is active.
     }
 
     if (movementDir)
@@ -2541,25 +2544,10 @@ void DisplayPartyMenuStdMessage(u32 stringId)
 
         if (stringId == PARTY_MSG_CHOOSE_MON)
         {
-            u8 enemyNextMonID = *(gBattleStruct->monToSwitchIntoId + B_SIDE_OPPONENT);
-            u16 species = GetMonData(&gEnemyParty[enemyNextMonID], MON_DATA_SPECIES);
             if (sPartyMenuInternal->chooseHalf)
                 stringId = PARTY_MSG_CHOOSE_MON_AND_CONFIRM;
             else if (!ShouldUseChooseMonText())
                 stringId = PARTY_MSG_CHOOSE_MON_OR_CANCEL;
-            else if (gMain.inBattle){
-               // Checks if the opponent is sending out a new pokemon.
-               if (species >= NUM_SPECIES ||  species == SPECIES_NONE){
-                   species = gBattleMons[B_SIDE_OPPONENT].species;
-                   // Now tries to check if there's any opposing pokemon on the field
-                   if (species >= NUM_SPECIES ||  species == SPECIES_NONE || gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
-                       stringId = PARTY_MSG_CHOOSE_MON_2;  // No species on the other side, show the default text.
-               }
-               if (stringId == PARTY_MSG_CHOOSE_MON)
-                   StringCopy(gStringVar2, gSpeciesNames[species]);
-           }
-           else
-               stringId = PARTY_MSG_CHOOSE_MON_2;
         }
         DrawStdFrameWithCustomTileAndPalette(*windowPtr, FALSE, 0x4F, 13);
         StringExpandPlaceholders(gStringVar4, sActionStringTable[stringId]);
@@ -4517,13 +4505,6 @@ static bool8 NotUsingHPEVItemOnShedinja(struct Pokemon *mon, u16 item)
     return TRUE;
 }
 
-static bool8 EV_Item_With_EVs_Disabled(u16 item)
-{
-    if (GetItemEffectType(item) == ITEM_EFFECT_HP_EV || ITEM_EFFECT_ATK_EV || ITEM_EFFECT_SPATK_EV || ITEM_EFFECT_SPDEF_EV || ITEM_EFFECT_SPEED_EV || ITEM_EFFECT_DEF_EV)
-        return FALSE;
-    return TRUE;
-}
-
 static bool8 IsItemFlute(u16 item)
 {
     if (item == ITEM_BLUE_FLUTE || item == ITEM_RED_FLUTE || item == ITEM_YELLOW_FLUTE)
@@ -4547,11 +4528,6 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
     bool8 canHeal, cannotUse;
 
     if (NotUsingHPEVItemOnShedinja(mon, item) == FALSE)
-    {
-        cannotUse = TRUE;
-    }
-    else if ((EV_Item_With_EVs_Disabled(item) == FALSE) && (gSaveBlock1Ptr->tx_Challenges_NoEVs == 1))
-    //Disable the use of EV items with the challenge NO EVs.
     {
         cannotUse = TRUE;
     }
@@ -5834,12 +5810,10 @@ static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
     u16 i = 0;
     u16 species;
     u16* gFrontierBannedSpecies;
-    if (gSaveBlock2Ptr->optionsDifficulty == 1)
+    if (gSaveBlock1Ptr->tx_Features_FrontierBans == 0)
         gFrontierBannedSpecies = gFrontierBannedSpeciesNormal;
-    if (gSaveBlock2Ptr->optionsDifficulty == 0)
+    else if (gSaveBlock1Ptr->tx_Features_FrontierBans == 1)
         gFrontierBannedSpecies = gFrontierBannedSpeciesEasy;
-    if (gSaveBlock2Ptr->optionsDifficulty == 2)
-        gFrontierBannedSpecies = gFrontierBannedSpeciesHard;
 
     if (GetMonData(mon, MON_DATA_IS_EGG)
         || GetMonData(mon, MON_DATA_LEVEL) > GetBattleEntryLevelCap()

@@ -33,10 +33,10 @@ struct FacilityMon
     u8 nature;
 };
 
-extern const u8 gTowerMaleFacilityClasses[42];
-extern const u8 gTowerMaleTrainerGfxIds[42];
-extern const u8 gTowerFemaleFacilityClasses[28];
-extern const u8 gTowerFemaleTrainerGfxIds[28];
+extern const u8 gTowerMaleFacilityClasses[43];
+extern const u16 gTowerMaleTrainerGfxIds[43];
+extern const u8 gTowerFemaleFacilityClasses[27];
+extern const u16 gTowerFemaleTrainerGfxIds[27];
 extern const u16 gBattleFrontierHeldItems[];
 extern const struct FacilityMon gBattleFrontierMons[];
 extern const struct FacilityMon gBattleFrontierMonsSplit[];

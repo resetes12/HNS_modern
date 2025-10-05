@@ -342,6 +342,7 @@ struct SpeciesInfo
  /* 0x06 */ u8 types_old[2];
             u8 abilities_old[2];
             u8 types_new[2];
+            u8 catchRate_hard;
 };
 
 #define MOVE_CATEGORY_PHYSICAL 0
@@ -585,9 +586,6 @@ u16 GetSpeciesRandomSeeded(u16 species, u8 type, u16 additionalOffset);
 u16 GetRandomMove(u16 input_move, u16 species);
 u8 GetRandomType(void);
 u8 EvolutionBlockedByEvoLimit(u16 species);
-
-//Moves learned on evolution
-u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove);
 
 void FixSavePokemon1(struct BoxPokemon *boxMon);
 
