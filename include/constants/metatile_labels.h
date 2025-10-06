@@ -37,7 +37,7 @@
 #define METATILE_BattleFrontierOutsideWest_Door_Sliding        0x396
 
 // gTileset_BattlePalace
-#define METATILE_BattlePalace_Door  0x219
+#define METATILE_BattlePalace_Door  0x299
 
 // gTileset_BattlePike
 #define METATILE_BattlePike_CurtainFrames_Start   0x281
