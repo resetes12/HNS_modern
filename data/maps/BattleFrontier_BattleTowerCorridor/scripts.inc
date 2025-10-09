@@ -7,11 +7,11 @@ BattleFrontier_BattleTowerCorridor_MapScripts::
 
 BattleFrontier_BattleTowerCorridor_OnLoad:
 	goto_if_eq VAR_0x8006, 1, BattleFrontier_BattleTowerCorridor_EventScript_OpenFarDoor
-	opendoor 12, 1
+	@opendoor 12, 1
 	end
 
 BattleFrontier_BattleTowerCorridor_EventScript_OpenFarDoor::
-	opendoor 15, 1
+	@opendoor 15, 1
 	end
 
 BattleFrontier_BattleTowerCorridor_OnFrame:

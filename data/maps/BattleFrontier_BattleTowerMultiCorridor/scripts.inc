@@ -53,8 +53,8 @@ BattleFrontier_BattleTowerMultiCorridor_EventScript_EnterCorridor::
 	setflag FLAG_ENABLE_MULTI_CORRIDOR_DOOR
 	setvar VAR_0x8004, 14  @ x coord of far door, used by DrawDoor
 	setvar VAR_0x8005, 1   @ y coord of far door, used by DrawDoor
-	opendoor 1, 1
-	waitdooranim
+	@opendoor 1, 1
+	@waitdooranim
 	clearflag FLAG_ENABLE_MULTI_CORRIDOR_DOOR
 	showobjectat LOCALID_PLAYER, MAP_BATTLE_FRONTIER_BATTLE_TOWER_MULTI_CORRIDOR
 	showobjectat LOCALID_PARTNER, MAP_BATTLE_FRONTIER_BATTLE_TOWER_MULTI_CORRIDOR
@@ -64,8 +64,8 @@ BattleFrontier_BattleTowerMultiCorridor_EventScript_EnterCorridor::
 	setflag FLAG_ENABLE_MULTI_CORRIDOR_DOOR
 	setvar VAR_0x8004, 14  @ x coord of far door, used by DrawDoor
 	setvar VAR_0x8005, 1   @ y coord of far door, used by DrawDoor
-	closedoor 1, 1
-	waitdooranim
+	@closedoor 1, 1
+	@waitdooranim
 	clearflag FLAG_ENABLE_MULTI_CORRIDOR_DOOR
 	applymovement LOCALID_PLAYER, BattleFrontier_BattleTowerMultiCorridor_Movement_PlayerWalkToDoor
 	applymovement LOCALID_PARTNER, BattleFrontier_BattleTowerMultiCorridor_Movement_PartnerWalkToDoor
@@ -76,15 +76,15 @@ BattleFrontier_BattleTowerMultiCorridor_EventScript_EnterCorridor::
 	applymovement LOCALID_ATTENDANT_2, Common_Movement_WalkInPlaceFasterUp
 	applymovement LOCALID_ATTENDANT_1, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	opendoor 8, 1
-	waitdooranim
+	@opendoor 8, 1
+	@waitdooranim
 	applymovement LOCALID_ATTENDANT_2, BattleFrontier_BattleTowerMultiCorridor_Movement_AttendantEnterDoor
 	applymovement LOCALID_ATTENDANT_1, BattleFrontier_BattleTowerMultiCorridor_Movement_AttendantEnterDoor
 	applymovement LOCALID_PLAYER, BattleFrontier_BattleTowerMultiCorridor_Movement_TrainerEnterDoor
 	applymovement LOCALID_PARTNER, BattleFrontier_BattleTowerMultiCorridor_Movement_TrainerEnterDoor
 	waitmovement 0
-	closedoor 8, 1
-	waitdooranim
+	@closedoor 8, 1
+	@waitdooranim
 	delay 30
 	setvar VAR_TEMP_1, 1
 	call BattleFrontier_BattleTowerMultiCorridor_EventScript_WarpToBattleRoom
