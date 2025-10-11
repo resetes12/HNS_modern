@@ -268,6 +268,10 @@
 #define METATILE_General_YellowCaveIndent      0x1A8
 #define METATILE_General_YellowCaveOpen        0x1A9
 
+// gTileset_General_Frontier_East
+#define METATILE_General_Frontier_East_MartDoor        0x041
+#define METATILE_General_Frontier_East_PokecenterDoor  0x061
+
 // gTileset_GenericBuilding
 #define METATILE_GenericBuilding_TableEdge               0x2F1
 #define METATILE_GenericBuilding_TrickHouse_Door_Closed  0x21B
