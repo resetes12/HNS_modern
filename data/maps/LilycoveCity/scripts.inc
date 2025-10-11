@@ -10,7 +10,7 @@ LilycoveCity_MapScripts::
 LilycoveCity_OnTransition:
 	callnative SetTimeBasedEncounters
 	setflag FLAG_VISITED_SAFFRON_CITY
-	setvar VAR_GARBAGEVAR, 0
+	setvar VAR_CONTEST_HALL_STATE, 0
 	setflag FLAG_GARBAGEFLAG
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	call Common_EventScript_SetupRivalGfxId

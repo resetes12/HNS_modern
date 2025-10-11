@@ -6,7 +6,7 @@ VerdanturfTown_MapScripts::
 
 VerdanturfTown_OnTransition:
 	setflag FLAG_VISITED_OLIVINE_CITY
-	setvar VAR_GARBAGEVAR, 0
+	setvar VAR_CONTEST_HALL_STATE, 0
 	end
 
 VerdanturfTown_LickyEvo::

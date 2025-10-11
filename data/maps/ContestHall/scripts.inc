@@ -55,11 +55,11 @@ ContestHall_EventScript_ReShowAudience::
 	return
 
 ContestHall_OnFrame:
-	map_script_2 VAR_GARBAGEVAR, 1, ContestHall_EventScript_Contest
+	map_script_2 VAR_CONTEST_HALL_STATE, 1, ContestHall_EventScript_Contest
 	.2byte 0
 
 ContestHall_OnWarp:
-	map_script_2 VAR_GARBAGEVAR, 1, ContestHall_EventScript_SetContestObjects
+	map_script_2 VAR_CONTEST_HALL_STATE, 1, ContestHall_EventScript_SetContestObjects
 	.2byte 0
 
 ContestHall_EventScript_Contest::

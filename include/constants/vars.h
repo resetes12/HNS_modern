@@ -267,7 +267,7 @@
 #define VAR_SUICUNE_EVENT                                0x40F7
 #define VAR_ENTEI_EVENT                                  0x40F8
 #define VAR_RAIKOU_EVENT                                 0x40F9
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
+#define VAR_CONTEST_HALL_STATE                           0x40FA
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_SURF_MON_SLOT                                0x40FD // Added new VAR for Surfing Overworld Sprites - Holds Surfing Party Mon index

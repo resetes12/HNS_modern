@@ -194,7 +194,7 @@ LilycoveCity_ContestLobby_EventScript_EnterMon::
 	msgbox LilycoveCity_ContestLobby_Text_YourMonIsEntryNum4, MSGBOX_DEFAULT
 	closemessage
 	releaseall
-	setvar VAR_GARBAGEVAR, 1
+	setvar VAR_CONTEST_HALL_STATE, 1
 	return
 
 ContestHall_EventScript_DoContest::
@@ -217,7 +217,7 @@ ContestHall_EventScript_DoContest::
 	call ContestHall_EventScript_CongratulateWinner
 	call ContestHall_EventScript_AudienceLookAround
 	call ContestHall_EventScript_GiveWinnerPrize
-	setvar VAR_GARBAGEVAR, 2
+	setvar VAR_CONTEST_HALL_STATE, 2
 	return
 
 ContestHall_EventScript_GetContestRankStringId::
