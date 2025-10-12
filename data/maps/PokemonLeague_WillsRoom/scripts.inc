@@ -121,9 +121,9 @@ PokemonLeague_WillsRoom_Text_Defeat:
 PokemonLeague_WillsRoom_Text_RematchBefore:
     .string "WILL: Ah, welcome back.\p"
     .string "I have foreseen this encounter.\p"
-    .string "My psychic POKéMON and I have\n"
-    .string "evolved,\l"
-    .string "developing new tactics.\p"
+    .string "My psychic POKéMON and\n"
+    .string "I have evolved, developing\l"
+    .string "new tactics.\p"
     .string "Prepare yourself for a battle of\n"
     .string "enhanced strategy and might.\p"
     .string "Let us see if your foresight\n"

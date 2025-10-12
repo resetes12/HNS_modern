@@ -967,6 +967,13 @@ u8 LoadGameSave(u8 saveType)
         }
         gSaveBlock1Ptr->versionId = 3;        
     }
+    if (gSaveBlock1Ptr->versionId <4){
+        if(FlagGet(FLAG_BADGE16_GET)){
+            FlagSet(FLAG_SAFARI_ZONE_WEST_EXPANSION);
+            FlagSet(FLAG_SAFARI_ZONE_EAST_EXPANSION);
+        }
+        gSaveBlock1Ptr->versionId = 4;
+    }
     return status;
 }
 

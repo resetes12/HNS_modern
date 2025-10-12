@@ -5,4 +5,5 @@ MtSilver_3F_MapScripts::
 
 MtSilver_3F_OnTransition: 
 	callnative SetTimeBasedEncounters
+	setescapewarp MAP_MT_SILVER_OUTSIDE, 17, 8
 	end

@@ -226,7 +226,7 @@ Route14_Text_BirdKeeperRoyAfterBattle:
 Route14_Text_PokefanmTrevorSeen:
 	.string "Hi. Did you know…?\p"
 	.string "POKéMON get more friendly if you\n"
-	.string "train them in a place that they\n"
+	.string "train them in a place that they\l"
 	.string "remember.$"
 
 Route14_Text_PokefanmTrevorBeaten:

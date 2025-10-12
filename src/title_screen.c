@@ -760,8 +760,8 @@ static void Task_TitleScreenPhase2(u8 taskId)
                                     | DISPCNT_BG1_ON
                                     | DISPCNT_BG2_ON
                                     | DISPCNT_OBJ_ON);
-        CreatePressStartBanner(START_BANNER_X, 143); //108 //90
-        CreateCopyrightBanner(START_BANNER_X, 148); 
+        CreatePressStartBanner(START_BANNER_X, 138); //108 //90
+        CreateCopyrightBanner(START_BANNER_X, 148); //version number
         gTasks[taskId].tBg1Y = 0;
         gTasks[taskId].func = Task_TitleScreenPhase3;
     }

@@ -18,7 +18,7 @@ CinnabarIsland_PokemonCenter_EventScript_Fisher::
 
 CinnabarIsland_PokemonCenter1F_Text_CooltrainerF:
 	.string "CINNABAR GYM's BLAINE apparently\n"
-	.string "lives alone in the SEAFOAM ISLANDS\n"
+	.string "lives alone in the SEAFOAM ISLANDS\l"
 	.string "cave…$"
 
 CinnabarIsland_PokemonCenter1F_Text_Fisher:

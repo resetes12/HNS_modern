@@ -79,7 +79,7 @@ Route13_Text_BirdKeeperPerryAfterBattle:
 
 Route13_Text_BirdKeeperBretSeen:
 	.string "Check out my POKéMON. Just look\n"
-	.string "at their coloring and their\n"
+	.string "at their coloring and their\l"
 	.string "plumage.$"
 
 Route13_Text_BirdKeeperBretBeaten:

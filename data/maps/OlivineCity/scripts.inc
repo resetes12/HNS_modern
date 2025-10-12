@@ -32,8 +32,8 @@ OlivineCity_Text_Baoba:
 	.string "{PLAYER}!\p"
 	.string "This is WARDEN BAOBA.\p"
 	.string "Sorry to have kept you waiting.\n"
-	.string "We've finally opened the SAFARI\l"
-	.string "ZONE!\p"
+	.string "We've finally opened the\l"
+	.string "SAFARI ZONE!\p"
 	.string "Do you know where it is?\p"
 	.string "You know the GATE inside the cavern\n"
 	.string "in CIANWOOD CITY?\p"
@@ -47,6 +47,9 @@ OlivineCity_EventScript_CityTrigger:: @FLAGHEAP
 	setflag FLAG_HIDE_OLIVINE_CITY_GYM_JASMINE
 	setflag FLAG_HIDE_OLIVINE_SILVER
 	setflag FLAG_VISITED_OLIVINE_CITY
+	clearflag FLAG_SAFARI_ZONE_WEST_EXPANSION
+	clearflag FLAG_SAFARI_ZONE_EAST_EXPANSION
+	setflag FLAG_VISITED_SAFARI_ZONE_GATE
 	clearflag FLAG_HIDE_BATTLEFRONTIER_ENGINEER
 	clearflag FLAG_HIDE_LIGHTHOUSE_JASMINE
 	clearflag FLAG_HIDE_WHIRL_ISLANDS_TENTACRUEL

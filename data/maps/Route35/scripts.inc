@@ -129,9 +129,9 @@ Route35_Text_BirdKeeperBryanBeaten:
 
 Route35_Text_BirdKeeperBryanAfter:
 	.string "Some POKéMON flee right away.\p"
-	.string "Try catching them with KURT's FAST\n"
-	.string "BALL.\p"
-	.string "Whenever I find a WHT APRICORN, I\n"
+	.string "Try catching them with KURT's\n"
+	.string "FAST BALL.\p"
+	.string "Whenever I find a ASPEAR BERRY, I\n"
 	.string "take it to KURT.\p"
 	.string "He turns it into a custom BALL.$"
 

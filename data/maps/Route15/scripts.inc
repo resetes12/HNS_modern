@@ -57,7 +57,7 @@ Route15_Text_TeacherColetteAfterBattle:
 
 Route15_Text_TeacherHillarySeen:
 	.string "On sunny days, I think that the\n"
-	.string "kids would rather be playing in the\n"
+	.string "kids would rather be playing in the\l"
 	.string "schoolyard than studying in class.$"
 
 Route15_Text_TeacherHillaryBeaten:
@@ -99,7 +99,7 @@ Route15_Text_SchoolboyJohnnyAfterBattle:
 	.string "take a break.$"
 
 Route15_Text_SchoolboyBillySeen:
-	.string "My favorite class is gym!$"
+	.string "My favorite class is Gym!$"
 
 Route15_Text_SchoolboyBillyBeaten:
 	.string "Oh, no! How could I lose?$"
