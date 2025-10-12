@@ -449,8 +449,13 @@ static void CreateCopyrightBanner(s16 x, s16 y)
     {
         spriteId = CreateSprite(&sStartCopyrightBannerSpriteTemplate, x, y, 0);
         StartSpriteAnim(&gSprites[spriteId], i + NUM_PRESS_START_FRAMES);
+
+        // Make the version/copyright segments blink like "Press Start"
+        gSprites[spriteId].sAnimate = TRUE;   // <— add this line
+        // (sTimer defaults to 0, so they'll stay in sync with Press Start.)
     }
 }
+
 
 #undef sAnimate
 #undef sTimer
