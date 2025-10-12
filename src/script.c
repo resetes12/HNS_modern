@@ -6,6 +6,7 @@
 #include "constants/event_objects.h"
 #include "constants/map_scripts.h"
 #include "rtc.h"
+#include "constants/flags.h"
 
 #define RAM_SCRIPT_MAGIC 51
 
@@ -190,6 +191,16 @@ u32 ScriptReadWord(struct ScriptContext *ctx)
     return (((((value3 << 8) + value2) << 8) + value1) << 8) + value0;
 }
 
+u32 ScriptPeekWord(struct ScriptContext *ctx)
+{
+    u32 value0 = *(ctx->scriptPtr);
+    u32 value1 = *(ctx->scriptPtr + 1);
+    u32 value2 = *(ctx->scriptPtr + 2);
+    u32 value3 = *(ctx->scriptPtr + 3);
+    return (((((value3 << 8) + value2) << 8) + value1) << 8) + value0;
+}
+
+
 void LockPlayerFieldControls(void)
 {
     sLockFieldControls = TRUE;
@@ -254,6 +265,8 @@ void ScriptContext_SetupScript(const u8 *ptr)
     InitScriptContext(&sGlobalScriptContext, gScriptCmdTable, gScriptCmdTableEnd);
     SetupBytecodeScript(&sGlobalScriptContext, ptr);
     LockPlayerFieldControls();
+    if (OW_MON_SCRIPT_MOVEMENT)
+        FlagSet(FLAG_SAFE_FOLLOWER_MOVEMENT);
     sGlobalScriptContextStatus = CONTEXT_RUNNING;
 }
 
@@ -500,3 +513,52 @@ void SetTimeBasedEncounters(void)
 		VarSet(VAR_TIME_BASED_ENCOUNTER, 2); // Night
 	}
 }    
+
+void DisableChallengesAfterBeatingGameEvoLimit(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_EvoLimit = 0;
+}
+
+void DisableChallengesAfterBeatingGameMirror(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_Mirror = 0;
+}
+void DisableChallengesAfterBeatingGameMirrorThief(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_Mirror_Thief = 0;
+}
+
+void DisableChallengesAfterBeatingGameLimitDifficulty(void)
+{
+    gSaveBlock1Ptr->tx_Features_LimitDifficulty = 0;
+}
+
+void DisableChallengesAfterBeatingGamePkmnFaint(void)
+{
+    gSaveBlock1Ptr->tx_Features_PkmnDeath = 0;
+}
+
+void DisableChallengesAfterBeatingGameOneType(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge = 0;
+}
+
+void DisableChallengesAfterBeatingGamePartyLimit(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_PartyLimit = 0;
+}
+
+void DisableChallengesAfterBeatingGameNoItemPlayer(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_NoItemPlayer = 0;
+}
+
+void DisableChallengesAfterBeatingGameNoItemTrainer(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_NoItemTrainer = 0;
+}
+
+void DisableChallengesAfterBeatingGamePkmCenterChallenge(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_PkmnCenter = 0;
+}

@@ -83,10 +83,10 @@ VioletCity_PokemonCenter_EventScript_Man::
 	release
 	end
 
-VioletCity_PokemonCenter_Text_BookshelfWoman::
+VioletCity_PokemonCenter_Text_BookshelfMan::
 	lock
 	faceplayer
-	msgbox VioletCity_PokeCenter_Text_BooksAreGreat, MSGBOX_DEFAULT
+	msgbox VioletCity_PokeCenter_Text_FarawayLink, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -126,15 +126,16 @@ VioletCity_PokeCenter_Text_ElmsAideFullParty:
 VioletCity_PokeCenter_Text_ElmsAideRefuse:
 	.string "B-but… PROF.ELM asked for you…$"
 
-VioletCity_PokeCenter_Text_BooksAreGreat:
-	.string "While my POKéMON are recovering\n"
-	.string "I love to read a good book.$"
+VioletCity_PokeCenter_Text_FarawayLink:
+	.string "I've been thinking it'd be great\n"
+	.string "to link up and battle with my\n"
+	.string "friends who live far away.$"
 
 VioletCity_PokeCenter_Text_MobileAdapter:
 	.string "I just battled a friend in\n"
 	.string "CIANWOOD over a link.\p"
 	.string "If you connect a MOBILE ADAPTER,\n"
-	.string "you can link with a friend far\l"
+	.string "you can link with a friend far\n"
 	.string "away.$"
 
 VioletCity_PokeCenter_Text_GameboyKid:

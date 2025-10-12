@@ -321,7 +321,7 @@ const u8 gTowerFemaleFacilityClasses[28] =
     FACILITY_CLASS_LEAF, //new
 };
 
-const u8 gTowerMaleTrainerGfxIds[42] =
+const u16 gTowerMaleTrainerGfxIds[42] =
 {
     OBJ_EVENT_GFX_HIKER, //ruin maniac
     OBJ_EVENT_GFX_LITTLE_BOY, //tuber M
@@ -367,7 +367,7 @@ const u8 gTowerMaleTrainerGfxIds[42] =
     OBJ_EVENT_GFX_STEVEN, //new
 };
 
-const u8 gTowerFemaleTrainerGfxIds[28] =
+const u16 gTowerFemaleTrainerGfxIds[28] =
 {
     OBJ_EVENT_GFX_WOMAN_2, //aroma lady
     OBJ_EVENT_GFX_LITTLE_GIRL, //was tuber

@@ -39,4 +39,4 @@ VioletCity_Mart_Text_CooltrainerM:
 	.string "POKéMON can hold items like\n"
 	.string "POTION and ANTIDOTE.\p"
 	.string "But they don't appear to know\n"
-	.string "how to use man-made items.$"
+	.string "how to use manmade items.$"

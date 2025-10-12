@@ -2544,12 +2544,9 @@ void DisplayPartyMenuStdMessage(u32 stringId)
 
         if (stringId == PARTY_MSG_CHOOSE_MON)
         {
-            if (gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD)
-                stringId = PARTY_MSG_CHOOSE_MON_2;
-            else if (gPartyMenu.menuType == PARTY_MENU_TYPE_IN_BATTLE)
-                // Avoid the “Choose a Pokémon for {STR_VAR_2}” template in battle,
-                // since STR_VAR_2 may be unset in some switch paths.
-                stringId = PARTY_MSG_CHOOSE_MON_2;
+            if (sPartyMenuInternal->chooseHalf)
+                stringId = PARTY_MSG_CHOOSE_MON_AND_CONFIRM;
+            }
             else if (!ShouldUseChooseMonText())
                 stringId = PARTY_MSG_CHOOSE_MON_OR_CANCEL;
         }
@@ -5836,12 +5833,10 @@ static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
     u16 i = 0;
     u16 species;
     u16* gFrontierBannedSpecies;
-    if (gSaveBlock2Ptr->optionsDifficulty == 1)
+    if (gSaveBlock1Ptr->tx_Features_FrontierBans == 0)
         gFrontierBannedSpecies = gFrontierBannedSpeciesNormal;
-    if (gSaveBlock2Ptr->optionsDifficulty == 0)
+    else if (gSaveBlock1Ptr->tx_Features_FrontierBans == 1)
         gFrontierBannedSpecies = gFrontierBannedSpeciesEasy;
-    if (gSaveBlock2Ptr->optionsDifficulty == 2)
-        gFrontierBannedSpecies = gFrontierBannedSpeciesHard;
 
     if (GetMonData(mon, MON_DATA_IS_EGG)
         || GetMonData(mon, MON_DATA_LEVEL) > GetBattleEntryLevelCap()

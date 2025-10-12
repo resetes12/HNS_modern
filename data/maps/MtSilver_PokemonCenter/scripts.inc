@@ -18,7 +18,7 @@ MtSilver_PokemonCenter_Text_Meara:
 	.string "An unusual amount of artifacts have\n"
 	.string "been discovered in this area, so\l"
 	.string "I've come here to investigate.\p"
-	.string "There are no records of a civilization\n"
+	.string "There are no records of a civlization\n"
 	.string "around the mountain, but the\l"
 	.string "artifacts are almost certainly\l"
 	.string "man-made.\p"

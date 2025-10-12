@@ -36,7 +36,7 @@ static const u8 sCondMsg16[] = _("{STR_VAR_1} doesn't want to get off\nthe boat 
 static const u8* const sBoatTexts[] = {sCondMsg14, sCondMsg15, sCondMsg16, NULL};
 static const u8 sCondMsg17[] = _("{STR_VAR_1} is listening to the\nsound of the machines.");
 static const u8* const sMachineTexts[] = {sCondMsg13, sCondMsg17, NULL};
-static const u8 sCondMsg18[] = _("Waah! your POKéMON suddenly splashed\nwater!");
+static const u8 sCondMsg18[] = _("Waah! Your POKéMON suddenly splashed\nwater!");
 static const u8 sCondMsg19[] = _("Your POKéMON is blowing sand in the\nair!");
 static const u8 sCondMsg20[] = _("{STR_VAR_1} is playing around,\nplucking bits of grass.");
 static const u8 sCondMsg21[] = _("Your POKéMON is happily looking at\nyour footprints!");
@@ -55,7 +55,7 @@ static const u8* const sFearTexts[] = {sCondMsg29, sCondMsg30, NULL};
 static const u8 sCondMsg31[] = _("{STR_VAR_1} is taking shelter in the\ngrass from the rain.");
 static const u8 sCondMsg32[] = _("{STR_VAR_1} seems very cold.");
 static const u8 sCondMsg33[] = _("{STR_VAR_1} is staring at the sea.");
-static const u8 sCondMsg34[] = _("Your pokemon is staring intently at\nthe sea!");
+static const u8 sCondMsg34[] = _("Your POKéMON is staring intently at\nthe sea!");
 static const u8 sCondMsg35[] = _("{STR_VAR_1} is looking at the\nsurging sea.");
 static const u8* const sSeaTexts[] = {sCondMsg33, sCondMsg34, sCondMsg35, NULL};
 static const u8 sCondMsg36[] = _("{STR_VAR_1} is listening to the\nsound of the waterfall.");
@@ -72,6 +72,7 @@ static const u8* const sDayTexts[] = {sCondMsg43, sCondMsg44, NULL};
 static const u8 sCondMsg45[] = _("Your POKéMON is staring spellbound\nat the night sky!");
 static const u8 sCondMsg46[] = _("Your POKéMON is happily gazing at\nthe beautiful, starry sky!");
 static const u8* const sNightTexts[] = {sCondMsg45, sCondMsg46, NULL};
+static const u8 sCondMsg50[] = _("{STR_VAR_1} is disturbed by the\nabnormal weather!");
 
 // See the struct definition in follower_helper.h for more info
 const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT] = {
@@ -303,6 +304,18 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
             MATCH_TIME_OF_DAY(TIME_OF_DAY_NIGHT),
             MATCH_OUTDOORS(),
         },
+    },
+
+    [COND_MSG_ABNORMAL_WEATHER] =
+    {
+    .text = sCondMsg50,
+    .emotion = FOLLOWER_EMOTION_SURPRISE,
+    .conditions = {
+        MATCH_MUSIC(MUS_ABNORMAL_WEATHER),
+        MATCH_NOT_SPECIES(SPECIES_KYOGRE),
+        MATCH_NOT_SPECIES(SPECIES_GROUDON),
+        MATCH_NOT_SPECIES(SPECIES_RAYQUAZA),
+    }
     },
 
 };

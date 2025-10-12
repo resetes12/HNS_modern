@@ -967,7 +967,7 @@ static const u8 sSunnyDayDescription[] = _(
 
 static const u8 sCrunchDescription[] = _(
     "Crunches with sharp fangs.\n"
-    "May lower DEF.");
+    "May lower SP. DEF.");
 
 static const u8 sMirrorCoatDescription[] = _(
     "Counters the foe's special\n"

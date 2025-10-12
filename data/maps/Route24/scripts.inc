@@ -140,7 +140,7 @@ Route24_Text_RocketBeaten:
 	.string "I am not to you!$"
 
 Route24_Text_RocketAfter:
-	.string "OK. Tell you mine secret will I?\n"
+	.string "OK. Tell you mine secret will I\n"
 	.string "MACHINE PART steal by me, hide it\l"
 	.string "I did in GYM of the CERULEAN.\p"
 	.string "Inside water put it I did. Look\n"

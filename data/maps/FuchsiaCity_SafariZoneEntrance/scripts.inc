@@ -305,20 +305,20 @@ FuchsiaCity_SafariZoneEntrance_Text_Steven:
 FuchsiaCity_SafariZoneEntrance_Text_Level1:
 	.string "Hello {PLAYER}, would you\n"
 	.string "like to increase your SAFARI LEVEL\l"
-	.string "to 2? It will cost you ¥200,000.$"
+	.string "to 2? It will cost you ¥200,000$"
 
 FuchsiaCity_SafariZoneEntrance_Text_Level2:
 	.string "Hello {PLAYER}, would you\n"
 	.string "like to increase your SAFARI LEVEL\l"
-	.string "to 3? It will cost you ¥300,000.$"
+	.string "to 3? It will cost you ¥300,000$"
 
 FuchsiaCity_SafariZoneEntrance_Text_Level3:
 	.string "Hello {PLAYER}, would you\n"
 	.string "like to increase your SAFARI LEVEL\l"
-	.string "to 4? It will cost you ¥400,000.$"
+	.string "to 4? It will cost you ¥400,000$"
 
 FuchsiaCity_SafariZoneEntrance_Text_UpgradeGuyDeclined:
-	.string "Oh, that's too bad, then...$"
+	.string "Oh, that's too bad, then... $"
 
 FuchsiaCity_SafariZoneEntrance_Text_UpgradeGuyAccepted:
 	.string "Enjoy the premium SAFARI ZONE\n"
@@ -328,3 +328,4 @@ FuchsiaCity_SafariZoneEntrance_Text_MaxLevel:
 	.string "Hello {PLAYER}, thank you for\n"
 	.string "continuing to be a premium member\l"
 	.string "at the FUCHSIA SAFARI ZONE.$"
+

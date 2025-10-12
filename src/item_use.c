@@ -42,6 +42,7 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/songs.h"
+#include "script_pokemon_util.h"
 #include "random.h"
 #include "constants/region_map_sections.h"
 
@@ -831,6 +832,21 @@ void ItemUseOutOfBattle_InfiniteRareCandies(u8 taskId)
     }
 }
 
+void ItemUseOutOfBattle_HealingHeart(u8 taskId)
+{
+    PlayFanfare(MUS_HEAL);
+    if (gTasks[taskId].tUsingRegisteredKeyItem) // to account for pressing select in the overworld
+    {
+        HealPlayerParty();
+        DisplayItemMessageOnField(taskId, gText_HealingHeart, Task_CloseCantUseKeyItemMessage);
+    }
+    else
+    {
+        HealPlayerParty();
+        DisplayItemMessage(taskId, 1, gText_HealingHeart, CloseItemMessage);
+    }
+}
+
 void ItemUseOutOfBattle_PowderJar(u8 taskId)
 {
     ConvertIntToDecimalStringN(gStringVar1, GetBerryPowder(), STR_CONV_MODE_LEFT_ALIGN, 5);
@@ -1108,8 +1124,13 @@ static void ItemUseOnFieldCB_EscapeRope(u8 taskId)
 
 bool8 CanUseDigOrEscapeRopeOnCurMap(void)
 {
-    if (gMapHeader.allowEscaping)
-        return TRUE;
+    if (gSaveBlock1Ptr->tx_Difficulty_EscapeRopeDig == 0)
+    {
+        if (gMapHeader.allowEscaping)
+            return TRUE;
+        else
+            return FALSE;
+    }
     else
         return FALSE;
 }
