@@ -65,6 +65,7 @@
 #include "constants/battle_frontier.h"
 #include "list_menu.h"
 #include "malloc.h"
+#include "starter_choose.h"
 
 //HnS For headbutt
 // From party_menu.c (that TU owns the tutor data)

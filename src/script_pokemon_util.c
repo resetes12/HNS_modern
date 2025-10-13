@@ -26,6 +26,8 @@
 #include "constants/items.h"
 #include "constants/battle_frontier.h"
 #include "tx_randomizer_and_challenges.h"
+#include "script_pokemon_util.h"
+#include "starter_choose.h"
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);

@@ -4339,7 +4339,7 @@ static void PrintMonWeight(u16 weight, u8 left, u8 top)
     }
 }
 
-const u8 *GetPokedexCategoryName(u16 dexNum) // unused
+const u8 *GetPokedexCategoryName(u16 dexNum)
 {
     return gPokedexEntries[dexNum].categoryName;
 }
