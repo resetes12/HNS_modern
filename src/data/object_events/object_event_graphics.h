@@ -382,8 +382,11 @@ const u32 gObjectEventPic_Giovanni[] = INCBIN_U32("graphics/object_events/pics/p
 const u32 gObjectEventPic_PokeBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_poke.4bpp");
 const u32 gObjectEventPic_TrainMid[] = INCBIN_U32("graphics/object_events/pics/misc/train_mid.4bpp");
 const u32 gObjectEventPic_TrainBack[] = INCBIN_U32("graphics/object_events/pics/misc/train_back.4bpp");
+//Added for the Battle Frontier
 const u32 gObjectEventPic_SwimmerM_Land[] = INCBIN_U32("graphics/object_events/pics/people/swimmer_m_land.4bpp");
 const u32 gObjectEventPic_SwimmerF_Land[] = INCBIN_U32("graphics/object_events/pics/people/swimmer_f_land.4bpp");
+const u32 gObjectEventPic_Tuber_M[] = INCBIN_U32("graphics/object_events/pics/people/tuber_m.4bpp");
+const u32 gObjectEventPic_Tuber_F[] = INCBIN_U32("graphics/object_events/pics/people/tuber_f.4bpp");
 //New frontier brain Ow
 const u32 gObjectEventPic_Anabel_New[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/anabel.4bpp");
 const u32 gObjectEventPic_Tucker_New[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/tucker.4bpp");

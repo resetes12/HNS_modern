@@ -264,6 +264,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Greta_New;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lucy_New;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Noland_New;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Spenser_New;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tuber_M;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tuber_F;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -377,7 +379,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_JUGGLER] =                &gObjectEventGraphicsInfo_Cameraman, //magma_admin.png
     [OBJ_EVENT_GFX_BRENDAN_UNDERWATER] =       &gObjectEventGraphicsInfo_BrendanUnderwater,
     [OBJ_EVENT_GFX_MAY_UNDERWATER] =           &gObjectEventGraphicsInfo_MayUnderwater,
-    [OBJ_EVENT_GFX_MOVING_BOX] =               &gObjectEventGraphicsInfo_MovingBox,
+    //[OBJ_EVENT_GFX_TUBER_M] =               &gObjectEventGraphicsInfo_MovingBox,
     [OBJ_EVENT_GFX_TRAIN_FRONT] =                &gObjectEventGraphicsInfo_TrainFront,
     [OBJ_EVENT_GFX_SCIENTIST_F] =              &gObjectEventGraphicsInfo_ScientistF,
     [OBJ_EVENT_GFX_KIMONO_GIRL] =           &gObjectEventGraphicsInfo_KimonoGirl, 
@@ -489,7 +491,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_KYOGRE_SIDE] =              &gObjectEventGraphicsInfo_KyogreSide,
     [OBJ_EVENT_GFX_GROUDON_SIDE] =             &gObjectEventGraphicsInfo_GroudonSide,
     [OBJ_EVENT_GFX_MYSTERY_GIFT_MAN] =         &gObjectEventGraphicsInfo_MysteryEventDeliveryman,
-    [OBJ_EVENT_GFX_TRICK_HOUSE_STATUE] =       &gObjectEventGraphicsInfo_Statue,
+    //[OBJ_EVENT_GFX_TUBER_F] =       &gObjectEventGraphicsInfo_Statue,
     [OBJ_EVENT_GFX_NURSE_CHANSEY] =                   &gObjectEventGraphicsInfo_Kirlia,
     [OBJ_EVENT_GFX_DUSCLOPS] =                 &gObjectEventGraphicsInfo_Dusclops,
     [OBJ_EVENT_GFX_RED_NORMAL] =         &gObjectEventGraphicsInfo_UnionRoomAttendant,
@@ -517,6 +519,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LUCY] =                     &gObjectEventGraphicsInfo_Lucy_New,
     [OBJ_EVENT_GFX_NOLAND] =                   &gObjectEventGraphicsInfo_Noland_New,
     [OBJ_EVENT_GFX_SPENSER] =                  &gObjectEventGraphicsInfo_Spenser_New,
+    [OBJ_EVENT_GFX_TUBER_M] =                  &gObjectEventGraphicsInfo_Tuber_M,
+    [OBJ_EVENT_GFX_TUBER_F] =                  &gObjectEventGraphicsInfo_Tuber_F,
+    
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

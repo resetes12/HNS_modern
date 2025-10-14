@@ -106,7 +106,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",
+      "graphics_id": "OBJ_EVENT_GFX_TUBER_F",
       "x": 4,
       "y": 17,
       "elevation": 0,
@@ -119,7 +119,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",
+      "graphics_id": "OBJ_EVENT_GFX_TUBER_F",
       "x": 4,
       "y": 6,
       "elevation": 0,

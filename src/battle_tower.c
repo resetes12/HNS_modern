@@ -323,7 +323,7 @@ const u8 gTowerFemaleFacilityClasses[28] =
 const u8 gTowerMaleTrainerGfxIds[42] =
 {
     OBJ_EVENT_GFX_HIKER, //ruin maniac
-    OBJ_EVENT_GFX_LITTLE_BOY, //tuber M
+    OBJ_EVENT_GFX_TUBER_M, //tuber M
     OBJ_EVENT_GFX_COOLTRAINER_M,
     OBJ_EVENT_GFX_WORKER_M, //rich boy
     OBJ_EVENT_GFX_BOY, //pokemaniac
@@ -369,7 +369,7 @@ const u8 gTowerMaleTrainerGfxIds[42] =
 const u8 gTowerFemaleTrainerGfxIds[28] =
 {
     OBJ_EVENT_GFX_WOMAN_2, //aroma lady
-    OBJ_EVENT_GFX_LITTLE_GIRL, //was tuber
+    OBJ_EVENT_GFX_TUBER_F, //was tuber
     OBJ_EVENT_GFX_COOLTRAINER_F, //cooltrainer
     OBJ_EVENT_GFX_CHANNELER, //Hex maniac
     OBJ_EVENT_GFX_WOMAN_2, //lady

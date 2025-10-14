@@ -114,7 +114,7 @@
 #define OBJ_EVENT_GFX_JUGGLER                  110
 #define OBJ_EVENT_GFX_BRENDAN_UNDERWATER         111
 #define OBJ_EVENT_GFX_MAY_UNDERWATER             112
-#define OBJ_EVENT_GFX_MOVING_BOX                 113
+#define OBJ_EVENT_GFX_TUBER_M                    113
 #define OBJ_EVENT_GFX_TRAIN_FRONT                  114
 #define OBJ_EVENT_GFX_SCIENTIST_F                115
 #define OBJ_EVENT_GFX_KIMONO_GIRL             116
@@ -225,7 +225,7 @@
 #define OBJ_EVENT_GFX_KYOGRE_SIDE                221
 #define OBJ_EVENT_GFX_GROUDON_SIDE               222
 #define OBJ_EVENT_GFX_MYSTERY_GIFT_MAN           223
-#define OBJ_EVENT_GFX_TRICK_HOUSE_STATUE         224
+#define OBJ_EVENT_GFX_TUBER_F                    224
 #define OBJ_EVENT_GFX_NURSE_CHANSEY                     225
 #define OBJ_EVENT_GFX_DUSCLOPS                   226
 #define OBJ_EVENT_GFX_RED_NORMAL           227
