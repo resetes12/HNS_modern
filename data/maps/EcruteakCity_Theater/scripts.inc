@@ -14,7 +14,7 @@ EcruteakCity_Theater_MapScripts::
 
 EcruteakCity_Theater_OnTransition::
 	call_if_eq VAR_ECRUTEAK_CITY_THEATER, 1, EcruteakCity_Theater_MapScript_SetRocketSceneActive
-	call_if_eq VAR_ECRUTEAK_CITY_THEATER, 7, EcruteakCity_Theater_MapScript_SetKimonoMovement
+	call_if_eq VAR_ECRUTEAK_CITY_THEATER, 8, EcruteakCity_Theater_MapScript_SetKimonoMovement
 	end
 
 EcruteakCity_Theater_MapScript_SetRocketSceneActive::
@@ -234,7 +234,7 @@ EcruteakCity_Theater_EventScript_KimonoGirlDuringEvent::
 EcruteakCity_Theater_EventScript_Zuki::
 	lock
 	faceplayer
-	goto_if_ge VAR_ECRUTEAK_CITY_THEATER, 7, EcruteakCity_Theater_EventScript_ZukiAfterLegendary
+	goto_if_ge VAR_ECRUTEAK_CITY_THEATER, 8, EcruteakCity_Theater_EventScript_ZukiAfterLegendary
 	goto_if_eq VAR_ECRUTEAK_CITY_THEATER, 6, EcruteakCity_Theater_EventScript_ZukiBattle
 	goto_if_eq VAR_ECRUTEAK_CITY_THEATER, 1, EcruteakCity_Theater_EventScript_ZukiDuringRocket
 	msgbox EcruteakCity_Theater_Text_Kimono, MSGBOX_DEFAULT

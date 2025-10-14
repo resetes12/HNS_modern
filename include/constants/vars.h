@@ -131,7 +131,7 @@
 #define VAR_LUGIA_OR_HOOH                                0x406F // 0 = unset, 1 = lugia, 2 = ho-oh
 #define VAR_KENYA                                        0x4070 // 0 = take, 1 = deliver, 2 = delivered, 3 = informed of delivery
 #define VAR_BUG_CONTEST_STATE                            0x4071
-#define VAR_ECRUTEAK_CITY_THEATER                        0x4072 //0 = goto theater, 1 = talk to rocket, 2 = get surf, 3 = wait until 8th badge elm visit. 4 = talktosilver, 5 = fightkimono, 6 = goto legendary, 7 = done legendary.
+#define VAR_ECRUTEAK_CITY_THEATER                        0x4072 //0 = goto theater, 1 = talk to rocket, 2 = get surf, 3 = wait until 8th badge elm visit. 4 = talktosilver, 5 = enter dojo, 6 = fightkimono, 7 = goto legendary, 8 = done legendary.
 #define VAR_ROUTE39_BARN                                 0x4073 // 0 = give 5 berries. 1 = give 4 berries. 2 = give 3 berries, 3 = give 2 berries, 4 = give 1 berry, 5 = healed, can buy milk.
 #define VAR_RUINSOFALPH_STATE                            0x4074
 #define VAR_SHUCKIE                                      0x4075 // 0 = unset, 1 = given, 2 = returnable, 3 = returned

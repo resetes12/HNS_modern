@@ -2565,6 +2565,21 @@ bool8 ScrCmd_remove5mons(struct ScriptContext *ctx)
 
 
 //HnS
+// Guarantees shiny and desired nature by construction.
+static u32 MakeShinyPidWithNature(u16 tid, u16 sid, u8 nature)
+{
+    const u16 s = tid ^ sid;
+    for (u32 lo = 0; lo < 65536; lo++)
+    {
+        u16 hi = s ^ (u16)lo;                 // ensures (tid ^ sid ^ hi ^ lo) == 0 → shiny
+        u32 pid = ((u32)hi << 16) | (u32)lo;  // full PID
+        if (pid % 25 == nature)               // match desired nature
+            return pid;
+    }
+    // Fallback (the loop will always return, but keep a safe default)
+    return ((u32)(s ^ 0) << 16) | 0;
+}
+
 bool8 ScrCmd_givenamedmon(struct ScriptContext *ctx)
 {
     u16 giftId = ScriptReadHalfword(ctx);
@@ -2628,15 +2643,28 @@ bool8 ScrCmd_givenamedmon(struct ScriptContext *ctx)
         otId = 5231;
         personality = Random32();
         break;
-    case 4: // DRATINI
-        species = SPECIES_DRATINI;
-        level = 15;
-        item = ITEM_NONE;
-        nickname = NULL;
-        otName = gSaveBlock2Ptr->playerName;
-        otId = gSaveBlock2Ptr->playerTrainerId[0];
-        personality = 0x00000003; 
-        break;
+    case 4: // DRATINI (always shiny + Adamant)
+        {
+            species  = SPECIES_DRATINI;
+            level    = 15;
+            item     = ITEM_NONE;
+            nickname = NULL;
+            otName   = gSaveBlock2Ptr->playerName;
+
+            // Build full 32-bit Trainer ID (TID|SID)
+            u32 fullId = ((u32)gSaveBlock2Ptr->playerTrainerId[3] << 24)
+                    | ((u32)gSaveBlock2Ptr->playerTrainerId[2] << 16)
+                    | ((u32)gSaveBlock2Ptr->playerTrainerId[1] <<  8)
+                    | ((u32)gSaveBlock2Ptr->playerTrainerId[0]);
+            u16 tid = (u16)(fullId & 0xFFFF);
+            u16 sid = (u16)(fullId >> 16);
+
+            // Make a shiny, Adamant PID for this TID/SID
+            personality = MakeShinyPidWithNature(tid, sid, NATURE_ADAMANT);
+
+            otId = fullId;   // pass full 32-bit ID to CreateBoxMon (OT_ID_PRESET)
+            break;
+        }
     default:
         gSpecialVar_Result = MON_CANT_GIVE;
         return FALSE;

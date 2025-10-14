@@ -36,7 +36,7 @@ ReceptionGate_Trigger::
     playse SE_PIN
     applymovement LOCALID_INDIGOJUNCTION_POLICEMAN, Common_Movement_ExclamationMark
     delay 20
-    goto_if_lt VAR_ECRUTEAK_CITY_THEATER, 7, ReceptionGate_EventScript_Kimono
+    goto_if_lt VAR_ECRUTEAK_CITY_THEATER, 8, ReceptionGate_EventScript_Kimono
     msgbox VictoryRoadGate_Text_Officer, MSGBOX_DEFAULT
     goto_if_unset FLAG_BADGE08_GET, ReceptionGate_EventScript_NotEnough
     msgbox VictoryRoadGate_Text_EightBadges, MSGBOX_DEFAULT

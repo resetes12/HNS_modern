@@ -11,6 +11,5 @@ SeafoamIslands_1F_OnTransition:
 SeafoamIslands_1F_SetHoleWarp:
 	setstepcallback STEP_CB_CRACKED_FLOOR
 	setholewarp MAP_SEAFOAM_ISLANDS_B1F
-	callnative SetTimeBasedEncounters
 	end
 
