@@ -73,7 +73,7 @@
 #define BATTLE_TYPE_RECORDED_LINK      (1 << 25)
 #define BATTLE_TYPE_TRAINER_HILL       (1 << 26)
 #define BATTLE_TYPE_SECRET_BASE        (1 << 27)
-#define BATTLE_TYPE_GROUDON            (1 << 28)
+#define BATTLE_TYPE_HO_OH            (1 << 28)
 #define BATTLE_TYPE_KYOGRE             (1 << 29)
 #define BATTLE_TYPE_RAYQUAZA           (1 << 30)
 #define BATTLE_TYPE_RECORDED_IS_MASTER (1 << 31)
@@ -83,7 +83,7 @@
                                              | BATTLE_TYPE_WALLY_TUTORIAL | BATTLE_TYPE_ROAMER | BATTLE_TYPE_EREADER_TRAINER    \
                                              | BATTLE_TYPE_KYOGRE_GROUDON | BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_REGI            \
                                              | BATTLE_TYPE_RECORDED | BATTLE_TYPE_TRAINER_HILL | BATTLE_TYPE_SECRET_BASE        \
-                                             | BATTLE_TYPE_GROUDON | BATTLE_TYPE_KYOGRE | BATTLE_TYPE_RAYQUAZA))
+                                             | BATTLE_TYPE_HO_OH | BATTLE_TYPE_KYOGRE | BATTLE_TYPE_RAYQUAZA))
 
 // Battle Outcome defines
 #define B_OUTCOME_WON                  1

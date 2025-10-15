@@ -607,7 +607,7 @@ void BattleSetup_StartLegendaryBattle(void)
     {
     default:
     case SPECIES_GROUDON:
-        gBattleTypeFlags |= BATTLE_TYPE_GROUDON;
+        gBattleTypeFlags |= BATTLE_TYPE_KYOGRE;
         CreateBattleStartTask(B_TRANSITION_GROUDON, MUS_VS_KYOGRE_GROUDON);
         break;
     case SPECIES_KYOGRE:
@@ -635,7 +635,7 @@ void BattleSetup_StartLegendaryBattle(void)
         CreateBattleStartTask(B_TRANSITION_RECTANGULAR_SPIRAL, MUS_HG_VS_LUGIA);
         break;
     case SPECIES_HO_OH:
-        gBattleTypeFlags |= BATTLE_TYPE_RAYQUAZA;
+        gBattleTypeFlags |= BATTLE_TYPE_HO_OH;
         CreateBattleStartTask(B_TRANSITION_RECTANGULAR_SPIRAL, MUS_HG_VS_HO_OH);
         break;
     case SPECIES_ARTICUNO:
