@@ -8542,24 +8542,24 @@
       "blockdata_filepath": "data/layouts/TinTower_RoofNight/map.bin"
     },
     {
-      "id": "LAYOUT_BATTLE_TOWER_OUTSIDE",
-      "name": "BattleTower_Outside_Layout",
+      "id": "LAYOUT_TRAINER_HILL_COURTYARD",
+      "name": "TrainerHill_Courtyard_Layout",
       "width": 46,
       "height": 46,
       "primary_tileset": "gTileset_Johto_General",
-      "secondary_tileset": "gTileset_BattleTower_Outside",
-      "border_filepath": "data/layouts/BattleTower_Outside/border.bin",
-      "blockdata_filepath": "data/layouts/BattleTower_Outside/map.bin"
+      "secondary_tileset": "gTileset_TrainerHill_Courtyard",
+      "border_filepath": "data/layouts/TrainerHill_Courtyard/border.bin",
+      "blockdata_filepath": "data/layouts/TrainerHill_Courtyard/map.bin"
     },
     {
-      "id": "LAYOUT_GATE_ROUTE40_BATTLE_TOWER_OUTSIDE",
-      "name": "Gate_Route40_BattleTowerOutside_Layout",
+      "id": "LAYOUT_GATE_ROUTE40_TRAINER_HILL_COURTYARD",
+      "name": "Gate_Route40_TrainerHill_Courtyard_Layout",
       "width": 15,
       "height": 12,
       "primary_tileset": "gTileset_Johto_Building",
       "secondary_tileset": "gTileset_Gate_Standard",
-      "border_filepath": "data/layouts/Gate_Route40_BattleTowerOutside/border.bin",
-      "blockdata_filepath": "data/layouts/Gate_Route40_BattleTowerOutside/map.bin"
+      "border_filepath": "data/layouts/Gate_Route40_TrainerHill_Courtyard/border.bin",
+      "blockdata_filepath": "data/layouts/Gate_Route40_TrainerHill_Courtyard/map.bin"
     },
     {
       "id": "LAYOUT_RUINS_OF_ALPH_WORDS_ROOM1",

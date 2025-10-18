@@ -1953,14 +1953,14 @@ const struct Tileset gTileset_ShopRooftop =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_BattleTower_Outside =
+const struct Tileset gTileset_TrainerHill_Courtyard =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_BattleTower_Outside,
-    .palettes = gTilesetPalettes_BattleTower_Outside,
-    .metatiles = gMetatiles_BattleTower_Outside,
-    .metatileAttributes = gMetatileAttributes_BattleTower_Outside,
+    .tiles = gTilesetTiles_TrainerHill_Courtyard,
+    .palettes = gTilesetPalettes_TrainerHill_Courtyard,
+    .metatiles = gMetatiles_TrainerHill_Courtyard,
+    .metatileAttributes = gMetatileAttributes_TrainerHill_Courtyard,
     .callback = NULL,
 };
 

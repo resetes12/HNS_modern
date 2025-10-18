@@ -1,7 +1,7 @@
 {
-  "id": "MAP_BATTLE_TOWER_OUTSIDE",
-  "name": "BattleTower_Outside",
-  "layout": "LAYOUT_BATTLE_TOWER_OUTSIDE",
+  "id": "MAP_TRAINER_HILL_COURTYARD",
+  "name": "TrainerHill_Courtyard",
+  "layout": "LAYOUT_TRAINER_HILL_COURTYARD",
   "music": "MUS_PL_FIGHT_AREA_DAY",
   "region_map_section": "MAPSEC_ROUTE_40",
   "requires_flash": false,
@@ -30,7 +30,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleTower_Outside_EventScript_Youngster",
+      "script": "TrainerHill_Courtyard_EventScript_Youngster",
       "flag": "0"
     },
     {
@@ -43,7 +43,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleTower_Outside_EventScript_Beauty",
+      "script": "TrainerHill_Courtyard_EventScript_Beauty",
       "flag": "0"
     },
     {
@@ -56,7 +56,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleTower_Outside_EventScript_Sailor",
+      "script": "TrainerHill_Courtyard_EventScript_Sailor",
       "flag": "0"
     },
     {
@@ -69,7 +69,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleTower_Outside_EventScript_RightMoveTutor",
+      "script": "TrainerHill_Courtyard_EventScript_RightMoveTutor",
       "flag": "0"
     },
     {
@@ -82,7 +82,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleTower_Outside_EventScript_ElementalMoveTutor",
+      "script": "TrainerHill_Courtyard_EventScript_ElementalMoveTutor",
       "flag": "0"
     },
     {
@@ -95,7 +95,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleTower_Outside_EventScript_LeftMoveTutor",
+      "script": "TrainerHill_Courtyard_EventScript_LeftMoveTutor",
       "flag": "0"
     },
     {
@@ -108,7 +108,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleTower_Outside_ExchangeServiceCorner_EventScript_HoldItemClerk",
+      "script": "TrainerHill_Courtyard_ExchangeServiceCorner_EventScript_HoldItemClerk",
       "flag": "0"
     },
     {
@@ -121,7 +121,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleTower_Outside_ExchangeServiceCorner_EventScript_VitaminClerk",
+      "script": "TrainerHill_Courtyard_ExchangeServiceCorner_EventScript_VitaminClerk",
       "flag": "0"
     },
     {
@@ -269,7 +269,7 @@
       "y": 29,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "BattleTower_Outside_EventScript_BattleTowerSign"
+      "script": "TrainerHill_Courtyard_EventScript_BattleTowerSign"
     },
     {
       "type": "sign",
@@ -277,7 +277,7 @@
       "y": 20,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "BattleTower_Outside_EventScript_Tent_Arena"
+      "script": "TrainerHill_Courtyard_EventScript_Tent_Arena"
     },
     {
       "type": "sign",
@@ -285,7 +285,7 @@
       "y": 29,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "BattleTower_Outside_EventScript_Tent_Palace"
+      "script": "TrainerHill_Courtyard_EventScript_Tent_Palace"
     },
     {
       "type": "sign",
@@ -293,7 +293,7 @@
       "y": 29,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "BattleTower_Outside_EventScript_Tent_Factory"
+      "script": "TrainerHill_Courtyard_EventScript_Tent_Factory"
     }
   ]
 }

@@ -1949,9 +1949,9 @@ Common_EventScript_LegendaryFlewAway::
 
 	.include "data/maps/TinTower_RoofNight/scripts.inc"
 
-	.include "data/maps/BattleTower_Outside/scripts.inc"
+	.include "data/maps/TrainerHill_Courtyard/scripts.inc"
 
-	.include "data/maps/Gate_Route40_BattleTowerOutside/scripts.inc"
+	.include "data/maps/Gate_Route40_TrainerHill_Courtyard/scripts.inc"
 
 	.include "data/maps/RuinsOfAlph_WordsRoom1/scripts.inc"
 

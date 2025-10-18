@@ -487,8 +487,8 @@ const u16 gMetatileAttributes_MtSilverSnow[] = INCBIN_U16("data/tilesets/seconda
 const u16 gMetatiles_ShopRooftop[] = INCBIN_U16("data/tilesets/secondary/shop_rooftop/metatiles.bin");
 const u16 gMetatileAttributes_ShopRooftop[] = INCBIN_U16("data/tilesets/secondary/shop_rooftop/metatile_attributes.bin");
 
-const u16 gMetatiles_BattleTower_Outside[] = INCBIN_U16("data/tilesets/secondary/battle_tower_outer/metatiles.bin");
-const u16 gMetatileAttributes_BattleTower_Outside[] = INCBIN_U16("data/tilesets/secondary/battle_tower_outer/metatile_attributes.bin");
+const u16 gMetatiles_TrainerHill_Courtyard[] = INCBIN_U16("data/tilesets/secondary/battle_tower_outer/metatiles.bin");
+const u16 gMetatileAttributes_TrainerHill_Courtyard[] = INCBIN_U16("data/tilesets/secondary/battle_tower_outer/metatile_attributes.bin");
 
 const u16 gMetatiles_BattleTowerInner[] = INCBIN_U16("data/tilesets/secondary/battle_tower_inner/metatiles.bin");
 const u16 gMetatileAttributes_BattleTowerInner[] = INCBIN_U16("data/tilesets/secondary/battle_tower_inner/metatile_attributes.bin");

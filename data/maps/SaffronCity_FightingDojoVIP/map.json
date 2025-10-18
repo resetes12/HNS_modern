@@ -479,7 +479,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleTower_Outside_EventScript_RightMoveTutor",
+      "script": "TrainerHill_Courtyard_EventScript_RightMoveTutor",
       "flag": "0"
     },
     {
@@ -492,7 +492,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleTower_Outside_EventScript_ElementalMoveTutor",
+      "script": "TrainerHill_Courtyard_EventScript_ElementalMoveTutor",
       "flag": "0"
     },
     {
@@ -505,7 +505,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleTower_Outside_EventScript_LeftMoveTutor",
+      "script": "TrainerHill_Courtyard_EventScript_LeftMoveTutor",
       "flag": "0"
     },
     {
@@ -518,7 +518,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleTower_Outside_ExchangeServiceCorner_EventScript_VitaminClerk",
+      "script": "TrainerHill_Courtyard_ExchangeServiceCorner_EventScript_VitaminClerk",
       "flag": "0"
     },
     {
@@ -531,7 +531,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleTower_Outside_ExchangeServiceCorner_EventScript_HoldItemClerk",
+      "script": "TrainerHill_Courtyard_ExchangeServiceCorner_EventScript_HoldItemClerk",
       "flag": "0"
     }
   ],

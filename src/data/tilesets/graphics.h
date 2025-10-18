@@ -3637,7 +3637,7 @@ const u16 gTilesetPalettes_ShopRooftop[][16] =
 
 const u32 gTilesetTiles_ShopRooftop[] = INCBIN_U32("data/tilesets/secondary/shop_rooftop/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_BattleTower_Outside[][16] =
+const u16 gTilesetPalettes_TrainerHill_Courtyard[][16] =
 {
     INCBIN_U16("data/tilesets/secondary/battle_tower_outer/palettes/00.gbapal"),
     INCBIN_U16("data/tilesets/secondary/battle_tower_outer/palettes/01.gbapal"),
@@ -3654,7 +3654,7 @@ const u16 gTilesetPalettes_BattleTower_Outside[][16] =
     INCBIN_U16("data/tilesets/secondary/battle_tower_outer/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_BattleTower_Outside[] = INCBIN_U32("data/tilesets/secondary/battle_tower_outer/tiles.4bpp.lz");
+const u32 gTilesetTiles_TrainerHill_Courtyard[] = INCBIN_U32("data/tilesets/secondary/battle_tower_outer/tiles.4bpp.lz");
 
 const u16 gTilesetPalettes_BattleTowerInner[][16] =
 {
