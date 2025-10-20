@@ -41,7 +41,7 @@ Route18_Text_BirdKeeperBobBeaten:
 
 Route18_Text_BirdKeeperBobAfterBattle:
 	.string "If you don't have a BICYCLE,\n"
-	.string "you're not allowed to use the\n"
+	.string "you're not allowed to use the\l"
 	.string "shortcut.$"
 
 Route18_Text_Sign:
