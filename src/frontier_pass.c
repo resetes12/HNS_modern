@@ -177,7 +177,7 @@ static void ShowHideZoomingArea(bool8, bool8);
 static void SpriteCB_PlayerHead(struct Sprite *);
 
 static const u16 sMaleHead_Pal[]                 = INCBIN_U16("graphics/frontier_pass/map_heads.gbapal");
-static const u16 sFemaleHead_Pal[]               = INCBIN_U16("graphics/frontier_pass/map_heads_female.gbapal");
+static const u16 sFemaleHead_Pal[]               = INCBIN_U16("graphics/frontier_pass/map_heads.gbapal");
 static const u32 sMapScreen_Gfx[]                = INCBIN_U32("graphics/frontier_pass/map_screen.4bpp.lz");
 static const u32 sCursor_Gfx[]                   = INCBIN_U32("graphics/frontier_pass/cursor.4bpp.lz");
 static const u32 sHeads_Gfx[]                    = INCBIN_U32("graphics/frontier_pass/map_heads.4bpp.lz");
