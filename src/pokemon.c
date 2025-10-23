@@ -6381,9 +6381,9 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
 
     if (ShouldGetStatBadgeBoost(FLAG_BADGE01_GET, battlerIdAtk))
         attack = (110 * attack) / 100;
-    if (ShouldGetStatBadgeBoost(FLAG_BADGE03_GET, battlerIdDef))
-        defense = (110 * defense) / 100;
     if (ShouldGetStatBadgeBoost(FLAG_BADGE06_GET, battlerIdDef))
+        defense = (110 * defense) / 100;
+    if (ShouldGetStatBadgeBoost(FLAG_BADGE07_GET, battlerIdDef))
         spDefense = (110 * spDefense) / 100;
         if (ShouldGetStatBadgeBoost(FLAG_BADGE07_GET, battlerIdAtk))
         spAttack = (110 * spAttack) / 100;
