@@ -5414,10 +5414,10 @@
     {
       "id": "LAYOUT_MT_MOON_CAVE",
       "name": "MtMoon_Cave_Layout",
-      "width": 40,
-      "height": 21,
+      "width": 50,
+      "height": 40,
       "primary_tileset": "gTileset_Johto_General",
-      "secondary_tileset": "gTileset_Cave_Default",
+      "secondary_tileset": "gTileset_Cave_MtMoon",
       "border_filepath": "data/layouts/MtMoon_Cave/border.bin",
       "blockdata_filepath": "data/layouts/MtMoon_Cave/map.bin"
     },

@@ -69,6 +69,7 @@ Route4_Text_PicnickerSharon_AfterBattle:
 	.string "……I'll go train some more…$"
 
 Route4_Text_MtMoonSquareSign:
-	.string "MT.MOON SQUARE\p"
-	.string "Just go up the stairs.$"
+	.string "MT.MOON NEW ENTRANCE\n"
+	.string "DUE TO CAVE-IN\p"
+	.string "WATCH YOUR STEP$"
 

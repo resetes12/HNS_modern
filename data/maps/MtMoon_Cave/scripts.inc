@@ -16,6 +16,10 @@ MtMoon_Cave_MapScript_OnFrame::
 	map_script_2 VAR_PEWTER_CITY_STATE, 1, MtMoon_Cave_EventScript_Silver
 	.2byte 0
 
+MtMoon_Cave_EventScript_Sign::
+	msgbox MtMoon_Cave_Text_Sign, MSGBOX_SIGN
+	end
+
 MtMoon_Cave_EventScript_Silver::
 	lock
 	playbgm MUS_HG_ENCOUNTER_RIVAL, TRUE
@@ -56,20 +60,27 @@ MtMoon_Cave_EventScript_SilverAfterBattle::
 	setflag FLAG_HIDE_MTMOON_SILVER
 	clearflag FLAG_HIDE_INDIGO_PLATEAU_SILVER
 	setvar VAR_PEWTER_CITY_STATE, 2
-		fadedefaultbgm
+	fadedefaultbgm
 	release
 	end
 
 MtMoon_Cave_Movement_WalkToPlayer:
 	walk_left
 	walk_left
+	walk_left
 	step_end
 
 MtMoon_Cave_Movement_SilverLeave:
 	walk_right
+	walk_right
+	walk_right
 	walk_down
 	walk_down
 	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_down
 	walk_down
 	walk_down
@@ -107,3 +118,5 @@ MtMoon_Cave_Text_Rival_Loss:
 	.string "CHAMPION and become the world's greatest\n"
 	.string "trainer.$"
 
+MtMoon_Cave_Text_Sign:
+	.string "MT MOON SQUARE ->$"

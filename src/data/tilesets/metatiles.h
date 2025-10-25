@@ -501,3 +501,6 @@ const u16 gMetatileAttributes_CyclingRoad[] = INCBIN_U16("data/tilesets/secondar
 
 const u16 gMetatiles_SeaCottage[] = INCBIN_U16("data/tilesets/secondary/sea_cottage/metatiles.bin");
 const u16 gMetatileAttributes_SeaCottage[] = INCBIN_U16("data/tilesets/secondary/sea_cottage/metatile_attributes.bin");
+
+const u16 gMetatiles_Cave_MtMoon[] = INCBIN_U16("data/tilesets/secondary/cave_mt_moon/metatiles.bin");
+const u16 gMetatileAttributes_Cave_MtMoon[] = INCBIN_U16("data/tilesets/secondary/cave_mt_moon/metatile_attributes.bin");

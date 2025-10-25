@@ -2007,3 +2007,14 @@ const struct Tileset gTileset_SeaCottage =
     .metatileAttributes = gMetatileAttributes_SeaCottage,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Cave_MtMoon =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Cave_MtMoon,
+    .palettes = gTilesetPalettes_Cave_MtMoon,
+    .metatiles = gMetatiles_Cave_MtMoon,
+    .metatileAttributes = gMetatileAttributes_Cave_MtMoon,
+    .callback = NULL,
+};
