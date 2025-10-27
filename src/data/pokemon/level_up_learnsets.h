@@ -2311,7 +2311,6 @@ static const u16 sJolteonLevelUpLearnset[] = {
 static const u16 sFlareonLevelUpLearnset[] = {
     LEVEL_UP_MOVE(0, MOVE_FLAME_WHEEL),
     LEVEL_UP_MOVE(1, MOVE_FALSE_SWIPE),
-    LEVEL_UP_MOVE(1, MOVE_TACKLE),
     LEVEL_UP_MOVE(1, MOVE_CHARM),
     LEVEL_UP_MOVE(1, MOVE_COVET),
     LEVEL_UP_MOVE(1, MOVE_SWIFT),
