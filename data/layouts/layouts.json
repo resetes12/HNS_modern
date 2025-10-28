@@ -5524,9 +5524,9 @@
     {
       "id": "LAYOUT_WHIRL_ISLANDS_B2F",
       "name": "WhirlIslands_B2F_Layout",
-      "width": 20,
-      "height": 10,
-      "primary_tileset": "gTileset_Johto_General",
+      "width": 70,
+      "height": 27,
+      "primary_tileset": "gTileset_Johto_NorthEast",
       "secondary_tileset": "gTileset_WhirlIslands",
       "border_filepath": "data/layouts/WhirlIslands_B2F/border.bin",
       "blockdata_filepath": "data/layouts/WhirlIslands_B2F/map.bin"
@@ -8764,7 +8764,7 @@
     {
       "id": "LAYOUT_WHIRL_ISLANDS_B3F",
       "name": "WhirlIslands_B3F_Layout",
-      "width": 60,
+      "width": 70,
       "height": 27,
       "primary_tileset": "gTileset_Johto_NorthEast",
       "secondary_tileset": "gTileset_WhirlIslands",
