@@ -52,6 +52,11 @@ struct __attribute__((packed)) TimeBlendSettings {
   u16 altWeight;
 };
 
+enum {
+    REGION_JOHTO,
+    REGION_KANTO
+};
+
 // Exported RAM declarations
 extern struct WarpData gLastUsedWarp;
 extern struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4];
