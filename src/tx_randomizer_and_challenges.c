@@ -16,8 +16,8 @@ bool8 AreFeaturesActivated(void)
         || gSaveBlock1Ptr->tx_Features_WildMonDropItems
         || gSaveBlock1Ptr->tx_Mode_AlternateSpawns
         || gSaveBlock1Ptr->tx_Mode_InfiniteTMs
-        || gSaveBlock1Ptr->tx_Mode_PoisonSurvive
-        || gSaveBlock1Ptr->tx_Features_EasierFeebas)
+        || gSaveBlock1Ptr->tx_Mode_PoisonSurvive)
+        //|| gSaveBlock1Ptr->tx_Features_EasierFeebas)
         return TRUE;
 
     return FALSE;

@@ -65,11 +65,21 @@ static void LoadSurfOverworldPalette(bool8 isShiny)
 {
     u8 palette;
 
+    if (gSaveBlock1Ptr->tx_Features_ShinyColors == 0)
+    {
     if (isShiny == TRUE)
         palette = LoadSpritePalette(&sSurfablePokemonShinyPalettes[sCurrentSurfMon]);
     else
         palette = LoadSpritePalette(&sSurfablePokemonPalettes[sCurrentSurfMon]);
+    }
 
+    if (gSaveBlock1Ptr->tx_Features_ShinyColors == 1)
+    {
+        if ((isShiny == TRUE))
+            palette = LoadSpritePalette(&sSurfablePokemonShinyPalettes_Modern[sCurrentSurfMon]);
+        else
+            palette = LoadSpritePalette(&sSurfablePokemonPalettes[sCurrentSurfMon]);
+    }
     UpdateSpritePaletteWithWeather(palette, TRUE);
 }
 
