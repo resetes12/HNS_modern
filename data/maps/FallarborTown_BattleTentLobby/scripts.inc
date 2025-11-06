@@ -312,9 +312,9 @@ FallarborTown_BattleTentLobby_Text_MakeThinkImJustKid:
 
 FallarborTown_BattleTentLobby_Text_FallarborTentMyFavorite:
 	.string "You know how BATTLE TENTS offer\n"
-	.string "different events in different towns?\p"
-	.string "My favorite is definitely the BATTLE\n"
-	.string "TENT in FALLARBOR TOWN.\p"
+	.string "different events?\p"
+	.string "My favorite is definitely the red\n"
+	.string "colored TENT.\p"
 	.string "I think it's fantastic how TRAINERS\n"
 	.string "try to win with all their faith in\l"
 	.string "their POKéMON.$"

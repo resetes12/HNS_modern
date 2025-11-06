@@ -354,7 +354,7 @@ SlateportCity_BattleTentLobby_Text_ExplainMonRules:
 	.string "The POKéMON of the BATTLE TENT:\n"
 	.string "FACTORY are all rentals.\p"
 	.string "All rental POKéMON are kept at\n"
-	.string "Level 30.$"
+	.string "Level 50.$"
 
 @ Unused
 VerdanturfTown_BattleTentLobby_Text_RulesAreListed2:
@@ -423,10 +423,8 @@ VerdanturfTown_BattleTentLobby_Text_ExplainWhenInDangerRules:
 
 BattleTentLobby_Text_ExplainLevelRules:
 	.string "At this BATTLE TENT, the levels of\n"
-	.string "your opponents will be adjusted to\l"
-	.string "match the levels of your POKéMON.\p"
-	.string "However, no TRAINER you face will\n"
-	.string "have any POKéMON below Level 30.$"
+	.string "all POKéMON will be adjusted to\l"
+	.string "Level 50.$"
 
 VerdanturfTown_BattleTentLobby_Text_RulesAreListed:
 	.string "The BATTLE TENT: PALACE\n"
