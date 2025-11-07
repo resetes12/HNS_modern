@@ -853,6 +853,9 @@
 // gTileset_VioletCity
 #define METATILE_VioletCity_Dojo_Door  0x32B
 
+// gTileset_ViridianCity
+#define METATILE_ViridianCity_Viridian_Door  0x31B
+
 // gTileset_ssaqua
 #define METATILE_ssaqua_Door  0x281
 
