@@ -184,7 +184,7 @@ Route34_Text_TrainerTips:
 	.string "BERRIES.$"
 
 Route34_Text_CooltrainerIrene_Seen:
-	.string "IRENE: Kyaaah! Someone found us!$"
+	.string "IRENE: Who are you?!$"
 
 Route34_Text_CooltrainerIrene_Beaten:
 	.string "IRENE: Ohhh! You're too strong!$"
@@ -198,8 +198,8 @@ Route34_Text_CooltrainerIrene_After2:
 	.string "It's our secret little getaway!$"
 
 Route34_Text_CooltrainerJenn_Seen:
-	.string "JENN: You can't beat IRENE and go\n"
-	.string "unpunished!$"
+	.string "JENN: What the...?\n"
+	.string "What are you doing?$"
 
 Route34_Text_CooltrainerJenn_Beaten:
 	.string "JENN: So sorry, IRENE! Dear Sis!$"
@@ -213,16 +213,16 @@ Route34_Text_CooltrainerJenn_After2:
 	.string "stronger.$"
 
 Route34_Text_CooltrainerKate_Seen:
-	.string "KATE: You sure were mean to my\n"
-	.string "little sisters!$"
+	.string "KATE: I must pay you back for\n"
+	.string "taking care of my sisters!$"
 
 Route34_Text_CooltrainerKate_Beaten:
 	.string "KATE: No! I can't believe I lost.$"
 
 Route34_Text_CooltrainerKate_GiveSoftSand:
-	.string "KATE: You're too strong. I didn't\n"
-	.string "stand a chance. Here, you deserve\n"
-	.string "this.$"
+	.string "KATE: You are so strong.\n"
+	.string "We lost with no excuses...\p"
+	.string "Here, take this!$"
 
 Route34_Text_CooltrainerKate_After:
 	.string "KATE: I'm sorry we jumped you.\p"
