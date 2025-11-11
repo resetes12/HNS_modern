@@ -63,15 +63,21 @@ MrPokemonHouse_EventScript_GiveEgg::
 	setvar VAR_NEWBARKTOWN_LABSTATE, 4
 	setflag FLAG_HIDE_SILVER_NEWBARKTOWN
 	setflag FLAG_SYS_POKEDEX_GET
+	checkrandomizer
+	call_if_eq VAR_RESULT, TRUE, MrPokemonHouse_EventScript_GiveNatDexRandomizer
 	clearflag FLAG_HIDE_LAB_POLICEMAN
 	setvar VAR_CHERRYGROVE_CITY_STATE, 2
 	setrespawn HEAL_LOCATION_CHERRYGROVE_CITY
 	clearflag FLAG_HIDE_SILVER_CHERRYGROVE
 	setflag FLAG_HIDE_GUIDE_GENT_CHERRYGROVE
 	clearflag FLAG_HIDE_CHERRYGROVE_GUIDE_GENT_HOUSE
-
 	release
 	end
+
+MrPokemonHouse_EventScript_GiveNatDexRandomizer::
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
+	return
 
 MrPokemonHouse_EventScript_MrPokemon::
 	lock
