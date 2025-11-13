@@ -118,8 +118,36 @@ Otherwise, ask for help on Discord or IRC (see [README.md](README.md)), or conti
 - Otherwise, **open msys2** and go to [Choosing where to store pokeemerald (msys2)](#choosing-where-to-store-pokeemerald-msys2).
 
 ### Installing devkitARM
-1. Download the devkitPro installer [here](https://github.com/devkitPro/installer/releases).
-2. Run the devkitPro installer. In the "Choose Components" screen, uncheck everything except GBA Development unless if you plan to install other devkitPro components for other purposes. Keep the install location as C:\devkitPro and leave the Start Menu option unchanged.
+Heart and Soul requires the installation of devkitARM65 in order to make successfully. 
+
+devkitARM65 installation instructions (Debian, Ubuntu, wsl):
+
+1) Open your terminal and navigate to the folder you intend to clone pokemonHnS to.
+
+2) Run ```git clone https://github.com/devkitPro/buildscripts```
+
+3) Run ```cd ./buildscripts```
+ 
+4) Run ```git checkout devkitARM_r65```
+ to switch to the devkitARM version 65 commit.
+
+5) Install the dependencies. Run
+```sudo apt-get install libgmp-dev libmpfr-dev libmpc-dev libfreeimage-dev zlib1g-dev libusb-dev libudev-dev libexpat1-dev texinfo```
+
+6) Run the build script ```sudo ./build-devkit.sh```
+ and select devkitARM.
+
+7) When it is done, run ```sudo vim ~/.bashrc```
+ This will open a file that needs to be modified with the paths. You'll want to add it at the bottom. Copy and paste the following:
+
+export DEVKITPRO="/opt/devkitpro"
+export DEVKITARM="/opt/devkitpro/devkitARM"
+export PATH="$PATH:/opt/devkitpro/tools/bin/"
+
+8) To save after entering this, you need to hit the ESCAPE key and then : w q
+
+9) Restart your Terminal for the changes to take affect.
+
 
 ### Setting up msys2
 
