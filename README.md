@@ -137,11 +137,11 @@ If you are a developer interested in forking this repository and making your own
 ## Pokémon Modern Emerald 
 
 This project is based on the decompilation of Pokémon Emerald, edited to be "Pokémon Modern Emerald".
-You can get more information about Modern Emerald by resetes12 at [Pokécommunity](https://www.Pokécommunity.com/showthread.php?t=494005) and at [Github](https://github.com/resetes12/Pokéemerald).
+You can get more information about Modern Emerald by resetes12 at [Pokécommunity](https://www.Pokécommunity.com/showthread.php?t=494005) and at [Github](https://github.com/resetes12/Pokeemerald).
 
 ## If you want to compile:
 
-Please follow [Pret's guide on how to build the rom](https://github.com/pret/Pokéemerald/blob/master/INSTALL.md) but using this branch instead of theirs. 
+Please follow [Pret's guide on how to build the rom](https://github.com/pret/pokeemerald/blob/master/INSTALL.md) but using this branch instead of theirs. 
 When you compile, use the modern compiler with "make modern". Compiling using the old compiler won't work.
 
 ## Modern Emerald Features: (not all present in Hns)
