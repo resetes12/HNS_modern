@@ -124,7 +124,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsNewBackgrounds = 1; //HnS
     gSaveBlock2Ptr->optionsRunType = 1;
     gSaveBlock2Ptr->optionsNewBattleUI= 0;
-    gSaveBlock2Ptr->optionsGenOneHyperBeam= 0;
+    gSaveBlock2Ptr->optionsGenOneRecharge= 0;
 }
 
 static void ClearPokedexFlags(void)
