@@ -144,7 +144,7 @@ VioletCity_TrainerSchool_Text_GameboyKid1:
 
 VioletCity_TrainerSchool_Text_GameboyKid2:
 	.string "Berries in the JOHTO region are\n"
-	.string "good for healing and making balls.\p"
+	.string "good for healing and making BALLS.\p"
 	.string "Berries in KANTO are good for\n"
 	.string "reducing a POKéMON's stats.\p"
 	.string "The DOJO in KANTO helps POKéMON\n"
