@@ -1,6 +1,19 @@
 GoldenrodCity_House1_MapScripts::
 	.byte 0
 
+GoldenrodCity_NameRatersHouse_EventScript_RenameRival::
+	msgbox GoldenrodCity_NameRatersHouse_Text_RenameRival, MSGBOX_DEFAULT
+	closemessage
+	special NameRival
+	waitstate
+	end
+
+GoldenrodCity_NameRatersHouse_Text_RenameRival:
+	.string "It's the news...\p"
+	.string "The POLICE are looking for this\n"
+	.string "REDHEADED BOY!\p"
+	.string "Do YOU know his name?$"
+
 GoldenrodCity_NameRatersHouse_EventScript_NameRater::
 	lock
 	faceplayer

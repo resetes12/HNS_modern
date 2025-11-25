@@ -69,7 +69,7 @@ Debug_Script_1_Text2:
 	.string "WILL HAVE TO ENABLE THEM AGAIN.$"
 
 Debug_Script_2::
-	special NameRival
+	goto GoldenrodCity_NameRatersHouse_EventScript_RenameRival
 	end
 
 Debug_Script_3::
