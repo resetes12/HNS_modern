@@ -276,7 +276,7 @@ LakeOfRage_Text_LanceRadioSignal:
     .string "LANCE: Excellent!\p"
     .string "It seems that the LAKE's MAGIKARP\n"
     .string "are being forced to evolve.\p"
-    .string "A mysterious radio broadcast\n"
+    .string "A mysterious RADIO broadcast\n"
     .string "coming from MAHOGANY is the cause.\p"
     .string "We'll be waiting for you,\n"
     .string "{PLAYER}.$"

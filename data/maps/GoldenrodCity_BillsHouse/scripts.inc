@@ -109,7 +109,7 @@ BillHouse_Text_MomAfterEcruteak:
     .string "father.$"
 
 BillHouse_Text_SisterUsefulNumber:
-    .string "Are you a trainer?\p"
+    .string "Are you a TRAINER?\p"
     .string "I've got a useful phone number\n"
     .string "for you.$"
 

@@ -680,7 +680,7 @@ RocketHideout_B3F_Text_ScientistRossBeaten:
     .string "A mere tactical error cost me…$"
 
 RocketHideout_B3F_Text_ScientistRossAfter:
-    .string "A radio signal that drives\n"
+    .string "A RADIO signal that drives\n"
     .string "POKéMON mad…\p"
     .string "My experiment is a complete\n"
     .string "success.\p"
@@ -697,6 +697,6 @@ RocketHideout_B3F_Text_ScientistMitchBeaten:
 
 RocketHideout_B3F_Text_ScientistMitchAfter:
     .string "If we turn up the power of our\n"
-    .string "radio signal for broadcast\l"
+    .string "RADIO signal for broadcast\l"
     .string "nationwide…\p"
     .string "The very thought excites me!$"

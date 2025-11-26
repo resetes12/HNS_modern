@@ -122,7 +122,7 @@ Route35GoldenrodGate_Text_PokefanF_TreeBlocking:
 
 Route35GoldenrodGate_Text_PokefanF_Lullaby:
 	.string "I like the POKéMON Lullaby they play\n"
-	.string "on the radio.$"
+	.string "on the RADIO.$"
 
 Route35GoldenrodGate_Text_Fisher:
 	.string "I wonder how many kinds of POKéMON\n"

@@ -338,7 +338,7 @@ GoldenrodCity_Text_CooltrainerF2:
 
 GoldenrodCity_Text_CooltrainerF2_GotCard:
 	.string "Oh, your POKéGEAR already works\n"
-	.string "as a radio!$"
+	.string "as a RADIO!$"
 
 GoldenrodCity_Text_Youngster2:
 	.string "E-he-he-he…\p"

@@ -207,7 +207,7 @@ BlackthornGrampsGrantsEntryText:
 
 BlackBeltText_VoicesInMyHead:
 	.string "Arooo! Voices in my head!\p"
-	.string "Huh? I'm listening to my radio!$"
+	.string "Huh? I'm listening to my RADIO!$"
 
 BlackthornCooltrainerF1Text:
 	.string "Are you going to make your POKéMON\n"

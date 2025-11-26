@@ -143,9 +143,9 @@ VioletCity_TrainerSchool_Text_GameboyKid1:
 	.string "at DAY and NIGHT!$"
 
 VioletCity_TrainerSchool_Text_GameboyKid2:
-	.string "Berries in the JOHTO region are\n"
+	.string "BERRIES in the JOHTO region are\n"
 	.string "good for healing and making BALLS.\p"
-	.string "Berries in KANTO are good for\n"
+	.string "BERRIES in KANTO are good for\n"
 	.string "reducing a POKéMON's stats.\p"
 	.string "The DOJO in KANTO helps POKéMON\n"
 	.string "perfect individual stats.$"

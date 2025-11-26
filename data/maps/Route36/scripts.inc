@@ -286,9 +286,9 @@ Route36_Text_ArthurGivesGift:
 	.string "Here. You can have this.$"
 
 Route36_Text_ArthurGaveGift:
-	.string "ARTHUR: A POKéMON that uses rock-\n"
+	.string "ARTHUR: A POKéMON that uses ROCK-\n"
 	.string "type moves should hold on to that.\p"
-	.string "It pumps up rock-type attacks.$"
+	.string "It pumps up ROCK-type attacks.$"
 
 Route36_Text_ArthurThursday:
 	.string "ARTHUR: I'm ARTHUR of Thursday.\n"

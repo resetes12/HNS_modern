@@ -61,7 +61,7 @@ Route43_Text_PokemaniacBenBeaten:
 Route43_Text_PokemaniacBenAfter:
     .string "What else do I like besides\n"
     .string "POKéMON?\p"
-    .string "MARY on the radio. I bet she's\n"
+    .string "MARY on the RADIO. I bet she's\n"
     .string "cute!$"
 
 Route43_Text_PokemaniacBrentSeen:

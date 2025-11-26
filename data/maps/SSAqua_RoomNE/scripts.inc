@@ -33,5 +33,5 @@ SSAqua_RoomNE_Text_PokemaniacEthanAfterBattle:
     .string "LILY's nice, but\n"
     .string "MARY's the best!\n"
     .string "I want to check\n"
-    .string "out JOHTO's radio\n"
+    .string "out JOHTO's RADIO\n"
     .string "programs!$"

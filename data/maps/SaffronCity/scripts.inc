@@ -162,7 +162,7 @@ SaffronCity_Text_Youngster2:
 	.string "gather from all over the place.$"
 
 SaffronCity_Text_Lass2:
-	.string "Our city was featured on a radio\n"
+	.string "Our city was featured on a RADIO\n"
 	.string "program.\p"
 	.string "It's nice to hear praise for your\n"
 	.string "city, but it's a bit embarrassing\l"

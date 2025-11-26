@@ -219,7 +219,7 @@ SSAqua_B1F_Text_SchoolboyNateBeaten:
 	.string "Yaargh!$"
 
 SSAqua_B1F_Text_SchoolboyNateAfter:
-	.string "Radios pick up strange signals\n"
+	.string "RADIOs pick up strange signals\n"
 	.string "inside the RUINS.$"
 
 SSAqua_B1F_EventScript_Ricky::

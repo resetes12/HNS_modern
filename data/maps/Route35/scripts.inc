@@ -80,13 +80,13 @@ Route35_EventScript_Item_ParalyzeHeal::
 
 Route35_Text_CamperIvanSeen:
 	.string "I've been getting POKéMON data off\n"
-	.string "my radio. I think I'm good.$"
+	.string "my RADIO. I think I'm good.$"
 
 Route35_Text_CamperIvanBeaten:
 	.string "I give!$"
 
 Route35_Text_CamperIvanAfter:
-	.string "Music on the radio changes the\n"
+	.string "Music on the RADIO changes the\n"
 	.string "moods of wild POKéMON.$"
 
 Route35_Text_CamperElliotSeen:
@@ -168,7 +168,7 @@ Route35_Text_FirebreatherWaltBeaten:
 	.string "Ow! I scorched the tip of my nose!$"
 
 Route35_Text_FirebreatherWaltAfter:
-	.string "The POKéMON March on the radio\n"
+	.string "The POKéMON March on the RADIO\n"
 	.string "lures wild POKéMON.$"
 
 Route35_Text_OfficerDirkSeen:
@@ -178,7 +178,7 @@ Route35_Text_OfficerDirkBeaten:
 	.string "Whoops!$"
 
 Route35_Text_OfficerDirkAfter:
-	.string "You know, nighttime is fun in its\n"
+	.string "You know, night time is fun in its\n"
 	.string "own ways.\p"
 	.string "But don't overdo it, OK?$"
 

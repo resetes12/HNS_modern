@@ -24,10 +24,10 @@ MahoganyRedGyaradosHouse_Text_BlackBelt:
     .string "GYARADOS are rare in that lake…$"
 
 MahoganyRedGyaradosHouse_Text_Teacher:
-    .string "My favorite radio program? I'd say\n"
+    .string "My favorite RADIO program? I'd say\n"
     .string "POKéMON MUSIC.$"
 
 MahoganyRedGyaradosHouse_Text_Teacher_Rockets:
     .string "I've been hearing laughter on the\n"
-    .string "radio…\p"
+    .string "RADIO…\p"
     .string "It's creepy.$"

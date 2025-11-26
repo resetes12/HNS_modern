@@ -183,8 +183,8 @@ BerryTree_EventScript_PlantBerry::
 	return
 
 ApricornTree_Text_Growing:
-	.string "It's a berry tree!\n"
-	.string "These berries aren't ripe yet.$"
+	.string "It's a BERRY tree!\n"
+	.string "These BERRIES aren't ripe yet.$"
 
 BerryTree_Text_ItsSoftLoamySoil:
 	.string "It's soft, loamy soil.$"

@@ -52,10 +52,10 @@ RadioTower1F_EventScript_Whitney::
 RadioTower1F_Text_Whitney1::
 	.string "WHITNEY: Hi!\p"
 	.string "My name is WHITNEY!\p"
-	.string "I heard about the Quiz to win a\n"
+	.string "I heard about the QUIZ to win a\n"
 	.string "RADIO, so I came here to get\l"
 	.string "one...\p"
-	.string "But this Quiz is so hard!$"
+	.string "But this QUIZ is so hard!$"
 
 RadioTower1F_Text_Whitney2::
 	.string "WHITNEY: Wow, you did it!\p"
@@ -174,13 +174,13 @@ RadioTower1F_Text_ReceptionistNoTours:
     .string "offering any tours today.$"
 
 RadioTower1F_Text_RadioCardWomanOfferQuiz:
-    .string "We have a special quiz campaign on\n"
+    .string "We have a special QUIZ campaign on\n"
     .string "right now.\p"
     .string "Answer five questions correctly to\n"
     .string "win a RADIO.\p"
     .string "You and your POKéMON can use it to\n"
     .string "play music anytime, anywhere.\p"
-    .string "Would you like to take the quiz?$"
+    .string "Would you like to take the QUIZ?$"
 
 RadioTower1F_Text_QuizQuestion1:
     .string "Question 1:\p"
@@ -196,7 +196,7 @@ RadioTower1F_Text_QuizQuestion2:
 RadioTower1F_Text_QuizQuestion3:
     .string "Bull's-eye!\n"
     .string "Question 3:\p"
-    .string "Kurt, the POKéBALL creator, uses\n"
+    .string "KURT, the POKéBALL creator, uses\n"
 	.string "apricorns as ingredients?$"
 
 RadioTower1F_Text_QuizQuestion4:

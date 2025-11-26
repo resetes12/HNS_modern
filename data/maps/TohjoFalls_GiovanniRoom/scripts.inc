@@ -24,7 +24,7 @@ TohjoFalls_GiovanniRoom_EventScript_Radio::
 	end
 
 TohjoFalls_GiovanniRoom_Text_RadioObject::
-	.string "A radio...\n"
+	.string "A RADIO...\n"
 	.string "The battery is dead...$"
 
 TohjoFalls_GiovanniRoom_CancelScene::

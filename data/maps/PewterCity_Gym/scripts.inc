@@ -40,7 +40,7 @@ PewterCity_Gym_Text_Brock_Intro:
 	.string "BROCK: Wow, it's not often that we get a\n"
 	.string "challenger from JOHTO.\p"
 	.string "I'm BROCK, the PEWTER GYM LEADER.\p"
-	.string "I'm an expert on rock-type POKéMON.\p"
+	.string "I'm an expert on ROCK-type POKéMON.\p"
 	.string "My POKéMON are impervious to most\n"
 	.string "physical attacks. You'll have a hard\l"
 	.string "time inflicting any damage.\p"

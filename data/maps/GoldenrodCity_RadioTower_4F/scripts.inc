@@ -107,7 +107,7 @@ GoldenrodCity_RadioTower_4F4_Text_Proton_After:
 	.string "TEAM ROCKET's wrath grow.$"
 
 GoldenrodCity_RadioTower_4F4_Text_Fisher:
-	.string "I listened to the radio while I was\n"
+	.string "I listened to the RADIO while I was\n"
 	.string "at the RUINS.\p"
 	.string "I heard a strange broadcast there.$"
 

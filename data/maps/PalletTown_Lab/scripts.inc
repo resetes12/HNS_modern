@@ -112,7 +112,7 @@ PalletTown_Lab_Text_OakYesKantoBadges:
 	.string "Keep trying hard, {PLAYER}!$"
 
 PalletTown_Lab_Text_OaksAssistant1:
-	.string "The PROF's POKéMON TALK radio\n"
+	.string "The PROF's POKéMON TALK RADIO\n"
 	.string "program isn't aired here in KANTO.\p"
 	.string "It's a shame--I'd like to hear it.$"
 

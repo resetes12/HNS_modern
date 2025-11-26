@@ -239,7 +239,7 @@ MahoganyMart1F_Text_Lance_HyperBeam:
 MahoganyMart1F_Text_Lance_Radio:
     .string "What took you, {PLAYER}?\p"
     .string "Just as we thought, that strange\n"
-    .string "radio signal is coming from here.$"
+    .string "RADIO signal is coming from here.$"
 
 MahoganyMart1F_Text_Lance_Stairs:
     .string "Excellent work finding the stairs,\n"

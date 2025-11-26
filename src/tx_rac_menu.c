@@ -573,7 +573,7 @@ static const u8 sText_SpeciesClause[]   = _("DUPES CLAUSE");
 static const u8 sText_ShinyClause[]     = _("SHINY CLAUSE");
 static const u8 sText_Nicknaming[]      = _("NICKNAMES");
 static const u8 sText_Deletion[]        = _("FAINTING");
-static const u8 sText_RareCandy[]       = _("INF RARE CANDY");
+static const u8 sText_RareCandy[]       = _("INF. RARE CANDY");
 
 static const u8 *const sOptionMenuItemsNamesNuzlocke[MENUITEM_NUZLOCKE_COUNT] =
 {

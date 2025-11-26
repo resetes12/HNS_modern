@@ -130,7 +130,7 @@ Route34_Text_CamperTodd_After:
 	.string "or maybe use some items…$"
 
 Route34_Text_PicnickerGina_Seen:
-	.string "Are you a trainer?\p"
+	.string "Are you a TRAINER?\p"
 	.string "Let's have a practice battle.$"
 
 Route34_Text_PicnickerGina_Beaten:

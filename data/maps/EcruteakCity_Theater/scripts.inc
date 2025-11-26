@@ -1002,7 +1002,7 @@ EcruteakCity_Theater_Text_NaokoSeen:
 	.string "I'm NAOKO--not so good with\n"
 	.string "directions.\p"
 	.string "I saw you defeat Team Rocket\n"
-	.string "when Kurt was in trouble at\l"
+	.string "when KURT was in trouble at\l"
 	.string "the SLOWPOKE Well.\p"
 	.string "Let me challenge you and your\n"
 	.string "POKéMON!$"

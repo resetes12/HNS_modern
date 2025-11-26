@@ -229,7 +229,7 @@ MrPokemonHouse_Text_OakParting:
 	.string "complete that POKéDEX!\p"
 	.string "But I've stayed too long.\p"
 	.string "I have to get to GOLDENROD\n"
-	.string "for my usual radio show.\p"
+	.string "for my usual RADIO show.\p"
 	.string "{PLAYER}, I'm counting on you!$"
 
 MrPokemonHouse_Text_GimmeTheScale:

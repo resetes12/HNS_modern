@@ -59,7 +59,7 @@ PewterCity_EventScript_Cooltrainer::
 
 PewterCity_Text_CooltrainerF:
 	.string "Have you visited PEWTER GYM?\p"
-	.string "The LEADER uses rock-type POKéMON.$"
+	.string "The LEADER uses ROCK-type POKéMON.$"
 
 PewterCity_Text_BugCatcher:
 	.string "At night, CLEFAIRY come out to play at\n"

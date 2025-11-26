@@ -84,7 +84,7 @@ OlivineCity_PortInside_Text_Nationaldex3:
 	.string "honest attempt on our behalf!$"
 OlivineCity_PortInside_Text_Nationaldex4:
 	.string "Oh, time flies!\p"
-	.string "I have a radio show to record at\n"
+	.string "I have a RADIO show to record at\n"
 	.string "GOLDENROD RADIO TOWER.\p"
 	.string "You must be heading for KANTO.\p"
 	.string "If you come near PALLET TOWN, do\n"

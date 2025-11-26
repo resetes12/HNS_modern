@@ -94,7 +94,7 @@ LavendertownRadioStation_Text_Upgraded_Radio:
 
 LavenderTown_RadioStation_Text_Gentleman_GotExpnCard:
 	.string "With that thing, you can tune into\n"
-	.string "the radio programs here in KANTO.\p"
+	.string "the RADIO programs here in KANTO.\p"
 	.string "Gahahahaha!$"
 
 LavenderTown_RadioStation_Text_SuperNerd2:

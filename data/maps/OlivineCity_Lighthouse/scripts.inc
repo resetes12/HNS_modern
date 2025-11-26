@@ -141,7 +141,7 @@ OlivineLighthouse_Text_GentlemanPrestonBeaten:
 	.string "…sigh… I must train some more…$"
 
 OlivineLighthouse_Text_GentlemanPrestonAfter:
-	.string "JASMINE used to use rock-type\n"
+	.string "JASMINE used to use ROCK-type\n"
 	.string "POKéMON like ONIX.$"
 
 @4th floor==============================================================================================================================

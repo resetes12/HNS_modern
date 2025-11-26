@@ -265,13 +265,13 @@ OlivineCity_Text_CafeSign:
 OlivineCity_Text_EonTicketWoman1:
 	.string "My name is MARY!\p"
 	.string "Just kidding, but I love MARY's\n"
-	.string "radio show!$"
+	.string "RADIO show!$"
 
 OlivineCity_Text_EonTicketWoman2:
 	.string "You must be {PLAYER}!!!\p"
 	.string "Oh my goodness! The champion!\p"
 	.string "I heard about you on MARY's\n"
-	.string "radio show!\p"
+	.string "RADIO show!\p"
 	.string "Here, take this!$"
 
 OlivineCity_Text_EonTicketWoman3:

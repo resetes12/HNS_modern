@@ -156,7 +156,7 @@ static const u8 sText_Nuz_SpeciesClause[]    = _("DUPES CLAUSE");
 static const u8 sText_Nuz_ShinyClause[]      = _("SHINY CLAUSE");
 static const u8 sText_Nuz_Nicknaming[]       = _("NICKNAMES");
 static const u8 sText_Nuz_Fainting[]         = _("FAINTING");
-static const u8 sText_Nuz_RareCandy[]        = _("INF RARE CANDY");
+static const u8 sText_Nuz_RareCandy[]        = _("INF. RARE CANDY");
 
 // page 5 (Difficulty) — labels
 static const u8 sText_Diff_PartyLimit[]      = _("PARTY LIMIT");

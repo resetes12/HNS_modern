@@ -31,9 +31,9 @@ LavenderTown_PokemonCenter1F_Text_Gentleman:
 	.string "the POWER PLANT.$"
 
 LavenderTown_PokemonCenter1F_Text_Teacher:
-	.string "There's a radio program that plays\n"
+	.string "There's a RADIO program that plays\n"
 	.string "POKé FLUTE music.\p"
-	.string "Oh? Ah, your radio needs a RADIO\n"
+	.string "Oh? Ah, your RADIO needs a RADIO\n"
 	.string "UPGRADE to tune into it.\p"
 	.string "Maybe the RADIO STATION here\n"
 	.string "in town can provide you one?$"
