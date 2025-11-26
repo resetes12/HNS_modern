@@ -159,7 +159,7 @@ Route39_Text_BaobaIntro::
 	.string "It may be more than a coincidence\n"
 	.string "that we are chatting.\p"
 	.string "Why don't we register each other's\n"
-	.string "numbers in the Pokégear?\p"
+	.string "numbers in the POKéGEAR?\p"
 	.string "I can give you a call once the\n"
 	.string "SAFARI ZONE is open before I call\l"
 	.string "anyone else!$"

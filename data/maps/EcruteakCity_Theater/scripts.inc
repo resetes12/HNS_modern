@@ -255,7 +255,7 @@ EcruteakCity_Theater_EventScript_ZukiDuringRocket::
 	end
 
 EcruteakCity_Theater_Text_Kimono:
-	.string "For KIMONO GIRLs like me,\n"
+	.string "For KIMONO GIRLS like me,\n"
 	.string "dancing is everything.\p"
 	.string "I have never gone a day\n"
 	.string "without a dance practice.\p"
@@ -429,7 +429,7 @@ EcruteakCity_Theater_Text_SurfGuyGaveSurf:
 	.string "swim across water with ease.$"
 
 EcruteakCity_Theater_Text_SurfGuyAfter:
-	.string "Not only are the KIMONO GIRLs\n"
+	.string "Not only are the KIMONO GIRLS\n"
 	.string "great dancers, they're also\l"
 	.string "skilled at POKéMON.\p"
 	.string "But they battle only for good\n"
@@ -464,7 +464,7 @@ EcruteakCity_Theater_Text_GrannyBefore:
 	.string "that if not for this pain...!$"
 
 EcruteakCity_Theater_Text_Gramps:
-	.string "The KIMONO GIRLs are so\n"
+	.string "The KIMONO GIRLS are so\n"
 	.string "beautiful...\p"
 	.string "But they have to go through\n"
 	.string "rigorous training.\p"
