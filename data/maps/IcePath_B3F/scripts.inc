@@ -13,15 +13,14 @@ IcePath_B3F_OnTransition:
 
 IcePath_B3F_Trigger_Swinub_Jump::
 	goto_if_set FLAG_DAY_POKEMON, IcePath_B3F_Trigger_Night
-	lock
 	playse SE_PIN
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-	delay 30
+	delay 60
+	waitse
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
-	delay 10
 	playmoncry SPECIES_SWINUB, CRY_MODE_NORMAL
 	applymovement LOCALID_ICEPATH4_STUCK_SWINUB, IcePath_B3F_Movement_StuckSwinubJump0
-	waitmovement 0
+	waitmovement LOCALID_ICEPATH4_STUCK_SWINUB
 	delay 20
 	playse SE_LEDGE
 	applymovement LOCALID_ICEPATH4_STUCK_SWINUB, IcePath_B3F_Movement_StuckSwinubJump
@@ -29,7 +28,6 @@ IcePath_B3F_Trigger_Swinub_Jump::
 	setobjectxyperm LOCALID_ICEPATH4_STUCK_SWINUB, 3, 19
 	setobjectmovementtype LOCALID_ICEPATH4_STUCK_SWINUB, MOVEMENT_TYPE_FACE_DOWN
 	setvar VAR_TEMP_0, 1
-	release
 	end
 IcePath_B3F_Trigger_Night::
 	setvar VAR_TEMP_0, 1
