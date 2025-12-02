@@ -10402,7 +10402,7 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_TEAM_AQUA:
         case TRAINER_CLASS_TEAM_MAGMA:
             if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 0)
-                return MUS_HG_VS_ROCKET;
+                return MUS_VS_AQUA_MAGMA;
             else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 1)
                 return MUS_VS_AQUA_MAGMA;
             else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 2)
@@ -10445,7 +10445,7 @@ u16 GetBattleBGM(void)
             return MUS_VS_AQUA_MAGMA;
         case TRAINER_CLASS_LEADER:
             if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 0)
-                return MUS_HG_VS_GYM_LEADER;
+                return MUS_VS_GYM_LEADER;
             else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 1)
                 return  MUS_RG_VS_GYM_LEADER;
             else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 2)
@@ -10471,9 +10471,9 @@ u16 GetBattleBGM(void)
                 else if((Random() % 5) == 4)
                     return MUS_HG_VS_GYM_LEADER_KANTO;
                 else
-                    return MUS_HG_VS_GYM_LEADER;
+                    return MUS_VS_GYM_LEADER;
             }
-            return MUS_HG_VS_GYM_LEADER;
+            return MUS_VS_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
             if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 0)
                 return MUS_VS_CHAMPION;
@@ -10556,11 +10556,11 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
             if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 0)
-                return MUS_HG_VS_FRONTIER_BRAIN;
+                return MUS_VS_FRONTIER_BRAIN;
             else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 1)
-                return MUS_HG_VS_FRONTIER_BRAIN;
+                return MUS_VS_FRONTIER_BRAIN;
             else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 2)
-                return MUS_HG_VS_FRONTIER_BRAIN;
+                return MUS_PL_VS_FRONTIER_BRAIN;
             else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 3)
                 return MUS_HG_VS_FRONTIER_BRAIN;
             else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 4)
@@ -10568,13 +10568,13 @@ u16 GetBattleBGM(void)
             else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 5)
             {
                 if((Random() % 3) == 1)
-                    return MUS_HG_VS_FRONTIER_BRAIN;
+                    return MUS_PL_VS_FRONTIER_BRAIN;
                 else if((Random() % 3) == 2)
                     return MUS_HG_VS_FRONTIER_BRAIN;
                 else
-                    return MUS_HG_VS_FRONTIER_BRAIN;
+                    return MUS_VS_FRONTIER_BRAIN;
             }
-            return MUS_HG_VS_FRONTIER_BRAIN;
+            return MUS_VS_FRONTIER_BRAIN;
         case TRAINER_CLASS_TEAM_ROCKET:
             return MUS_HG_VS_ROCKET;
         case TRAINER_CLASS_ROCKET_ADMIN:
@@ -10583,7 +10583,7 @@ u16 GetBattleBGM(void)
             if (gMapHeader.regionMapSectionId == MAPSEC_BATTLE_FRONTIER) //BGM by map
             {
                 if (gSaveBlock2Ptr->optionsFrontierTrainerBattleMusic == 0)
-                    return MUS_HG_VS_TRAINER;
+                    return MUS_VS_TRAINER;
                 else if (gSaveBlock2Ptr->optionsFrontierTrainerBattleMusic == 1)
                     return MUS_RG_VS_TRAINER;
                 else if (gSaveBlock2Ptr->optionsFrontierTrainerBattleMusic == 2)
@@ -10605,12 +10605,12 @@ u16 GetBattleBGM(void)
                     else
                         return MUS_VS_TRAINER;
                 }
-                return MUS_HG_VS_TRAINER;
+                return MUS_RG_VS_TRAINER;
             }
             else
             {
                 if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 0)
-                    return MUS_HG_VS_TRAINER;
+                    return MUS_VS_TRAINER;
                 else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 1)
                     return MUS_RG_VS_TRAINER;
                 else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 2)
@@ -10638,13 +10638,13 @@ u16 GetBattleBGM(void)
                     else
                         return MUS_VS_TRAINER;
                 }
-                return MUS_HG_VS_TRAINER;
+                return MUS_VS_TRAINER;
             }
         }
     }
     else
         if (gSaveBlock2Ptr->optionsWildBattleMusic == 0)
-            return MUS_HG_VS_WILD;
+            return MUS_VS_WILD;
         else if (gSaveBlock2Ptr->optionsWildBattleMusic == 1)
             return MUS_RG_VS_WILD;
         else if (gSaveBlock2Ptr->optionsWildBattleMusic == 2)
@@ -10672,7 +10672,7 @@ u16 GetBattleBGM(void)
             else
                 return MUS_VS_WILD;
         }
-        return MUS_HG_VS_WILD;
+        return MUS_VS_WILD;
 }
 
 void PlayBattleBGM(void)

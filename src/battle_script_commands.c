@@ -3952,19 +3952,19 @@ static void Cmd_getexp(void)
             {
                 BattleStopLowHpSound();
                 if ((gSaveBlock2Ptr->optionsWildBattleMusic == 0) || (gSaveBlock2Ptr->optionsWildBattleMusic == 1))
-                    PlayBGM(MUS_HG_VICTORY_WILD);
+                    PlayBGM(MUS_VICTORY_WILD);
                 else if (gSaveBlock2Ptr->optionsWildBattleMusic == 2)
-                    PlayBGM(MUS_HG_VICTORY_WILD); 
+                    PlayBGM(MUS_DP_VICTORY_WILD); 
                 else if((gSaveBlock2Ptr->optionsWildBattleMusic == 3) || (gSaveBlock2Ptr->optionsWildBattleMusic == 4))
                     PlayBGM(MUS_HG_VICTORY_WILD); 
                 else if (gSaveBlock2Ptr->optionsWildBattleMusic == 5)
                 {
                     if((Random() % 3) == 1)
-                        PlayBGM(MUS_HG_VICTORY_WILD); 
+                        PlayBGM(MUS_DP_VICTORY_WILD); 
                     else if((Random() % 3) == 2)
                         PlayBGM(MUS_HG_VICTORY_WILD); 
                     else
-                        PlayBGM(MUS_HG_VICTORY_WILD); 
+                        PlayBGM(MUS_VICTORY_WILD); 
                 }
                 gBattleStruct->wildVictorySong++;
             }
