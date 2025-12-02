@@ -11317,6 +11317,7 @@ const union {
     } }, 
         
     [SPECIES_YANMEGA] = { .learnset = {
+        .DRAGON_CLAW = TRUE,
         .TOXIC = TRUE,
         .HIDDEN_POWER = TRUE,
         .SUNNY_DAY = TRUE,
