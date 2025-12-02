@@ -1210,6 +1210,7 @@ extern const u8 gText_Challenges[];
 extern const u8 gText_PlayersPC[];
 extern const u8 gText_WhichPCShouldBeAccessed[];
 
+extern const u8 gText_CheckObtainedRibbons[];
 extern const u8 gText_PokenavMatchCall_Strategy[];
 extern const u8 gText_PokenavMatchCall_TrainerPokemon[];
 extern const u8 gText_PokenavMatchCall_SelfIntroduction[];
