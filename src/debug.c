@@ -1177,7 +1177,15 @@ static u8 Debug_CheckToggleFlags(u8 id)
                 FlagGet(FLAG_BADGE05_GET) &&
                 FlagGet(FLAG_BADGE06_GET) &&
                 FlagGet(FLAG_BADGE07_GET) &&
-                FlagGet(FLAG_BADGE08_GET);
+                FlagGet(FLAG_BADGE08_GET) &&
+                FlagGet(FLAG_DEFEATED_PEWTER_GYM) &&
+                FlagGet(FLAG_DEFEATED_CERULEAN_GYM) &&
+                FlagGet(FLAG_DEFEATED_VERMILION_GYM) &&
+                FlagGet(FLAG_DEFEATED_CELADON_GYM) &&
+                FlagGet(FLAG_DEFEATED_FUCHSIA_GYM) &&
+                FlagGet(FLAG_DEFEATED_SAFFRON_GYM) &&
+                FlagGet(FLAG_DEFEATED_CINNABAR_ISLAND_GYM) &&
+                FlagGet(FLAG_DEFEATED_VIRIDIAN_GYM);
             break;
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS:
             result = FlagGet(FLAG_SYS_FRONTIER_PASS);
@@ -2622,6 +2630,14 @@ static void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId)
     FlagToggle(FLAG_BADGE06_GET);
     FlagToggle(FLAG_BADGE07_GET);
     FlagToggle(FLAG_BADGE08_GET);
+    FlagToggle(FLAG_DEFEATED_PEWTER_GYM);
+    FlagToggle(FLAG_DEFEATED_CERULEAN_GYM);
+    FlagToggle(FLAG_DEFEATED_VERMILION_GYM);
+    FlagToggle(FLAG_DEFEATED_CELADON_GYM);
+    FlagToggle(FLAG_DEFEATED_FUCHSIA_GYM);
+    FlagToggle(FLAG_DEFEATED_SAFFRON_GYM);
+    FlagToggle(FLAG_DEFEATED_CINNABAR_ISLAND_GYM);
+    FlagToggle(FLAG_DEFEATED_VIRIDIAN_GYM);
 }
 static void DebugAction_FlagsVars_ToggleFrontierPass(u8 taskId)
 {
