@@ -3955,9 +3955,9 @@ static void Cmd_getexp(void)
                     PlayBGM(MUS_VICTORY_WILD);
                 else if (gSaveBlock2Ptr->optionsWildBattleMusic == 2)
                     PlayBGM(MUS_DP_VICTORY_WILD); 
-                else if((gSaveBlock2Ptr->optionsWildBattleMusic == 3) || (gSaveBlock2Ptr->optionsWildBattleMusic == 4))
+                else if((gSaveBlock2Ptr->optionsWildBattleMusic == 3))
                     PlayBGM(MUS_HG_VICTORY_WILD); 
-                else if (gSaveBlock2Ptr->optionsWildBattleMusic == 5)
+                else if (gSaveBlock2Ptr->optionsWildBattleMusic == 4)
                 {
                     if((Random() % 3) == 1)
                         PlayBGM(MUS_DP_VICTORY_WILD); 

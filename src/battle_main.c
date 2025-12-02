@@ -5820,11 +5820,11 @@ static void HandleEndTurn_BattleWon(void)
         {
         case TRAINER_CLASS_ELITE_FOUR:
             {
-                if ((gSaveBlock2Ptr->optionsTrainerBattleMusic == 0) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 1) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 3) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 4))
+                if ((gSaveBlock2Ptr->optionsTrainerBattleMusic == 0) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 1) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 3))
                     PlayBGM(MUS_VICTORY_LEAGUE);
                 else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 2)
                     PlayBGM(MUS_DP_VICTORY_ELITE_FOUR);
-                else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 5)
+                else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 4)
                     {
                         if((Random() % 2) == 1)
                             PlayBGM(MUS_DP_VICTORY_ELITE_FOUR);
@@ -5835,11 +5835,11 @@ static void HandleEndTurn_BattleWon(void)
             break;
         case TRAINER_CLASS_CHAMPION:
             {
-                if ((gSaveBlock2Ptr->optionsTrainerBattleMusic == 0) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 1) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 3) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 4))
+                if ((gSaveBlock2Ptr->optionsTrainerBattleMusic == 0) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 1) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 3))
                     PlayBGM(MUS_VICTORY_LEAGUE);
                 else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 2)
                     PlayBGM(MUS_DP_VICTORY_CHAMPION);
-                else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 5)
+                else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 4)
                     {
                         if((Random() % 2) == 1)
                             PlayBGM(MUS_DP_VICTORY_CHAMPION);
@@ -5855,11 +5855,11 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_MAGMA_ADMIN:
         case TRAINER_CLASS_MAGMA_LEADER:
             {
-                if ((gSaveBlock2Ptr->optionsTrainerBattleMusic == 0) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 1) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 3) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 4))
+                if ((gSaveBlock2Ptr->optionsTrainerBattleMusic == 0) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 1) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 3))
                     PlayBGM(MUS_VICTORY_AQUA_MAGMA);
                 else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 2)
                     PlayBGM(MUS_DP_VICTORY_GALACTIC);
-                else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 5)
+                else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 4)
                     {
                         if((Random() % 2) == 1)
                             PlayBGM(MUS_DP_VICTORY_GALACTIC);
@@ -5874,9 +5874,9 @@ static void HandleEndTurn_BattleWon(void)
                     PlayBGM(MUS_VICTORY_GYM_LEADER);
                 else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 2)
                     PlayBGM(MUS_DP_VICTORY_GYM_LEADER);
-                else if((gSaveBlock2Ptr->optionsTrainerBattleMusic == 3) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 4))
+                else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 3)
                     PlayBGM(MUS_HG_VICTORY_GYM_LEADER);
-                else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 5)
+                else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 4)
                     {
                         if((Random() % 3) == 1)
                             PlayBGM(MUS_DP_VICTORY_GYM_LEADER);
@@ -5893,9 +5893,9 @@ static void HandleEndTurn_BattleWon(void)
                     PlayBGM(MUS_VICTORY_TRAINER);
                 else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 2)
                     PlayBGM(MUS_DP_VICTORY_TRAINER);
-                else if((gSaveBlock2Ptr->optionsTrainerBattleMusic == 3) || (gSaveBlock2Ptr->optionsTrainerBattleMusic == 4))
+                else if((gSaveBlock2Ptr->optionsTrainerBattleMusic == 3))
                     PlayBGM(MUS_HG_VICTORY_TRAINER);
-                else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 5)
+                else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 4)
                 {
                     if((Random() % 3) == 1)
                         PlayBGM(MUS_DP_VICTORY_TRAINER);
