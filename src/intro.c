@@ -800,7 +800,7 @@ static void VBlankCB_Copyright(void)
 static void CB2_WaitFadeBeforeSetUpIntro(void)
 {
     if (!UpdatePaletteFade())
-        SetMainCallback2(CB2_SetUpIntro);
+        SetMainCallback2(CB2_InitTitleScreen);
 }
 
 static void load_copyright_graphics(u16 tilesetAddress, u16 tilemapAddress, u16 paletteAddress)
