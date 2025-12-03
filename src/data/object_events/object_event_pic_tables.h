@@ -5976,6 +5976,15 @@ static const struct SpriteFrameImage sPicTable_Dudunsparce[] = {
     overworld_frame(gObjectEventPic_Dudunsparce, 4, 4, 5),
 };
 
+static const struct SpriteFrameImage sPicTable_Test[] = {
+    overworld_frame(gObjectEventPic_Test, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Test, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Test, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Test, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Test, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Test, 4, 4, 5),
+};
+
 static const struct SpriteFrameImage sPicTable_Wyrdeer[] = {
     overworld_frame(gObjectEventPic_Wyrdeer, 4, 4, 0),
     overworld_frame(gObjectEventPic_Wyrdeer, 4, 4, 1),

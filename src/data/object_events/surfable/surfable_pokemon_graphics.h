@@ -586,6 +586,11 @@ const u32 gSurfableShinyPokemonPic_Arceus[] = INCBIN_U32("graphics/object_events
 const u16 gSurfablePokemonPalette_Arceus[] = INCBIN_U16("graphics/object_events/pics/pokemon/surfable/0493_arceus.gbapal");
 const u16 gSurfablePokemonShinyPalette_Arceus[] = INCBIN_U16("graphics/object_events/pics/pokemon/surfable/0493_arceus_shiny.gbapal");
 
+const u32 gSurfablePokemonPic_Test[] = INCBIN_U32("graphics/object_events/pics/pokemon/surfable/test.4bpp");
+const u32 gSurfableShinyPokemonPic_Test[] = INCBIN_U32("graphics/object_events/pics/pokemon/surfable/test_shiny.4bpp");
+const u16 gSurfablePokemonPalette_Test[] = INCBIN_U16("graphics/object_events/pics/pokemon/surfable/test.gbapal");
+const u16 gSurfablePokemonShinyPalette_Test[] = INCBIN_U16("graphics/object_events/pics/pokemon/surfable/test_shiny.gbapal");
+
 //Modern shinies
 
 const u32 gSurfableShinyPokemonPic_Modern_Pikachu[] = INCBIN_U32("graphics/object_events/pics/pokemon/surfable/0025_pikachu_shiny_modern.4bpp");

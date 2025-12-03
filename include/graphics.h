@@ -3244,6 +3244,13 @@ extern const u32 gMonShinyPalette_DoubleQuestionMark[];
 extern const u32 gMonStillFrontPic_DoubleQuestionMark[];
 extern const u16 gMonIconPalettes[][16];
 
+extern const u8 gMonIcon_Test[];
+extern const u32 gMonFrontPic_Test[];
+extern const u32 gMonPalette_Test[];
+extern const u32 gMonBackPic_Test[];
+extern const u32 gMonShinyPalette_Test[];
+extern const u32 gMonStillFrontPic_Test[];
+
 //Modern Shinies
 extern const u32 gMonShinyPalette_Modern_Pikachu[];
 extern const u32 gMonShinyPalette_Modern_Pichu[];
