@@ -4525,8 +4525,8 @@ bool16 HasAllMons(void)
             return FALSE;
     }
 
-    // -2 excludes Jirachi and Deoxys
-    for (i = JOHTO_DEX_COUNT; i < NATIONAL_DEX_COUNT - 2; i++)
+    // -2 excludes Jirachi, Deoxys, Arceus and Test
+    for (i = JOHTO_DEX_COUNT; i < NATIONAL_DEX_COUNT - 4; i++)
     {
         if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
             return FALSE;

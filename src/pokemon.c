@@ -571,7 +571,7 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     //SPECIES_TO_HOENN(KLEAVOR),
     //SPECIES_TO_HOENN(UNUSED_SPACE5),
     //SPECIES_TO_HOENN(UNUSED_SPACE6),
-    //SPECIES_TO_HOENN(TEST),
+    SPECIES_TO_HOENN(TEST),
     //SPECIES_TO_HOENN(UNUSED_SPACE8),
     //SPECIES_TO_HOENN(UNUSED_SPACE9),
     //SPECIES_TO_HOENN(UNUSED_SPACE10),
@@ -1039,7 +1039,7 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     //SPECIES_TO_NATIONAL(KLEAVOR),
     //SPECIES_TO_NATIONAL(UNUSED_SPACE5),
     //SPECIES_TO_NATIONAL(UNUSED_SPACE6),
-    //SPECIES_TO_NATIONAL(TEST),
+    SPECIES_TO_NATIONAL(TEST),
     //SPECIES_TO_NATIONAL(UNUSED_SPACE8),
     //SPECIES_TO_NATIONAL(UNUSED_SPACE9),
     //SPECIES_TO_NATIONAL(UNUSED_SPACE10),
@@ -1508,7 +1508,7 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     //HOENN_TO_NATIONAL(KLEAVOR),
     //HOENN_TO_NATIONAL(UNUSED_SPACE5),
     //HOENN_TO_NATIONAL(UNUSED_SPACE6),
-    //HOENN_TO_NATIONAL(TEST),
+    HOENN_TO_NATIONAL(TEST),
     //HOENN_TO_NATIONAL(UNUSED_SPACE8),
     //HOENN_TO_NATIONAL(UNUSED_SPACE9),
     //HOENN_TO_NATIONAL(UNUSED_SPACE10),
@@ -6479,6 +6479,12 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     {
         defense *= 1.25;
         spDefense *= 1.25;
+    }
+    //Test event
+    if ((attacker->ability == ABILITY_LEVITATE) && (type == TYPE_MYSTERY))
+    {
+        attack *= 1.5;
+        spAttack *= 1.5;
     }
     // Apply abilities / field sports
     if (gSaveBlock2Ptr->optionStyle == 0)
