@@ -38,21 +38,26 @@ enum
 
 enum
 {
+    //Preset selector
     MENUITEM_MODE_CLASSIC_MODERN,
+    //Original / Post-game / New encounters
     //MENUITEM_MODE_ALTERNATE_SPAWNS,
+    //Gen VI+ / Improved
+    MENUITEM_MODE_NEW_EFFECTIVENESS,
+    //Original / Modern options
+    MENUITEM_MODE_NEW_STATS,
+    MENUITEM_MODE_FAIRY_TYPES,
+    MENUITEM_MODE_MODERN_TYPES,
     MENUITEM_MODE_MODERN_MOVES,
     MENUITEM_MODE_SYNCHRONIZE,
     MENUITEM_MODE_STURDY,
     MENUITEM_MODE_NEW_CITRUS,
-    MENUITEM_MODE_FAIRY_TYPES,
-    MENUITEM_MODE_LEGENDARY_ABILITIES,
-    MENUITEM_MODE_INFINITE_TMS,
-    MENUITEM_MODE_MINTS,
-    MENUITEM_MODE_SURVIVE_POISON,
-    //MENUITEM_MODE_NEW_EFFECTIVENESS,
-    //MENUITEM_MODE_MODERN_TYPES,
-    //MENUITEM_MODE_NEW_STATS,
+    //On / Off options
     //MENUITEM_MODE_NEW_LEGENDARIES,
+    MENUITEM_MODE_LEGENDARY_ABILITIES,
+    MENUITEM_MODE_MINTS,
+    MENUITEM_MODE_INFINITE_TMS,
+    MENUITEM_MODE_SURVIVE_POISON,
     MENUITEM_MODE_NEXT,
     MENUITEM_MODE_COUNT,
 };
@@ -98,7 +103,7 @@ enum
     MENUITEM_NUZLOCKE_SHINY_CLAUSE,
     MENUITEM_NUZLOCKE_NICKNAMING,
     MENUITEM_NUZLOCKE_DELETION,
-    MENUITEM_NUZLOCKE_RARE_CANDY,
+    //MENUITEM_NUZLOCKE_RARE_CANDY,
     MENUITEM_NUZLOCKE_NEXT,
     MENUITEM_NUZLOCKE_COUNT,
 };
@@ -366,14 +371,14 @@ struct // MENU_MODE
     [MENUITEM_MODE_SYNCHRONIZE]           = {DrawChoices_Mode_Synchronize,          ProcessInput_Options_Two},
     [MENUITEM_MODE_STURDY]                = {DrawChoices_Mode_Sturdy,               ProcessInput_Options_Two},
     [MENUITEM_MODE_MINTS]                 = {DrawChoices_Mode_Mints,                ProcessInput_Options_Two},
-    //[MENUITEM_MODE_MODERN_TYPES]          = {DrawChoices_Mode_Modern_Types,         ProcessInput_Options_Two},
+    [MENUITEM_MODE_MODERN_TYPES]          = {DrawChoices_Mode_Modern_Types,         ProcessInput_Options_Two},
     [MENUITEM_MODE_FAIRY_TYPES]           = {DrawChoices_Mode_Fairy_Types,          ProcessInput_Options_Two},
-    //[MENUITEM_MODE_NEW_STATS]             = {DrawChoices_Mode_New_Stats,            ProcessInput_Options_Two},
+    [MENUITEM_MODE_NEW_STATS]             = {DrawChoices_Mode_New_Stats,            ProcessInput_Options_Two},
     [MENUITEM_MODE_NEW_CITRUS]            = {DrawChoices_Mode_New_Citrus,           ProcessInput_Options_Two},
     [MENUITEM_MODE_MODERN_MOVES]          = {DrawChoices_Mode_Modern_Moves,         ProcessInput_Options_Two},
     [MENUITEM_MODE_LEGENDARY_ABILITIES]   = {DrawChoices_Mode_Legendary_Abilities,  ProcessInput_Options_Two},
     //[MENUITEM_MODE_NEW_LEGENDARIES]       = {DrawChoices_Mode_New_Legendaries,      ProcessInput_Options_Two},
-    //[MENUITEM_MODE_NEW_EFFECTIVENESS]     = {DrawChoices_Mode_New_Effectiveness,    ProcessInput_Options_Two},
+    [MENUITEM_MODE_NEW_EFFECTIVENESS]     = {DrawChoices_Mode_New_Effectiveness,    ProcessInput_Options_Two},
     [MENUITEM_MODE_NEXT]                  = {NULL, NULL},
 };
 
@@ -429,7 +434,7 @@ struct // MENU_NUZLOCKE
     [MENUITEM_NUZLOCKE_SHINY_CLAUSE]    = {DrawChoices_Nuzlocke_ShinyClause,    ProcessInput_Options_Two},
     [MENUITEM_NUZLOCKE_NICKNAMING]      = {DrawChoices_Nuzlocke_Nicknaming,     ProcessInput_Options_Two},
     [MENUITEM_NUZLOCKE_DELETION]        = {DrawChoices_Nuzlocke_Deletion,       ProcessInput_Options_Two},
-    [MENUITEM_NUZLOCKE_RARE_CANDY]      = {DrawChoices_Nuzlocke_RareCandy,       ProcessInput_Options_Two},
+    //[MENUITEM_NUZLOCKE_RARE_CANDY]      = {DrawChoices_Nuzlocke_RareCandy,       ProcessInput_Options_Two},
     [MENUITEM_NUZLOCKE_NEXT]            = {NULL, NULL},
 };
 
@@ -480,9 +485,9 @@ static const u8 sText_Poison[]              = _("SURVIVE POISON");
 static const u8 sText_Synchronize[]         = _("SYNCHRONIZE");
 static const u8 sText_Mints[]               = _("NATURE MINTS");
 static const u8 sText_NewCitrus[]           = _("SITRUS BERRY");
-static const u8 sText_ModernTypes[]         = _("{COLOR 3}{SHADOW 3}POKéMON TYPES");
+static const u8 sText_ModernTypes[]         = _("POKéMON TYPES");
 static const u8 sText_FairyTypes[]          = _("ADD FAIRY TYPE");
-static const u8 sText_NewStats[]            = _("{COLOR 3}{SHADOW 3}POKéMON STATS");
+static const u8 sText_NewStats[]            = _("POKéMON STATS");
 static const u8 sText_Sturdy[]              = _("STURDY");
 static const u8 sText_Modern_Moves[]        = _("{PKMN} MOVEPOOL");
 static const u8 sText_Legendary_Abilities[] = _("LEGEN. ABILITIES");
@@ -500,13 +505,13 @@ static const u8 *const sOptionMenuItemsNamesMode[MENUITEM_MODE_COUNT] =
     [MENUITEM_MODE_STURDY]                    = sText_Sturdy,
     [MENUITEM_MODE_MINTS]                     = sText_Mints,
     [MENUITEM_MODE_NEW_CITRUS]                = sText_NewCitrus,
-    //[MENUITEM_MODE_MODERN_TYPES]              = sText_ModernTypes,
+    [MENUITEM_MODE_MODERN_TYPES]              = sText_ModernTypes,
     [MENUITEM_MODE_FAIRY_TYPES]               = sText_FairyTypes,
-    //[MENUITEM_MODE_NEW_STATS]                 = sText_NewStats,
+    [MENUITEM_MODE_NEW_STATS]                 = sText_NewStats,
     [MENUITEM_MODE_MODERN_MOVES]              = sText_Modern_Moves,
     [MENUITEM_MODE_LEGENDARY_ABILITIES]       = sText_Legendary_Abilities,
     //[MENUITEM_MODE_NEW_LEGENDARIES]           = sText_New_Legendaries,
-    //[MENUITEM_MODE_NEW_EFFECTIVENESS]         = sText_New_Effectiveness,
+    [MENUITEM_MODE_NEW_EFFECTIVENESS]         = sText_New_Effectiveness,
     [MENUITEM_MODE_NEXT]                      = sText_Next,
 };
 
@@ -582,7 +587,7 @@ static const u8 *const sOptionMenuItemsNamesNuzlocke[MENUITEM_NUZLOCKE_COUNT] =
     [MENUITEM_NUZLOCKE_SHINY_CLAUSE]    = sText_ShinyClause,
     [MENUITEM_NUZLOCKE_NICKNAMING]      = sText_Nicknaming,
     [MENUITEM_NUZLOCKE_DELETION]        = sText_Deletion,
-    [MENUITEM_NUZLOCKE_RARE_CANDY]      = sText_RareCandy,
+    //[MENUITEM_NUZLOCKE_RARE_CANDY]      = sText_RareCandy,
     [MENUITEM_NUZLOCKE_NEXT]            = sText_Next,
 };
 
@@ -670,14 +675,14 @@ static bool8 CheckConditions(int selection)
             case MENUITEM_MODE_INFINITE_TMS:              return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
             case MENUITEM_MODE_NEW_CITRUS:                return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
             case MENUITEM_MODE_SURVIVE_POISON:            return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
-            //case MENUITEM_MODE_MODERN_TYPES:              return FALSE;
+            case MENUITEM_MODE_MODERN_TYPES:              return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
             case MENUITEM_MODE_FAIRY_TYPES:               return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
-            //case MENUITEM_MODE_NEW_STATS:                 return FALSE;
+            case MENUITEM_MODE_NEW_STATS:                 return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
             case MENUITEM_MODE_STURDY:                    return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
             case MENUITEM_MODE_MODERN_MOVES:              return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
             case MENUITEM_MODE_LEGENDARY_ABILITIES:       return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
             //case MENUITEM_MODE_NEW_LEGENDARIES:           return FALSE;
-            //case MENUITEM_MODE_NEW_EFFECTIVENESS:         return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
+            case MENUITEM_MODE_NEW_EFFECTIVENESS:         return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
         default:       return FALSE;
         }
     case MENU_FEATURES:
@@ -748,11 +753,11 @@ static bool8 CheckConditions(int selection)
                 return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
             else
                 return !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
-        case MENUITEM_NUZLOCKE_RARE_CANDY:
+        /*case MENUITEM_NUZLOCKE_RARE_CANDY:
             if ((gSaveBlock1Ptr->tx_Nuzlocke_EasyMode) == 0)
                 return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
             else
-                return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
+                return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];*/
         default:                                return TRUE;
         }
     case MENU_DIFFICULTY:
@@ -804,8 +809,8 @@ static const u8 sText_Description_Mode_Leg_Abilities_Off[]        = _("PRESSURE 
 static const u8 sText_Description_Mode_Leg_Abilities_On[]         = _("Legendaries have PRESSURE changed\nfor a better ability.");
 static const u8 sText_Description_Mode_New_Legendaries_Off[]      = _("No extra legendaries are added.");
 static const u8 sText_Description_Mode_New_Legendaries_On[]       = _("Extra legendaries from GEN I and II\nare added via ingame events.");
-static const u8 sText_Description_Mode_New_Effectiveness_Original[]  = _("Original type effectiveness\nfor all types.");
-static const u8 sText_Description_Mode_New_Effectiveness_Modern[]    = _("New and balanced type effectiveness\nfor certain types.");
+static const u8 sText_Description_Mode_New_Effectiveness_Original[]  = _("Type effectiveness from Gen VI!\nGHOST / DARK do x1 to STEEL.");
+static const u8 sText_Description_Mode_New_Effectiveness_Modern[]    = _("Rebalanced type effectiveness\nfor certain types. Check docs.");
 static const u8 sText_Description_Mode_Next[]                     = _("Continue to Features options.");
 
 static const u8 *const sOptionMenuItemDescriptionsMode[MENUITEM_MODE_COUNT][5] =
@@ -817,14 +822,14 @@ static const u8 *const sOptionMenuItemDescriptionsMode[MENUITEM_MODE_COUNT][5] =
     [MENUITEM_MODE_SYNCHRONIZE]           = {sText_Description_Mode_Synchronize_Old,        sText_Description_Mode_Synchronize_New,       sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_MODE_MINTS]                 = {sText_Description_Mode_Mints_Off,              sText_Description_Mode_Mints_On,              sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_MODE_NEW_CITRUS]            = {sText_Description_Mode_New_Citrus_Off,         sText_Description_Mode_New_Citrus_On,         sText_Empty,                                        sText_Empty,                                        sText_Empty},
-    //[MENUITEM_MODE_MODERN_TYPES]          = {sText_Description_Mode_Modern_Types_Off,       sText_Description_Mode_Modern_Types_On,       sText_Empty,                                        sText_Empty,                                        sText_Empty},
+    [MENUITEM_MODE_MODERN_TYPES]          = {sText_Description_Mode_Modern_Types_Off,       sText_Description_Mode_Modern_Types_On,       sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_MODE_FAIRY_TYPES]           = {sText_Description_Mode_Fairy_Types_Off,        sText_Description_Mode_Fairy_Types_On,        sText_Empty,                                        sText_Empty,                                        sText_Empty},
-    //[MENUITEM_MODE_NEW_STATS]             = {sText_Description_Mode_New_Stats_Off,          sText_Description_Mode_New_Stats_On,          sText_Empty,                                        sText_Empty,                                        sText_Empty},
+    [MENUITEM_MODE_NEW_STATS]             = {sText_Description_Mode_New_Stats_Off,          sText_Description_Mode_New_Stats_On,          sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_MODE_STURDY]                = {sText_Description_Mode_Sturdy_Off,             sText_Description_Mode_Sturdy_On,             sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_MODE_MODERN_MOVES]          = {sText_Description_Mode_Modern_Moves_Off,       sText_Description_Mode_Modern_Moves_On,       sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_MODE_LEGENDARY_ABILITIES]   = {sText_Description_Mode_Leg_Abilities_Off,      sText_Description_Mode_Leg_Abilities_On,      sText_Empty,                                        sText_Empty,                                        sText_Empty},
     //[MENUITEM_MODE_NEW_LEGENDARIES]       = {sText_Description_Mode_New_Legendaries_Off,    sText_Description_Mode_New_Legendaries_On,    sText_Empty,                                        sText_Empty,                                        sText_Empty},
-    //[MENUITEM_MODE_NEW_EFFECTIVENESS]     = {sText_Description_Mode_New_Effectiveness_Original,    sText_Description_Mode_New_Effectiveness_Modern,    sText_Empty,                                        sText_Empty,                                        sText_Empty},
+    [MENUITEM_MODE_NEW_EFFECTIVENESS]     = {sText_Description_Mode_New_Effectiveness_Original,    sText_Description_Mode_New_Effectiveness_Modern,    sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_MODE_NEXT]                  = {sText_Description_Mode_Next,                   sText_Empty,                                  sText_Empty,                                        sText_Empty,                                        sText_Empty},
 };
 
@@ -933,7 +938,7 @@ static const u8 *const sOptionMenuItemDescriptionsNuzlocke[MENUITEM_NUZLOCKE_COU
     [MENUITEM_NUZLOCKE_SHINY_CLAUSE]        = {sText_Description_Nuzlocke_ShinyClause_On,       sText_Description_Nuzlocke_ShinyClause_Off,         sText_Empty,                        sText_Empty},
     [MENUITEM_NUZLOCKE_NICKNAMING]          = {sText_Description_Nuzlocke_Nicknaming_On,        sText_Description_Nuzlocke_Nicknaming_Off,          sText_Empty,                        sText_Empty},
     [MENUITEM_NUZLOCKE_DELETION]            = {sText_Description_Nuzlocke_Deletion_Cemetery,    sText_Description_Nuzlocke_Deletion_Deletion,       sText_Empty,                        sText_Empty},
-    [MENUITEM_NUZLOCKE_RARE_CANDY]          = {sText_Description_Nuzlocke_RareCandy_On,            sText_Description_Nuzlocke_RareCandy_Off,               sText_Empty,                        sText_Empty},
+    //[MENUITEM_NUZLOCKE_RARE_CANDY]          = {sText_Description_Nuzlocke_RareCandy_On,            sText_Description_Nuzlocke_RareCandy_Off,               sText_Empty,                        sText_Empty},
     [MENUITEM_NUZLOCKE_NEXT]                = {sText_Description_Nuzlocke_Next,                 sText_Empty,                                        sText_Empty,                        sText_Empty},
 };
 
@@ -1034,14 +1039,14 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledMode[MENUITEM_MODE_COU
     [MENUITEM_MODE_STURDY]                = sText_Empty,
     [MENUITEM_MODE_MINTS]                 = sText_Empty,
     [MENUITEM_MODE_NEW_CITRUS]            = sText_Empty,
-    //[MENUITEM_MODE_MODERN_TYPES]          = sText_Description_Disabled_Feature,
+    [MENUITEM_MODE_MODERN_TYPES]          = sText_Empty,
     [MENUITEM_MODE_FAIRY_TYPES]           = sText_Empty,
-    //[MENUITEM_MODE_NEW_STATS]             = sText_Description_Disabled_Feature,
+    [MENUITEM_MODE_NEW_STATS]             = sText_Empty,
     [MENUITEM_MODE_MODERN_MOVES]          = sText_Empty,
     [MENUITEM_MODE_NEXT]                  = sText_Empty,
     [MENUITEM_MODE_LEGENDARY_ABILITIES]   = sText_Empty,
     //[MENUITEM_MODE_NEW_LEGENDARIES]       = sText_Description_Disabled_Feature,
-    //[MENUITEM_MODE_NEW_EFFECTIVENESS]     = sText_Empty,
+    [MENUITEM_MODE_NEW_EFFECTIVENESS]     = sText_Empty,
 };
 
 // Disabled descriptions
@@ -1089,7 +1094,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledNuzlocke[MENUITEM_NUZL
     [MENUITEM_NUZLOCKE_SHINY_CLAUSE]        = sText_Description_Disabled_Nuzlocke_Nuzlocke,
     [MENUITEM_NUZLOCKE_NICKNAMING]          = sText_Description_Disabled_Nuzlocke_Nuzlocke,
     [MENUITEM_NUZLOCKE_DELETION]            = sText_Description_Disabled_Nuzlocke_Nuzlocke,
-    [MENUITEM_NUZLOCKE_RARE_CANDY]          = sText_Description_Disabled_Nuzlocke_Nuzlocke,
+    //[MENUITEM_NUZLOCKE_RARE_CANDY]          = sText_Description_Disabled_Nuzlocke_Nuzlocke,
     [MENUITEM_NUZLOCKE_NEXT]                = sText_Empty,
 };
 
@@ -1457,7 +1462,7 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         gSaveBlock1Ptr->tx_Mode_Modern_Moves                = TX_MODE_MODERN_MOVES;
         gSaveBlock1Ptr->tx_Mode_Legendary_Abilities         = TX_MODE_LEGENDARY_ABILITIES;
         gSaveBlock1Ptr->tx_Mode_New_Legendaries             = TX_MODE_NEW_LEGENDARIES;
-        //gSaveBlock1Ptr->tx_Mode_TypeEffectiveness           = TX_MODE_TYPE_EFFECTIVENESS;
+        gSaveBlock1Ptr->tx_Mode_TypeEffectiveness           = TX_MODE_TYPE_EFFECTIVENESS;
 
         gSaveBlock1Ptr->tx_Features_RTCType                 = TX_FEATURES_RTC_TYPE;
         gSaveBlock1Ptr->tx_Features_ShinyChance             = TX_FEATURES_SHINY_CHANCE;
@@ -1524,14 +1529,14 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         sOptions->sel_mode[MENUITEM_MODE_SYNCHRONIZE]            = gSaveBlock1Ptr->tx_Mode_Synchronize;
         sOptions->sel_mode[MENUITEM_MODE_MINTS]                  = gSaveBlock1Ptr->tx_Mode_Mints;
         sOptions->sel_mode[MENUITEM_MODE_NEW_CITRUS]             = gSaveBlock1Ptr->tx_Mode_New_Citrus;
-        //sOptions->sel_mode[MENUITEM_MODE_MODERN_TYPES]           = gSaveBlock1Ptr->tx_Mode_Modern_Types;
+        sOptions->sel_mode[MENUITEM_MODE_MODERN_TYPES]           = gSaveBlock1Ptr->tx_Mode_Modern_Types;
         sOptions->sel_mode[MENUITEM_MODE_FAIRY_TYPES]            = gSaveBlock1Ptr->tx_Mode_Fairy_Types;
-        //sOptions->sel_mode[MENUITEM_MODE_NEW_STATS]              = gSaveBlock1Ptr->tx_Mode_New_Stats;
+        sOptions->sel_mode[MENUITEM_MODE_NEW_STATS]              = gSaveBlock1Ptr->tx_Mode_New_Stats;
         sOptions->sel_mode[MENUITEM_MODE_STURDY]                 = gSaveBlock1Ptr->tx_Mode_Sturdy;
         sOptions->sel_mode[MENUITEM_MODE_MODERN_MOVES]           = gSaveBlock1Ptr->tx_Mode_Modern_Moves;
         sOptions->sel_mode[MENUITEM_MODE_LEGENDARY_ABILITIES]    = gSaveBlock1Ptr->tx_Mode_Legendary_Abilities;
         //sOptions->sel_mode[MENUITEM_MODE_NEW_LEGENDARIES]        = gSaveBlock1Ptr->tx_Mode_New_Legendaries;
-        //sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS]      = gSaveBlock1Ptr->tx_Mode_TypeEffectiveness;
+        sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS]      = gSaveBlock1Ptr->tx_Mode_TypeEffectiveness;
         //MENU FEATURES
         sOptions->sel_features[MENUITEM_FEATURES_RTC_TYPE]               = gSaveBlock1Ptr->tx_Features_RTCType;
         sOptions->sel_features[MENUITEM_FEATURES_SHINY_CHANCE]           = gSaveBlock1Ptr->tx_Features_ShinyChance;
@@ -1571,7 +1576,7 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE]      = !gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause;
         sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NICKNAMING]        = !gSaveBlock1Ptr->tx_Nuzlocke_Nicknaming;
         sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION]          = gSaveBlock1Ptr->tx_Nuzlocke_Deletion;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY]        = gSaveBlock1Ptr->tx_Nuzlocke_RareCandy;
+        //sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY]        = gSaveBlock1Ptr->tx_Nuzlocke_RareCandy;
         
         // MENU_DIFFICULTY
         sOptions->sel_difficulty[MENUITEM_DIFFICULTY_PARTY_LIMIT]    = gSaveBlock1Ptr->tx_Challenges_PartyLimit;
@@ -1879,14 +1884,14 @@ void SaveData_TxRandomizerAndChallenges(void)
     gSaveBlock1Ptr->tx_Mode_Synchronize                 = sOptions->sel_mode[MENUITEM_MODE_SYNCHRONIZE]; 
     gSaveBlock1Ptr->tx_Mode_Mints                       = sOptions->sel_mode[MENUITEM_MODE_MINTS]; 
     gSaveBlock1Ptr->tx_Mode_New_Citrus                  = sOptions->sel_mode[MENUITEM_MODE_NEW_CITRUS]; 
-    //gSaveBlock1Ptr->tx_Mode_Modern_Types                = sOptions->sel_mode[MENUITEM_MODE_MODERN_TYPES]; 
+    gSaveBlock1Ptr->tx_Mode_Modern_Types                = sOptions->sel_mode[MENUITEM_MODE_MODERN_TYPES]; 
     gSaveBlock1Ptr->tx_Mode_Fairy_Types                 = sOptions->sel_mode[MENUITEM_MODE_FAIRY_TYPES]; 
-    //gSaveBlock1Ptr->tx_Mode_New_Stats                   = sOptions->sel_mode[MENUITEM_MODE_NEW_STATS]; 
+    gSaveBlock1Ptr->tx_Mode_New_Stats                   = sOptions->sel_mode[MENUITEM_MODE_NEW_STATS]; 
     gSaveBlock1Ptr->tx_Mode_Sturdy                      = sOptions->sel_mode[MENUITEM_MODE_STURDY]; 
     gSaveBlock1Ptr->tx_Mode_Modern_Moves                = sOptions->sel_mode[MENUITEM_MODE_MODERN_MOVES]; 
     gSaveBlock1Ptr->tx_Mode_Legendary_Abilities         = sOptions->sel_mode[MENUITEM_MODE_LEGENDARY_ABILITIES]; 
     //gSaveBlock1Ptr->tx_Mode_New_Legendaries             = sOptions->sel_mode[MENUITEM_MODE_NEW_LEGENDARIES]; 
-    //gSaveBlock1Ptr->tx_Mode_TypeEffectiveness           = sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS];
+    gSaveBlock1Ptr->tx_Mode_TypeEffectiveness           = sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS];
     //MENU FEAUTRES
     gSaveBlock1Ptr->tx_Features_RTCType                     = sOptions->sel_features[MENUITEM_FEATURES_RTC_TYPE]; 
     gSaveBlock1Ptr->tx_Features_ShinyChance                 = sOptions->sel_features[MENUITEM_FEATURES_SHINY_CHANCE]; 
@@ -1955,17 +1960,17 @@ void SaveData_TxRandomizerAndChallenges(void)
         gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = TRUE;
         break;
     }
-    if (gSaveBlock1Ptr->tx_Nuzlocke_EasyMode)
-    {
-        gSaveBlock1Ptr->tx_Nuzlocke_RareCandy        = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY];
-    }
+    //if (gSaveBlock1Ptr->tx_Nuzlocke_EasyMode)
+    //{
+    //    gSaveBlock1Ptr->tx_Nuzlocke_RareCandy        = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY];
+    //}
     if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke)
     {
         gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause   = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE];
         gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause     = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE];
         gSaveBlock1Ptr->tx_Nuzlocke_Nicknaming      = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NICKNAMING];
         gSaveBlock1Ptr->tx_Nuzlocke_Deletion        = sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION];
-        gSaveBlock1Ptr->tx_Nuzlocke_RareCandy        = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY];
+        //gSaveBlock1Ptr->tx_Nuzlocke_RareCandy        = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY];
     }
     else
     {
@@ -2310,12 +2315,12 @@ static void DrawChoices_Mode_Classic_Modern_Selector(int selection, int y)
         FlagSet (FLAG_MINTS_ENABLED);
         sOptions->sel_mode[MENUITEM_MODE_NEW_CITRUS]                = !TX_MODE_NEW_CITRUS;
         gSaveBlock1Ptr->tx_Mode_New_Citrus = 1;
-        //sOptions->sel_mode[MENUITEM_MODE_MODERN_TYPES]              = TX_MODE_MODERN_TYPES;
-        //gSaveBlock1Ptr->tx_Mode_Modern_Types = 0;
+        sOptions->sel_mode[MENUITEM_MODE_MODERN_TYPES]              = !TX_MODE_MODERN_TYPES;
+        gSaveBlock1Ptr->tx_Mode_Modern_Types = 1;
         sOptions->sel_mode[MENUITEM_MODE_FAIRY_TYPES]               = !TX_MODE_FAIRY_TYPES;
         gSaveBlock1Ptr->tx_Mode_Fairy_Types = 1;
-        //sOptions->sel_mode[MENUITEM_MODE_NEW_STATS]                 = TX_MODE_NEW_STATS;
-        //gSaveBlock1Ptr->tx_Mode_New_Stats = 0;
+        sOptions->sel_mode[MENUITEM_MODE_NEW_STATS]                 = !TX_MODE_NEW_STATS;
+        gSaveBlock1Ptr->tx_Mode_New_Stats = 1;
         sOptions->sel_mode[MENUITEM_MODE_STURDY]                    = !TX_MODE_STURDY;
         gSaveBlock1Ptr->tx_Mode_Sturdy = 1;
         sOptions->sel_mode[MENUITEM_MODE_MODERN_MOVES]              = !TX_MODE_MODERN_MOVES;
@@ -2324,8 +2329,8 @@ static void DrawChoices_Mode_Classic_Modern_Selector(int selection, int y)
         gSaveBlock1Ptr->tx_Mode_Legendary_Abilities = 1;
         //sOptions->sel_mode[MENUITEM_MODE_NEW_LEGENDARIES]           = TX_MODE_NEW_LEGENDARIES;
         //gSaveBlock1Ptr->tx_Mode_New_Legendaries = 0;
-        //sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS]         = TX_MODE_TYPE_EFFECTIVENESS;
-        gSaveBlock1Ptr->tx_Mode_TypeEffectiveness = 1;
+        sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS]         = TX_MODE_TYPE_EFFECTIVENESS;
+        gSaveBlock1Ptr->tx_Mode_TypeEffectiveness = 0;
     }
 }
 
@@ -2454,7 +2459,7 @@ static void DrawChoices_Challenges_Nuzlocke(int selection, int y)
         sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE]      = !TX_NUZLOCKE_SHINY_CLAUSE; 
         sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NICKNAMING]        = !TX_NUZLOCKE_NICKNAMING;
         sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION]          = TX_NUZLOCKE_DELETION;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY]          = !TX_NUZLOCKE_RARE_CANDY;
+        //sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY]          = !TX_NUZLOCKE_RARE_CANDY;
         gSaveBlock1Ptr->tx_Nuzlocke_EasyMode = 0; //off
     }
     else if (selection == 1)
@@ -2463,7 +2468,7 @@ static void DrawChoices_Challenges_Nuzlocke(int selection, int y)
         sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE]      = !TX_NUZLOCKE_SHINY_CLAUSE; 
         sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NICKNAMING]        = !TX_NUZLOCKE_NICKNAMING;
         sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION]          = TX_NUZLOCKE_DELETION;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY]          = !TX_NUZLOCKE_RARE_CANDY;
+        //sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY]          = !TX_NUZLOCKE_RARE_CANDY;
         gSaveBlock1Ptr->tx_Nuzlocke_EasyMode = 1; //on
     }
     else
@@ -2496,11 +2501,11 @@ static void DrawChoices_Nuzlocke_Deletion(int selection, int y)
     DrawOptionMenuChoice(sText_Nuzlocke_Cemetery, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_Nuzlocke_Deletion, GetStringRightAlignXOffset(1, sText_Nuzlocke_Deletion, 198), y, styles[1], active);
 }
-static void DrawChoices_Nuzlocke_RareCandy(int selection, int y)
+/*static void DrawChoices_Nuzlocke_RareCandy(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_NUZLOCKE_RARE_CANDY);
     DrawChoices_Nuzlocke_OnOff(selection, y, active);
-}
+}*/
 
 // MENU_DIFFICULTY
 static const u8 sText_Yes[] = _("YES");
@@ -2976,7 +2981,7 @@ static void DrawChoices_Mode_New_Citrus(int selection, int y)
     DrawOptionMenuChoice(sText_Encounters_Modern_Long, GetStringRightAlignXOffset(1, sText_Encounters_Modern_Long, 198), y, styles[1], active);
 }
 
-/*static void DrawChoices_Mode_Modern_Types(int selection, int y)
+static void DrawChoices_Mode_Modern_Types(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_MODE_MODERN_TYPES);
     u8 styles[2] = {0};
@@ -2991,9 +2996,9 @@ static void DrawChoices_Mode_New_Citrus(int selection, int y)
         gSaveBlock1Ptr->tx_Mode_Modern_Types = 1; //New typings
     }
 
-    //DrawOptionMenuChoice(sText_Encounters_Vanilla_Long, 104, y, styles[0], active);
-    //DrawOptionMenuChoice(sText_Encounters_Modern_Long, GetStringRightAlignXOffset(1, sText_Encounters_Modern_Long, 198), y, styles[1], active);
-}*/
+    DrawOptionMenuChoice(sText_Encounters_Vanilla_Long, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Encounters_Modern_Long, GetStringRightAlignXOffset(1, sText_Encounters_Modern_Long, 198), y, styles[1], active);
+}
 
 static void DrawChoices_Mode_Fairy_Types(int selection, int y)
 {
@@ -3010,11 +3015,11 @@ static void DrawChoices_Mode_Fairy_Types(int selection, int y)
         gSaveBlock1Ptr->tx_Mode_Fairy_Types = 1; //They do now
     }
 
-    DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
-    DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
+    DrawOptionMenuChoice(sText_Encounters_Vanilla_Long, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Encounters_Modern_Long, GetStringRightAlignXOffset(1, sText_Encounters_Modern_Long, 198), y, styles[1], active);
 }
 
-/*static void DrawChoices_Mode_New_Stats(int selection, int y)
+static void DrawChoices_Mode_New_Stats(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_MODE_NEW_STATS);
     u8 styles[2] = {0};
@@ -3029,9 +3034,9 @@ static void DrawChoices_Mode_Fairy_Types(int selection, int y)
         gSaveBlock1Ptr->tx_Mode_New_Stats = 1; //New stats
     }
 
-    //DrawOptionMenuChoice(sText_Encounters_Vanilla_Long, 104, y, styles[0], active);
-    //DrawOptionMenuChoice(sText_Encounters_Modern_Long, GetStringRightAlignXOffset(1, sText_Encounters_Modern_Long, 198), y, styles[1], active);
-}*/
+    DrawOptionMenuChoice(sText_Encounters_Vanilla_Long, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Encounters_Modern_Long, GetStringRightAlignXOffset(1, sText_Encounters_Modern_Long, 198), y, styles[1], active);
+}
 
 static void DrawChoices_Mode_Sturdy(int selection, int y)
 {
@@ -3071,7 +3076,9 @@ static void DrawChoices_Mode_Modern_Moves(int selection, int y)
     DrawOptionMenuChoice(sText_Encounters_Modern_Long, GetStringRightAlignXOffset(1, sText_Encounters_Modern_Long, 198), y, styles[1], active);
 }
 
-/*static void DrawChoices_Mode_New_Effectiveness(int selection, int y)
+static const u8 sText_Encounters_Encounters_Gen6[]   = _("GEN VI+");
+static const u8 sText_Encounters_Encounters_New[]    = _("IMPROVED");
+static void DrawChoices_Mode_New_Effectiveness(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_MODE_NEW_EFFECTIVENESS);
     u8 styles[2] = {0};
@@ -3086,9 +3093,9 @@ static void DrawChoices_Mode_Modern_Moves(int selection, int y)
         gSaveBlock1Ptr->tx_Mode_TypeEffectiveness = 1; //New type chart
     }
 
-    DrawOptionMenuChoice(sText_Encounters_Vanilla_Long, 104, y, styles[0], active);
-    DrawOptionMenuChoice(sText_Encounters_Modern_Long, GetStringRightAlignXOffset(1, sText_Encounters_Modern_Long, 198), y, styles[1], active);
-}*/
+    DrawOptionMenuChoice(sText_Encounters_Encounters_Gen6, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Encounters_Encounters_New, GetStringRightAlignXOffset(1, sText_Encounters_Encounters_New, 198), y, styles[1], active);
+}
 
 static void DrawChoices_Mode_Legendary_Abilities(int selection, int y)
 {

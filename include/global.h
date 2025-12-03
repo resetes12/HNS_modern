@@ -1166,9 +1166,9 @@ struct SaveBlock1
         u8 tx_Mode_Synchronize:1;
         u8 tx_Mode_Mints:1;
         u8 tx_Mode_New_Citrus:1;
-        u8 tx_Mode_Modern_Types:1; //unused in HnS
+        u8 tx_Mode_Modern_Types:1;
         u8 tx_Mode_Fairy_Types:1;
-        u8 tx_Mode_New_Stats:1; //unused in HnS
+        u8 tx_Mode_New_Stats:1;
         u8 tx_Mode_Sturdy:1;
         u8 tx_Mode_Modern_Moves:1;
         u8 tx_Mode_Legendary_Abilities:1;
@@ -1178,9 +1178,9 @@ struct SaveBlock1
         u8 tx_Mode_Encounters:2; //unused in HnS
         u8 tx_Features_FrontierBans:1;
         u8 tx_Difficulty_HardExp:1; //unused in HnS
-        u8 tx_Mode_TypeEffectiveness:1; //unused in HnS
-        u8 NuzlockeEncounterFlags[12]; //
+        u8 tx_Mode_TypeEffectiveness:1;
         u8 tx_Nuzlocke_RareCandy:1; //new for HnS 1.2
+        u8 NuzlockeEncounterFlags[12]; //
 };
 
 extern struct SaveBlock1* gSaveBlock1Ptr;
