@@ -118,10 +118,15 @@ static const u8 sText_SurvivePoison_Label[] = _("SURVIVE POISON");
 static const u8 sText_Synchronize_Label[]   = _("SYNCHRONIZE");
 static const u8 sText_Mints_Label[]         = _("NATURE MINTS");
 static const u8 sText_NewCitrus_Label[]     = _("SITRUS BERRY");
-static const u8 sText_FairyTypes_Label[]    = _("ADD FAIRY TYPE");
+static const u8 sText_FairyTypes_Label[]    = _("FAIRY TYPE");
 static const u8 sText_Sturdy_Label[]        = _("STURDY");
 static const u8 sText_ModernMoves_Label[]   = _("{PKMN} MOVEPOOL");
 static const u8 sText_LegendaryAbils_Label[]= _("LEGEN. ABILITIES");
+static const u8 sText_Encounters_Label[]    = _("ENCOUNTERS");
+static const u8 sText_TypeChart_Label[]     = _("TYPE CHART");
+static const u8 sText_Stats_Label[]         = _("POKéMON STATS");
+static const u8 sText_Types_Label[]         = _("POKéMON TYPES");
+static const u8 sText_Extra_Legendaries_Label[]         = _("EXTRA LEGEND.");
 
 //page 2 Features
 static const u8 sText_RTCType_Label[]      = _("CLOCK TYPE");
@@ -129,6 +134,8 @@ static const u8 sText_ShinyChance_Label[]  = _("SHINY CHANCE");
 static const u8 sText_ItemDrops_Label[]    = _("ITEM DROP");
 static const u8 sText_FrontierBans_Label[] = _("FRONTIER BANS");
 static const u8 sText_ShinyColors_Label[]  = _("SHINY COLORS");
+static const u8 sText_UnlimitedWT_Label[]  = _("UNLIMITED WT");
+static const u8 sText_Feebas_Label[]       = _("EASIER FEEBAS");
 
 // page 3 (Randomizer)
 static const u8 sText_Randomizer[]            = _("RANDOMIZER");
@@ -162,6 +169,8 @@ static const u8 sText_Nuz_RareCandy[]        = _("INF. RARE CANDY");
 static const u8 sText_Diff_PartyLimit[]      = _("PARTY LIMIT");
 static const u8 sText_Diff_LevelCap[]        = _("LEVEL CAP");
 static const u8 sText_Diff_ExpMult[]         = _("EXP. MULTIPLIER");
+static const u8 sText_Diff_HardExp[]         = _("HARD MODE EXP.");
+static const u8 sText_Diff_CatchRate[]       = _("CATCH RATE");
 static const u8 sText_Diff_NoItemPlayer[]    = _("PLAYER ITEMS");
 static const u8 sText_Diff_NoItemTrainer[]   = _("TRAINER ITEMS");
 static const u8 sText_Diff_PartyIVs[]        = _("PLAYER IVs");
@@ -198,7 +207,16 @@ static const u8 sText_Nuz_Mode_Standard[]   = _("NORMAL");
 static const u8 sText_Nuz_Mode_Hardcore[]   = _("HARD");
 static const u8 sText_Nuz_Fainting_Cemetery[]   = _("CEMETERY");
 static const u8 sText_Nuz_Fainting_Release[]    = _("RELEASE");
+static const u8 sText_Mode_Effect_GenVI[]       = _("GEN VI+");
+static const u8 sText_Mode_Effect_Modern[]      = _("IMPROVED");
 
+//3 ENCOUNTER MODES
+static const u8 sText_Mode_Encounters_Og[]      = _("ORIG");
+static const u8 sText_Mode_Encounters_New[]     = _("NEW");
+static const u8 sText_Mode_Encounters_Post[]    = _("POST");
+static const u8 *const sText_Mode_Encounters_Strings[] = {
+    sText_Mode_Encounters_Og, sText_Mode_Encounters_New, sText_Mode_Encounters_Post
+};
 // Party Limit: OFF,5,4,3,2,1
 static const u8 sPL_Off[] = _("OFF");
 static const u8 sPL_5[]   = _("5");
@@ -352,6 +370,15 @@ static const u8 sText_Challenges_ShinyChance_1024[]   = _("1024");
 static const u8 sText_Challenges_ShinyChance_512[]    = _("512");
 static const u8 *const sText_Challenges_ShinyChance_Strings[] = {sText_Challenges_ShinyChance_8192,  sText_Challenges_ShinyChance_4096,  sText_Challenges_ShinyChance_2048,  sText_Challenges_ShinyChance_1024,  sText_Challenges_ShinyChance_512};
 
+static const u8 sText_Difficulty_CatchRate_05x[]   = _("0.5x");
+static const u8 sText_Difficulty_CatchRate_1x[]   = _("DEFAULT");
+static const u8 sText_Difficulty_CatchRate_2x[]   = _("2x");
+static const u8 sText_Difficulty_CatchRate_3x[]   = _("3x");
+static const u8 *const sText_Difficulty_CatchRate_Strings[] = {sText_Difficulty_CatchRate_1x, sText_Difficulty_CatchRate_05x, sText_Difficulty_CatchRate_2x,  sText_Difficulty_CatchRate_3x};
+
+static const u8 sText_Difficulty_HardmodeExp_Normal[]   = _("NORMAL");
+static const u8 *const sText_Difficulty_HardModeExp_Strings[] = {sText_Difficulty_CatchRate_1x, sText_Difficulty_HardmodeExp_Normal};
+
 static inline void Viewer_ClearRow(u8 visRow, bool8 selected)
 {
     const int y = visRow * 16;
@@ -412,6 +439,11 @@ static u8 GetSel_FairyTypes(void)         { return gSaveBlock1Ptr->tx_Mode_Fairy
 static u8 GetSel_Sturdy(void)             { return gSaveBlock1Ptr->tx_Mode_Sturdy            ? 1 : 0; }
 static u8 GetSel_ModernMoves(void)        { return gSaveBlock1Ptr->tx_Mode_Modern_Moves      ? 1 : 0; }
 static u8 GetSel_LegendaryAbilities(void) { return gSaveBlock1Ptr->tx_Mode_Legendary_Abilities ? 1 : 0; }
+static u8 GetSel_Encounters(void)         { return gSaveBlock1Ptr->tx_Mode_Encounters;}
+static u8 GetSel_TypeChart(void)          { return gSaveBlock1Ptr->tx_Mode_TypeEffectiveness   ? 1 : 0; }
+static u8 GetSel_Stats(void)              { return gSaveBlock1Ptr->tx_Mode_New_Stats           ? 1 : 0; }
+static u8 GetSel_Types(void)              { return gSaveBlock1Ptr->tx_Mode_Modern_Types        ? 1 : 0; }
+static u8 GetSel_ExtraLegends(void)       { return gSaveBlock1Ptr->tx_Mode_New_Legendaries     ? 1 : 0; }
 
 //Page 2
 static u8 GetSel_Feature_RTCType(void)      { return gSaveBlock1Ptr->tx_Features_RTCType          ? 1 : 0; }
@@ -419,6 +451,8 @@ static u8 GetSel_Feature_ShinyChance(void)  { return gSaveBlock1Ptr->tx_Features
 static u8 GetSel_Feature_ItemDrops(void)    { return gSaveBlock1Ptr->tx_Features_WildMonDropItems ? 1 : 0; }
 static u8 GetSel_Feature_FrontierBans(void) { return (gSaveBlock1Ptr->tx_Features_FrontierBans==0)     ? 1 : 0; } //reversed from the rest
 static u8 GetSel_Feature_ShinyColors(void)  { return gSaveBlock1Ptr->tx_Features_ShinyColors      ? 1 : 0; }
+//static u8 GetSel_Feature_UnlimitedWT(void)  { return gSaveBlock1Ptr->tx_Features_Unlimited_WT     ? 1 : 0; }
+//static u8 GetSel_Feature_Feebas(void)       { return gSaveBlock1Ptr->tx_Features_EasierFeebas     ? 1 : 0; }
 
 // Page 3 (Randomizer) getters
 static u8 GetSel_Randomizer(void)
@@ -471,8 +505,10 @@ static u8 GetSel_Diff_ExpMult(void)         { return gSaveBlock1Ptr->tx_Challeng
 static u8 GetSel_Diff_PlayerIVs(void)       { return gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs; }     //0..2 (Yes, No, No(HP))
 static u8 GetSel_Diff_TrainerIVs(void)      { return gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs; } // 0..2 (Off, Scale, Hard)
 static u8 GetSel_Diff_TrainerEVs(void)      { return gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs; } // 0..3 (Off, Scale, Hard, Extreme)
+static u8 GetSel_Diff_CatchRate(void)       { return gSaveBlock1Ptr->tx_Difficulty_CatchRate; } // 0..3 (1x, 0.5x, 2x, 3x)
 
 // Plain bool rows (normalize to 0/1 for the shared bool renderer)
+static u8 GetSel_Diff_HardExp(void)         { return gSaveBlock1Ptr->tx_Difficulty_HardExp ? 1 : 0; } //Yes/No
 static u8 GetSel_Diff_NoItemPlayer(void)    { return gSaveBlock1Ptr->tx_Challenges_NoItemPlayer ? 1 : 0; } //Yes/No
 static u8 GetSel_Diff_NoItemTrainer(void)   { return gSaveBlock1Ptr->tx_Challenges_NoItemTrainer ? 1 : 0; } //Yes/No
 static u8 GetSel_Diff_PlayerEVs(void)       { return gSaveBlock1Ptr->tx_Challenges_NoEVs ? 1 : 0; } //Yes/No
@@ -516,22 +552,29 @@ static u8 GetSel_Chk_MirrorThief(void)     { return gSaveBlock1Ptr->tx_Challenge
 
 
 static const struct ViewerBoolRow sBoolRows[] = {
-    { sText_ModernMoves_Label,   GetSel_ModernMoves        },
-    { sText_Synchronize_Label,   GetSel_Synchronize        },
-    { sText_Sturdy_Label,        GetSel_Sturdy             },
-    { sText_NewCitrus_Label,     GetSel_NewCitrus          },
-    { sText_FairyTypes_Label,    GetSel_FairyTypes         },
-    { sText_LegendaryAbils_Label,GetSel_LegendaryAbilities },
-    { sText_InfiniteTMs_Label,   GetSel_InfiniteTMs        },
-    { sText_Mints_Label,         GetSel_Mints              },
-    { sText_SurvivePoison_Label, GetSel_SurvivePoison      },
+    //{ sText_Encounters_Label,        GetSel_Encounters         },
+    { sText_TypeChart_Label,         GetSel_TypeChart          },
+    { sText_Stats_Label,             GetSel_Stats              },
+    { sText_FairyTypes_Label,        GetSel_FairyTypes         },
+    { sText_Types_Label,             GetSel_Types              },
+    { sText_ModernMoves_Label,       GetSel_ModernMoves        },
+    { sText_Synchronize_Label,       GetSel_Synchronize        },
+    { sText_Sturdy_Label,            GetSel_Sturdy             },
+    { sText_NewCitrus_Label,         GetSel_NewCitrus          },
+    //{ sText_Extra_Legendaries_Label, GetSel_ExtraLegends       },
+    { sText_LegendaryAbils_Label,    GetSel_LegendaryAbilities },
+    { sText_Mints_Label,             GetSel_Mints              },
+    { sText_InfiniteTMs_Label,       GetSel_InfiniteTMs        },
+    { sText_SurvivePoison_Label,     GetSel_SurvivePoison      },
 };
 
 static const struct ViewerBoolRow sBoolRows_Page2[] = {
     { sText_RTCType_Label,      GetSel_Feature_RTCType      },
-    { sText_ShinyChance_Label,  GetSel_Feature_ShinyChance  },
+    { sText_ShinyChance_Label,  GetSel_Feature_ShinyChance  }, 
     { sText_ShinyColors_Label,  GetSel_Feature_ShinyColors  },
     { sText_ItemDrops_Label,    GetSel_Feature_ItemDrops    },
+    //{ sText_UnlimitedWT_Label,  GetSel_Feature_UnlimitedWT  },
+    //{ sText_Feebas_Label,       GetSel_Feature_Feebas       },
     { sText_FrontierBans_Label, GetSel_Feature_FrontierBans },
 };
 
@@ -562,7 +605,7 @@ static const struct ViewerBoolRow sBoolRows_Page4[] = {
     { sText_Nuz_ShinyClause,   GetSel_Nuz_ShinyClause   },
     { sText_Nuz_Nicknaming,    GetSel_Nuz_Nicknaming    },
     { sText_Nuz_Fainting,      GetSel_Nuz_Deletion      },
-    { sText_Nuz_RareCandy,     GetSel_Nuz_RareCandy     },
+    //{ sText_Nuz_RareCandy,     GetSel_Nuz_RareCandy     },
 };
 
 // Page 5 (Difficulty) — for the bool-style rows we reuse the generic bool renderer.
@@ -571,14 +614,16 @@ static const struct ViewerBoolRow sBoolRows_Page5[] = {
     { sText_Diff_PartyLimit,    NULL }, // idx 0 — single-value
     { sText_Diff_LevelCap,      NULL }, // idx 1 — single-value
     { sText_Diff_ExpMult,       NULL }, // idx 2 — single-value
-    { sText_Diff_NoItemPlayer,  GetSel_Diff_NoItemPlayer  }, // idx 3
-    { sText_Diff_NoItemTrainer, GetSel_Diff_NoItemTrainer }, // idx 4
-    { sText_Diff_PartyIVs,      NULL }, // idx 5
-    { sText_Diff_TrainerIVs,    NULL }, // idx 6 — single-value
-    { sText_Diff_PlayerEVs,     GetSel_Diff_PlayerEVs }, // idx 7 — single-value
-    { sText_Diff_TrainerEVs,    NULL }, // idx 8 — single-value
-    { sText_Diff_LessEscapes,   GetSel_Diff_LessEscapes  }, // idx 9
-    { sText_Diff_EscapeRopeDig, GetSel_Diff_EscapeRopeDig}, // idx 10
+    //{ sText_Diff_HardExp,       GetSel_Diff_HardExp }, // idx 3 — single-value
+    { sText_Diff_CatchRate,     NULL }, // idx 3
+    { sText_Diff_NoItemPlayer,  GetSel_Diff_NoItemPlayer  }, // idx 4
+    { sText_Diff_NoItemTrainer, GetSel_Diff_NoItemTrainer }, // idx 5
+    { sText_Diff_PartyIVs,      NULL }, // idx 6
+    { sText_Diff_TrainerIVs,    NULL }, // idx 7 — single-value
+    { sText_Diff_PlayerEVs,     GetSel_Diff_PlayerEVs }, // idx 8 — single-value
+    { sText_Diff_TrainerEVs,    NULL }, // idx 9 — single-value
+    { sText_Diff_LessEscapes,   GetSel_Diff_LessEscapes  }, // idx 10
+    { sText_Diff_EscapeRopeDig, GetSel_Diff_EscapeRopeDig}, // idx 11
 };
 
 static const struct ViewerBoolRow sBoolRows_Page6[] = {
@@ -609,7 +654,78 @@ static void Viewer_DrawRow_Page1(u8 visRow, u16 idx)
 
     switch (idx)
     {
-    case 0: // PKM MOVEPOOL
+    /*case 0: // Encounters (OG/NEW/POST)
+    {
+        u8 v = GetSel_Encounters();
+        if (v > 3) v = 0;
+        Viewer_DrawSingleValueRow(visRow, sText_Encounters_Label, sText_Mode_Encounters_Strings[v], selected);
+        break;
+    }*/
+    case 0: // type chart (gen6/improved)
+    {
+        const int y = visRow * 16;
+        Viewer_ClearRow(visRow, selected);
+        AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, 8, y + 1, 0, 0,
+                                     sColorLeftActive, TEXT_SKIP_DRAW, sText_TypeChart_Label);
+        u8 sel = GetSel_TypeChart();
+        const u8 *leftStyle  = (sel == 0) ? sColorRightRed : sColorRightGray; // "GEN VI+"
+        const u8 *rightStyle = (sel == 1) ? sColorRightRed : sColorRightGray; // "IMPROVED"
+        AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, 104, y, 0, 0,
+                                     leftStyle, TEXT_SKIP_DRAW, sText_Mode_Effect_GenVI);
+        int xr = GetStringRightAlignXOffset(1, sText_Mode_Effect_Modern, 198);
+        AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, xr, y, 0, 0,
+                                     rightStyle, TEXT_SKIP_DRAW, sText_Mode_Effect_Modern);
+        break;
+    }
+    case 1: // PKM stats
+    {
+        const int y = visRow * 16;
+        Viewer_ClearRow(visRow, selected);
+        AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, 8, y + 1, 0, 0,
+                                     sColorLeftActive, TEXT_SKIP_DRAW, sText_Stats_Label);
+        u8 sel = GetSel_Stats();
+        const u8 *leftStyle  = (sel == 0) ? sColorRightRed : sColorRightGray; // "ORIGINAL"
+        const u8 *rightStyle = (sel == 1) ? sColorRightRed : sColorRightGray; // "MODERN"
+        AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, 104, y, 0, 0,
+                                     leftStyle, TEXT_SKIP_DRAW, sText_Original);
+        int xr = GetStringRightAlignXOffset(1, sText_Modern, 198);
+        AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, xr, y, 0, 0,
+                                     rightStyle, TEXT_SKIP_DRAW, sText_Modern);
+        break;
+    }
+    case 2: // Fairy type
+    {
+        const int y = visRow * 16;
+        Viewer_ClearRow(visRow, selected);
+        AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, 8, y + 1, 0, 0,
+                                     sColorLeftActive, TEXT_SKIP_DRAW, sText_FairyTypes_Label);
+        u8 sel = GetSel_FairyTypes();
+        const u8 *leftStyle  = (sel == 0) ? sColorRightRed : sColorRightGray; // "ORIGINAL"
+        const u8 *rightStyle = (sel == 1) ? sColorRightRed : sColorRightGray; // "MODERN"
+        AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, 104, y, 0, 0,
+                                     leftStyle, TEXT_SKIP_DRAW, sText_Original);
+        int xr = GetStringRightAlignXOffset(1, sText_Modern, 198);
+        AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, xr, y, 0, 0,
+                                     rightStyle, TEXT_SKIP_DRAW, sText_Modern);
+        break;
+    }
+    case 3: // PKM types
+    {
+        const int y = visRow * 16;
+        Viewer_ClearRow(visRow, selected);
+        AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, 8, y + 1, 0, 0,
+                                     sColorLeftActive, TEXT_SKIP_DRAW, sText_Types_Label);
+        u8 sel = GetSel_Types();
+        const u8 *leftStyle  = (sel == 0) ? sColorRightRed : sColorRightGray; // "ORIGINAL"
+        const u8 *rightStyle = (sel == 1) ? sColorRightRed : sColorRightGray; // "MODERN"
+        AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, 104, y, 0, 0,
+                                     leftStyle, TEXT_SKIP_DRAW, sText_Original);
+        int xr = GetStringRightAlignXOffset(1, sText_Modern, 198);
+        AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, xr, y, 0, 0,
+                                     rightStyle, TEXT_SKIP_DRAW, sText_Modern);
+        break;
+    }
+    case 4: // PKM MOVEPOOL
     {
         const int y = visRow * 16;
         Viewer_ClearRow(visRow, selected);
@@ -625,7 +741,7 @@ static void Viewer_DrawRow_Page1(u8 visRow, u16 idx)
                                      rightStyle, TEXT_SKIP_DRAW, sText_Modern);
         break;
     }
-    case 1: // SYNCHRONIZE
+    case 5: // SYNCHRONIZE
     {
         const int y = visRow * 16;
         Viewer_ClearRow(visRow, selected);
@@ -641,7 +757,7 @@ static void Viewer_DrawRow_Page1(u8 visRow, u16 idx)
                                      rightStyle, TEXT_SKIP_DRAW, sText_Modern);
         break;
     }
-    case 2: // STURDY
+    case 6: // STURDY
     {
         const int y = visRow * 16;
         Viewer_ClearRow(visRow, selected);
@@ -657,7 +773,7 @@ static void Viewer_DrawRow_Page1(u8 visRow, u16 idx)
                                      rightStyle, TEXT_SKIP_DRAW, sText_Modern);
         break;
     }
-    case 3: // SITRUS BERRY
+    case 7: // SITRUS BERRY
     {
         const int y = visRow * 16;
         Viewer_ClearRow(visRow, selected);
@@ -817,7 +933,23 @@ static void Viewer_DrawRow_Page5(u8 visRow, u16 idx)
         Viewer_DrawSingleValueRow(visRow, sText_Diff_ExpMult, sText_Diff_ExpMult_Strings[v], selected);
         break;
     }
-    case 3: //Player items (YES / NO)
+    /*case 3: //Hardmode exp. (DEFAULT / NORMAL)
+    {
+        u8 cr = gSaveBlock1Ptr->tx_Difficulty_HardExp;
+        if (cr > 2) cr = 0;
+        Viewer_DrawSingleValueRow(visRow, sText_Diff_HardExp,
+                                  sText_Difficulty_HardModeExp_Strings[cr], selected);
+        break;
+    }*/
+    case 3: // CATCH RATE
+    {
+        u8 cr = gSaveBlock1Ptr->tx_Difficulty_CatchRate;
+        if (cr > 3) cr = 0;
+        Viewer_DrawSingleValueRow(visRow, sText_Diff_CatchRate,
+                                  sText_Difficulty_CatchRate_Strings[cr], selected);
+        break;
+    }
+    case 4: //Player items (YES / NO)
     {
         const int y = visRow * 16;
         Viewer_ClearRow(visRow, selected);
@@ -833,7 +965,7 @@ static void Viewer_DrawRow_Page5(u8 visRow, u16 idx)
                                      rightStyle, TEXT_SKIP_DRAW, sText_No);
         break;
     }
-    case 4: //Trainer items (YES / NO)
+    case 5: //Trainer items (YES / NO)
     {
         const int y = visRow * 16;
         Viewer_ClearRow(visRow, selected);
@@ -849,21 +981,21 @@ static void Viewer_DrawRow_Page5(u8 visRow, u16 idx)
                                      rightStyle, TEXT_SKIP_DRAW, sText_No);
         break;
     }
-    case 5: //Player IVs (YES/NO/NO(HP))
+    case 6: //Player IVs (YES/NO/NO(HP))
     {
         u8 v = GetSel_Diff_PlayerIVs();
         if (v > 2) v = 0;
         Viewer_DrawSingleValueRow(visRow, sText_Diff_PartyIVs, sText_Diff_PlayerIVs_Strings[v], selected);
         break;
     }
-    case 6: // TRAINER IVs (OFF/SCALE/HARD)
+    case 7: // TRAINER IVs (OFF/SCALE/HARD)
     {
         u8 v = GetSel_Diff_TrainerIVs();
         if (v > 2) v = 0;
         Viewer_DrawSingleValueRow(visRow, sText_Diff_TrainerIVs, sText_TrainerEV_Strings[v], selected);
         break;
     }
-    case 7: // PLAYER EVs (Yes/No)
+    case 8: // PLAYER EVs (Yes/No)
     {
 
         const int y = visRow * 16;
@@ -880,14 +1012,14 @@ static void Viewer_DrawRow_Page5(u8 visRow, u16 idx)
                                      rightStyle, TEXT_SKIP_DRAW, sText_No);
         break;
     }
-    case 8: // TRAINER EVs (Off/Scale/Hard/Extreme)
+    case 9: // TRAINER EVs (Off/Scale/Hard/Extreme)
     {
         u8 v = GetSel_Diff_TrainerEVs();
         if (v > 3) v = 0;
         Viewer_DrawSingleValueRow(visRow, sText_Diff_TrainerEVs, sText_TrainerEV_Strings[v], selected);
         break;
     }
-    case 10: // Escape Rope & Dig (Yes/No)
+    case 11: // Escape Rope & Dig (Yes/No)
     {
 
         const int y = visRow * 16;
@@ -1190,7 +1322,7 @@ static void DrawTopBar(void)
     // Right side hint: Exit + Scroll
     {
         // "A/B: Exit  Up/Down: Scroll"
-        static const u8 sViewerExitScrollHint[] = _("Heart & Soul");
+        static const u8 sViewerExitScrollHint[] = _("Modern Heart&Soul");
         s32 w = GetStringWidth(FONT_SMALL, sViewerExitScrollHint, 0);
         s32 x = 232 - w; // stay a few px from the right edge
         if (x < 0) x = 0;
