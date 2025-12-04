@@ -139,15 +139,16 @@
 #define MAP_GOLDENROD_CITY_DEPARTMENT_STORE_ELEVATOR (28 | (5 << 8))
 
 // gMapGroup_IndoorEcruteak
-#define MAP_ECRUTEAK_CITY_POKEMON_CENTER (0 | (6 << 8))
-#define MAP_ECRUTEAK_CITY_MART           (1 | (6 << 8))
-#define MAP_ECRUTEAK_CITY_THEATER        (2 | (6 << 8))
-#define MAP_ECRUTEAK_CITY_HOUSE1         (3 | (6 << 8))
-#define MAP_ECRUTEAK_CITY_HOUSE2         (4 | (6 << 8))
-#define MAP_ECRUTEAK_CITY_SAGE_OFFICE1   (5 | (6 << 8))
-#define MAP_ECRUTEAK_CITY_SAGE_OFFICE2   (6 | (6 << 8))
-#define MAP_BELLCHIME_TRAIL              (7 | (6 << 8))
-#define MAP_ECRUTEAK_CITY_GYM            (8 | (6 << 8))
+#define MAP_ECRUTEAK_CITY_POKEMON_CENTER    (0 | (6 << 8))
+#define MAP_ECRUTEAK_CITY_MART              (1 | (6 << 8))
+#define MAP_ECRUTEAK_CITY_THEATER           (2 | (6 << 8))
+#define MAP_ECRUTEAK_CITY_HOUSE1            (3 | (6 << 8))
+#define MAP_ECRUTEAK_CITY_HOUSE2            (4 | (6 << 8))
+#define MAP_ECRUTEAK_CITY_SAGE_OFFICE1      (5 | (6 << 8))
+#define MAP_ECRUTEAK_CITY_SAGE_OFFICE2      (6 | (6 << 8))
+#define MAP_BELLCHIME_TRAIL                 (7 | (6 << 8))
+#define MAP_ECRUTEAK_CITY_GYM               (8 | (6 << 8))
+#define MAP_ECRUTEAK_CITY_POKEMON_CENTER_B1 (9 | (6 << 8))
 
 // gMapGroup_IndoorOlivine
 #define MAP_OLIVINE_CITY_POKEMON_CENTER (0 | (7 << 8))
@@ -1025,6 +1026,6 @@
 
 #define MAP_GROUPS_COUNT 32
 
-// static const u8 MAP_GROUP_COUNT[] = {71, 5, 5, 6, 5, 29, 9, 10, 6, 6, 6, 5, 5, 7, 6, 9, 7, 18, 10, 12, 1, 7, 27, 28, 91, 0, 27, 126, 113, 126, 74, 97, 0};
+// static const u8 MAP_GROUP_COUNT[] = {71, 5, 5, 6, 5, 29, 10, 10, 6, 6, 6, 5, 5, 7, 6, 9, 7, 18, 10, 12, 1, 7, 27, 28, 91, 0, 27, 126, 113, 126, 74, 97, 0};
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

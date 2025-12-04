@@ -1996,3 +1996,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/WhirlIslands_B3F/scripts.inc"
 
 	.include "data/maps/WhirlIslands_B1F_Inner/scripts.inc"
+
+	.include "data/maps/EcruteakCity_PokemonCenter_B1/scripts.inc"

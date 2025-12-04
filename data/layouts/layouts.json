@@ -8780,6 +8780,16 @@
       "secondary_tileset": "gTileset_WhirlIslands",
       "border_filepath": "data/layouts/WhirlIslands_B1F_Inner/border.bin",
       "blockdata_filepath": "data/layouts/WhirlIslands_B1F_Inner/map.bin"
+    },
+    {
+      "id": "LAYOUT_ECRUTEAK_CITY_POKEMON_CENTER_B1",
+      "name": "EcruteakCity_PokemonCenter_B1_Layout",
+      "width": 16,
+      "height": 10,
+      "primary_tileset": "gTileset_Johto_Building",
+      "secondary_tileset": "gTileset_Kanto_PokemonCenter",
+      "border_filepath": "data/layouts/EcruteakCity_PokemonCenter_B1/border.bin",
+      "blockdata_filepath": "data/layouts/EcruteakCity_PokemonCenter_B1/map.bin"
     }
   ]
 }
