@@ -8705,7 +8705,7 @@
       "id": "LAYOUT_FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN",
       "name": "FuchsiaCity_SafariZoneMountain_Layout",
       "width": 68,
-      "height": 20,
+      "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_NationalPark",
       "border_filepath": "data/layouts/FuchsiaCity_SafariZoneMountain/border.bin",
