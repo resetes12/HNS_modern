@@ -230,7 +230,7 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_ICE_PATH]         = 0x38,
     [MAPSEC_MT_SILVER]        = 0x39,
     [MAPSEC_TOHJO_FALLS]      = 0x3A,
-    [MAPSEC_SAFARI_ZONE_GATE] = 0x3B, //Covers the whole Safari Zone
+    [MAPSEC_SAFARI_ZONE_GATE] = 0x3B,
     [MAPSEC_DRAGONS_DEN]      = 0x3C,
     [MAPSEC_CLIFF_CAVE]       = 0x3D,
     [MAPSEC_ROCKET_HIDEOUT]   = 0x3E,
@@ -239,7 +239,7 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_MT_MORTAR]        = 0x40,
     [MAPSEC_WHIRL_ISLANDS]    = 0x41,
     [MAPSEC_BURNED_TOWER]     = 0x42,
-    [MAPSEC_SAFARI_ZONE]      = 0x43, //This one only affects one Safari Zone area: Safari Top Left (might be a bug?)
+    [MAPSEC_SAFARI_ZONE]      = 0x43, //Unused
     //Dungeons: Kanto
     [MAPSEC_ROCK_TUNNEL]      = 0x44,
     [MAPSEC_SEAFOAM_ISLANDS]  = 0x45,
@@ -267,13 +267,25 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_CINNABAR_ISLAND]  = 0x57,
     //11
     [MAPSEC_SAFFRON_CITY]     = 0x58,
-    [MAPSEC_FUCHSIA_CITY]     = 0x59, //This covers the Safari Zone too
+    [MAPSEC_FUCHSIA_CITY]     = 0x59,
     [MAPSEC_CELADON_CITY]     = 0x5A,
     [MAPSEC_PALLET_TOWN]      = 0x5B,
     [MAPSEC_VIRIDIAN_CITY]    = 0x5C,
     [MAPSEC_PEWTER_CITY]      = 0x5D,
     [MAPSEC_LAVENDER_TOWN]    = 0x5E,
-    [MAPSEC_BATTLE_FRONTIER]  = 0x5F
+    [MAPSEC_BATTLE_FRONTIER]  = 0x5F,
+    //12
+    [MAPSEC_SAFARI_ZONE_AREA1]        = 0x60, //Covers Johto Safari Zone
+    [MAPSEC_SAFARI_ZONE_AREA2]        = 0x61,
+    [MAPSEC_SAFARI_ZONE_AREA3]        = 0x62,
+    [MAPSEC_SAFARI_ZONE_AREA4]        = 0x63,
+    [MAPSEC_SAFARI_ZONE_AREA5]        = 0x64,
+    [MAPSEC_SAFARI_ZONE_AREA6]        = 0x65,
+    [MAPSEC_SAFARI_ZONE_FUCHSIA_1]    = 0x66, //Covers Kanto Safari Zone
+    [MAPSEC_SAFARI_ZONE_FUCHSIA_2]    = 0x67,
+    //13
+    [MAPSEC_SAFARI_ZONE_FUCHSIA_3]    = 0x68,
+    [MAPSEC_SAFARI_ZONE_FUCHSIA_4]    = 0x69,
 };
 
 //tx_randomizer_and_challenges

@@ -1180,7 +1180,7 @@ struct SaveBlock1
         u8 tx_Mode_TypeEffectiveness:1;
         u8 tx_Nuzlocke_RareCandy:1; //Unused in Modern HnS (Use cheating lady in Cherrygrove)
         u8 tx_Mode_GenOneRecharge:1; //Moved from the options menu
-        u8 NuzlockeEncounterFlags[12];
+        u8 NuzlockeEncounterFlags[14];
 };
 
 extern struct SaveBlock1* gSaveBlock1Ptr;

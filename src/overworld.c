@@ -618,6 +618,12 @@ static const u8 sMapsecToRegion[] = {
 	[MAPSEC_OLIVINE_CITY]				= REGION_JOHTO,
 	[MAPSEC_CIANWOOD_CITY]				= REGION_JOHTO,
 	[MAPSEC_SAFARI_ZONE_GATE]			= REGION_JOHTO,
+    [MAPSEC_SAFARI_ZONE_AREA1]          = REGION_JOHTO,
+    [MAPSEC_SAFARI_ZONE_AREA2]          = REGION_JOHTO,
+    [MAPSEC_SAFARI_ZONE_AREA3]          = REGION_JOHTO,
+    [MAPSEC_SAFARI_ZONE_AREA4]          = REGION_JOHTO,
+    [MAPSEC_SAFARI_ZONE_AREA5]          = REGION_JOHTO,
+    [MAPSEC_SAFARI_ZONE_AREA6]          = REGION_JOHTO,
 	[MAPSEC_MAHOGANY_TOWN]				= REGION_JOHTO,
 	[MAPSEC_BLACKTHORN_CITY]			= REGION_JOHTO,
 	[MAPSEC_INDIGO_PLATEAU]				= REGION_JOHTO,	// GSC/HGSS still uses johto themes for 26/27/28 and elite four
@@ -678,6 +684,10 @@ static const u8 sMapsecToRegion[] = {
 	[MAPSEC_VERMILION_CITY]				= REGION_KANTO,
 	[MAPSEC_CELADON_CITY]				= REGION_KANTO,
 	[MAPSEC_FUCHSIA_CITY]				= REGION_KANTO,
+    [MAPSEC_SAFARI_ZONE_FUCHSIA_1]      = REGION_KANTO, 
+    [MAPSEC_SAFARI_ZONE_FUCHSIA_2]      = REGION_KANTO,
+    [MAPSEC_SAFARI_ZONE_FUCHSIA_3]      = REGION_KANTO,
+    [MAPSEC_SAFARI_ZONE_FUCHSIA_4]      = REGION_KANTO,
 	[MAPSEC_SAFFRON_CITY]				= REGION_KANTO,
 	[MAPSEC_CINNABAR_ISLAND]			= REGION_KANTO,
 	[MAPSEC_SOUTHERN_ISLAND]			= REGION_KANTO,
@@ -1588,25 +1598,41 @@ u8 NuzlockeGetCurrentRegionMapSectionId(void) //tx_randomizer_and_challenges @Ku
     MgbaPrintf(MGBA_LOG_DEBUG, "location.mapGroup=%d; location.mapNum=%d; location.regionMapSectionId=%d", gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum)->regionMapSectionId);
     #endif
 
-    if (regionMapSectionId == MAPSEC_SAFARI_ZONE)
+    // Johto Safari Zone
+    if (regionMapSectionId == MAPSEC_SAFARI_ZONE_GATE)
     {
         switch(gSaveBlock1Ptr->location.mapNum)
         {
-        case MAP_NUM(SAFARI_ZONE_SOUTH):
+        case MAP_NUM(SAFARI_ZONE_TOP_LEFT):
             return MAPSEC_SAFARI_ZONE_AREA1;
-        case MAP_NUM(SAFARI_ZONE_SOUTHWEST):
+        case MAP_NUM(SAFARI_ZONE_LOW_MID):
             return MAPSEC_SAFARI_ZONE_AREA2;
-        case MAP_NUM(SAFARI_ZONE_NORTHWEST):
+        case MAP_NUM(SAFARI_ZONE_LOW_LEFT):
             return MAPSEC_SAFARI_ZONE_AREA3;
-        case MAP_NUM(SAFARI_ZONE_NORTH):
+        case MAP_NUM(SAFARI_ZONE_LOW_RIGHT):
             return MAPSEC_SAFARI_ZONE_AREA4;
-        case MAP_NUM(SAFARI_ZONE_SOUTHEAST):
+        case MAP_NUM(SAFARI_ZONE_TOP_MID):
             return MAPSEC_SAFARI_ZONE_AREA5;
-        case MAP_NUM(SAFARI_ZONE_NORTHEAST):
+        case MAP_NUM(SAFARI_ZONE_TOP_RIGHT):
             return MAPSEC_SAFARI_ZONE_AREA6;
         }
     }
-
+    // Fuchsia City Safari Zone
+    else if (regionMapSectionId == MAPSEC_FUCHSIA_CITY)
+    {
+        switch(gSaveBlock1Ptr->location.mapNum)
+        {
+        case MAP_NUM(FUCHSIA_CITY_SAFARI_ZONE_BEACH):
+            return MAPSEC_SAFARI_ZONE_FUCHSIA_1;
+        case MAP_NUM(FUCHSIA_CITY_SAFARI_ZONE_BRUSH):
+            return MAPSEC_SAFARI_ZONE_FUCHSIA_2;
+        case MAP_NUM(FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN):
+            return MAPSEC_SAFARI_ZONE_FUCHSIA_3;
+        case MAP_NUM(FUCHSIA_CITY_SAFARI_ZONE_CAVE):
+            return MAPSEC_SAFARI_ZONE_FUCHSIA_4;
+        }
+    }
+    
     return regionMapSectionId;
 }
 

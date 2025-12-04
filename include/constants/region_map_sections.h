@@ -230,6 +230,12 @@
 #define MAPSEC_SAFARI_ZONE_AREA5            0xDC
 #define MAPSEC_SAFARI_ZONE_AREA6            0xDD
 
+//Kanto Hoennian Safari Zone
+#define MAPSEC_SAFARI_ZONE_FUCHSIA_1        0xDE
+#define MAPSEC_SAFARI_ZONE_FUCHSIA_2        0xDF
+#define MAPSEC_SAFARI_ZONE_FUCHSIA_3        0xE0
+#define MAPSEC_SAFARI_ZONE_FUCHSIA_4        0xE1
+
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE
 #define METLOC_FATEFUL_ENCOUNTER            0xFF

@@ -95,9 +95,11 @@ Text_Hard_Mode::
 	.string "Hard mode is {STR_VAR_1}$"
 
 Debug_Script_4::
+	setflag FLAG_VISITED_KANTO
 	end
 
 Debug_Script_5::
+	clearflag FLAG_VISITED_KANTO
 	end
 
 Debug_Script_6::
