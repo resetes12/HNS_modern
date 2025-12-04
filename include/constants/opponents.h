@@ -853,7 +853,7 @@
 #define TRAINER_BORIS                      849
 #define TRAINER_NICOLE                     850
 #define TRAINER_RED                         851
-#define TRAINER_LEAF                        852
+#define TRAINER_NURSE                       852
 #define TRAINER_LUCY_BF_BRAIN               853
 #define TRAINER_BRANDON_BF_BRAIN            854
 #define TRAINER_GRUNT_12                    855

@@ -243,9 +243,9 @@ BattleFrontier_Lounge9_EV_Column_Text:
     .string "IV-MAN trains POKéMON to maximize IVs.\l"
     .string "He can also adjust IVs to change the\l"
     .string "type of HIDDEN POWER.\p"
-    @.string "EXPERIENCE TRAINING:\n"
-    @.string "The EXPERIENCE NURSE on the bottom\l"
-    @.string "left offers training for your team.\p"
+    .string "EXPERIENCE TRAINING:\n"
+    .string "The EXPERIENCE NURSE on the bottom\l"
+    .string "right offers training for your team.\p"
     .string "ABILITY SWAPPER:\n"
     .string "The ABILITY EXPERT on the right can\l"
     .string "swap between the abilities a POKéMON\l"
@@ -1073,7 +1073,7 @@ BattleFrontier_Lounge9_IV_Finish:
 
 BattleFrontier_Lounge9_Nurse::
 	faceplayer
-	goto_if_unset FLAG_SYS_GAME_CLEAR, BattleFrontier_Lounge9_NurseChampion
+	goto_if_unset FLAG_DEFEATED_RED, BattleFrontier_Lounge9_NurseChampion
 	msgbox BattleFrontier_Lounge9_NurseRepeat2, MSGBOX_YESNO
 	switch VAR_RESULT
 	case NO, BattleFrontier_Lounge9_Chansey1End
@@ -1081,7 +1081,7 @@ BattleFrontier_Lounge9_Nurse::
 	case MULTI_B_PRESSED, BattleFrontier_Lounge9_Chansey1End
 
 BattleFrontier_Lounge9_NurseBattle::
-	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_JOEY, 0, BattleFrontier_Lounge9_NurseIntro, BattleFrontier_Lounge9_NurseDefeat, BattleFrontier_Lounge9_ChanseyBattleAgain
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_NURSE, 0, BattleFrontier_Lounge9_NurseIntro, BattleFrontier_Lounge9_NurseDefeat, BattleFrontier_Lounge9_ChanseyBattleAgain
 	end
 
 BattleFrontier_Lounge9_Chansey1End::
@@ -1101,9 +1101,9 @@ BattleFrontier_Lounge9_NurseChampion:
 	end
 
 BattleFrontier_Lounge9_NurseChampionText:
-	.string "I'm the EXPERIENCE NURSE!\n"
-	.string "Unfortunately, I can't battle you\l"
-	.string "unless you become the CHAMPION.$"
+	.string "I'm the EXP. NURSE! Unfortunately, I\n"
+	.string "can't battle you unless you beat the\l"
+	.string "STRONGEST TRAINER.$"
 
 BattleFrontier_Lounge9_NurseIntro:
 	.string "Let's go, BLISSEY!$"
@@ -1115,7 +1115,8 @@ BattleFrontier_Lounge9_NurseRepeat:
 	.string "If you want, we can battle again!$"
 
 BattleFrontier_Lounge9_NurseRepeat2:
-	.string "Ready for a battle?$"
+	.string "I'm the EXPERIENCE NURSE!\n"
+	.string "Should we battle?$"
 
 @Ability swapper
 

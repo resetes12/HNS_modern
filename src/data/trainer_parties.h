@@ -21981,3 +21981,42 @@ static const struct TrainerMonNoItemDefaultMoves sParty_DuffAndEda[] = { //Young
     .species = SPECIES_CLOYSTER,
     },
 };
+
+static const struct TrainerMonNoItemCustomMoves sParty_Nurse[] = {
+    {
+    .iv = 0,
+    .lvl = 100,
+    .species = SPECIES_BLISSEY,
+    .moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = 0,
+    .lvl = 100,
+    .species = SPECIES_BLISSEY,
+    .moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = 0,
+    .lvl = 100,
+    .species = SPECIES_BLISSEY,
+    .moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = 0,
+    .lvl = 100,
+    .species = SPECIES_BLISSEY,
+    .moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = 0,
+    .lvl = 100,
+    .species = SPECIES_BLISSEY,
+    .moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = 0,
+    .lvl = 100,
+    .species = SPECIES_BLISSEY,
+    .moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    }
+};
