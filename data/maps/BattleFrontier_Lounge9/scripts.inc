@@ -17,7 +17,7 @@ BattleFrontier_Lounge9_Heal::
 	end
 
 BattleFrontier_Lounge9_Heal_TEXT:
-	.string "Hi! Welcome to the TRAINING DOJO!\n"
+	.string "Hi! Welcome to the FIGHTING DOJO!\n"
 	.string "I will heal your POKéMON.$"
 
 BattleFrontier_Lounge9_Heal_TEXT2:
@@ -227,7 +227,7 @@ BattleFrontier_Lounge9_EV_Column::
 	end
 
 BattleFrontier_Lounge9_EV_Column_Text:
-    .string "Welcome to the TRAINING DOJO!\p"
+    .string "Welcome to the FIGHTING DOJO!\p"
     .string "Here, you will find various types of\n"
     .string "training to improve POKéMON STATS.\p"
     .string "EV RESET:\n"
