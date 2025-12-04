@@ -3241,7 +3241,7 @@ void SetMoveEffect(bool8 primary, u8 certain)
                 }
                 break;
             case MOVE_EFFECT_RECHARGE:
-                if(gSaveBlock2Ptr->optionsGenOneRecharge){    
+                if(gSaveBlock1Ptr->tx_Mode_GenOneRecharge){    
                     // Only recharge if the target survived the hit
                     if (gBattleMons[gBattlerTarget].hp != 0)
                     {

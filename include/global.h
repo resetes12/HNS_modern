@@ -570,7 +570,6 @@ struct SaveBlock2
               u16 optionsAutorunDive:1;
               u16 optionsNewBattleUI:1;
               u8 rivalName[PLAYER_NAME_LENGTH + 1];
-              u16 optionsGenOneRecharge:1;
 }; // sizeof=0xF2C
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
@@ -1180,7 +1179,8 @@ struct SaveBlock1
         u8 tx_Difficulty_HardExp:1; //unused in HnS
         u8 tx_Mode_TypeEffectiveness:1;
         u8 tx_Nuzlocke_RareCandy:1; //Unused in Modern HnS (Use cheating lady in Cherrygrove)
-        u8 NuzlockeEncounterFlags[12]; //
+        u8 tx_Mode_GenOneRecharge:1; //Moved from the options menu
+        u8 NuzlockeEncounterFlags[12];
 };
 
 extern struct SaveBlock1* gSaveBlock1Ptr;

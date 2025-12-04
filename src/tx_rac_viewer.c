@@ -127,6 +127,7 @@ static const u8 sText_TypeChart_Label[]     = _("TYPE CHART");
 static const u8 sText_Stats_Label[]         = _("POKéMON STATS");
 static const u8 sText_Types_Label[]         = _("POKéMON TYPES");
 static const u8 sText_Extra_Legendaries_Label[]         = _("EXTRA LEGEND.");
+static const u8 sText_Gen1Recharge[]         = _("GEN 1 RECHARGE");
 
 //page 2 Features
 static const u8 sText_RTCType_Label[]      = _("CLOCK TYPE");
@@ -444,6 +445,7 @@ static u8 GetSel_TypeChart(void)          { return gSaveBlock1Ptr->tx_Mode_TypeE
 static u8 GetSel_Stats(void)              { return gSaveBlock1Ptr->tx_Mode_New_Stats           ? 1 : 0; }
 static u8 GetSel_Types(void)              { return gSaveBlock1Ptr->tx_Mode_Modern_Types        ? 1 : 0; }
 static u8 GetSel_ExtraLegends(void)       { return gSaveBlock1Ptr->tx_Mode_New_Legendaries     ? 1 : 0; }
+static u8 GetSel_Gen1Recharge(void)       { return gSaveBlock1Ptr->tx_Mode_GenOneRecharge      ? 1 : 0; }
 
 //Page 2
 static u8 GetSel_Feature_RTCType(void)      { return gSaveBlock1Ptr->tx_Features_RTCType          ? 1 : 0; }
@@ -565,6 +567,7 @@ static const struct ViewerBoolRow sBoolRows[] = {
     { sText_LegendaryAbils_Label,    GetSel_LegendaryAbilities },
     { sText_Mints_Label,             GetSel_Mints              },
     { sText_InfiniteTMs_Label,       GetSel_InfiniteTMs        },
+    { sText_Gen1Recharge,            GetSel_Gen1Recharge       },
     { sText_SurvivePoison_Label,     GetSel_SurvivePoison      },
 };
 

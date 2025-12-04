@@ -57,6 +57,7 @@ enum
     MENUITEM_MODE_LEGENDARY_ABILITIES,
     MENUITEM_MODE_MINTS,
     MENUITEM_MODE_INFINITE_TMS,
+    MENUITEM_MODE_GEN_ONE_RECHARGE,
     MENUITEM_MODE_SURVIVE_POISON,
     MENUITEM_MODE_NEXT,
     MENUITEM_MODE_COUNT,
@@ -334,6 +335,7 @@ static void DrawChoices_Difficulty_CatchRate(int selection, int y);
 static void DrawChoices_Mode_New_Effectiveness(int selection, int y);
 static void DrawChoices_Difficulty_Escape_Rope_Dig(int selection, int y);
 static void DrawChoices_Features_Shiny_Colors(int selection, int y);
+static void DrawChoices_Mode_GenOneRecharge(int selection, int y);
 
 static void PrintCurrentSelections(void);
 
@@ -381,6 +383,7 @@ struct // MENU_MODE
     [MENUITEM_MODE_LEGENDARY_ABILITIES]   = {DrawChoices_Mode_Legendary_Abilities,  ProcessInput_Options_Two},
     //[MENUITEM_MODE_NEW_LEGENDARIES]       = {DrawChoices_Mode_New_Legendaries,      ProcessInput_Options_Two},
     [MENUITEM_MODE_NEW_EFFECTIVENESS]     = {DrawChoices_Mode_New_Effectiveness,    ProcessInput_Options_Two},
+    [MENUITEM_MODE_GEN_ONE_RECHARGE]      = {DrawChoices_Mode_GenOneRecharge,       ProcessInput_Options_Two},
     [MENUITEM_MODE_NEXT]                  = {NULL, NULL},
 };
 
@@ -396,7 +399,7 @@ struct // MENU_FEATURES
     //[MENUITEM_FEATURES_EASY_FEEBAS]           = {DrawChoices_Features_EasyFeebas,           ProcessInput_Options_Two},
     //[MENUITEM_FEATURES_UNLIMITED_WT]          = {DrawChoices_Features_Unlimited_WT,         ProcessInput_Options_Two},
     [MENUITEM_FEATURES_FRONTIER_BANS]         = {DrawChoices_Features_FrontierBans,         ProcessInput_Options_Two},
-    [MENUITEM_FEATURES_SHINY_COLOR]           = {DrawChoices_Features_Shiny_Colors,          ProcessInput_Options_Two},
+    [MENUITEM_FEATURES_SHINY_COLOR]           = {DrawChoices_Features_Shiny_Colors,         ProcessInput_Options_Two},
     [MENUITEM_FEATURES_NEXT]                  = {NULL, NULL},
 };
 
@@ -496,6 +499,7 @@ static const u8 sText_Modern_Moves[]        = _("{PKMN} MOVEPOOL");
 static const u8 sText_Legendary_Abilities[] = _("LEGEN. ABILITIES");
 static const u8 sText_New_Legendaries[]     = _("{COLOR 3}{SHADOW 3}EXTRA LEGEND.");
 static const u8 sText_New_Effectiveness[]   = _("TYPE CHART");
+static const u8 sText_GenOneRecharge[]      = _("GEN 1 RECHARGE");
 static const u8 sText_Next[]                = _("NEXT");
 // Menu left side option names text
 static const u8 *const sOptionMenuItemsNamesMode[MENUITEM_MODE_COUNT] =
@@ -515,6 +519,7 @@ static const u8 *const sOptionMenuItemsNamesMode[MENUITEM_MODE_COUNT] =
     [MENUITEM_MODE_LEGENDARY_ABILITIES]       = sText_Legendary_Abilities,
     //[MENUITEM_MODE_NEW_LEGENDARIES]           = sText_New_Legendaries,
     [MENUITEM_MODE_NEW_EFFECTIVENESS]         = sText_New_Effectiveness,
+    [MENUITEM_MODE_GEN_ONE_RECHARGE]          = sText_GenOneRecharge,
     [MENUITEM_MODE_NEXT]                      = sText_Next,
 };
 
@@ -688,6 +693,7 @@ static bool8 CheckConditions(int selection)
             case MENUITEM_MODE_LEGENDARY_ABILITIES:       return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
             //case MENUITEM_MODE_NEW_LEGENDARIES:           return FALSE;
             case MENUITEM_MODE_NEW_EFFECTIVENESS:         return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
+            case MENUITEM_MODE_GEN_ONE_RECHARGE:          return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
         default:       return FALSE;
         }
     case MENU_FEATURES:
@@ -816,7 +822,9 @@ static const u8 sText_Description_Mode_New_Legendaries_Off[]      = _("No extra 
 static const u8 sText_Description_Mode_New_Legendaries_On[]       = _("Extra legendaries from GEN I and II\nare added via ingame events.");
 static const u8 sText_Description_Mode_New_Effectiveness_Original[]  = _("Type effectiveness from Gen VI!\nGHOST / DARK do x1 to STEEL.");
 static const u8 sText_Description_Mode_New_Effectiveness_Modern[]    = _("Rebalanced type effectiveness\nfor certain types. Check docs.");
-static const u8 sText_Description_Mode_Next[]                     = _("Continue to Features options.");
+static const u8 sText_Description_Gen1Recharge_Off[]                 = _("RECHARGE MOVES like HYPER BEAM will\nalways need to recharge after use.");
+static const u8 sText_Description_Gen1Recharge_On[]                  = _("If a RECHARGE MOVE KO's the opponent,\nno recharge turn is needed.");
+static const u8 sText_Description_Mode_Next[]                        = _("Continue to Features options.");
 
 static const u8 *const sOptionMenuItemDescriptionsMode[MENUITEM_MODE_COUNT][5] =
 {
@@ -835,6 +843,7 @@ static const u8 *const sOptionMenuItemDescriptionsMode[MENUITEM_MODE_COUNT][5] =
     [MENUITEM_MODE_LEGENDARY_ABILITIES]   = {sText_Description_Mode_Leg_Abilities_Off,      sText_Description_Mode_Leg_Abilities_On,      sText_Empty,                                        sText_Empty,                                        sText_Empty},
     //[MENUITEM_MODE_NEW_LEGENDARIES]       = {sText_Description_Mode_New_Legendaries_Off,    sText_Description_Mode_New_Legendaries_On,    sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_MODE_NEW_EFFECTIVENESS]     = {sText_Description_Mode_New_Effectiveness_Original,    sText_Description_Mode_New_Effectiveness_Modern,    sText_Empty,                                        sText_Empty,                                        sText_Empty},
+    [MENUITEM_MODE_GEN_ONE_RECHARGE]      = {sText_Description_Gen1Recharge_Off,            sText_Description_Gen1Recharge_On,            sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_MODE_NEXT]                  = {sText_Description_Mode_Next,                   sText_Empty,                                  sText_Empty,                                        sText_Empty,                                        sText_Empty},
 };
 
@@ -1057,6 +1066,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledMode[MENUITEM_MODE_COU
     [MENUITEM_MODE_LEGENDARY_ABILITIES]   = sText_Empty,
     //[MENUITEM_MODE_NEW_LEGENDARIES]       = sText_Description_Disabled_Feature,
     [MENUITEM_MODE_NEW_EFFECTIVENESS]     = sText_Empty,
+    [MENUITEM_MODE_GEN_ONE_RECHARGE]      = sText_Empty,
 };
 
 // Disabled descriptions
@@ -1474,6 +1484,7 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         gSaveBlock1Ptr->tx_Mode_Legendary_Abilities         = TX_MODE_LEGENDARY_ABILITIES;
         gSaveBlock1Ptr->tx_Mode_New_Legendaries             = TX_MODE_NEW_LEGENDARIES;
         gSaveBlock1Ptr->tx_Mode_TypeEffectiveness           = TX_MODE_TYPE_EFFECTIVENESS;
+        gSaveBlock1Ptr->tx_Mode_GenOneRecharge              = TX_MODE_GEN1_RECHARGE;
 
         gSaveBlock1Ptr->tx_Features_RTCType                 = TX_FEATURES_RTC_TYPE;
         gSaveBlock1Ptr->tx_Features_ShinyChance             = TX_FEATURES_SHINY_CHANCE;
@@ -1548,6 +1559,7 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         sOptions->sel_mode[MENUITEM_MODE_LEGENDARY_ABILITIES]    = gSaveBlock1Ptr->tx_Mode_Legendary_Abilities;
         //sOptions->sel_mode[MENUITEM_MODE_NEW_LEGENDARIES]        = gSaveBlock1Ptr->tx_Mode_New_Legendaries;
         sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS]      = gSaveBlock1Ptr->tx_Mode_TypeEffectiveness;
+        sOptions->sel_mode[MENUITEM_MODE_GEN_ONE_RECHARGE]       = gSaveBlock1Ptr->tx_Mode_GenOneRecharge;
         //MENU FEATURES
         sOptions->sel_features[MENUITEM_FEATURES_RTC_TYPE]               = gSaveBlock1Ptr->tx_Features_RTCType;
         sOptions->sel_features[MENUITEM_FEATURES_SHINY_CHANCE]           = gSaveBlock1Ptr->tx_Features_ShinyChance;
@@ -1904,6 +1916,7 @@ void SaveData_TxRandomizerAndChallenges(void)
     gSaveBlock1Ptr->tx_Mode_Legendary_Abilities         = sOptions->sel_mode[MENUITEM_MODE_LEGENDARY_ABILITIES]; 
     //gSaveBlock1Ptr->tx_Mode_New_Legendaries             = sOptions->sel_mode[MENUITEM_MODE_NEW_LEGENDARIES]; 
     gSaveBlock1Ptr->tx_Mode_TypeEffectiveness           = sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS];
+    gSaveBlock1Ptr->tx_Mode_GenOneRecharge              = sOptions->sel_mode[MENUITEM_MODE_GEN_ONE_RECHARGE];
     //MENU FEAUTRES
     gSaveBlock1Ptr->tx_Features_RTCType                     = sOptions->sel_features[MENUITEM_FEATURES_RTC_TYPE]; 
     gSaveBlock1Ptr->tx_Features_ShinyChance                 = sOptions->sel_features[MENUITEM_FEATURES_SHINY_CHANCE]; 
@@ -2343,6 +2356,8 @@ static void DrawChoices_Mode_Classic_Modern_Selector(int selection, int y)
         //sOptions->sel_mode[MENUITEM_MODE_NEW_LEGENDARIES]           = TX_MODE_NEW_LEGENDARIES;
         //gSaveBlock1Ptr->tx_Mode_New_Legendaries = 0;
         sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS]         = TX_MODE_TYPE_EFFECTIVENESS;
+        gSaveBlock1Ptr->tx_Mode_TypeEffectiveness = 0;
+        sOptions->sel_mode[MENUITEM_MODE_GEN_ONE_RECHARGE]          = TX_MODE_TYPE_EFFECTIVENESS;
         gSaveBlock1Ptr->tx_Mode_TypeEffectiveness = 0;
     }
 }
@@ -3283,6 +3298,25 @@ static void DrawChoices_Features_Shiny_Colors(int selection, int y)
     else
     {
         gSaveBlock1Ptr->tx_Features_ShinyColors = 1; //New shinies
+    }
+
+    DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
+}
+
+static void DrawChoices_Mode_GenOneRecharge(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_MODE_GEN_ONE_RECHARGE);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    if (selection == 0)
+    {
+        gSaveBlock1Ptr->tx_Mode_GenOneRecharge = 0; //Gen 3 recharge
+    }
+    else
+    {
+        gSaveBlock1Ptr->tx_Mode_GenOneRecharge = 1; //Gen 1 recharge
     }
 
     DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
