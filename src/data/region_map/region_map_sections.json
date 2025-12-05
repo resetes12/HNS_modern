@@ -919,6 +919,14 @@
       "y": 5,
       "width": 1,
       "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ARTISAN_CAVE",
+      "name": "ARTISAN CAVE",
+      "x": 14,
+      "y": 14,
+      "width": 1,
+      "height": 1
     }
   ]
 }
