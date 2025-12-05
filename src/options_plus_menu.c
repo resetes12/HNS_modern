@@ -1309,7 +1309,7 @@ static int ProcessInput_FrameType(int selection)
 static int ProcessInput_BattleStyle(int selection)
 {
     if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
-        if ((gSaveBlock2Ptr->optionsDifficulty == 2) && (gSaveBlock1Ptr->tx_Features_LimitDifficulty == 1) && (FlagGet(FLAG_SYS_GAME_CLEAR)))
+        if ((gSaveBlock2Ptr->optionsDifficulty == 2) && (gSaveBlock1Ptr->tx_Features_LimitDifficulty == 1) && (FlagGet(FLAG_DEFEATED_RED)))
         {
             selection ^= 1;
         }
@@ -1329,14 +1329,14 @@ static int ProcessInput_Difficulty(int selection)
 {
     if (JOY_NEW(DPAD_RIGHT))
     {
-        if ((gSaveBlock1Ptr->tx_Features_LimitDifficulty == 1) && (FlagGet(FLAG_SYS_GAME_CLEAR) == 0))
+        if ((gSaveBlock1Ptr->tx_Features_LimitDifficulty == 1) && (FlagGet(FLAG_DEFEATED_RED) == 0))
             PlaySE(SE_FAILURE);
         else if (++selection > (3 - 1))
             selection = 0;
     }
     if (JOY_NEW(DPAD_LEFT))
     {
-        if ((gSaveBlock1Ptr->tx_Features_LimitDifficulty == 1) && (FlagGet(FLAG_SYS_GAME_CLEAR) == 0))
+        if ((gSaveBlock1Ptr->tx_Features_LimitDifficulty == 1) && (FlagGet(FLAG_DEFEATED_RED) == 0))
             PlaySE(SE_FAILURE);
         else if (--selection < 0)
             selection = (3 - 1);

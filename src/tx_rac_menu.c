@@ -111,11 +111,11 @@ enum
 
 enum
 {
-    //MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY,
+    MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY,
     MENUITEM_DIFFICULTY_PARTY_LIMIT,
     MENUITEM_DIFFICULTY_LEVEL_CAP,
     MENUITEM_DIFFICULTY_EXP_MULTIPLIER,
-    //MENUITEM_DIFFICULTY_HARD_EXP,
+    MENUITEM_DIFFICULTY_HARD_EXP,
     MENUITEM_DIFFICULTY_CATCH_RATE,
     MENUITEM_DIFFICULTY_ITEM_PLAYER,
     MENUITEM_DIFFICULTY_ITEM_TRAINER,
@@ -304,7 +304,7 @@ static void DrawChoices_Challenges_OneTypeChallenge(int selection, int y);
 static void DrawChoices_Challenges_BaseStatEqualizer(int selection, int y);
 static void DrawChoices_Challenges_Mirror(int selection, int y);
 static void DrawChoices_Challenges_Mirror_Thief(int selection, int y);
-//static void DrawChoices_Challenges_LimitDifficulty(int selection, int y);
+static void DrawChoices_Challenges_LimitDifficulty(int selection, int y);
 static void DrawChoices_Challenges_MaxPartyIVs(int selection, int y);
 static void DrawChoices_Challenges_PCHeal(int selection, int y);
 static void DrawChoices_Challenges_LessEscapes(int selection, int y);
@@ -330,7 +330,7 @@ static void DrawChoices_Mode_Modern_Moves(int selection, int y);
 static void DrawChoices_Mode_Legendary_Abilities(int selection, int y);
 static void DrawChoices_Mode_New_Legendaries(int selection, int y);
 static void DrawChoices_Features_FrontierBans(int selection, int y);
-//static void DrawChoices_Difficulty_HardExp(int selection, int y);
+static void DrawChoices_Difficulty_HardExp(int selection, int y);
 static void DrawChoices_Difficulty_CatchRate(int selection, int y);
 static void DrawChoices_Mode_New_Effectiveness(int selection, int y);
 static void DrawChoices_Difficulty_Escape_Rope_Dig(int selection, int y);
@@ -457,11 +457,11 @@ struct // MENU_DIFFICULTY
     [MENUITEM_DIFFICULTY_NO_EVS]                = {DrawChoices_Challenges_NoEVs,            ProcessInput_Options_Two},
     [MENUITEM_DIFFICULTY_SCALING_IVS]           = {DrawChoices_Challenges_ScalingIVs,       ProcessInput_Options_Three},
     [MENUITEM_DIFFICULTY_SCALING_EVS]           = {DrawChoices_Challenges_ScalingEVs,       ProcessInput_Options_Four},
-    //[MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY]      = {DrawChoices_Challenges_LimitDifficulty,  ProcessInput_Options_Two},
+    [MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY]      = {DrawChoices_Challenges_LimitDifficulty,  ProcessInput_Options_Two},
     [MENUITEM_DIFFICULTY_MAX_PARTY_IVS]         = {DrawChoices_Challenges_MaxPartyIVs,      ProcessInput_Options_Three},
     [MENUITEM_DIFFICULTY_LESS_ESCAPES]          = {DrawChoices_Challenges_LessEscapes,      ProcessInput_Options_Two},
     [MENUITEM_DIFFICULTY_ESCAPE_ROPE_DIG]       = {DrawChoices_Difficulty_Escape_Rope_Dig,  ProcessInput_Options_Two},
-    //[MENUITEM_DIFFICULTY_HARD_EXP]              = {DrawChoices_Difficulty_HardExp,          ProcessInput_Options_Two},
+    [MENUITEM_DIFFICULTY_HARD_EXP]              = {DrawChoices_Difficulty_HardExp,          ProcessInput_Options_Two},
     [MENUITEM_DIFFICULTY_CATCH_RATE]            = {DrawChoices_Difficulty_CatchRate,        ProcessInput_Options_Four},
     [MENUITEM_DIFFICULTY_NEXT] = {NULL, NULL},
 };
@@ -609,8 +609,8 @@ static const u8 sText_Items_Trainer[]       = _("TRAINER ITEMS");
 static const u8 sText_NoEVs[]               = _("PLAYER EVs");
 static const u8 sText_ScalingIVs[]          = _("TRAINER IVs");
 static const u8 sText_ScalingEVs[]          = _("TRAINER EVs");
-//static const u8 sText_LimitDifficulty[]     = _("LOCK DIFFICULTY");
-//static const u8 sText_HardExp[]             = _("HARD MODE EXP.");
+static const u8 sText_LimitDifficulty[]     = _("LOCK DIFFICULTY");
+static const u8 sText_HardExp[]             = _("HARD MODE EXP.");
 static const u8 sText_CatchRate[]           = _("CATCH RATE");
 static const u8 sText_MaxPartyIvs[]         = _("PLAYER IVs");
 static const u8 sText_DigRope[]             = _("ESC. ROPE / DIG");
@@ -624,8 +624,8 @@ static const u8 *const sOptionMenuItemsNamesDifficulty[MENUITEM_DIFFICULTY_COUNT
     [MENUITEM_DIFFICULTY_NO_EVS]                = sText_NoEVs,
     [MENUITEM_DIFFICULTY_SCALING_IVS]           = sText_ScalingIVs,
     [MENUITEM_DIFFICULTY_SCALING_EVS]           = sText_ScalingEVs,
-    //[MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY]      = sText_LimitDifficulty,
-    //[MENUITEM_DIFFICULTY_HARD_EXP]              = sText_HardExp,
+    [MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY]      = sText_LimitDifficulty,
+    [MENUITEM_DIFFICULTY_HARD_EXP]              = sText_HardExp,
     [MENUITEM_DIFFICULTY_CATCH_RATE]            = sText_CatchRate,
     [MENUITEM_DIFFICULTY_MAX_PARTY_IVS]         = sText_MaxPartyIvs,
     [MENUITEM_DIFFICULTY_LESS_ESCAPES]          = sText_LessEscapes,
@@ -987,8 +987,8 @@ static const u8 sText_Description_Difficulty_LessEscapes_Off[]          = _("The
 static const u8 sText_Description_Difficulty_LessEscapes_On[]           = _("The player can't easily run\naway from battles. Use repels!");
 static const u8 sText_Description_Difficulty_EscapeRopeDig_Off[]        = _("ESCAPE ROPE and DIG can't\nbe used to exit dungeons.");
 static const u8 sText_Description_Difficulty_EscapeRopeDig_On[]         = _("ESCAPE ROPE and DIG can\nbe used to exit dungeons.");
-//static const u8 sText_Description_Difficulty_HardExp_Enabled[]          = _("{PKMN} gain 60% of total EXP in HARD.\n{COLOR 7}{COLOR 8}RECOMMENDED, provides good challenge.");
-//static const u8 sText_Description_Difficulty_HardExp_Disabled[]         = _("{PKMN} gain the default EXP in HARD. {COLOR 7}{COLOR 8}NOT\nRECOMMENDED, makes HARD MODE easy.");
+static const u8 sText_Description_Difficulty_HardExp_Enabled[]          = _("{PKMN} gain 60% of total EXP in HARD.\n{COLOR 7}{COLOR 8}RECOMMENDED, provides good challenge.");
+static const u8 sText_Description_Difficulty_HardExp_Disabled[]         = _("{PKMN} gain the default EXP in HARD. {COLOR 7}{COLOR 8}NOT\nRECOMMENDED, makes HARD MODE easy.");
 static const u8 sText_Description_Difficulty_CatchRate_05x[]            = _("POKéMON are harder to catch than\nusual.");
 static const u8 sText_Description_Difficulty_CatchRate_1x[]             = _("No change to POKéMON catch rate.");
 static const u8 sText_Description_Difficulty_CatchRate_2x[]             = _("POKéMON are easier to catch.");
@@ -1005,10 +1005,10 @@ static const u8 *const sOptionMenuItemDescriptionsDifficulty[MENUITEM_DIFFICULTY
     [MENUITEM_DIFFICULTY_SCALING_IVS]           = {sText_Description_Difficulty_ScalingIVs_Off,     sText_Description_Difficulty_ScalingIVs_Scaling,    sText_Description_Difficulty_ScalingIVs_Hard,   sText_Empty},
     [MENUITEM_DIFFICULTY_SCALING_EVS]           = {sText_Description_Difficulty_ScalingEVs_Off,     sText_Description_Difficulty_ScalingEVs_Scaling,    sText_Description_Difficulty_ScalingEVs_Hard,   sText_Description_Difficulty_ScalingEVs_Extreme},
     [MENUITEM_DIFFICULTY_NEXT]                  = {sText_Description_Difficulty_Next,               sText_Empty,                                        sText_Empty,                                    sText_Empty},
-    //[MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY]      = {sText_Description_Challenges_LimitDifficulty_Off,    sText_Description_Challenges_LimitDifficulty_On,    sText_Empty,                                        sText_Empty},
+    [MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY]      = {sText_Description_Challenges_LimitDifficulty_Off,    sText_Description_Challenges_LimitDifficulty_On,    sText_Empty,                                        sText_Empty},
     [MENUITEM_DIFFICULTY_ESCAPE_ROPE_DIG]       = {sText_Description_Difficulty_EscapeRopeDig_On,  sText_Description_Difficulty_EscapeRopeDig_Off,  sText_Empty,                                        sText_Empty},
     [MENUITEM_DIFFICULTY_MAX_PARTY_IVS]         = {sText_Description_Difficulty_MaxPartyIvs_Off,    sText_Description_Difficulty_MaxPartyIvs_On,    sText_Description_Difficulty_MaxPartyIvs_On_HP,                                        sText_Empty},
-    //[MENUITEM_DIFFICULTY_HARD_EXP]              = {sText_Description_Difficulty_HardExp_Enabled,    sText_Description_Difficulty_HardExp_Disabled,    sText_Empty,                                        sText_Empty},
+    [MENUITEM_DIFFICULTY_HARD_EXP]              = {sText_Description_Difficulty_HardExp_Enabled,    sText_Description_Difficulty_HardExp_Disabled,    sText_Empty,                                        sText_Empty},
     [MENUITEM_DIFFICULTY_CATCH_RATE]            = {sText_Description_Difficulty_CatchRate_1x,       sText_Description_Difficulty_CatchRate_05x,          sText_Description_Difficulty_CatchRate_2x,            sText_Description_Difficulty_CatchRate_3x},
 };  
 
@@ -1528,10 +1528,10 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = TX_DIFFICULTY_SCALING_IVS;
         gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = TX_DIFFICULTY_SCALING_EVS;
         gSaveBlock1Ptr->tx_Challenges_PkmnCenter            = TX_DIFFICULTY_PKMN_CENTER;
-        //gSaveBlock1Ptr->tx_Features_LimitDifficulty         = TX_DIFFICULTY_LIMIT_DIFFICULTY;
+        gSaveBlock1Ptr->tx_Features_LimitDifficulty         = TX_DIFFICULTY_LIMIT_DIFFICULTY;
         gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs           = TX_DIFFICULTY_MAX_PARTY_IVS;
         gSaveBlock1Ptr->tx_Difficulty_EscapeRopeDig         = TX_DIFFICULTY_ESCAPE_ROPE_DIG;
-        //gSaveBlock1Ptr->tx_Difficulty_HardExp               = TX_DIFFICULTY_HARD_EXP;
+        gSaveBlock1Ptr->tx_Difficulty_HardExp               = TX_DIFFICULTY_HARD_EXP;
 
         gSaveBlock1Ptr->tx_Challenges_PCHeal                = TX_CHALLENGE_PCHEAL;
         gSaveBlock1Ptr->tx_Challenges_Expensive             = TX_CHALLENGES_EXPENSIVE;
@@ -1611,10 +1611,10 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NO_EVS]         = gSaveBlock1Ptr->tx_Challenges_NoEVs;
         sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_IVS]    = gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs;
         sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_EVS]    = gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs; 
-        //sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY]      = gSaveBlock1Ptr->tx_Features_LimitDifficulty;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY]      = gSaveBlock1Ptr->tx_Features_LimitDifficulty;
         sOptions->sel_difficulty[MENUITEM_DIFFICULTY_MAX_PARTY_IVS]         = gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs;
         sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ESCAPE_ROPE_DIG]       = gSaveBlock1Ptr->tx_Difficulty_EscapeRopeDig;
-        //sOptions->sel_difficulty[MENUITEM_DIFFICULTY_HARD_EXP]              = gSaveBlock1Ptr->tx_Difficulty_HardExp;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_HARD_EXP]              = gSaveBlock1Ptr->tx_Difficulty_HardExp;
         sOptions->sel_difficulty[MENUITEM_DIFFICULTY_CATCH_RATE]             = gSaveBlock1Ptr->tx_Difficulty_CatchRate;
         // MENU_CHALLENGES
         sOptions->sel_challenges[MENUITEM_DIFFICULTY_POKECENTER]             = gSaveBlock1Ptr->tx_Challenges_PkmnCenter;
@@ -2013,7 +2013,7 @@ void SaveData_TxRandomizerAndChallenges(void)
     gSaveBlock1Ptr->tx_Challenges_NoEVs                 = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NO_EVS];
     gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_IVS];
     gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_EVS];
-    //gSaveBlock1Ptr->tx_Features_LimitDifficulty              = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY];
+    gSaveBlock1Ptr->tx_Features_LimitDifficulty              = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY];
     gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs                         = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_MAX_PARTY_IVS];
     // MENU_CHALLENGES
     gSaveBlock1Ptr->tx_Challenges_EvoLimit             = sOptions->sel_challenges[MENUITEM_CHALLENGES_EVO_LIMIT];
@@ -2032,7 +2032,7 @@ void SaveData_TxRandomizerAndChallenges(void)
     gSaveBlock1Ptr->tx_Challenges_PkmnCenter           = sOptions->sel_challenges[MENUITEM_DIFFICULTY_POKECENTER];
     gSaveBlock1Ptr->tx_Challenges_Expensive            = sOptions->sel_challenges[MENUITEM_CHALLENGES_EXPENSIVE];
     gSaveBlock1Ptr->tx_Difficulty_EscapeRopeDig        = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ESCAPE_ROPE_DIG];
-    //gSaveBlock1Ptr->tx_Difficulty_HardExp              = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_HARD_EXP];
+    gSaveBlock1Ptr->tx_Difficulty_HardExp              = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_HARD_EXP];
     gSaveBlock1Ptr->tx_Difficulty_CatchRate            = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_CATCH_RATE]; 
 
     PrintTXSaveData();
@@ -2751,7 +2751,7 @@ static const u8 sText_Encounters_Modern_Long[]    = _("MODERN");
     DrawOptionMenuChoice(sText_Encounters_Postgame, GetStringRightAlignXOffset(1, sText_Encounters_Postgame, 198), y, styles[2], active);
 }*/
 
-/*static void DrawChoices_Challenges_LimitDifficulty(int selection, int y)
+static void DrawChoices_Challenges_LimitDifficulty(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY);
     u8 styles[2] = {0};
@@ -2768,7 +2768,7 @@ static const u8 sText_Encounters_Modern_Long[]    = _("MODERN");
 
     DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
-}*/
+}
 
 static const u8 sText_Max_Party_IVs_30_31[]   = _("NO (HP)");
 static void DrawChoices_Challenges_MaxPartyIVs(int selection, int y)
@@ -3235,7 +3235,7 @@ static void DrawChoices_Features_FrontierBans(int selection, int y)
     DrawOptionMenuChoice(sText_Features_Frontier_UnBan, GetStringRightAlignXOffset(1, sText_Features_Frontier_UnBan, 198), y, styles[1], active);
 }
 
-/*static const u8 sText_Difficulty_HardExp_Enabled[]   = _("DEFAULT");
+static const u8 sText_Difficulty_HardExp_Enabled[]   = _("DEFAULT");
 static const u8 sText_Difficulty_HardExp_Disabled[]  = _("NORMAL");
 static void DrawChoices_Difficulty_HardExp(int selection, int y)
 {
@@ -3254,7 +3254,7 @@ static void DrawChoices_Difficulty_HardExp(int selection, int y)
 
     DrawOptionMenuChoice(sText_Difficulty_HardExp_Enabled, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_Difficulty_HardExp_Disabled, GetStringRightAlignXOffset(1, sText_Difficulty_HardExp_Disabled, 198), y, styles[1], active);
-}*/
+}
 
 static const u8 sText_Difficulty_CatchRate_05x[]  = _("0.5x");
 static const u8 sText_Difficulty_CatchRate_1x[]   = _("DEFAULT");

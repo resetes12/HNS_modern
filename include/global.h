@@ -1177,7 +1177,7 @@ struct SaveBlock1
         u8 tx_Difficulty_EscapeRopeDig:1;
         u8 tx_Mode_Encounters:2; //unused in HnS
         u8 tx_Features_FrontierBans:1;
-        u8 tx_Difficulty_HardExp:1; //unused in HnS
+        u8 tx_Difficulty_HardExp:1;
         u8 tx_Mode_TypeEffectiveness:1;
         u8 tx_Nuzlocke_RareCandy:1; //Unused in Modern HnS (Use cheating lady in Cherrygrove)
         u8 tx_Mode_GenOneRecharge:1; //Moved from the options menu
