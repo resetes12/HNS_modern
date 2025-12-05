@@ -3749,12 +3749,12 @@ void TryOverrideObjectEventTemplateCoords(u8 localId, u8 mapNum, u8 mapGroup)
         OverrideTemplateCoordsForObjectEvent(&gObjectEvents[objectEventId]);
 }
 
-void OverrideSecretBaseDecorationSpriteScript(u8 localId, u8 mapNum, u8 mapGroup, u8 decorationCategory)
+void OverrideSecretBaseDecorationSpriteScript(u8 localId, u8 mapNum, u8 mapGroup, u8 DecorationCategory_HNS)
 {
     u8 objectEventId;
     if (!TryGetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup, &objectEventId))
     {
-        switch (decorationCategory)
+        switch (DecorationCategory_HNS)
         {
         case DECORCAT_DOLL:
             OverrideObjectEventTemplateScript(&gObjectEvents[objectEventId], SecretBase_EventScript_DollInteract);

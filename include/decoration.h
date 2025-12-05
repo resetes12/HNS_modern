@@ -35,8 +35,14 @@ enum DecorationCategory
     DECORCAT_ORNAMENT,
     DECORCAT_MAT,
     DECORCAT_POSTER,
-    DECORCAT_DOLL,
+    //DECORCAT_DOLL,
     DECORCAT_CUSHION,
+    //DECORCAT_COUNT,
+};
+
+enum DecorationCategory_HNS
+{
+    DECORCAT_DOLL,
     DECORCAT_COUNT,
 };
 
