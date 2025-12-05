@@ -1176,7 +1176,8 @@ u8 GetScaledLevel(u8 lvl)
     if (lvl < 1)
         lvl = 1;
 
-    if (!FlagGet(FLAG_IS_CHAMPION))
+    //Doesn't apply to HnS
+    /*if (!FlagGet(FLAG_IS_CHAMPION))
     {
         if ((IsTrainerReadyForRematch() == TRUE) || (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_INTERVIEWER) && (gSaveBlock2Ptr->optionsDifficulty == 2)) 
         //hardmode rematches level cap
@@ -1214,7 +1215,7 @@ u8 GetScaledLevel(u8 lvl)
             else if ((lvl >= 52) && (badgeCount == 8))
                 lvl = 52;
         }
-    }
+    }*/
     return lvl;
 }
 

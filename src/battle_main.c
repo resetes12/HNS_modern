@@ -2473,7 +2473,8 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                     helditem = GetMonData(&party[i], MON_DATA_HELD_ITEM);
 
-                    if (gSaveBlock2Ptr->optionsDifficulty == 2) //only in hard mode
+                    //Not updated to HnS #DIFFICULTY
+                    /*if (gSaveBlock2Ptr->optionsDifficulty == 2) //only in hard mode
                     {
                         if (partyData[i].species == SPECIES_SCEPTILE && gTrainers[trainerNum].trainerPic == TRAINER_PIC_MAY 
                         && gTrainers[trainerNum].trainerClass == TRAINER_CLASS_RIVAL)
@@ -2516,7 +2517,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                             helditem = ITEM_072; //no modifier
                             SetMonData(&party[i], MON_DATA_HELD_ITEM, &helditem);
                         }
-                    }
+                    }*/
                 break;
             }
             case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
@@ -2539,7 +2540,8 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                     helditem = GetMonData(&party[i], MON_DATA_HELD_ITEM);
 
-                    if (gSaveBlock2Ptr->optionsDifficulty == 2) //only in hard mode
+                    //Not updated to HnS #DIFFICULTY
+                    /*if (gSaveBlock2Ptr->optionsDifficulty == 2) //only in hard mode
                     {
                         if (partyData[i].species == SPECIES_SLAKING && gTrainers[trainerNum].trainerPic == TRAINER_PIC_ELITE_FOUR_WILL
                         && gTrainers[trainerNum].trainerClass == TRAINER_CLASS_LEADER)
@@ -2647,7 +2649,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                             helditem = ITEM_075;  //leftoverse modifier
                             SetMonData(&party[i], MON_DATA_HELD_ITEM, &helditem);
                         }
-                    }
+                    }*/
 
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {

@@ -6497,42 +6497,38 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     && (gSaveBlock2Ptr->optionsDifficulty == 2) 
     && (side == B_SIDE_PLAYER) 
     //&& !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_FRONTIER))
-    ) //FlagSet(FLAG_DIFFICULTY_HARD)
-    {//HnS changed to 110
+    ) //Damage scaling in HARD MODE. Pokemon take more damage with more badges
+    // HnS might need tweaks #DIFFICULTY
+    {
         if (FlagGet(FLAG_BADGE05_GET) == TRUE)
         {
-            defense = (110 * defense) / 100; //+25%
-            spDefense = (110 * spDefense) / 100;
+            defense = (75 * defense) / 100; //+25%
+            spDefense = (75 * spDefense) / 100;
         }
         else if (FlagGet(FLAG_BADGE04_GET) == TRUE)
         {
-            defense = (110 * defense) / 100; //+25%
-            spDefense = (110 * spDefense) / 100;
+            defense = (80 * defense) / 100; //+20%
+            spDefense = (80 * spDefense) / 100;
         }
         else if (FlagGet(FLAG_BADGE03_GET) == TRUE)
         {
-            defense = (110 * defense) / 100; //+25%
-            spDefense = (110 * spDefense) / 100;
+            defense = (85 * defense) / 100; //+15%
+            spDefense = (85 * spDefense) / 100;
         }
         else if (FlagGet(FLAG_BADGE02_GET) == TRUE)
         {
-            defense = (110 * defense) / 100; //+25%
-            spDefense = (110 * spDefense) / 100;
-        }
-        else if (FlagGet(FLAG_INCREASE_DIFFICULTY) == TRUE)
-        {
-            defense = (110 * defense) / 100; //+25%
-            spDefense = (110 * spDefense) / 100;
+            defense = (90 * defense) / 100; //+10%
+            spDefense = (90 * spDefense) / 100;
         }
         else if (FlagGet(FLAG_BADGE01_GET) == TRUE)
         {
-            defense = (110 * defense) / 100; //+25%
-            spDefense = (110 * spDefense) / 100;
+            defense = (95 * defense) / 100; //+5%
+            spDefense = (95 * spDefense) / 100;
         }
         else
         {
-            defense = (110 * defense) / 100; //+25%
-            spDefense = (110 * spDefense) / 100;
+            defense = (100 * defense) / 100; //+0%
+            spDefense = (100 * spDefense) / 100;
         }
     }
     if (attacker->ability == ABILITY_HUSTLE)

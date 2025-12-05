@@ -34,7 +34,7 @@ enum
 {
     MENUITEM_MAIN_TEXTSPEED,
     MENUITEM_MAIN_BATTLESCENE,
-    //MENUITEM_MAIN_DIFFICULTY,
+    MENUITEM_MAIN_DIFFICULTY,
     MENUITEM_MAIN_BATTLESTYLE,
     MENUITEM_MAIN_BUTTONMODE,
     MENUITEM_MAIN_FOLLOWER,
@@ -262,7 +262,7 @@ struct // MENU_MAIN
 {
     [MENUITEM_MAIN_TEXTSPEED]               = {DrawChoices_TextSpeed,        ProcessInput_Options_Four},
     [MENUITEM_MAIN_BATTLESCENE]             = {DrawChoices_BattleScene,      ProcessInput_Options_Two},
-    //[MENUITEM_MAIN_DIFFICULTY]              = {DrawChoices_Difficulty,       ProcessInput_Difficulty},
+    [MENUITEM_MAIN_DIFFICULTY]              = {DrawChoices_Difficulty,       ProcessInput_Difficulty},
     [MENUITEM_MAIN_BATTLESTYLE]             = {DrawChoices_BattleStyle,      ProcessInput_BattleStyle},
     [MENUITEM_MAIN_BUTTONMODE]              = {DrawChoices_ButtonMode,       ProcessInput_Options_Three},
     [MENUITEM_MAIN_FOLLOWER]                = {DrawChoices_Follower,         ProcessInput_Options_Two},
@@ -334,7 +334,7 @@ static const u8 *const sOptionMenuItemsNamesMain[MENUITEM_MAIN_COUNT] =
 {
     [MENUITEM_MAIN_TEXTSPEED]           = gText_TextSpeed,
     [MENUITEM_MAIN_BATTLESCENE]         = gText_BattleScene,
-    //[MENUITEM_MAIN_DIFFICULTY]          = gText_OptionDifficulty,
+    [MENUITEM_MAIN_DIFFICULTY]          = gText_OptionDifficulty,
     [MENUITEM_MAIN_BATTLESTYLE]         = gText_BattleStyle,
     [MENUITEM_MAIN_BUTTONMODE]          = gText_ButtonMode,
     [MENUITEM_MAIN_FOLLOWER]            = gText_FollowerEnable,
@@ -403,7 +403,7 @@ static bool8 CheckConditions(int selection)
         {
         case MENUITEM_MAIN_TEXTSPEED:         return TRUE;
         case MENUITEM_MAIN_BATTLESCENE:       return TRUE;
-        //case MENUITEM_MAIN_DIFFICULTY:        return TRUE;
+        case MENUITEM_MAIN_DIFFICULTY:        return TRUE;
         case MENUITEM_MAIN_BATTLESTYLE:       return TRUE;
         case MENUITEM_MAIN_BUTTONMODE:        return TRUE;
         case MENUITEM_MAIN_FRAMETYPE:         return TRUE;
@@ -490,7 +490,7 @@ static const u8 *const sOptionMenuItemDescriptionsMain[MENUITEM_MAIN_COUNT][3] =
 {
     [MENUITEM_MAIN_TEXTSPEED]   = {sText_Desc_TextSpeed,            sText_Empty,                sText_Empty},
     [MENUITEM_MAIN_BATTLESCENE] = {sText_Desc_BattleScene_On,       sText_Desc_BattleScene_Off, sText_Empty},
-    //[MENUITEM_MAIN_DIFFICULTY]  = {sText_Desc_Difficulty_Easy,      sText_Desc_Difficulty_Normal, sText_Desc_Difficulty_Hard},
+    [MENUITEM_MAIN_DIFFICULTY]  = {sText_Desc_Difficulty_Easy,      sText_Desc_Difficulty_Normal, sText_Desc_Difficulty_Hard},
     [MENUITEM_MAIN_BATTLESTYLE] = {sText_Desc_BattleStyle_Shift,    sText_Desc_BattleStyle_Set, sText_Empty},
     [MENUITEM_MAIN_BUTTONMODE]  = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,   sText_Desc_ButtonMode_LA},
     [MENUITEM_MAIN_FRAMETYPE]   = {sText_Desc_FrameType,            sText_Empty,                sText_Empty},
@@ -581,7 +581,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledMain[MENUITEM_MAIN_COU
 {
     [MENUITEM_MAIN_TEXTSPEED]   = sText_Desc_Disabled_Textspeed,
     [MENUITEM_MAIN_BATTLESCENE] = sText_Empty,
-    //[MENUITEM_MAIN_DIFFICULTY]  = sText_Empty,
+    [MENUITEM_MAIN_DIFFICULTY]  = sText_Empty,
     [MENUITEM_MAIN_BATTLESTYLE] = sText_Empty,
     [MENUITEM_MAIN_BUTTONMODE]  = sText_Empty,
     [MENUITEM_MAIN_FRAMETYPE]   = sText_Empty,
@@ -861,7 +861,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions = AllocZeroed(sizeof(*sOptions));
         sOptions->sel[MENUITEM_MAIN_TEXTSPEED]           = gSaveBlock2Ptr->optionsTextSpeed;
         sOptions->sel[MENUITEM_MAIN_BATTLESCENE]         = gSaveBlock2Ptr->optionsBattleSceneOff;
-        //sOptions->sel[MENUITEM_MAIN_DIFFICULTY]          = gSaveBlock2Ptr->optionsDifficulty;
+        sOptions->sel[MENUITEM_MAIN_DIFFICULTY]          = gSaveBlock2Ptr->optionsDifficulty;
         sOptions->sel[MENUITEM_MAIN_BATTLESTYLE]         = gSaveBlock2Ptr->optionsBattleStyle;
         sOptions->sel[MENUITEM_MAIN_BUTTONMODE]          = gSaveBlock2Ptr->optionsButtonMode;
         sOptions->sel[MENUITEM_MAIN_FOLLOWER]            = gSaveBlock2Ptr->optionsfollowerEnable;
@@ -1101,7 +1101,7 @@ static void Task_OptionMenuSave(u8 taskId)
 {
     gSaveBlock2Ptr->optionsTextSpeed             = sOptions->sel[MENUITEM_MAIN_TEXTSPEED];
     gSaveBlock2Ptr->optionsBattleSceneOff        = sOptions->sel[MENUITEM_MAIN_BATTLESCENE];
-    //gSaveBlock2Ptr->optionsDifficulty            = sOptions->sel[MENUITEM_MAIN_DIFFICULTY];
+    gSaveBlock2Ptr->optionsDifficulty            = sOptions->sel[MENUITEM_MAIN_DIFFICULTY];
     gSaveBlock2Ptr->optionsBattleStyle           = sOptions->sel[MENUITEM_MAIN_BATTLESTYLE]; 
     gSaveBlock2Ptr->optionsButtonMode            = sOptions->sel[MENUITEM_MAIN_BUTTONMODE];
     gSaveBlock2Ptr->optionsfollowerEnable        = sOptions->sel[MENUITEM_MAIN_FOLLOWER];
@@ -1462,7 +1462,7 @@ static void DrawChoices_BattleScene(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleSceneOff, 198), y, styles[1], active);
 }
 
-/*static void DrawChoices_Difficulty(int selection, int y)
+static void DrawChoices_Difficulty(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_MAIN_DIFFICULTY);
     u8 styles[3] = {0};
@@ -1488,7 +1488,7 @@ static void DrawChoices_BattleScene(int selection, int y)
     DrawOptionMenuChoice(gText_Easy, 104, y, styles[0], active);
     DrawOptionMenuChoice(gText_ButtonTypeNormal, xMid, y, styles[1], active);
     DrawOptionMenuChoice(gText_Hard, GetStringRightAlignXOffset(1, gText_ButtonTypeLEqualsA, 198), y, styles[2], active);
-}*/
+}
 static const u8 sText_Sound_WildMon_Hoenn[]       = _("HOENN");
 static const u8 sText_Sound_WildMon_Kanto_Old[]   = _("KANTO 1");
 static const u8 sText_Sound_WildMon_Sinnoh[]      = _("SINNOH");
