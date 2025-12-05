@@ -46,6 +46,7 @@ enum
     MENUITEM_CUSTOM_FISHING,
     MENUITEM_MAIN_EVEN_FASTER_JOY,
     MENUITEM_MAIN_UNIT_TYPE,
+    MENUITEM_MAIN_SHOW_INTRO_MSG,
     //MENUITEM_MAIN_SKIP_INTRO,
     MENUITEM_MAIN_FRAMETYPE,
     MENUITEM_MAIN_COUNT,
@@ -226,6 +227,7 @@ static void DrawChoices_New_BattleUI(int selection, int y);
 static void DrawChoices_Run_Type(int selection, int y);
 static void DrawChoices_Autorun_Surf(int selection, int y);
 static void DrawChoices_Autorun_Dive(int selection, int y);
+static void DrawChoices_ShowIntroMsg(int selection, int y);
 static void DrawBgWindowFrames(void);
 
 // EWRAM vars
@@ -274,6 +276,7 @@ struct // MENU_MAIN
     //[MENUITEM_MAIN_SKIP_INTRO]              = {DrawChoices_Skip_Intro,       ProcessInput_Options_Two}, 
     [MENUITEM_MAIN_UNIT_TYPE]               = {DrawChoices_Unit_Type,        ProcessInput_Options_Two},  
     [MENUITEM_MAIN_FRAMETYPE]               = {DrawChoices_FrameType,        ProcessInput_FrameType},
+    [MENUITEM_MAIN_SHOW_INTRO_MSG]          = {DrawChoices_ShowIntroMsg,     ProcessInput_Options_Two},
 };
 
 struct // MENU_CUSTOM
@@ -326,6 +329,7 @@ static const u8 sText_OptionNewBattleUI[]         = _("BATTLE UI");
 static const u8 sText_OptionRunType[]             = _("QUICK RUN");
 static const u8 sText_AutorunEnable_Surf[]        = _("AUTORUN (SURF)");
 static const u8 sText_AutorunEnable_Dive[]        = _("AUTORUN (DIVE)");
+static const u8 sText_IntroMsg[]                  = _("SHOW INTRO MSG");
 static const u8 *const sOptionMenuItemsNamesMain[MENUITEM_MAIN_COUNT] =
 {
     [MENUITEM_MAIN_TEXTSPEED]           = gText_TextSpeed,
@@ -343,6 +347,7 @@ static const u8 *const sOptionMenuItemsNamesMain[MENUITEM_MAIN_COUNT] =
     [MENUITEM_MAIN_EVEN_FASTER_JOY]     = sText_OptionEvenFasterJoy,
     //[MENUITEM_MAIN_SKIP_INTRO]          = sText_OptionSkipIntro,
     [MENUITEM_MAIN_UNIT_TYPE]           = sText_OptionUnitType,
+    [MENUITEM_MAIN_SHOW_INTRO_MSG]      = sText_IntroMsg,
     [MENUITEM_MAIN_FRAMETYPE]           = gText_Frame,
 };
 
@@ -411,6 +416,7 @@ static bool8 CheckConditions(int selection)
         //case MENUITEM_MAIN_MATCHCALL:         return TRUE;
         case MENUITEM_CUSTOM_FISHING:         return TRUE;
         case MENUITEM_MAIN_EVEN_FASTER_JOY:   return TRUE;
+        case MENUITEM_MAIN_SHOW_INTRO_MSG:    return TRUE;
         //case MENUITEM_MAIN_SKIP_INTRO:        return TRUE;
         case MENUITEM_MAIN_UNIT_TYPE:         return TRUE;
         }
@@ -478,6 +484,8 @@ static const u8 sText_Desc_OverworldCallsOn[]      = _("TRAINERs will be able to
 static const u8 sText_Desc_OverworldCallsOff[]     = _("You will not receive calls.\nSpecial events will still occur.");
 static const u8 sText_Desc_Units_Imperial[]        = _("Display BERRY and POKéMON weight\nand size in pounds and inches.");
 static const u8 sText_Desc_Units_Metric[]          = _("Display BERRY and POKéMON weight\nand size in kilograms and meters.");
+static const u8 sText_Desc_IntroMsg_On[]           = _("Bug reports {COLOR 7}{COLOR 8}MUST NOT{COLOR 2} be sent\nto the original HEART & SOUL devs.");
+static const u8 sText_Desc_IntroMsg_Off[]          = _("Report issues at\n{COLOR 9}{COLOR 10}github.com/resetes12/HNS{UNDERSCORE}modern");
 static const u8 *const sOptionMenuItemDescriptionsMain[MENUITEM_MAIN_COUNT][3] =
 {
     [MENUITEM_MAIN_TEXTSPEED]   = {sText_Desc_TextSpeed,            sText_Empty,                sText_Empty},
@@ -496,6 +504,7 @@ static const u8 *const sOptionMenuItemDescriptionsMain[MENUITEM_MAIN_COUNT][3] =
     [MENUITEM_MAIN_EVEN_FASTER_JOY]     = {sText_Desc_EvenFasterJoyOn,            sText_Desc_EvenFasterJoyOff},
     //[MENUITEM_MAIN_SKIP_INTRO]     = {sText_Desc_SkipIntroOn,            sText_Desc_SkipIntroOff},
     [MENUITEM_MAIN_UNIT_TYPE]     = {sText_Desc_Units_Metric,            sText_Desc_Units_Imperial},
+    [MENUITEM_MAIN_SHOW_INTRO_MSG]     = {sText_Desc_IntroMsg_On,            sText_Desc_IntroMsg_Off},
 };
 
 // Custom {PKMN}
@@ -584,6 +593,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledMain[MENUITEM_MAIN_COU
     //[MENUITEM_MAIN_MATCHCALL]   = sText_Empty,
     [MENUITEM_CUSTOM_FISHING]     = sText_Empty,
     [MENUITEM_MAIN_EVEN_FASTER_JOY]     = sText_Empty,
+    [MENUITEM_MAIN_SHOW_INTRO_MSG]     = sText_Empty,
     //[MENUITEM_MAIN_SKIP_INTRO]     = sText_Empty,
 };
 
@@ -865,6 +875,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel[MENUITEM_MAIN_EVEN_FASTER_JOY]     = gSaveBlock2Ptr->optionsEvenFasterJoy;
         //sOptions->sel[MENUITEM_MAIN_SKIP_INTRO]          = gSaveBlock2Ptr->optionsSkipIntro;
         sOptions->sel[MENUITEM_MAIN_UNIT_TYPE]           = gSaveBlock2Ptr->optionsUnitSystem;
+        sOptions->sel[MENUITEM_MAIN_SHOW_INTRO_MSG]      = gSaveBlock2Ptr->ModernMessage;
 
         sOptions->sel_battle[MENUITEM_BATTLE_FAST_INTRO]        = gSaveBlock2Ptr->optionsFastIntro;
         sOptions->sel_battle[MENUITEM_BATTLE_FAST_BATTLES]      = gSaveBlock2Ptr->optionsFastBattle;
@@ -1104,6 +1115,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsEvenFasterJoy         = sOptions->sel[MENUITEM_MAIN_EVEN_FASTER_JOY];
     //gSaveBlock2Ptr->optionsSkipIntro             = sOptions->sel[MENUITEM_MAIN_SKIP_INTRO];
     gSaveBlock2Ptr->optionsUnitSystem            = sOptions->sel[MENUITEM_MAIN_UNIT_TYPE];
+    gSaveBlock2Ptr->ModernMessage                = sOptions->sel[MENUITEM_MAIN_SHOW_INTRO_MSG];
 
     gSaveBlock2Ptr->optionsFastIntro        = sOptions->sel_battle[MENUITEM_BATTLE_FAST_INTRO];
     gSaveBlock2Ptr->optionsFastBattle       = sOptions->sel_battle[MENUITEM_BATTLE_FAST_BATTLES];
@@ -2053,6 +2065,25 @@ static void DrawChoices_Autorun_Surf(int selection, int y)
     else
     {
         gSaveBlock2Ptr->optionsAutorunSurf = 1; //no
+    }
+
+    DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
+    DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
+}
+
+static void DrawChoices_ShowIntroMsg(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_MAIN_SHOW_INTRO_MSG);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    if (selection == 0)
+    {
+        gSaveBlock2Ptr->ModernMessage = 0; //Show message
+    }
+    else
+    {
+        gSaveBlock2Ptr->ModernMessage = 1; //Hide message
     }
 
     DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);

@@ -124,6 +124,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsNewBackgrounds = 0;
     gSaveBlock2Ptr->optionsRunType = 1;
     gSaveBlock2Ptr->optionsNewBattleUI= 0;
+    gSaveBlock2Ptr->ModernMessage = 0;
 }
 
 static void ClearPokedexFlags(void)
