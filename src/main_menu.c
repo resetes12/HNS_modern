@@ -221,6 +221,9 @@ static void Task_NewGameBirchSpeech_WaitToShowGenderMenu(u8);
 static void Task_NewGameBirchSpeech_ChooseGender(u8);
 static void Task_NewGameBirchSpeech_WaitToShowDifficultyMenu(u8);
 static void Task_NewGameBirchSpeech_ChooseDifficulty(u8);
+static void Task_NewGameBirchSpeech_ChallengeEasy(u8);
+static void Task_NewGameBirchSpeech_ChallengeNormal(u8);
+static void Task_NewGameBirchSpeech_ChallengeHard(u8);
 static void Task_NewGameBirchSpeech_WaitToShowChallengeMenu(u8);
 static void Task_NewGameBirchSpeech_ChooseChallenge(u8);
 static void NewGameBirchSpeech_ShowGenderMenu(void);
@@ -1597,17 +1600,13 @@ static void Task_NewGameBirchSpeech_ChooseGender(u8 taskId)
             PlaySE(SE_SELECT);
             gSaveBlock2Ptr->playerGender = gender;
             NewGameBirchSpeech_ClearGenderWindow(1, 1);
-            //gTasks[taskId].func = Task_NewGameBirchSpeech_Difficulty;
-            gSaveBlock2Ptr->optionsDifficulty = 1; //manually set difficulty normal
-            gTasks[taskId].func = Task_NewGameBirchSpeech_Challenge;
+            gTasks[taskId].func = Task_NewGameBirchSpeech_Difficulty;
             break;
         case FEMALE:
             PlaySE(SE_SELECT);
             gSaveBlock2Ptr->playerGender = gender;
             NewGameBirchSpeech_ClearGenderWindow(1, 1);
-            //gTasks[taskId].func = Task_NewGameBirchSpeech_Difficulty;
-            gSaveBlock2Ptr->optionsDifficulty = 1; //manually set difficulty normal
-            gTasks[taskId].func = Task_NewGameBirchSpeech_Challenge;
+            gTasks[taskId].func = Task_NewGameBirchSpeech_Difficulty;
             break;
     }
     gender2 = Menu_GetCursorPos();
@@ -1690,23 +1689,47 @@ static void Task_NewGameBirchSpeech_ChooseDifficulty(u8 taskId)
             gSaveBlock2Ptr->optionsDifficulty = 0; //easy
             FlagClear(FLAG_DIFFICULTY_HARD);
             NewGameBirchSpeech_ClearDifficultyWindow(1, 1);
-            gTasks[taskId].func = Task_NewGameBirchSpeech_Challenge;
+            gTasks[taskId].func = Task_NewGameBirchSpeech_ChallengeEasy;
             break;
         case 1:
             PlaySE(SE_SELECT);
             gSaveBlock2Ptr->optionsDifficulty = 1; //normal
             FlagClear(FLAG_DIFFICULTY_HARD);
             NewGameBirchSpeech_ClearDifficultyWindow(1, 1);
-            gTasks[taskId].func = Task_NewGameBirchSpeech_Challenge;
+            gTasks[taskId].func = Task_NewGameBirchSpeech_ChallengeNormal;
             break;
         case 2:
             PlaySE(SE_SELECT);
             gSaveBlock2Ptr->optionsDifficulty = 2; //hard
             FlagSet(FLAG_DIFFICULTY_HARD);
             NewGameBirchSpeech_ClearDifficultyWindow(1, 1);
-            gTasks[taskId].func = Task_NewGameBirchSpeech_Challenge;
+            gTasks[taskId].func = Task_NewGameBirchSpeech_ChallengeHard;
             break;
     }
+}
+
+static void Task_NewGameBirchSpeech_ChallengeEasy(u8 taskId)
+{
+    NewGameBirchSpeech_ClearWindow(0);
+    StringExpandPlaceholders(gStringVar4, gText_Birch_ChallengeEasy);
+    AddTextPrinterForMessage(TRUE);
+    gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowChallengeMenu;
+}
+
+static void Task_NewGameBirchSpeech_ChallengeNormal(u8 taskId)
+{
+    NewGameBirchSpeech_ClearWindow(0);
+    StringExpandPlaceholders(gStringVar4, gText_Birch_ChallengeNormal);
+    AddTextPrinterForMessage(TRUE);
+    gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowChallengeMenu;
+}
+
+static void Task_NewGameBirchSpeech_ChallengeHard(u8 taskId)
+{
+    NewGameBirchSpeech_ClearWindow(0);
+    StringExpandPlaceholders(gStringVar4, gText_Birch_ChallengeHard);
+    AddTextPrinterForMessage(TRUE);
+    gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowChallengeMenu;
 }
 
 static void Task_NewGameBirchSpeech_Challenge(u8 taskId)
