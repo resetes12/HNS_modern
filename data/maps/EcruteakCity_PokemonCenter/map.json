@@ -105,8 +105,8 @@
       "x": 1,
       "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_ECRUTEAK_CITY_POKEMON_CENTER",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ECRUTEAK_CITY_POKEMON_CENTER_B1",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [

@@ -320,6 +320,32 @@
 #define METATILE_Johto_General_Fall_TallGrass  0x083
 #define METATILE_Johto_General_Grass           0x008
 
+// gTileset_Kanto_PokemonCenter
+#define METATILE_Kanto_PokemonCenter_Escalator1F_Tile0_Frame0  0x2D0
+#define METATILE_Kanto_PokemonCenter_Escalator1F_Tile0_Frame1  0x308
+#define METATILE_Kanto_PokemonCenter_Escalator1F_Tile0_Frame2  0x30A
+#define METATILE_Kanto_PokemonCenter_Escalator1F_Tile1_Frame0  0x2D1
+#define METATILE_Kanto_PokemonCenter_Escalator1F_Tile1_Frame1  0x309
+#define METATILE_Kanto_PokemonCenter_Escalator1F_Tile1_Frame2  0x30B
+#define METATILE_Kanto_PokemonCenter_Escalator1F_Tile2_Frame0  0x2D8
+#define METATILE_Kanto_PokemonCenter_Escalator1F_Tile2_Frame1  0x310
+#define METATILE_Kanto_PokemonCenter_Escalator1F_Tile2_Frame2  0x312
+#define METATILE_Kanto_PokemonCenter_Escalator1F_Tile3_Frame0  0x2D9
+#define METATILE_Kanto_PokemonCenter_Escalator1F_Tile3_Frame1  0x311
+#define METATILE_Kanto_PokemonCenter_Escalator1F_Tile3_Frame2  0x313
+#define METATILE_Kanto_PokemonCenter_Escalator2F_Tile0_Frame0  0x2E3
+#define METATILE_Kanto_PokemonCenter_Escalator2F_Tile0_Frame1  0x314
+#define METATILE_Kanto_PokemonCenter_Escalator2F_Tile0_Frame2  0x316
+#define METATILE_Kanto_PokemonCenter_Escalator2F_Tile1_Frame0  0x2E4
+#define METATILE_Kanto_PokemonCenter_Escalator2F_Tile1_Frame1  0x315
+#define METATILE_Kanto_PokemonCenter_Escalator2F_Tile1_Frame2  0x317
+#define METATILE_Kanto_PokemonCenter_Escalator2F_Tile2_Frame0  0x2EB
+#define METATILE_Kanto_PokemonCenter_Escalator2F_Tile2_Frame1  0x31C
+#define METATILE_Kanto_PokemonCenter_Escalator2F_Tile2_Frame2  0x31E
+#define METATILE_Kanto_PokemonCenter_Escalator2F_Tile3_Frame0  0x2EC
+#define METATILE_Kanto_PokemonCenter_Escalator2F_Tile3_Frame1  0x31D
+#define METATILE_Kanto_PokemonCenter_Escalator2F_Tile3_Frame2  0x31F
+
 // gTileset_Lavaridge
 #define METATILE_Lavaridge_AshGrass             0x207
 #define METATILE_Lavaridge_CaveEntrance_Bottom  0x25E
