@@ -709,9 +709,9 @@
 #define FLAG_SHINY_STARTER_3  0x296 // Flag for shiny starters, Totodile
 #define FLAG_FORCE_SHINY   0x297 // Needed for shiny starters, not used anywhere else
 #define FLAG_TEMPORALY_DISABLE_STATIC_RANDOMIZER  0x298
-#define FLAG_UNUSED_0x299  0x299 // Unused Flag
-#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
-#define FLAG_UNUSED_0x29B  0x29B // Unused Flag
+#define FLAG_BF_BRANDON_CAVEDOOR                  0x299
+#define FLAG_BF_BRANDON_CAVE_1                    0x29A
+#define FLAG_BF_BRANDON_CAVE_REGIGAS              0x29B
 #define FLAG_UNUSED_0x29C  0x29C // Unused Flag
 #define FLAG_UNUSED_0x29D  0x29D // Unused Flag
 #define FLAG_UNUSED_0x29E  0x29E // Unused Flag

@@ -1,4 +1,5 @@
 .set LOCALID_SUDOWOODO, 14
+.set LOCALID_BRANDON, 41
 
 BattleFrontier_OutsideEast_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, BattleFrontier_OutsideEast_OnResume
@@ -102,6 +103,48 @@ BattleFrontier_OutsideWest_Text_Reparations8:
     .string "The cave’s still unstable, so we built\n"
     .string "temporary wooden bridges.\p"
     .string "They’re sturdy… I think.$"
+
+BattleFrontier_OutsideWest_EventScript_Brandon::
+	lock
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	msgbox BattleFrontier_OutsideWest_Text_Brandon, MSGBOX_NPC
+	closemessage
+	setflag FLAG_BF_BRANDON_CAVEDOOR
+	applymovement LOCALID_BRANDON, BattleFrontier_OutsideWest_EventScript_Brandon_Movement
+	waitmovement 0
+	playse SE_EXIT
+	applymovement LOCALID_BRANDON, BattleFrontier_OutsideWest_EventScript_Brandon_Movement2
+	waitmovement 0
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	callnative UpdateFollowingPokemon
+	release
+	end
+
+BattleFrontier_OutsideWest_Text_Brandon:
+	.string "?????: Hahahah!\p"
+	.string "Are you the explorer SCOTT brought to\n"
+	.string "deal with the POKéMON tearing up\l"
+	.string "the underground?\p"
+	.string "…\p"
+	.string "No?\p"
+	.string "That can't be!\p"
+	.string "SCOTT swears you're the best option\n"
+	.string "we've got.\p"
+	.string "BRANDON: I'm BRANDON, nice to meet\n"
+	.string "a young explorer like you.\p"
+	.string "Come inside. We'll go over the ruins\n"
+	.string "while we examine them.$"
+
+BattleFrontier_OutsideWest_EventScript_Brandon_Movement:
+	face_up
+	walk_up
+	step_end
+
+BattleFrontier_OutsideWest_EventScript_Brandon_Movement2:
+	set_invisible
+	walk_up
+	walk_up
+	step_end
 
 BattleFrontier_OutsideEast_EventScript_Zigzagoon::
 	lock
