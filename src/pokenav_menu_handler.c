@@ -248,11 +248,19 @@ static u32 HandleMainMenuInput(struct Pokenav_Menu *menu)
             SetMenuIdAndCB(menu, POKENAV_REGION_MAP);
             return POKENAV_MENU_FUNC_OPEN_FEATURE;
         case POKENAV_MENUITEM_CONDITION:
-            menu->menuType = POKENAV_MENU_TYPE_CONDITION;
-            menu->cursorPos = 0;
-            menu->currMenuItem = sMenuItems[POKENAV_MENU_TYPE_CONDITION][0];
-            menu->callback = HandleConditionMenuInput;
-            return POKENAV_MENU_FUNC_OPEN_CONDITION;
+            if (FlagGet(FLAG_SYS_POKEMON_GET) == 0)
+            {
+                PlaySE(SE_FAILURE);
+                return POKENAV_MENU_FUNC_NONE;
+            }
+            else
+            {
+                menu->menuType = POKENAV_MENU_TYPE_CONDITION;
+                menu->cursorPos = 0;
+                menu->currMenuItem = sMenuItems[POKENAV_MENU_TYPE_CONDITION][0];
+                menu->callback = HandleConditionMenuInput;
+                return POKENAV_MENU_FUNC_OPEN_CONDITION;
+            }
         case POKENAV_MENUITEM_MATCH_CALL:
             menu->helpBarIndex = HELPBAR_MC_TRAINER_LIST;
             SetMenuIdAndCB(menu, POKENAV_MATCH_CALL);
