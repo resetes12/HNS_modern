@@ -62,6 +62,14 @@ EcruteakCity_PokemonCenter_EventScript_Woman::
 	release
 	end
 
+EcruteakCity_PokemonCenter_EventScript_Link_Woman::
+	lock
+	faceplayer
+	msgbox EcruteakCity_PokemonCenter1F_Text_LinkWoman, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 EcruteakCity_PokemonCenter_EventScript_Nerd::
 	lock
 	faceplayer
@@ -143,3 +151,24 @@ EcruteakCity_PokemonCenter1F_Text_GymGuide:
 	.string "swarm…\p"
 	.string "I smell a conspiracy. I know it!$"
 
+EcruteakCity_PokemonCenter1F_Text_LinkWoman:
+	.string "Hi!\p"
+	.string "The ECRUTEAK POKéCENTER is the only\n"
+	.string "only POKéMON CENTER that offers\l"
+	.string "TRADING and BATTLING with others\l"
+	.string "from different games, including:\p"
+	.string "POKéMON MODERN EMERALD v3.3+ and\n"
+	.string "POKéMON EMERALD, plus probably the\l"
+	.string "rest of the official games (untested!).\p"
+	.string "Please, DON'T TRY TO TRADE or BATTLE\n"
+	.string "with POKéMON that have been put in\l"
+	.string "the following POKéBALLS:\p"
+	.string "LOVE BALL, LURE BALL, FRIEND BALL\n"
+	.string "HEAVY BALL, MOON BALL, LEVEL BALL\l"
+	.string "FAST BALL or GS BALL.\p"
+	.string "At best, nothing will happen.\p"
+	.string "At worst, data might get corrupted\n"
+	.string "(Not probable, but might be possible).\p"
+	.string "Please deposit POKéMON that have been\n"
+	.string "or are in the mentioned POKéBALLS in\l"
+	.string "the PC.$"
