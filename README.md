@@ -1,3 +1,43 @@
+# MODERN Heart & Soul
+**Modern** Heart & Soul is a small modification of the original Pokémon Heart & Soul version 1.2.1 that includes missing options and features from its base game engine, Pokémon Modern Emerald. You can get more information about Modern Emerald at [Pokécommunity](https://www.Pokécommunity.com/showthread.php?t=494005) and at [Github](https://github.com/resetes12/pokeemerald). 
+
+The Modern feature list is:
+- Difficulty options (Easy, Normal, Hard). Same as Modern Emerald, it is NOT a difficulty hack-rom, it only adjusts levels, catch rates, badge boosts, and some other small stuff.
+- Removed GameFreak intro
+- Restored trading: Only in Ecruteak City Pokémon Center.
+- Restored missing options in the Options Menu, from Modern Emerald
+    - Difficulty option
+    - Bike Music option
+    - Surf Music option
+    - Wild Pokémon Music option
+    - Trainer Battle Music option
+    - Frontier Trainer Battle Music option
+    - Sound Effect option
+    - (Moved to Challenges Menu) Gen 1 Recharge
+    - (Removed, not needed) Nuzlocke Infinite Rare Candies
+- Restored missing options in the Challenges Menu, from Modern Emerald
+    - Type Chart (Gen6 / Improved)
+    - Pokémon Stats (Original / Modern)
+    - Pokémon Types (Original / Modern)
+    - (Moved from Options Menu) Gen 1 Recharge
+    - Lock Difficulty
+    - Hard Mode Exp.
+    - Catch Rate
+- Restored a "Disable challenge NPC after beating the game" in the Battle Frontier, after beating Red.
+- Add missing legendaries:
+    - Arceus Egg can be bought for 999BP at a Battle Frontier house.
+    - Regis: All six Regis can be caught at Artisan's Cave, in the Battle Frontier.
+- EVs are now up to 255 (from 252, for trade compatibility reasons)
+- Added cheating items (Infinite Rare Candies, Infinite Repel, Healing Heart and IV/EV editor in party menu). Talk to the Cheating Girl in Cherrygrove.
+- Added IV setter (includes Hidden Power changer), EV resetter, and EXP. NURSE in Saffron Dojo.
+- Revert Hold B to Run, instead of being able to run just by pressing.
+- Safari Zone is now NOT infinite in Nuzlocke modes, and it has been divided in different zones (Johto -> 6 zones; Kanto -> 4 zones). Each zone is one encounter.
+- Pokenav condition menu returns.
+- You can now decorate your Room!
+- TMs affected by modern moves, meaning that choosing Original will use original TM learneset.
+- Restored grass/footprints metatile behaviour from Modern Emerald.
+- Small bugfixes to the base game.
+
 ![HnS Logo](HnS_Logo.png)
 
 # Pokémon Heart & Soul
