@@ -321,6 +321,8 @@
 #define METATILE_Johto_General_Grass           0x008
 
 // gTileset_Kanto_PokemonCenter
+#define METATILE_Kanto_PokemonCenter_CounterBarrier            0x2F9
+#define METATILE_Kanto_PokemonCenter_Door_CableClub            0x2DE
 #define METATILE_Kanto_PokemonCenter_Escalator1F_Tile0_Frame0  0x2D0
 #define METATILE_Kanto_PokemonCenter_Escalator1F_Tile0_Frame1  0x308
 #define METATILE_Kanto_PokemonCenter_Escalator1F_Tile0_Frame2  0x30A
@@ -345,6 +347,9 @@
 #define METATILE_Kanto_PokemonCenter_Escalator2F_Tile3_Frame0  0x2EC
 #define METATILE_Kanto_PokemonCenter_Escalator2F_Tile3_Frame1  0x31D
 #define METATILE_Kanto_PokemonCenter_Escalator2F_Tile3_Frame2  0x31F
+#define METATILE_Kanto_PokemonCenter_Floor_Plain_Alt           0x384
+#define METATILE_Kanto_PokemonCenter_Floor_ShadowTop           0x382
+#define METATILE_Kanto_PokemonCenter_Floor_ShadowTop_Alt       0x383
 
 // gTileset_Lavaridge
 #define METATILE_Lavaridge_AshGrass             0x207
