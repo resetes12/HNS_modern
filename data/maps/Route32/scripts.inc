@@ -54,11 +54,11 @@ Route32_EventScript_BirdkeeperPeter::
 Route32_EventScript_Roar::
 	lock
 	faceplayer
-	checkitem ITEM_TM_ROAR
-	goto_if_eq VAR_RESULT, TRUE, Route32_EventScript_Roar2
+	goto_if_set FLAG_RECEIVED_TM_ROAR, Route32_EventScript_Roar2
 	msgbox Route32_Text_RoarIntro, MSGBOX_DEFAULT
 	giveitem ITEM_TM_ROAR
 	msgbox Route32_Text_RoarOutro, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM_ROAR
 	closemessage
 	release
 	end
