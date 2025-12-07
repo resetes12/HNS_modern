@@ -850,6 +850,8 @@ static bool8 RunCopyrightScreen(void)
         UpdatePaletteFade();
         gMain.state++;
         GameCubeMultiBoot_Main(&sGcmb);
+        if ((JOY_NEW(A_BUTTON)) || (JOY_NEW(B_BUTTON)) || (JOY_NEW(L_BUTTON)) || (JOY_NEW(START_BUTTON)))
+            gMain.state = 140;
         break;
     case 140:
         GameCubeMultiBoot_Main(&sGcmb);
