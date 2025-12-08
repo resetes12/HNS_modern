@@ -38,7 +38,9 @@ EventScript_PkmnCenterNurse_HealPkmnFast::
 	incrementgamestat GAME_STAT_USED_POKECENTER
 	special HealPlayerParty
 	playse SE_M_MORNING_SUN
-	goto EventScript_PkmnCenterNurse_ReturnPkmn
+	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
+	waitmovement 0
+	goto EventScript_PkmnCenterNurse_PlayerTurn
 	release
 	end
 
