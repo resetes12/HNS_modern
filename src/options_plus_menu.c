@@ -1497,7 +1497,7 @@ static const u8 sText_Sound_WildMon_Kanto_New[]   = _("KANTO 2");
 static const u8 sText_Sound_WildMon_Random[]      = _("RANDOM");
 
 static const u8 sText_Sound_WildMon_HGSS[]        = _("HGSS");
-static const u8 *const sText_Sound_WildMonBattleMusic_Strings_Six[] = {sText_Sound_WildMon_Hoenn,  sText_Sound_WildMon_Kanto_Old,  sText_Sound_WildMon_Sinnoh,  sText_Sound_WildMon_HGSS, sText_Sound_WildMon_Kanto_New,   sText_Sound_WildMon_Random};
+static const u8 *const sText_Sound_WildMonBattleMusic_Strings_Six[] = {sText_Sound_WildMon_Hoenn,  sText_Sound_WildMon_Kanto_Old,  sText_Sound_WildMon_Sinnoh,  sText_Sound_WildMon_Johto, sText_Sound_WildMon_Kanto_New,   sText_Sound_WildMon_Random};
 
 static const u8 *const sText_Sound_WildMonBattleMusic_Strings[] = {sText_Sound_WildMon_Hoenn,  sText_Sound_WildMon_Kanto_Old,  sText_Sound_WildMon_Sinnoh,  sText_Sound_WildMon_HGSS,   sText_Sound_WildMon_Random};
 static void DrawChoices_Wild_Battle_Music(int selection, int y)
