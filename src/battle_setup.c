@@ -1155,6 +1155,7 @@ u8 GetScaledLevel(u8 lvl)
             badgeCount++;
     }
 
+    // Might need tweaking in HnS #DIFFICULTY
     if (FlagGet(FLAG_IS_CHAMPION))
         levelScaling = 10;
     else if (badgeCount >= 6)
