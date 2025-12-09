@@ -1,5 +1,10 @@
 SaffronCity_FightingDojoVIP_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SaffronCity_FightingDojoVIP_OnTransition
 	.byte 0
+
+SaffronCity_FightingDojoVIP_OnTransition::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	end
 
 SaffronCity_FightingDojoVIP_EventScript_Declined::
 	closemessage
