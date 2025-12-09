@@ -619,7 +619,7 @@ SaffronCity_FightingDojoVIP_Text_Erika_Rematch:
 	.string "It's so lovely to see you again.\p"
 	.string "Your journey must have been so\n"
 	.string "exciting.\p"
-	.string "Even champions enjoy a challenge.\p"
+	.string "Even CHAMPIONS enjoy a challenge.\p"
 	.string "Want to have a rematch with me?$"
 
 SaffronCity_FightingDojoVIP_Text_Erika_RematchDefeat:

@@ -180,5 +180,5 @@ PokemonLeague_HallOfFame_Rematch_LanceText:
     .string "great, perhaps even the greatest.\p"
     .string "{PLAYER}, it is my honor to register\n"
     .string "you, and your trusted partners,\l"
-    .string "as champions once again.$"
+    .string "as CHAMPIONS once again.$"
 

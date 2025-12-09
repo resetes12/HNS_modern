@@ -349,12 +349,13 @@ Route32_Text_CooltrainerM_VioletGym:
 	.string "trainers!$"
 
 Route32_Text_CooltrainerM_HaveThisSeed:
-	.string "You have some good POKéMON there.\n"
-	.string "It must be from the training you\p"
-	.string "gave them around VIOLET CITY.\n"
-	.string "The training at the GYM must have\p"
-	.string "been especially helpful. As a\n"
-	.string "souvenir of VIOLET CITY, take this.\p"
+	.string "You have some good POKéMON there.\p"
+	.string "It must be from the training you\n"
+	.string "gave them around VIOLET CITY.\p"
+	.string "The training at the GYM must have\n"
+	.string "been especially helpful.\p"
+	.string "As a souvenir of VIOLET CITY,\n"
+	.string "take this.\p"
 	.string "It increases the power of GRASS-\n"
 	.string "type moves.$"
 
