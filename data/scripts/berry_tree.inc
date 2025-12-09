@@ -166,6 +166,7 @@ BerryTree_EventScript_WaterBerry::
 	message ApricornTree_Text_Growing
 	waitmessage
 	waitbuttonpress
+	closemessage
 	end
 
 BerryTree_EventScript_BerryTree::
