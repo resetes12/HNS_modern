@@ -228,12 +228,13 @@ CableClub_EventScript_Tutorial::
 	lockall
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	msgbox CableClub_Text_FirstTimeRightThisWay, MSGBOX_DEFAULT
-	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, CableClub_Movement_PlayerApproachCounter
-	waitmovement 0
-	delay 30
-	msgbox CableClub_Text_ExplainWirelessClubFirstTime, MSGBOX_DEFAULT
+	@msgbox CableClub_Text_FirstTimeRightThisWay, MSGBOX_DEFAULT
+	@closemessage
+	@applymovement OBJ_EVENT_ID_PLAYER, CableClub_Movement_PlayerApproachCounter
+	@waitmovement 0
+	@delay 30
+	@msgbox CableClub_Text_ExplainWirelessClubFirstTime, MSGBOX_DEFAULT
+	msgbox EcruteakCity_PokemonCenter1F_Text_LinkWoman, MSGBOX_DEFAULT
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 2
 	releaseall
 	end

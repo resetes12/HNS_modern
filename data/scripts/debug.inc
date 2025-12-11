@@ -103,7 +103,7 @@ Debug_Script_5::
 	end
 
 Debug_Script_6::
-	callnative TradeFix
+	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
 	end
 
 Debug_Script_7::

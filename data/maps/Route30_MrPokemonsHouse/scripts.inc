@@ -62,6 +62,7 @@ MrPokemonHouse_EventScript_GiveEgg::
 	
 	setvar VAR_NEWBARKTOWN_LABSTATE, 4
 	setflag FLAG_HIDE_SILVER_NEWBARKTOWN
+	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
 	setflag FLAG_SYS_POKEDEX_GET
 	checkrandomizer
 	call_if_eq VAR_RESULT, TRUE, MrPokemonHouse_EventScript_GiveNatDexRandomizer

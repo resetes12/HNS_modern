@@ -70,6 +70,40 @@ EcruteakCity_PokemonCenter_EventScript_Link_Woman::
 	release
 	end
 
+EcruteakCity_PokemonCenter_EventScript_Link_Fixer::
+	lock
+	faceplayer
+	msgbox EcruteakCity_PokemonCenter1F_Text_Fixer, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, EcruteakCity_PokemonCenter_EventScript_Link_Fixer_Yes_First
+	goto_if_eq VAR_RESULT, NO, EcruteakCity_PokemonCenter_EventScript_Link_Fixer_No
+	closemessage
+	release
+	end
+
+EcruteakCity_PokemonCenter_EventScript_Link_Fixer_No::
+	faceplayer
+	msgbox EcruteakCity_PokemonCenter1F_Text_Fixer_No, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+EcruteakCity_PokemonCenter_EventScript_Link_Fixer_Yes_First::
+	faceplayer
+	msgbox EcruteakCity_PokemonCenter1F_Text_Fixer_Yes_First, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, EcruteakCity_PokemonCenter_EventScript_Link_Fixer_Yes_Second
+	goto_if_eq VAR_RESULT, NO, EcruteakCity_PokemonCenter_EventScript_Link_Fixer_No
+	closemessage
+	release
+	end
+
+EcruteakCity_PokemonCenter_EventScript_Link_Fixer_Yes_Second::
+	faceplayer
+	callnative TradeFix
+	msgbox EcruteakCity_PokemonCenter1F_Text_Fixer_Yes_Second, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 EcruteakCity_PokemonCenter_EventScript_Nerd::
 	lock
 	faceplayer
@@ -152,23 +186,52 @@ EcruteakCity_PokemonCenter1F_Text_GymGuide:
 	.string "I smell a conspiracy. I know it!$"
 
 EcruteakCity_PokemonCenter1F_Text_LinkWoman:
-	.string "Hi!\p"
+	.string "Welcome!\p"
 	.string "The ECRUTEAK POKéCENTER is the only\n"
 	.string "only POKéMON CENTER that offers\l"
-	.string "TRADING and BATTLING with others\l"
+	.string "TRADING and BATTLING with players\l"
 	.string "from different games, including:\p"
-	.string "POKéMON MODERN EMERALD v3.3+ and\n"
+	.string "POKéMON MODERN EMERALD 3.3+ and official\n"
 	.string "POKéMON EMERALD, plus probably the\l"
 	.string "rest of the official games (untested!).\p"
-	.string "Please, DON'T TRY TO TRADE or BATTLE\n"
+	.string "{COLOR RED}Please, DON'T TRY TO TRADE or BATTLE\n"
 	.string "with POKéMON that have been put in\l"
 	.string "the following POKéBALLS:\p"
-	.string "LOVE BALL, LURE BALL, FRIEND BALL\n"
+	.string "{COLOR DARK_GRAY}LOVE BALL, LURE BALL, FRIEND BALL\n"
 	.string "HEAVY BALL, MOON BALL, LEVEL BALL\l"
 	.string "FAST BALL or GS BALL.\p"
 	.string "At best, nothing will happen.\p"
 	.string "At worst, data might get corrupted\n"
 	.string "(Not probable, but might be possible).\p"
-	.string "Please deposit POKéMON that have been\n"
-	.string "or are in the mentioned POKéBALLS in\l"
-	.string "the PC.$"
+	.string "Please, fix your Pokémon by talking\n"
+	.string "to the MAN sitting on the sofa.$"
+
+EcruteakCity_PokemonCenter1F_Text_Fixer:
+	.string "I'm the TRADING FIXER.\p"
+	.string "I can fix your {COLOR RED}PARTY{COLOR DARK_GRAY}, meaning {COLOR RED}all six\n"
+	.string "of your current POKéMON{COLOR DARK_GRAY} if they've\l"
+	.string "been placed in HEART AND SOUL extra\l"
+	.string "POKéBALLS.\p"
+	.string "You {COLOR RED}don't need{COLOR DARK_GRAY} to do this if you haven't\n"
+	.string "placed any of your six POKéMON in HEART\l"
+	.string "and SOUL newly added POKéBALLS.\p"
+	.string "Continue?$"
+
+EcruteakCity_PokemonCenter1F_Text_Fixer_No:
+	.string "I'll be here if you need me.$"
+
+EcruteakCity_PokemonCenter1F_Text_Fixer_Yes_First:
+	.string "Are you sure you want to fix your\n"
+	.string "{COLOR RED}whole{COLOR DARK_GRAY} party?\l"
+	.string "POKéMON on the PC are not affected.\p"
+	.string "They will be placed in a normal POKéBALL\n"
+	.string "again, if it's necessary.\p"
+	.string "Just making sure you're absolutely sure\n"
+	.string "about this operation. {COLOR RED}Don't{COLOR DARK_GRAY} press yes if\l"
+	.string "you still have POKéMON that haven't\l"
+	.string "been placed in the POKéBALLS that the\l"
+	.string "the woman at the entrance hasn't\l"
+	.string "mentioned.$"
+
+EcruteakCity_PokemonCenter1F_Text_Fixer_Yes_Second:
+	.string "Done.$"
