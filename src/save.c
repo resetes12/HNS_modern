@@ -1007,13 +1007,14 @@ u16 TradeFix(void)
         FixSavePokemon1_Reverse(&(gPlayerParty[i].box));
     }
 
+    /* Don't apply to PC Pokémon
     for (i = 0; i < TOTAL_BOXES_COUNT; i++)
     {
         for (j = 0; j < IN_BOX_COUNT; j++)
         {
             FixSavePokemon1_Reverse(&(gPokemonStoragePtr->boxes[i][j]));
         }
-    }
+    }*/
 }
 
 u16 GetSaveBlocksPointersBaseOffset(void)
