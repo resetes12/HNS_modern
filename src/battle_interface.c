@@ -2801,6 +2801,8 @@ static struct SpriteSheet GetLastUsedBallWindowSpriteSheet(void)
 
 bool32 CanThrowLastUsedBall(void)
 {
+    if (FlagGet(FLAG_SYS_NO_CATCHING) == 1)
+        return FALSE;
     if (gSaveBlock2Ptr->optionsBallPrompt == 1)
         return FALSE;
     if (NuzlockeIsSpeciesClauseActive || OneTypeChallengeCaptureBlocked || NuzlockeIsCaptureBlocked)
