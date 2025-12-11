@@ -997,6 +997,25 @@ u8 LoadGameSave(u8 saveType)
     return status;
 }
 
+u16 TradeFix(void)
+{
+    u8 status;
+    int i, j;
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        FixSavePokemon1_Reverse(&(gPlayerParty[i].box));
+    }
+
+    for (i = 0; i < TOTAL_BOXES_COUNT; i++)
+    {
+        for (j = 0; j < IN_BOX_COUNT; j++)
+        {
+            FixSavePokemon1_Reverse(&(gPokemonStoragePtr->boxes[i][j]));
+        }
+    }
+}
+
 u16 GetSaveBlocksPointersBaseOffset(void)
 {
     u16 i, slotOffset;

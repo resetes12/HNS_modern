@@ -591,5 +591,6 @@ u8 EvolutionBlockedByEvoLimit(u16 species);
 u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove);
 
 void FixSavePokemon1(struct BoxPokemon *boxMon);
+void FixSavePokemon1_Reverse(struct BoxPokemon *boxMon);
 
 #endif // GUARD_POKEMON_H

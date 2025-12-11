@@ -103,6 +103,7 @@ Debug_Script_5::
 	end
 
 Debug_Script_6::
+	callnative TradeFix
 	end
 
 Debug_Script_7::

@@ -12216,6 +12216,78 @@ void FixSavePokemon1(struct BoxPokemon *boxMon)
     EncryptBoxMon(boxMon);
 }
 
+void FixSavePokemon1_Reverse(struct BoxPokemon *boxMon)
+{
+    struct PokemonSubstruct0 *substruct0 = NULL;
+    struct PokemonSubstruct1 *substruct1 = NULL;
+    struct PokemonSubstruct2 *substruct2 = NULL;
+    struct PokemonSubstruct3 *substruct3 = NULL;
+
+    substruct0 = &(GetSubstruct(boxMon, boxMon->personality, 0)->type0);
+    substruct1 = &(GetSubstruct(boxMon, boxMon->personality, 1)->type1);
+    substruct2 = &(GetSubstruct(boxMon, boxMon->personality, 2)->type2);
+    substruct3 = &(GetSubstruct(boxMon, boxMon->personality, 3)->type3);
+
+    DecryptBoxMon(boxMon);
+
+    if (substruct0->species != SPECIES_NONE)
+    {
+        uint32_t b0 = ((uint32_t*)substruct3)[0];
+        uint32_t b1 = ((uint32_t*)substruct3)[1];
+        uint32_t b2 = ((uint32_t*)substruct3)[2];
+
+        /* Extract preserved areas exactly as original */
+        uint32_t hiKeep = b2 & 0b11100000000000000000000000000000;  // bits 95:93
+
+        uint32_t loKeep = b0 & 0b01111111111111111111111111111111;  // bits 30:0
+
+        /* Compute masks again */
+        uint32_t hiShiftMask = ~(0b11110000000000000000000000000000); // bits 91–64
+        uint32_t mdMask      = 0xFFFFFFFF;                            // bits 63–32
+        uint32_t loShiftMask = ~0b01111111111111111111111111111111;   // bit 31 only
+
+        /* Extract shifted portions from FIXED data */
+        uint32_t hiShift_fixed = b2 & hiShiftMask;
+        uint32_t mdShift_fixed = b1 & mdMask;
+        uint32_t loShift_fixed = b0 & loShiftMask;
+
+        /* Inversion path:
+           Original operation was:
+               hiShift <<= 1    and MSB came from mdShift >> 31
+               mdShift <<= 1    and MSB came from loShift >> 31
+               loShift <<= 1    and nothing fed into it
+
+           Therefore reverse:
+               hiShift >>= 1    but restore MSB bit from mdShift_fixed LSB
+               mdShift >>= 1    but restore MSB from loShift_fixed LSB
+               loShift >>= 1    (no MSB to restore)
+        */
+
+        uint32_t orig_hiShift =
+            (hiShift_fixed >> 1) | ((mdShift_fixed & 1) << 31);
+
+        uint32_t orig_mdShift =
+            (mdShift_fixed >> 1) | ((loShift_fixed & 1) << 31);
+
+        uint32_t orig_loShift =
+            (loShift_fixed >> 1);
+
+        /* Reassemble original words */
+        b2 = hiKeep | (orig_hiShift & hiShiftMask);
+        b1 = (orig_mdShift & mdMask);
+        b0 = loKeep | (orig_loShift & loShiftMask);
+
+        ((uint32_t*)substruct3)[0] = b0;
+        ((uint32_t*)substruct3)[1] = b1;
+        ((uint32_t*)substruct3)[2] = b2;
+
+        boxMon->checksum = CalculateBoxMonChecksum(boxMon);
+    }
+
+    EncryptBoxMon(boxMon);
+}
+
+
 u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
