@@ -6500,31 +6500,46 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     ) //Damage scaling in HARD MODE. Pokemon take more damage with more badges
     // HnS might need tweaks #DIFFICULTY
     {
-        if (FlagGet(FLAG_BADGE05_GET) == TRUE)
+        u32 j;
+        u8 badgeCount = 0;
+
+        for (j = FLAG_BADGE01_GET; j < FLAG_BADGE01_GET + NUM_BADGES; j++)
+        {
+            if (FlagGet(j))
+                badgeCount++;
+        }
+
+        if (badgeCount > 7)
+        //After deafeating the Eight gym, 25%
         {
             defense = (75 * defense) / 100; //+25%
             spDefense = (75 * spDefense) / 100;
         }
-        else if (FlagGet(FLAG_BADGE04_GET) == TRUE)
+        else if (badgeCount == 7)
+        //After defeating 7 gyms, 20%
         {
             defense = (80 * defense) / 100; //+20%
             spDefense = (80 * spDefense) / 100;
         }
-        else if (FlagGet(FLAG_BADGE03_GET) == TRUE)
+        else if (badgeCount == 4)
+        //After beating the Fouth gym, 15% (includes Fifth, Sixth and Seventh gym)
         {
             defense = (85 * defense) / 100; //+15%
             spDefense = (85 * spDefense) / 100;
         }
-        else if (FlagGet(FLAG_BADGE02_GET) == TRUE)
+        else if (badgeCount == 2)
+        //From the Second gym up to the third, 10%
         {
             defense = (90 * defense) / 100; //+10%
             spDefense = (90 * spDefense) / 100;
         }
-        else if (FlagGet(FLAG_BADGE01_GET) == TRUE)
+        else if (badgeCount == 1)
+        //From the First gym up to the second, 5%
         {
             defense = (95 * defense) / 100; //+5%
             spDefense = (95 * spDefense) / 100;
         }
+        //Until the first gym, no dmg scaling
         else
         {
             defense = (100 * defense) / 100; //+0%

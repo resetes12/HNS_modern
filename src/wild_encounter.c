@@ -279,6 +279,8 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     u8 max;
     u8 range;
     u8 rand;
+    u32 i;
+    u8 badgeCount = 0;
   
     // Make sure minimum level is less than maximum level
     if (wildPokemon->maxLevel >= wildPokemon->minLevel)
@@ -295,6 +297,13 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
         rand = Random() % range;
 
     // check ability for max level mon
+    // #DIFFICULTY
+    for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
+    {
+        if (FlagGet(i))
+            badgeCount++;
+    }
+
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
     {
         u8 ability = GetMonAbility(&gPlayerParty[0]);
@@ -303,19 +312,19 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
             if (Random() % 2 == 0) //Max level of the mon + (n), only for Hard Difficulty
                 if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_SYS_GAME_CLEAR))
                     return max + 10;
-                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE08_GET))
+                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 8))
                     return max + 8;
-                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE07_GET))
+                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 7))
                     return max + 7;
-                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE06_GET))
+                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 6))
                     return max + 6;
-                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE05_GET))
+                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 5))
                     return max + 5;
-                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE04_GET))
+                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 4))
                     return max + 4;
-                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE03_GET))
+                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 3))
                     return max + 3;
-                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE02_GET))
+                else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 2))
                     return max + 1;
                 else
                     return max;
@@ -326,19 +335,19 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     }
     if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_SYS_GAME_CLEAR))
         return min + rand + 10;
-    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE08_GET))
+    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 8))
         return min + rand + 8;
-    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE07_GET))
+    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 7))
         return min + rand + 7;
-    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE06_GET))
+    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 6))
         return min + rand + 6;
-    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE05_GET))
+    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 5))
         return min + rand + 5;
-    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE04_GET))
+    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 4))
         return min + rand + 4;
-    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE03_GET))
+    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 3))
         return min + rand + 3;
-    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && FlagGet(FLAG_BADGE02_GET))
+    else if (gSaveBlock2Ptr->optionsDifficulty == 2 && (badgeCount == 2))
         return min + rand + 1;   
     else
         return min + rand;
