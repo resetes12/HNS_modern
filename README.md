@@ -4,7 +4,9 @@
 The Modern feature list is:
 - Difficulty options (Easy, Normal, Hard). Same as Modern Emerald, it is NOT a difficulty hack-rom, it only adjusts levels, catch rates, badge boosts, and some other small stuff.
 - Removed GameFreak intro
-- Restored trading: Only in Ecruteak City Pokémon Center.
+- Restored trading: Only in Ecruteak City Pokémon Center. Can trade with: Modern Emerald 3.3+, or original games.
+    - Pokémon that have been put in new Pokéballs (Loveball, Lureball, Friendball, Heavyball, Moonball, Levelball or GSball) can't be traded initially, and will show up as BAD EGGs. 
+        - In order to fix that, there's an NPC in the Ecruteak Trade Center which will fix (aka, remove from the special Pokéballs) your Pokémon data.
 - Restored missing options in the Options Menu, from Modern Emerald
     - Difficulty option
     - Bike Music option
@@ -31,12 +33,14 @@ The Modern feature list is:
 - Added cheating items (Infinite Rare Candies, Infinite Repel, Healing Heart and IV/EV editor in party menu). Talk to the Cheating Girl in Cherrygrove.
 - Added IV setter (includes Hidden Power changer), EV resetter, and EXP. NURSE in Saffron Dojo.
 - Revert Hold B to Run, instead of being able to run just by pressing.
-- Safari Zone is now NOT infinite in Nuzlocke modes, and it has been divided in different zones (Johto -> 6 zones; Kanto -> 4 zones). Each zone is one encounter.
-- Pokenav condition menu returns.
+- Safari Zone is now NOT infinite in Nuzlocke modes, and it has been divided in different zones (Johto -> 6 zones; Kanto -> 4 zones). Each zone is one encounter when playing Nuzlocke.
+- Pokenav condition menu returns!
 - You can now decorate your Room!
 - TMs affected by modern moves, meaning that choosing Original will use original TM learneset.
 - Restored grass/footprints metatile behaviour from Modern Emerald.
 - Small bugfixes to the base game.
+
+# ORIGINAL Heart & Soul _readme.md_
 
 ![HnS Logo](HnS_Logo.png)
 
