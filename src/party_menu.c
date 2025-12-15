@@ -3882,9 +3882,24 @@ static void CursorCb_FieldMove(u8 taskId)
 
                 if (!hasBadge)
                 {
-                    DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
-                    gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
-                    return;
+                    if (fieldMove == FIELD_MOVE_FLY)
+                    {
+                        DisplayPartyMenuMessage(gText_CantUseUntilNewBadge_Fly, TRUE);
+                        gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+                        return;
+                    }
+                    else if (fieldMove == FIELD_MOVE_FLASH)
+                    {
+                        DisplayPartyMenuMessage(gText_CantUseUntilNewBadge_Flash, TRUE);
+                        gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+                        return;
+                    }
+                    else
+                    {
+                        DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
+                        gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+                        return;
+                    }
                 }
             }
 
