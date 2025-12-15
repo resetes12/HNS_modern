@@ -17654,12 +17654,12 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Gina3[] = { //PicnickerG
 static const struct TrainerMonNoItemDefaultMoves sParty_Tiffany[] = { //PicnickerGroup
     {
     .iv = 0,
-    .lvl = 34,
+    .lvl = 24,
     .species = SPECIES_CLEFABLE,
     },
     {
     .iv = 0,
-    .lvl = 34,
+    .lvl = 24,
     .species = SPECIES_WIGGLYTUFF,
     },
 };
