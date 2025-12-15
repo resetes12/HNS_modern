@@ -4606,8 +4606,8 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
     {
         cannotUse = TRUE;
     }
-    else if ((EV_Item_With_EVs_Disabled(item) == FALSE) && (gSaveBlock1Ptr->tx_Challenges_NoEVs == 1))
-    //Disable the use of EV items with the challenge NO EVs.
+    else if ((EV_Item_With_EVs_Disabled(item) == FALSE) && (gSaveBlock1Ptr->tx_Challenges_NoEVs == 1) && FlagGet(FLAG_DEFEATED_RED) == 0)
+    //Disable the use of EV items with the challenge NO EVs, only if you haven't beat Red
     {
         cannotUse = TRUE;
     }
