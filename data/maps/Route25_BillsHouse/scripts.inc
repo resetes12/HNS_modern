@@ -166,9 +166,8 @@ Route25_BillsHouse_Text_Roselia:
 	.string "growing from its wrists.$"
 
 Route25_BillsHouse_Text_Lotad:
-	.string "Do you know of a water POKéMON\n"
-	.string "that has a big lily pad on\l"
-	.string "its head?"
+	.string "Do you know of a water POKéMON that\n"
+	.string "has a big lily pad on its head?\p"
 	.string "I heard there are some at the\n"
 	.string "FUCHSIA SAFARI ZONE.\p"
 	.string "I would surely like to see it.$"

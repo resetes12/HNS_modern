@@ -74,6 +74,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "tx_randomizer_and_challenges.h"
+#include "ui_stat_editor.h"
 
 enum {
     MENU_SUMMARY,

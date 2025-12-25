@@ -447,8 +447,9 @@ VioletCity_Text_Sign:
 
 VioletCity_Text_GymSign:
 	.string "VIOLET CITY POKéMON GYM\p"
-	.string "LEADER: FALKNER, The Elegant\n"
-	.string "Master of Flying POKéMON$"
+	.string "LEADER: FALKNER\p"
+	.string "The Elegant Master\n"
+	.string "of Flying POKéMON$"
 
 VioletCity_Text_SproutTowerSign:
 	.string "SPROUT TOWER\p"
