@@ -1160,6 +1160,8 @@ u8 GetScaledLevel(u8 lvl)
         levelScaling = 10;
     else if (badgeCount >= 6)
         levelScaling = 6;
+    else if (badgeCount >= 5)
+        levelScaling = 5;
     else if (badgeCount >= 3)
         levelScaling = 3;
     else if (badgeCount >= 1)
