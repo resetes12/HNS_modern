@@ -118,17 +118,6 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 u
         //Fixes Missigno appearing in Monotype Dragon runs, as the game lacks Dragon species
         if (IsOneTypeChallengeActive() && (gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge == TYPE_DRAGON) && (species == 0))
             CreateMon(&mon, SPECIES_DRATINI, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
-        //Fixes the infamous and popular cult classic horror story "The Topepi of Terror" when selecting a starter.
-        //Bug might happen if you still catch a Togepi in the wild before getting the expected Togepi egg in Violet City.
-        //First, if in Normal or Fairy type Monotype run and you see a Togepi, it gets re-rolled into CLEFFA. 
-        //Doesn't take into account randomizer because it's not relevant here.
-        else if (IsOneTypeChallengeActive() 
-        && ((gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge == TYPE_NORMAL) || (gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge == TYPE_FAIRY)  
-        && (species == SPECIES_TOGEPI)))
-            CreateMon(&mon, SPECIES_CLEFFA, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
-        //If not playing a Normal or Fairy type Monorun, but you're using Random Starters and a Togepi is set as a starter, re-roll into CLEFFA.
-        else if ((gSaveBlock1Ptr->tx_Random_Starter == TRUE) && (species == SPECIES_TOGEPI))
-            CreateMon(&mon, SPECIES_CLEFFA, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
         else
             CreateMon(&mon, species, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
     }
