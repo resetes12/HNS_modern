@@ -243,8 +243,13 @@ void NewGameInitData(void)
     ResetTrainerHillResults();
     ResetContestLinkResults();
     RandomizeTypeEffectivenessListEWRAM(Random32());
+    //Below is unused, but set just in case. Easy Mode nuzlocke and Normal Mode nuzlocke can't be on together. 
+    //Hard Mode nuzlocke forces Normal Mode nuzlocke too, so no need to check.
     if ((gSaveBlock1Ptr->tx_Nuzlocke_EasyMode) && (gSaveBlock1Ptr->tx_Challenges_Nuzlocke))
         gSaveBlock1Ptr->tx_Nuzlocke_EasyMode = 0;
+    //If you are playing Fairy monotype, but for some reason you set Fairy types off, Fairy type will turn on by itself.
+    if ((gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge == TYPE_FAIRY) && (!gSaveBlock1Ptr->tx_Mode_Fairy_Types))
+        gSaveBlock1Ptr->tx_Mode_Fairy_Types = 1;
 
     HardPrev ? FlagSet(FLAG_DIFFICULTY_HARD) : FlagClear(FLAG_DIFFICULTY_HARD);
     TMPrev ? FlagSet(FLAG_FINITE_TMS) : FlagClear(FLAG_FINITE_TMS);
