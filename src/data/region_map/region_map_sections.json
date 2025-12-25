@@ -51,8 +51,8 @@
     {
       "map_section": "MAPSEC_SAFARI_ZONE_GATE",
       "name": "SAFARI ZONE GATE",
-      "x": 2,
-      "y": 9,
+      "x": 0,
+      "y": 6,
       "width": 1,
       "height": 1
     },
@@ -925,6 +925,14 @@
       "name": "ARTISAN CAVE",
       "x": 14,
       "y": 14,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_KANTO_SAFARI_ZONE",
+      "name": "KANTO SAFARI ZONE",
+      "x": 24,
+      "y": 10,
       "width": 1,
       "height": 1
     }

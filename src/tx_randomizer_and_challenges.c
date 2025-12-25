@@ -240,7 +240,7 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_MT_MORTAR]        = 0x40,
     [MAPSEC_WHIRL_ISLANDS]    = 0x41,
     [MAPSEC_BURNED_TOWER]     = 0x42,
-    [MAPSEC_SAFARI_ZONE]      = 0x43, //Unused
+    [MAPSEC_SAFARI_ZONE]      = 0x43,
     //Dungeons: Kanto
     [MAPSEC_ROCK_TUNNEL]      = 0x44,
     [MAPSEC_SEAFOAM_ISLANDS]  = 0x45,
@@ -276,17 +276,18 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_LAVENDER_TOWN]    = 0x5E,
     [MAPSEC_BATTLE_FRONTIER]  = 0x5F,
     //12
-    [MAPSEC_SAFARI_ZONE_AREA1]        = 0x60, //Covers Johto Safari Zone
+    [MAPSEC_SAFARI_ZONE_AREA1]        = 0x60, //Covers Johto Safari Zone encounters
     [MAPSEC_SAFARI_ZONE_AREA2]        = 0x61,
     [MAPSEC_SAFARI_ZONE_AREA3]        = 0x62,
     [MAPSEC_SAFARI_ZONE_AREA4]        = 0x63,
     [MAPSEC_SAFARI_ZONE_AREA5]        = 0x64,
     [MAPSEC_SAFARI_ZONE_AREA6]        = 0x65,
-    [MAPSEC_SAFARI_ZONE_FUCHSIA_1]    = 0x66, //Covers Kanto Safari Zone
+    [MAPSEC_SAFARI_ZONE_FUCHSIA_1]    = 0x66, //Covers Kanto Safari Zone encounters
     [MAPSEC_SAFARI_ZONE_FUCHSIA_2]    = 0x67,
     //13
     [MAPSEC_SAFARI_ZONE_FUCHSIA_3]    = 0x68,
     [MAPSEC_SAFARI_ZONE_FUCHSIA_4]    = 0x69,
+    [MAPSEC_KANTO_SAFARI_ZONE]        = 0x6A, //Kanto Safari Zone default area
 };
 
 //tx_randomizer_and_challenges

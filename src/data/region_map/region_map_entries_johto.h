@@ -113,4 +113,5 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
     [MAPSEC_LILYCOVE_CITY] = { 2, 17, 1, 1, sMapName_},
     [MAPSEC_MOSSDEEP_CITY] = { 3, 17, 1, 1, sMapName_},
     [MAPSEC_SOOTOPOLIS_CITY] = { 3, 17, 1, 1, sMapName_},
+    [MAPSEC_KANTO_SAFARI_ZONE] = { 3, 17, 1, 1, sMapName_KANTO_SAFARI_ZONE},
 };

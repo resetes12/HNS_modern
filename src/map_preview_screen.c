@@ -124,8 +124,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .image = IMG_POKEMON_TOWER
     },
     [MPS_SAFARI_ZONE] = {
-        //.mapsec = MAPSEC_KANTO_SAFARI_ZONE,
-        .mapsec = MAPSEC_FUCHSIA_CITY,
+        .mapsec = MAPSEC_KANTO_SAFARI_ZONE,
         .type = MPS_TYPE_BASIC,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_SAFARI_ZONE
@@ -262,6 +261,13 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_MONEAN_CHAMBER
+    },
+    //Johto
+    [MPS_SAFARI_ZONE_JOHTO] = {
+        .mapsec = MAPSEC_SAFARI_ZONE,
+        .type = MPS_TYPE_BASIC,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_SAFARI_ZONE
     }
 };
 

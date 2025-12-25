@@ -685,6 +685,7 @@ static const u8 sMapsecToRegion[] = {
 	[MAPSEC_VERMILION_CITY]				= REGION_KANTO,
 	[MAPSEC_CELADON_CITY]				= REGION_KANTO,
 	[MAPSEC_FUCHSIA_CITY]				= REGION_KANTO,
+    [MAPSEC_KANTO_SAFARI_ZONE]          = REGION_KANTO, 
     [MAPSEC_SAFARI_ZONE_FUCHSIA_1]      = REGION_KANTO, 
     [MAPSEC_SAFARI_ZONE_FUCHSIA_2]      = REGION_KANTO,
     [MAPSEC_SAFARI_ZONE_FUCHSIA_3]      = REGION_KANTO,
@@ -1611,7 +1612,7 @@ u8 NuzlockeGetCurrentRegionMapSectionId(void) //tx_randomizer_and_challenges @Ku
     #endif
 
     // Johto Safari Zone
-    if (regionMapSectionId == MAPSEC_SAFARI_ZONE_GATE)
+    if (regionMapSectionId == MAPSEC_SAFARI_ZONE)
     {
         switch(gSaveBlock1Ptr->location.mapNum)
         {
@@ -1630,7 +1631,7 @@ u8 NuzlockeGetCurrentRegionMapSectionId(void) //tx_randomizer_and_challenges @Ku
         }
     }
     // Fuchsia City Safari Zone
-    else if (regionMapSectionId == MAPSEC_FUCHSIA_CITY)
+    else if (regionMapSectionId == MAPSEC_KANTO_SAFARI_ZONE)
     {
         switch(gSaveBlock1Ptr->location.mapNum)
         {

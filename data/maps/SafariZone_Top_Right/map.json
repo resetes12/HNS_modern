@@ -3,7 +3,7 @@
   "name": "SafariZone_Top_Right",
   "layout": "LAYOUT_SAFARI_ZONE_TOP_RIGHT",
   "music": "MUS_HG_SAFARI_ZONE",
-  "region_map_section": "MAPSEC_SAFARI_ZONE_GATE",
+  "region_map_section": "MAPSEC_SAFARI_ZONE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_OCEAN_ROUTE",
