@@ -342,7 +342,7 @@
   ],
   "warp_events": [
     {
-      "x": 32,
+      "x": 31,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ROUTE32",
