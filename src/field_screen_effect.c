@@ -18,6 +18,7 @@
 #include "load_save.h"
 #include "main.h"
 #include "menu.h"
+#include "map_preview_screen.h"
 #include "mirage_tower.h"
 #include "metatile_behavior.h"
 #include "palette.h"
@@ -107,7 +108,10 @@ void WarpFadeOutScreen(void)
         FadeScreen(FADE_TO_BLACK, 0);
         break;
     case 1:
-        FadeScreen(FADE_TO_WHITE, 0);
+        if (MapHasPreviewScreen_HandleQLState2(GetDestinationWarpMapSectionId(), MPS_TYPE_CAVE))
+            FadeScreen(FADE_TO_BLACK, 0);
+        else
+            FadeScreen(FADE_TO_WHITE, 0);
     }
 }
 

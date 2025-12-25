@@ -459,3 +459,8 @@ static void LoadMapNamePopUpWindowBg(void)
         LoadPalette(sMapPopUp_PaletteTable[popUpThemeId], BG_PLTT_ID(14), sizeof(sMapPopUp_PaletteTable[0]));
     BlitBitmapToWindow(popupWindowId, sMapPopUp_Table[popUpThemeId], 0, 0, 80, 24);
 }
+
+void Script_MapPopUp(void)
+{
+    ShowMapNamePopup();
+}

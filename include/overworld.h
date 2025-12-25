@@ -185,6 +185,8 @@ bool32 Overworld_SendKeysToLinkIsRunning(void);
 bool32 IsSendingKeysOverCable(void);
 void ClearLinkPlayerObjectEvents(void);
 u8 NuzlockeGetCurrentRegionMapSectionId(void); //tx_randomizer_and_challenges
+u8 GetLastUsedWarpMapSectionId(void);
+u8 GetDestinationWarpMapSectionId(void);
 
 
 #endif // GUARD_OVERWORLD_H

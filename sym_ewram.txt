@@ -161,3 +161,4 @@
 	.include "src/debug_pokemon_creator.o"
 	.include "src/surfable.o"
 	.include "src/ui_stat_editor.o"
+	.include "src/map_preview_screen.o"
