@@ -289,6 +289,7 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_SAFARI_ZONE_FUCHSIA_4]    = 0x69,
     [MAPSEC_KANTO_SAFARI_ZONE]        = 0x6A, //Kanto Safari Zone default area
     [MAPSEC_FARAWAY_ISLAND]           = 0x6B,
+    [MAPSEC_MT_SILVER_INSIDE]         = 0x6C,
 };
 
 //tx_randomizer_and_challenges
