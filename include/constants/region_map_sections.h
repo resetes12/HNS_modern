@@ -83,7 +83,7 @@
 #define MAPSEC_JAGGED_PASS                  0x4C
 #define MAPSEC_JAGGED_PASS2                 0x4D
 #define MAPSEC_SEALED_CHAMBER               0x4E
-#define MAPSEC_UNDERWATER_SEALED_CHAMBER    0x4F
+#define MAPSEC_MT_SILVER_INSIDE             0x4F
 #define MAPSEC_SCORCHED_SLAB                0x50
 #define MAPSEC_ISLAND_CAVE                  0x51
 #define MAPSEC_DESERT_RUINS                 0x52

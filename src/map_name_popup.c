@@ -191,6 +191,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_LAKE_OF_RAGE] = MAPPOPUP_THEME_CLIFF,
     [MAPSEC_ICE_PATH] = MAPPOPUP_THEME_STONE2,
     [MAPSEC_MT_SILVER] = MAPPOPUP_THEME_STONE,
+    [MAPSEC_MT_SILVER_INSIDE] = MAPPOPUP_THEME_STONE,
     [MAPSEC_TOHJO_FALLS] = MAPPOPUP_THEME_STONE,
     [MAPSEC_SPROUT_TOWER] = MAPPOPUP_THEME_HISTORIC,
     [MAPSEC_SLOWPOKE_WELL] = MAPPOPUP_THEME_STONE2,
@@ -213,6 +214,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_SEAFLOOR_CAVERN] = MAPPOPUP_THEME_STONE,
     [MAPSEC_UNDERWATER_SEAFLOOR_CAVERN] = MAPPOPUP_THEME_STONE2,
     [MAPSEC_VICTORY_ROAD] = MAPPOPUP_THEME_STONE,
+    [MAPSEC_KANTO_VICTORY_ROAD] = MAPPOPUP_THEME_STONE,
     [MAPSEC_BIRTH_ISLAND] = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_SOUTHERN_ISLAND] = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_FARAWAY_ISLAND] = MAPPOPUP_THEME_UNDERWATER,
@@ -448,6 +450,9 @@ static void LoadMapNamePopUpWindowBg(void)
         else
             regionMapSectionId = 0; // Discard kanto region sections;
     }
+    else if ((regionMapSectionId >= KANTO_MAPSEC_START) && (regionMapSectionId == MAPSEC_MT_SILVER_INSIDE))
+        regionMapSectionId = gMapHeader.regionMapSectionId;
+
     popUpThemeId = sRegionMapSectionId_To_PopUpThemeIdMapping[regionMapSectionId];
 
     LoadBgTiles(GetWindowAttribute(popupWindowId, WINDOW_BG), sMapPopUp_OutlineTable[popUpThemeId], 0x400, 0x21D);

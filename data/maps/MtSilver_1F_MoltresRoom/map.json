@@ -3,7 +3,7 @@
   "name": "MtSilver_1F_MoltresRoom",
   "layout": "LAYOUT_MT_SILVER_1F_MOLTRES_ROOM",
   "music": "MUS_HG_LIGHTHOUSE",
-  "region_map_section": "MAPSEC_MT_SILVER",
+  "region_map_section": "MAPSEC_MT_SILVER_INSIDE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

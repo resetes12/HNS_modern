@@ -107,9 +107,9 @@
     {
       "map_section": "MAPSEC_ROUTE_28",
       "name": "ROUTE 28",
-      "x": 21,
-      "y": 5,
-      "width": 3,
+      "x": 15,
+      "y": 7,
+      "width": 1,
       "height": 1
     },
     {
@@ -283,10 +283,10 @@
     {
       "map_section": "MAPSEC_VICTORY_ROAD",
       "name": "VICTORY ROAD",
-      "x": 24,
-      "y": 5,
+      "x": 16,
+      "y": 4,
       "width": 1,
-      "height": 1
+      "height": 3
     },
     {
       "map_section": "MAPSEC_PALLET_TOWN",
@@ -933,6 +933,22 @@
       "name": "KANTO SAFARI ZONE",
       "x": 24,
       "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_KANTO_VICTORY_ROAD",
+      "name": "VICTORY ROAD GATE",
+      "x": 16,
+      "y": 7,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MT_SILVER_INSIDE",
+      "name": "MT. SILVER",
+      "x": 14,
+      "y": 6,
       "width": 1,
       "height": 1
     }

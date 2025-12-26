@@ -279,16 +279,16 @@
     {
       "map_section": "MAPSEC_SAFARI_ZONE",
       "name": "SAFARI ZONE",
-      "x": 0,
-      "y": 6,
+      "x": 2,
+      "y": 8,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_VICTORY_ROAD",
       "name": "VICTORY ROAD",
-      "x": 24,
-      "y": 5,
+      "x": 16,
+      "y": 4,
       "width": 1,
       "height": 1
     },
@@ -790,7 +790,7 @@
     },
     {
       "map_section": "MAPSEC_MT_SILVER",
-      "name": "MT. SILVER",
+      "name": "MT. SILVER ",
       "x": 14,
       "y": 7,
       "width": 1,
@@ -929,6 +929,22 @@
       "name": "SAFARI ZONE",
       "x": 24,
       "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_KANTO_VICTORY_ROAD",
+      "name": "VICTORY ROAD GATE",
+      "x": 24,
+      "y": 2,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MT_SILVER_INSIDE",
+      "name": "MT. SILVER",
+      "x": 14,
+      "y": 6,
       "width": 1,
       "height": 1
     }

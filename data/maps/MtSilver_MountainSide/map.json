@@ -3,7 +3,7 @@
   "name": "MtSilver_MountainSide",
   "layout": "LAYOUT_MT_SILVER_MOUNTAIN_SIDE",
   "music": "MUS_HG_LIGHTHOUSE",
-  "region_map_section": "MAPSEC_MT_SILVER",
+  "region_map_section": "MAPSEC_MT_SILVER_INSIDE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",

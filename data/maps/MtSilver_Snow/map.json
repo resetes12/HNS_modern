@@ -3,7 +3,7 @@
   "name": "MtSilver_Snow",
   "layout": "LAYOUT_MT_SILVER_SNOW",
   "music": "MUS_HG_LIGHTHOUSE",
-  "region_map_section": "MAPSEC_MT_SILVER",
+  "region_map_section": "MAPSEC_MT_SILVER_INSIDE",
   "requires_flash": false,
   "weather": "WEATHER_SNOW",
   "map_type": "MAP_TYPE_ROUTE",

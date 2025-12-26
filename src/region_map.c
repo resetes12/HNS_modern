@@ -93,7 +93,7 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
     [MAPSEC_ROUTE_47] = { 0, 9, 1, 1, sMapName_ROUTE_47},
     [MAPSEC_ROUTE_48] = { 0, 8, 1, 1, sMapName_ROUTE_48},
     [MAPSEC_SAFARI_ZONE] = { 0, 6, 1, 1, sMapName_SAFARI_ZONE},
-    [MAPSEC_VICTORY_ROAD] = { 16, 4, 1, 4, sMapName_VICTORY_ROAD},
+    [MAPSEC_VICTORY_ROAD] = { 16, 4, 1, 3, sMapName_VICTORY_ROAD},
     [MAPSEC_PALLET_TOWN] = { 19, 11, 1, 1, sMapName_PALLET_TOWN},
     [MAPSEC_VIRIDIAN_CITY] = { 19, 7, 1, 1, sMapName_VIRIDIAN_CITY},
     [MAPSEC_PEWTER_CITY] = { 19, 2, 1, 1, sMapName_PEWTER_CITY},
@@ -174,6 +174,8 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
     [MAPSEC_MOSSDEEP_CITY] = { 3, 17, 1, 1, sMapName_},
     [MAPSEC_SOOTOPOLIS_CITY] = { 3, 17, 1, 1, sMapName_},
     [MAPSEC_KANTO_SAFARI_ZONE] = { 3, 17, 1, 1, sMapName_KANTO_SAFARI_ZONE},
+    [MAPSEC_KANTO_VICTORY_ROAD] = { 16, 7, 1, 1, sMapName_VICTORY_ROAD_GATE},
+    [MAPSEC_MT_SILVER_INSIDE] = { 14, 6, 1, 1, sMapName_MT__SILVER},
 };
 
 
@@ -415,7 +417,7 @@ static const u16 sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_AQUA_HIDEOUT,               MAPSEC_LILYCOVE_CITY},
     {MAPSEC_AQUA_HIDEOUT_OLD,           MAPSEC_LILYCOVE_CITY},
     {MAPSEC_MAGMA_HIDEOUT,              MAPSEC_ROUTE_37},
-    {MAPSEC_UNDERWATER_SEALED_CHAMBER,  MAPSEC_TOHJO_FALLS},
+    {MAPSEC_MT_SILVER_INSIDE,  MAPSEC_TOHJO_FALLS},
     {MAPSEC_JAGGED_PASS,                MAPSEC_ROUTE_37},
     {MAPSEC_MT_PYRE,                    MAPSEC_ROUTE_47},
     {MAPSEC_SKY_PILLAR,                 MAPSEC_LAKE_OF_RAGE},
