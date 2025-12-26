@@ -1,7 +1,14 @@
+# WARNING!!!
+# REPOSITORY UNDER DEVELOPMENT!
+# NO RELEASES WILL BE AVAILABLE ANYTIME SOON
+
+
 # MODERN Heart & Soul
 **Modern** Heart & Soul is a small modification of the original Pokémon Heart & Soul version 1.2.1 that includes missing options and features from its base game engine, Pokémon Modern Emerald. You can get more information about Modern Emerald at [Pokécommunity](https://www.Pokécommunity.com/showthread.php?t=494005) and at [Github](https://github.com/resetes12/pokeemerald). 
 
 The Modern feature list is:
+- Map previews for dungeons, like FRLG and HGSS. Based on HGSS.
+- FRLG Pokémon sprites for Gen 1, but using double animation (hand-made).
 - Difficulty options (Easy, Normal, Hard). Same as Modern Emerald, it is NOT a difficulty hack-rom, it only adjusts levels, catch rates, badge boosts, and some other small stuff.
 - Removed GameFreak intro
 - Restored trading: Only in Ecruteak City Pokémon Center. Can trade with: Modern Emerald 3.3+, or original games.
@@ -38,7 +45,7 @@ The Modern feature list is:
 - You can now decorate your Room!
 - TMs affected by modern moves, meaning that choosing Original will use original TM learneset.
 - Restored grass/footprints metatile behaviour from Modern Emerald.
-- Small bugfixes to the base game.
+- Small bugfixes to the base game: mostly tiles and collision to match Gen 3-like map design.
 
 # ORIGINAL Heart & Soul _readme.md_
 
