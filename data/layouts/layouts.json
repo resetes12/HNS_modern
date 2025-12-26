@@ -1594,7 +1594,7 @@
     {
       "id": "LAYOUT_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP2",
       "name": "CaveOfOrigin_UnusedRubySapphireMap2_Layout",
-      "width": 40,
+      "width": 42,
       "height": 25,
       "primary_tileset": "gTileset_Johto_General",
       "secondary_tileset": "gTileset_Cave_Default",
