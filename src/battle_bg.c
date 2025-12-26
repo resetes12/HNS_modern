@@ -716,7 +716,7 @@ static const struct BattleBackground sBattleTerrainTable_2[] =
         .tilemap = gBattleTerrainTilemap_Cave_2,
         .entryTileset = gBattleTerrainAnimTiles_Cave_2,
         .entryTilemap = gBattleTerrainAnimTilemap_Cave_2,
-        .palette = gBattleTerrainPalette_Underwater_2,
+        .palette = gBattleTerrainPalette_Cave_2,
     },
 
     [BATTLE_TERRAIN_WATER] =
@@ -814,11 +814,11 @@ static const struct BattleBackground sBattleTerrainTable[] =
 
     [BATTLE_TERRAIN_GRAY_CAVE] =
     {
-        .tileset = gBattleTerrainTiles_Underwater,
-        .tilemap = gBattleTerrainTilemap_Underwater,
-        .entryTileset = gBattleTerrainAnimTiles_Underwater,
-        .entryTilemap = gBattleTerrainAnimTilemap_Underwater,
-        .palette = gBattleTerrainPalette_Underwater,
+        .tileset = gBattleTerrainTiles_Cave,
+        .tilemap = gBattleTerrainTilemap_Cave,
+        .entryTileset = gBattleTerrainAnimTiles_Cave,
+        .entryTilemap = gBattleTerrainAnimTilemap_Cave,
+        .palette = gBattleTerrainPalette_Cave,
     },
 
     [BATTLE_TERRAIN_WATER] =
