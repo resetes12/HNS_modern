@@ -1250,9 +1250,32 @@ static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
     return FALSE;
 }
 
+#define IS_MAP(mapGroupId, mapNumId) \
+    (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(mapGroupId) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(mapNumId))
+
+static bool16 IsRocketTakeover(struct WarpData *warp)
+{
+    // Inject Rocket Takeover override logic
+    if (VarGet(VAR_MAHOGANY_TOWN_STATE) == 16)
+    {
+        if (IS_MAP(GOLDENROD_CITY, GOLDENROD_CITY) ||
+            IS_MAP(GOLDENROD_CITY_RADIO_TOWER_4F, GOLDENROD_CITY_RADIO_TOWER_4F) ||
+            IS_MAP(GOLDENROD_CITY_RADIO_TOWER_1F, GOLDENROD_CITY_RADIO_TOWER_1F) ||
+            IS_MAP(GOLDENROD_CITY_RADIO_TOWER_2F, GOLDENROD_CITY_RADIO_TOWER_2F) ||
+            IS_MAP(GOLDENROD_CITY_RADIO_TOWER_3F, GOLDENROD_CITY_RADIO_TOWER_3F) ||
+            IS_MAP(GOLDENROD_CITY_RADIO_TOWER_5F, GOLDENROD_CITY_RADIO_TOWER_5F) ||
+            IS_MAP(GOLDENROD_CITY_UNDERGROUND_ENTRANCE, GOLDENROD_CITY_UNDERGROUND_ENTRANCE) ||
+            IS_MAP(GOLDENROD_CITY_UNDERGROUND_TUNNEL, GOLDENROD_CITY_UNDERGROUND_TUNNEL))
+            return TRUE;
+    }
+    return FALSE;
+}
+
 u16 GetLocationMusic(struct WarpData *warp)
 {
-    if (NoMusicInSotopolisWithLegendaries(warp) == TRUE)
+    if (IsRocketTakeover(warp) == TRUE)
+        return MUS_HG_ROCKET_TAKEOVER;
+    else if (NoMusicInSotopolisWithLegendaries(warp) == TRUE)
         return MUS_NONE;
     else if (ShouldLegendaryMusicPlayAtLocation(warp) == TRUE)
         return MUS_ABNORMAL_WEATHER;
@@ -1316,23 +1339,6 @@ void Overworld_ResetMapMusic(void)
 void Overworld_PlaySpecialMapMusic(void)
 {
     u16 music = GetCurrLocationDefaultMusic();
-
-    // Inject Rocket Takeover override logic
-    if (VarGet(VAR_MAHOGANY_TOWN_STATE) == 16)
-    {
-        if (
-            IS_MAP(GOLDENROD_CITY, GOLDENROD_CITY) ||
-            IS_MAP(GOLDENROD_CITY_RADIO_TOWER_4F, GOLDENROD_CITY_RADIO_TOWER_4F) ||
-            IS_MAP(GOLDENROD_CITY_RADIO_TOWER_1F, GOLDENROD_CITY_RADIO_TOWER_1F) ||
-            IS_MAP(GOLDENROD_CITY_RADIO_TOWER_2F, GOLDENROD_CITY_RADIO_TOWER_2F) ||
-            IS_MAP(GOLDENROD_CITY_RADIO_TOWER_3F, GOLDENROD_CITY_RADIO_TOWER_3F) ||
-            IS_MAP(GOLDENROD_CITY_RADIO_TOWER_5F, GOLDENROD_CITY_RADIO_TOWER_5F) ||
-            IS_MAP(GOLDENROD_CITY_UNDERGROUND_ENTRANCE, GOLDENROD_CITY_UNDERGROUND_ENTRANCE) ||
-            IS_MAP(GOLDENROD_CITY_UNDERGROUND_TUNNEL, GOLDENROD_CITY_UNDERGROUND_TUNNEL)
-        )
-            if (music != GetCurrentMapMusic())
-                music = MUS_HG_ROCKET_TAKEOVER;
-    }
 
     if (music != MUS_ABNORMAL_WEATHER && music != MUS_NONE)
     {
