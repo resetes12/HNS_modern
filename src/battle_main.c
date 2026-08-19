@@ -4412,7 +4412,6 @@ static void BattleIntroSafariQuickRun(void)
             if ((JOY_HELD(R_BUTTON)) && (JOY_HELD(L_BUTTON)))
             {
                 PlaySE(SE_FLEE);
-                gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
                 gBattleOutcome = B_OUTCOME_RAN;
                 gBattleMainFunc = HandleEndTurn_RanFromBattle;
                 return;
@@ -4436,7 +4435,6 @@ static void BattleIntroSafariQuickRun(void)
 
                 sSafariRunHoldCounter = 0;
                 PlaySE(SE_FLEE);
-                gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
                 gBattleOutcome = B_OUTCOME_RAN;
                 gBattleMainFunc = HandleEndTurn_RanFromBattle;
                 return;
