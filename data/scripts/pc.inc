@@ -73,8 +73,8 @@ EventScript_AccessFakePC_AfterLeague::
 
 EventScript_ChallengeViewer::
 	playse SE_PC_LOGIN
-	callnative Task_ChallengeViewer
-	delay 30
+	special Special_OpenChallengeViewer
+	waitstate
 	goto EventScript_PCMainMenu
 	end
 
