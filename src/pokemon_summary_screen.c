@@ -3223,7 +3223,7 @@ static void PrintMonInfo(void)
         PrintEggInfo();
     ScheduleBgCopyTilemapToVram(0);
 }
-static const u8 sText_Deoxys_Number[] = _("{NO}{CLEAR 0x01}386");
+static const u8 sText_Deoxys_Number[] = _("{NO}{CLEAR 0x01}425");
 static const u8 sText_Test_Number[] = _("{NO}{CLEAR 0x01}???");
 
 static void PrintNotEggInfo(void)
