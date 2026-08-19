@@ -5878,6 +5878,7 @@ const union {
         .RAIN_DANCE = TRUE,
         .FRUSTRATION = TRUE,
         .RETURN = TRUE,
+        .BRICK_BREAK = TRUE,
         .DOUBLE_TEAM = TRUE,
         .AERIAL_ACE = TRUE,
         .FACADE = TRUE,
