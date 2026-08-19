@@ -107,6 +107,10 @@ EventScript_SmashRock:: @ fallthrough
 	call_if_eq VAR_RESULT, 3, EventScript_RockSmashRedShard
 	call_if_eq VAR_RESULT, 4, EventScript_RockSmashGreenShard
 	call_if_eq VAR_RESULT, 5, EventScript_RockSmashYellowShard
+	@ Unused in HnS, made for Modern_FRLG
+	@random 30
+	@call_if_eq VAR_RESULT, 1, EventScript_RockSmashDeepSeaTooth
+	@call_if_eq VAR_RESULT, 2, EventScript_RockSmashDeepSeaScale
 	releaseall
 	end
 
@@ -224,6 +228,10 @@ EventScript_EndSmash::
 	call_if_eq VAR_RESULT, 3, EventScript_RockSmashRedShard
 	call_if_eq VAR_RESULT, 4, EventScript_RockSmashGreenShard
 	call_if_eq VAR_RESULT, 5, EventScript_RockSmashYellowShard
+	@ Unused in HnS, made for Modern_FRLG
+	@random 30
+	@call_if_eq VAR_RESULT, 1, EventScript_RockSmashDeepSeaTooth
+	@call_if_eq VAR_RESULT, 2, EventScript_RockSmashDeepSeaScale
 	releaseall
 	end
 
@@ -245,6 +253,14 @@ EventScript_RockSmashGreenShard::
 
 EventScript_RockSmashYellowShard::
 	giveitem ITEM_YELLOW_SHARD
+	return
+
+EventScript_RockSmashDeepSeaTooth::
+	giveitem ITEM_DEEP_SEA_TOOTH
+	return
+
+EventScript_RockSmashDeepSeaScale::
+	giveitem ITEM_DEEP_SEA_SCALE
 	return
 
 Movement_WalkUp:
