@@ -95,32 +95,43 @@ Text_Hard_Mode::
 	.string "Hard mode is {STR_VAR_1}$"
 
 Debug_Script_4::
-	setflag FLAG_VISITED_KANTO
+	register_matchcall TRAINER_JOEY
+    register_matchcall TRAINER_MIKEY
+    register_matchcall TRAINER_LIZ
+    register_matchcall TRAINER_COLETTE
+    register_matchcall TRAINER_BROOKE
+    register_matchcall TRAINER_HENRY
+    register_matchcall TRAINER_ANTHONY
+    register_matchcall TRAINER_BETH
+    register_matchcall TRAINER_BRANDON    
+    register_matchcall TRAINER_TOBY
+    register_matchcall TRAINER_JOE    
+    register_matchcall TRAINER_ROY    
+    register_matchcall TRAINER_JAMIE    
+    register_matchcall TRAINER_ANN_AND_ANNE
+    register_matchcall TRAINER_SIMON
+    register_matchcall TRAINER_SHANE
+    register_matchcall TRAINER_RON
+    register_matchcall TRAINER_ELLIOT
+    register_matchcall TRAINER_PHIL
+    register_matchcall TRAINER_KELLY
+    register_matchcall TRAINER_BRENT
+    register_matchcall TRAINER_BOB
+    register_matchcall TRAINER_THOM_AND_KAE
+    register_matchcall TRAINER_QUINN
+    register_matchcall TRAINER_WARREN    
+    register_matchcall TRAINER_ALLAN    
+    register_matchcall TRAINER_ZEKE    
+    register_matchcall TRAINER_SIDNEY
+    register_matchcall TRAINER_JASON
+    register_matchcall TRAINER_JAKE
+    register_matchcall TRAINER_BRET   
 	end
 
 Debug_Script_5::
-	clearflag FLAG_VISITED_KANTO
 	end
 
 Debug_Script_6::
-	register_matchcall TRAINER_JOEY
-	register_matchcall TRAINER_MIKEY
-	register_matchcall TRAINER_LIZ
-	register_matchcall TRAINER_HENRY
-	register_matchcall TRAINER_ANTHONY
-	register_matchcall TRAINER_BRANDON
-	register_matchcall TRAINER_ANN_AND_ANNE
-	register_matchcall TRAINER_BROOKE
-	register_matchcall TRAINER_ELLIOT
-	register_matchcall TRAINER_TOBY
-	register_matchcall TRAINER_JAMIE
-	register_matchcall TRAINER_SIMON
-	register_matchcall TRAINER_SHANE
-	register_matchcall TRAINER_RON
-	register_matchcall TRAINER_BRENT
-	register_matchcall TRAINER_PHIL
-	register_matchcall TRAINER_KELLY
-	register_matchcall TRAINER_THOM_AND_KAE
 	end
 
 Debug_Script_7::
