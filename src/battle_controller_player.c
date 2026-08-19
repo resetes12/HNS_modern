@@ -7,6 +7,7 @@
 #include "battle_dome.h"
 #include "battle_interface.h"
 #include "battle_message.h"
+#include "battle_script_commands.h"
 #include "battle_setup.h"
 #include "battle_tv.h"
 #include "bg.h"
@@ -1941,7 +1942,7 @@ u8 TypeEffectiveness(u8 targetId)
 
 bool8 IsMoveSTAB(u16 move, u8 battlerId)
 {
-	u8 moveType = gBattleMoves[move].type;
+	u8 moveType = DisplayMoveTypeChange(move);
 
     if (IS_MOVE_STATUS(move))
         return FALSE;
@@ -2005,7 +2006,7 @@ static void MoveSelectionDisplayMoveTypeDoubles(u8 targetId)
     u16 move = moveInfo->moves[gMoveSelectionCursor[gActiveBattler]];
 
     moveCategory = gBattleMoves[move].category;
-    type = gBattleMoves[move].type;
+    type = DisplayMoveTypeChange(move);
 
     if (move == MOVE_HIDDEN_POWER)
     {
@@ -2055,7 +2056,7 @@ static void MoveSelectionDisplayMoveType(void) //Made this display a Move Type I
     u16 move = moveInfo->moves[gMoveSelectionCursor[gActiveBattler]];
 
     moveCategory = gBattleMoves[move].category;
-    type = gBattleMoves[move].type;
+    type = DisplayMoveTypeChange(move);
 
     if (move == MOVE_HIDDEN_POWER)
     {
