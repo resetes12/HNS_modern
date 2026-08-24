@@ -498,6 +498,7 @@ const union {
         .TOXIC = TRUE,
         .HIDDEN_POWER = TRUE,
         .SUNNY_DAY = TRUE,
+        .TAUNT = TRUE,
         .HYPER_BEAM = TRUE,
         .PROTECT = TRUE,
         .RAIN_DANCE = TRUE,
@@ -1161,6 +1162,7 @@ const union {
         .SOLAR_BEAM = TRUE,
         .RETURN = TRUE,
         .DIG = TRUE,
+        .SHADOW_BALL = TRUE,
         .DOUBLE_TEAM = TRUE,
         .SLUDGE_BOMB = TRUE,
         .AERIAL_ACE = TRUE,
@@ -5011,11 +5013,14 @@ const union {
         .SOLAR_BEAM = TRUE,
         .RETURN = TRUE,
         .DOUBLE_TEAM = TRUE,
+        .FLAMETHROWER = TRUE,
         .SLUDGE_BOMB = TRUE,
+        .FIRE_BLAST = TRUE,
         .FACADE = TRUE,
         .SECRET_POWER = TRUE,
         .REST = TRUE,
         .ATTRACT = TRUE,
+        .OVERHEAT = TRUE,
         .FLAMETHROWER = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
@@ -6701,6 +6706,7 @@ const union {
 
     [SPECIES_GROVYLE] = { .learnset = {
         .FOCUS_PUNCH = TRUE,
+        .DRAGON_CLAW = TRUE,
         .TOXIC = TRUE,
         .BULLET_SEED = TRUE,
         .HIDDEN_POWER = TRUE,
@@ -7535,7 +7541,9 @@ const union {
         .ATTRACT = TRUE,
         .THIEF = TRUE,
         .SURF = TRUE,
+        .STEEL_WING = TRUE,
         .FLASH = TRUE,
+        .FLY = TRUE,
     } },
 
     [SPECIES_WAILMER] = { .learnset = {
@@ -10546,6 +10554,7 @@ const union {
     [SPECIES_ELECTIVIRE] = { .learnset = {
         .FOCUS_PUNCH = TRUE,
         .TOXIC = TRUE,
+        .BULK_UP = TRUE,
         .HIDDEN_POWER = TRUE,
         .TAUNT = TRUE,
         .HYPER_BEAM = TRUE,
