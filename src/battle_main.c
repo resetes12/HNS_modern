@@ -3850,7 +3850,7 @@ static void BattleStartClearSetData(void)
         gLastPrintedMoves[i] = MOVE_NONE;
         gBattleResources->flags->flags[i] = 0;
         gPalaceSelectionBattleScripts[i] = 0;
-        if (gSaveBlock2Ptr->optionsCursorMemory)
+        if ((gSaveBlock2Ptr->optionsCursorMemory) == 0)
         {
             gTargetSelectionCursor[i] = 0xFF;
             gTargetSelectionMove[i] = 0xFF;
@@ -4004,7 +4004,7 @@ void SwitchInClearSetData(void)
 
     gActionSelectionCursor[gActiveBattler] = 0;
     gMoveSelectionCursor[gActiveBattler] = 0;
-    if (gSaveBlock2Ptr->optionsCursorMemory)
+    if ((gSaveBlock2Ptr->optionsCursorMemory) == 0)
         gTargetSelectionCursor[gActiveBattler] = 0xFF;
 
     ptr = (u8 *)&gDisableStructs[gActiveBattler];
@@ -4088,7 +4088,7 @@ void FaintClearSetData(void)
 
     gActionSelectionCursor[gActiveBattler] = 0;
     gMoveSelectionCursor[gActiveBattler] = 0;
-    if (gSaveBlock2Ptr->optionsCursorMemory)
+    if ((gSaveBlock2Ptr->optionsCursorMemory) == 0)
         gTargetSelectionCursor[gActiveBattler] = 0xFF;
 
     ptr = (u8 *)&gDisableStructs[gActiveBattler];
