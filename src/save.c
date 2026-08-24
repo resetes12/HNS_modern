@@ -994,6 +994,13 @@ u8 LoadGameSave(u8 saveType)
         StringCopy(gSaveBlock2Ptr->rivalName, gSilverPresetNames[0]);
         gSaveBlock1Ptr->versionId = 7;
     }
+    if (gSaveBlock1Ptr->versionId <8){
+        {
+            // Retroactively set shiny-seen flags for any shinies already in party/PC/daycare
+            ScanOwnedMonsForShinies();
+        }
+        gSaveBlock1Ptr->versionId = 8;
+    }
     return status;
 }
 

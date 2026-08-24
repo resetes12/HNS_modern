@@ -14,7 +14,8 @@ You can get more information about Modern Emerald at [Pokécommunity](https://ww
 [More information about Heart and Soul here.](https://github.com/PokemonHnS-Development/pokemonHnS)
 
 The **Modern** feature list is:
-- Updated to the lastest Modern Emerald base (HnS 1.2.1 uses Modern Emerald 3.2 base; current Modern Emerald is 3.5). Includes tons of fixes and QOL features.
+- Updated to the lastest Modern Emerald base (HnS 1.2.1 uses Modern Emerald 3.2 base; current Modern Emerald is 3.6). Includes tons of fixes and QOL features.
+- Saves from Heart and Soul 1.2.1 **(NOT 2.0 AND UP, THOSE ARE FULLY INCOMPATIBLE)** can be imported starting from 1.2.1m2 **(m1 DOES NOT SUPPORT 1.2.1 SAVES)**.
 - Full game decapitalization.
 - FRLG Pokémon sprites for Gen 1, but using double animation _(mostly hand-made*)_.
 - Map previews for dungeons and special maps, like FRLG and HGSS. Based on HGSS, also contains FRLG (but are unused).
