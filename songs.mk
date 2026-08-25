@@ -396,7 +396,7 @@ $(MID_SUBDIR)/mus_rg_oak_lab.s: %.s: %.mid
 $(MID_SUBDIR)/mus_rg_berry_pick.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G132 -V090
 
-$(MID_SUBDIR)/mus_rg_vermillion.s: %.s: %.mid
+$(MID_SUBDIR)/mus_rg_vermilion.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G172 -V090
 
 $(MID_SUBDIR)/mus_rg_route1.s: %.s: %.mid
