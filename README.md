@@ -1,6 +1,7 @@
-## If you are unsure which version to play, play the official one
+# If you are unsure which version to play, play the official one. 
+# Version 2.0 is better than this version. Play this version if you want to continue using your 1.2.1 save with new features and bug fixes.
 
-## DO NOT, UNDER ANY CIRCUMSTANCE, REPORT BUGS TO THE OFFICIAL HNS REPO OR DISCORD SERVER
+# DO NOT, UNDER ANY CIRCUMSTANCE, REPORT BUGS TO THE OFFICIAL HNS REPO OR DISCORD SERVER
 
 # (UNOFFICIAL) MODERN Heart & Soul
 **Modern** Heart & Soul is a small modification of the original Pokémon Heart & Soul version 1.2.1+(more recent than 1.2.1, "unofficially" called 1.2.2, but unreleased nonetheless) that includes missing options and features from its base game engine, Pokémon Modern Emerald. It has been created to become the base game of a future romhack: Modern Fire Red & Leaf Green.
@@ -75,13 +76,14 @@ The **Modern** feature list is:
     - Pokegear Map fixes.
     - Tons of bugfixes from Modern Emerald 3.3+.
 
-## 🪪CREDITS
+# 🪪CREDITS
 
 * Modern version by me
 * Decap by [@fanyx](https://github.com/fanyx)
 * Tweaks and commits (From Modern Emerald) by [@aloven](https://github.com/aloven), [@pinkshellos](https://github.com/PinkShellos), [@insertCreativeName5](https://github.com/InsertCreativeName5). [@davidgfnet](https://github.com/davidgfnet), [@unique-github-username](https://github.com/unique-github-username), [@TixoRebel](https://github.com/TixoRebel) and [@bfedie5](https://github.com/bfedie518)
 * [Box art](https://i.imgur.com/NOsaRVf.png) by [@-TXTEC-](https://www.reddit.com/user/-TXTEC-)
 * Squirtle, Wartortle, Kakuna, Arbok, Nidoqueen, Nidoking, Vileplume, Geodude, Grimer, Muk, Onix, Scyther, Magikarp, Gyarados, Eeevee, Articuno, Mew second frame taken from the **"Gen 3 Resource Sprite Project"** Discord Server, so credits to them.
+* Charizard, Fearow, Golduck, Mankey, Primeape, Machop, Exeggutor, Cubone, Rhydon, Dratini, Kangaskhan, Lapras, Horsea, Dragonite, Pidgeotto, Pidgeot, Nidorina, Nidorino, Paras, Alakazam, Bellsprout, Hypno, Pinsir, Ninetales, Wigglytuff, Growlithe, Rapidash, Dewgong, Tauros, Kabutops, Aerodactyl and Dragonair second frame by [LincolnTheUnknown (Pokecommunity)](https://www.pokecommunity.com/members/lincolntheunknown.1518757/)
 
 ## HnS ORIGINAL CREDITS
 
@@ -126,7 +128,7 @@ The **Modern** feature list is:
 **Playtesters**
 MearaTheDigger · Kingofrocks · Ferropexola · Scarred-Healer13 · ShigyNinja · Liquid Justice · aktatertot · Faintful · piobrando · Shortino · Chronotakular · NoVa x CerberuS · Czarwardy · Phantonomy · TeggyDave · HenryChess · Inner Rhymes · Astralaria · GPie · BillyNaing · Penkachu · Emma M · Casper · Marzi · leob0505 · Sayu · RavePossum · Brick · KinoKuma · BlackBelt Jiraiya
 
-# MODERN EMERALD CREDITS
+## MODERN EMERALD CREDITS
 * [Pokeemerald decomp](https://github.com/pret/pokeemerald) for its base
 * [Pret's Wiki Tutorials](https://github.com/pret/pokeemerald/wiki/Tutorials):
     - TONS of their tutorials were used!
