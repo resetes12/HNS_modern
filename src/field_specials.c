@@ -1674,6 +1674,15 @@ bool8 IsBadEggInParty(void)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_BAD_EGG) == TRUE)
             return TRUE;
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_POKEBALL, NULL) == ITEM_LOVE_BALL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_POKEBALL, NULL) == ITEM_LURE_BALL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_POKEBALL, NULL) == ITEM_FRIEND_BALL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_POKEBALL, NULL) == ITEM_HEAVY_BALL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_POKEBALL, NULL) == ITEM_MOON_BALL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_POKEBALL, NULL) == ITEM_LEVEL_BALL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_POKEBALL, NULL) == ITEM_FAST_BALL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_POKEBALL, NULL) == ITEM_GS_BALL))
+            return TRUE;
     }
 
     return FALSE;

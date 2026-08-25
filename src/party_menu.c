@@ -6966,7 +6966,27 @@ void ItemUseCB_PokeBall(u8 taskId, TaskFunc task)
     u16 newBall = gSpecialVar_ItemId;
     static const u8 sText_MonBallWasChanged[] = _("{STR_VAR_1} was put in the {STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
 
-    if (currBall == newBall)
+        // If current ball is the same as the new one, cancel
+    if ((currBall == newBall) 
+        // If the new ball is one of the HnS balls, cancel
+        || (newBall == ITEM_LOVE_BALL 
+        || newBall == ITEM_LURE_BALL 
+        || newBall == ITEM_FRIEND_BALL 
+        || newBall == ITEM_HEAVY_BALL 
+        || newBall == ITEM_MOON_BALL
+        || newBall == ITEM_LEVEL_BALL
+        || newBall == ITEM_FAST_BALL
+        || newBall == ITEM_GS_BALL)
+        // If the Pokémon is in any HnS ball, cancel
+        // Pokémon caught with HnS balls stay in it, so they can't be traded to ME or M_FRLG
+        || ((GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_LOVE_BALL)
+        || (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_LURE_BALL)
+        || (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_FRIEND_BALL)
+        || (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_HEAVY_BALL)
+        || (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_MOON_BALL)
+        || (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_LEVEL_BALL)
+        || (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_FAST_BALL)
+        || (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_GS_BALL)))
     {
         gPartyMenuUseExitCallback = FALSE;
         DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
