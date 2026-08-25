@@ -10807,13 +10807,15 @@ u16 GetBattleBGM(void)
             else if (gSaveBlock2Ptr->optionsFrontierTrainerBattleMusic == 3)
                 return MUS_HG_VS_FRONTIER_BRAIN;
             else if (gSaveBlock2Ptr->optionsFrontierTrainerBattleMusic == 4)
+                return MUS_HG_VS_FRONTIER_BRAIN;
+            else if (gSaveBlock2Ptr->optionsFrontierTrainerBattleMusic == 5)
                 {
                     if((Random() % 2) == 1)
                         return BW_SEQ_BGM_VS_N;
                     else
                         return BW_SEQ_BGM_VS_N_2;
                 }
-            else if (gSaveBlock2Ptr->optionsFrontierTrainerBattleMusic == 5)
+            else if (gSaveBlock2Ptr->optionsFrontierTrainerBattleMusic == 6)
             {
                 if((Random() % 5) == 1)
                     return MUS_PL_VS_FRONTIER_BRAIN;
