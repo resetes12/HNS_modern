@@ -571,6 +571,7 @@ struct SaveBlock2
               u16 optionsAutorunDive:1;
               u16 optionsNewBattleUI:1;
               u8 rivalName[PLAYER_NAME_LENGTH + 1];
+              u16 unused_space:1; //old gen1 recharge in hns 1.2.1
               u16 ModernMessage:1;
               u16 optionsFontType:1;
               u16 optionsCursorMemory:1;
@@ -1124,7 +1125,7 @@ struct SaveBlock1
     /*0x3D5E*/ u8 unused_3D5E[6];
     /*0x3D64*/ struct TrainerHillSave trainerHill;
     /*0x3D70*/ struct WaldaPhrase waldaPhrase;
-    /*0x3D88*/ u8 tx_Difficulty_CatchRate:3;
+    /*0x3D88*/ u8 unused_3D88[9];
         u8 tx_Random_Chaos:1;
         u8 tx_Random_WildPokemon:1;
         u8 tx_Random_Similar:1;
@@ -1192,9 +1193,10 @@ struct SaveBlock1
         u8 tx_Features_FrontierBans:1;
         u8 tx_Difficulty_HardExp:1;
         u8 tx_Mode_TypeEffectiveness:1;
+        u8 NuzlockeEncounterFlags[14];
         u8 tx_Nuzlocke_RareCandy:1; //Unused in Modern HnS (Use cheating lady in Cherrygrove)
         u8 tx_Mode_GenOneRecharge:1; //Moved from the options menu
-        u8 NuzlockeEncounterFlags[14];
+        u8 tx_Difficulty_CatchRate:3; //Will always default to 0 in HnS 1.2.1 saves, no need to do save migration
 };
 
 extern struct SaveBlock1* gSaveBlock1Ptr;
