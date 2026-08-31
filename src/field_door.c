@@ -7,6 +7,7 @@
 #include "constants/songs.h"
 #include "constants/metatile_labels.h"
 #include "constants/region_map_sections.h"
+#include "constants/layouts.h"
 
 
 enum {

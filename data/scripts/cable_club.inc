@@ -644,6 +644,7 @@ Movement_PlayerFaceAttendantLeft:
 	step_end
 
 Movement_PlayerFaceAttendantRight:
+	walk_down
 	face_right
 	step_end
 
@@ -1228,23 +1229,23 @@ CableClub_EventScript_AdapterNotConnected::
 	end
 
 CableClub_EventScript_OpenUnionRoomBarrier::
-	setmetatile 5, 2, METATILE_Kanto_PokemonCenter_Floor_ShadowTop_Alt, FALSE
-	setmetatile 5, 3, METATILE_Kanto_PokemonCenter_Floor_Plain_Alt, FALSE
+	setmetatile 5, 3, METATILE_Kanto_PokemonCenter_Floor_ShadowTop_Alt, FALSE
+	setmetatile 5, 4, METATILE_Kanto_PokemonCenter_Floor_Plain_Alt, FALSE
 	return
 
 CableClub_EventScript_CloseUnionRoomBarrier::
-	setmetatile 5, 2, METATILE_Kanto_PokemonCenter_Floor_ShadowTop, TRUE
-	setmetatile 5, 3, METATILE_Kanto_PokemonCenter_CounterBarrier, TRUE
+	setmetatile 5, 3, METATILE_Kanto_PokemonCenter_Floor_ShadowTop, TRUE
+	setmetatile 5, 4, METATILE_Kanto_PokemonCenter_CounterBarrier, TRUE
 	return
 
 CableClub_EventScript_OpenDirectCornerBarrier::
-	setmetatile 9, 2, METATILE_Kanto_PokemonCenter_Floor_ShadowTop_Alt, FALSE
-	setmetatile 9, 3, METATILE_Kanto_PokemonCenter_Floor_Plain_Alt, FALSE
+	setmetatile 9, 3, METATILE_Kanto_PokemonCenter_Floor_ShadowTop_Alt, FALSE
+	setmetatile 9, 4, METATILE_Kanto_PokemonCenter_Floor_Plain_Alt, FALSE
 	return
 
 CableClub_EventScript_CloseDirectCornerBarrier::
-	setmetatile 9, 2, METATILE_Kanto_PokemonCenter_Floor_ShadowTop, TRUE
-	setmetatile 9, 3, METATILE_Kanto_PokemonCenter_CounterBarrier, TRUE
+	setmetatile 9, 3, METATILE_Kanto_PokemonCenter_Floor_ShadowTop, TRUE
+	setmetatile 9, 4, METATILE_Kanto_PokemonCenter_CounterBarrier, TRUE
 	return
 
 EventScript_OpenMossdeepGameCornerBarrier::
