@@ -4880,3 +4880,15 @@ u8 ContextNpcGetTextColor(void)
         return GetColorFromTextColorTable(gfxId);
     }*/
 }
+
+void ReverseFixSavePokemon1(void)
+{
+    u8 partyIndex = gSpecialVar_0x8004;
+    struct Pokemon *mon = &gPlayerParty[partyIndex];
+    
+    if ((GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+     || (GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_EGG))
+    {
+        FixSavePokemon1_Reverse_Single(&mon->box);
+    }
+}

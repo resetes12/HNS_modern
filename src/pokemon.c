@@ -12134,7 +12134,7 @@ void FixSavePokemon1(struct BoxPokemon *boxMon)
     EncryptBoxMon(boxMon);
 }
 
-void FixSavePokemon1_Reverse(struct BoxPokemon *boxMon)
+void FixSavePokemon1_Reverse_Single(struct BoxPokemon *boxMon)
 {
     struct PokemonSubstruct0 *substruct0 = NULL;
     struct PokemonSubstruct1 *substruct1 = NULL;
@@ -12150,6 +12150,37 @@ void FixSavePokemon1_Reverse(struct BoxPokemon *boxMon)
 
     if (substruct0->species != SPECIES_NONE)
     {
+        // Save ALL original values from substruct3
+        uint32_t original_b0 = ((uint32_t*)substruct3)[0];
+        uint32_t original_b1 = ((uint32_t*)substruct3)[1];
+        uint32_t original_b2 = ((uint32_t*)substruct3)[2];
+        
+        // Extract IVs from original b1 (bits 1-30)
+        uint32_t preserved_hpIV = (original_b1 >> 1) & 0x1F;      // bits 1-5
+        uint32_t preserved_attackIV = (original_b1 >> 6) & 0x1F;   // bits 6-10
+        uint32_t preserved_defenseIV = (original_b1 >> 11) & 0x1F; // bits 11-15
+        uint32_t preserved_speedIV = (original_b1 >> 16) & 0x1F;   // bits 16-20
+        uint32_t preserved_spAttackIV = (original_b1 >> 21) & 0x1F; // bits 21-25
+        uint32_t preserved_spDefenseIV = (original_b1 >> 26) & 0x1F; // bits 26-30
+        
+        // Extract isEgg from original b1 (bit 31)
+        uint32_t preserved_isEgg = (original_b1 >> 31) & 0x1;
+        
+        // Extract metLevel, metGame, pokeball from original b0 (bits 16-31)
+        uint32_t preserved_metLevel = (original_b0 >> 16) & 0x7F;   // bits 16-22
+        uint32_t preserved_metGame = (original_b0 >> 23) & 0xF;     // bits 23-26
+        uint32_t preserved_pokeball = (original_b0 >> 27) & 0x1F;   // bits 27-31
+        
+        // Extract otGender from original b1 (bit 0)
+        uint32_t preserved_otGender = original_b1 & 0x1;
+        
+        // Extract abilityNum from original b2 (bit 0)
+        uint32_t preserved_abilityNum = original_b2 & 0x1;
+        
+        // Extract all ribbons from original b2 (bits 1-31)
+        uint32_t preserved_ribbons = original_b2 & 0xFFFFFFFE; // all bits except bit 0 (abilityNum)
+        
+        // Now perform the reverse fix on b0, b1, b2
         uint32_t b0 = ((uint32_t*)substruct3)[0];
         uint32_t b1 = ((uint32_t*)substruct3)[1];
         uint32_t b2 = ((uint32_t*)substruct3)[2];
@@ -12160,8 +12191,8 @@ void FixSavePokemon1_Reverse(struct BoxPokemon *boxMon)
         uint32_t loKeep = b0 & 0b01111111111111111111111111111111;  // bits 30:0
 
         /* Compute masks again */
-        uint32_t hiShiftMask = ~(0b11110000000000000000000000000000); // bits 91–64
-        uint32_t mdMask      = 0xFFFFFFFF;                            // bits 63–32
+        uint32_t hiShiftMask = ~(0b11110000000000000000000000000000); // bits 91–64 (excludes bit 92)
+        uint32_t mdMask = 0xFFFFFFFF;                            // bits 63–32
         uint32_t loShiftMask = ~0b01111111111111111111111111111111;   // bit 31 only
 
         /* Extract shifted portions from FIXED data */
@@ -12169,18 +12200,7 @@ void FixSavePokemon1_Reverse(struct BoxPokemon *boxMon)
         uint32_t mdShift_fixed = b1 & mdMask;
         uint32_t loShift_fixed = b0 & loShiftMask;
 
-        /* Inversion path:
-           Original operation was:
-               hiShift <<= 1    and MSB came from mdShift >> 31
-               mdShift <<= 1    and MSB came from loShift >> 31
-               loShift <<= 1    and nothing fed into it
-
-           Therefore reverse:
-               hiShift >>= 1    but restore MSB bit from mdShift_fixed LSB
-               mdShift >>= 1    but restore MSB from loShift_fixed LSB
-               loShift >>= 1    (no MSB to restore)
-        */
-
+        /* Inversion path */
         uint32_t orig_hiShift =
             (hiShift_fixed >> 1) | ((mdShift_fixed & 1) << 31);
 
@@ -12191,9 +12211,30 @@ void FixSavePokemon1_Reverse(struct BoxPokemon *boxMon)
             (loShift_fixed >> 1);
 
         /* Reassemble original words */
-        b2 = hiKeep | (orig_hiShift & hiShiftMask);
+        b2 = (hiKeep) | (orig_hiShift & hiShiftMask);
         b1 = (orig_mdShift & mdMask);
         b0 = loKeep | (orig_loShift & loShiftMask);
+
+        // RESTORE ALL PRESERVED ORIGINAL VALUES
+        
+        // Restore metLevel, metGame, pokeball in b0 (bits 16-31)
+        b0 = (b0 & 0x0000FFFF) | (preserved_metLevel << 16);      // metLevel bits 16-22
+        b0 = (b0 & 0xFF80FFFF) | (preserved_metGame << 23);        // metGame bits 23-26
+        b0 = (b0 & 0xF8FFFFFF) | (preserved_pokeball << 27);       // pokeball bits 27-31
+        
+        // Restore IVs and isEgg in b1
+        b1 = (b1 & 0xFFFFFFFE) | (preserved_otGender & 0x1);       // otGender bit 0
+        b1 = (b1 & 0xFFFFFFC1) | (preserved_hpIV << 1);            // hpIV bits 1-5
+        b1 = (b1 & 0xFFFFF83F) | (preserved_attackIV << 6);        // attackIV bits 6-10
+        b1 = (b1 & 0xFFFE07FF) | (preserved_defenseIV << 11);      // defenseIV bits 11-15
+        b1 = (b1 & 0xFFE0FFFF) | (preserved_speedIV << 16);        // speedIV bits 16-20
+        b1 = (b1 & 0xFC1FFFFF) | (preserved_spAttackIV << 21);     // spAttackIV bits 21-25
+        b1 = (b1 & 0x83FFFFFF) | (preserved_spDefenseIV << 26);    // spDefenseIV bits 26-30
+        b1 = (b1 & 0x7FFFFFFF) | (preserved_isEgg << 31);          // isEgg bit 31
+        
+        // Restore abilityNum and all ribbons in b2
+        b2 = (b2 & 0xFFFFFFFE) | (preserved_abilityNum & 0x1);     // abilityNum bit 0
+        b2 = (b2 & 0x00000000) | (preserved_ribbons & 0xFFFFFFFE); // restore all ribbons (bits 1-31)
 
         ((uint32_t*)substruct3)[0] = b0;
         ((uint32_t*)substruct3)[1] = b1;

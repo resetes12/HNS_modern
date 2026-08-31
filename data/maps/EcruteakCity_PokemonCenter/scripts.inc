@@ -97,8 +97,10 @@ EcruteakCity_PokemonCenter_EventScript_Link_Fixer_Yes_First::
 	end
 
 EcruteakCity_PokemonCenter_EventScript_Link_Fixer_Yes_Second::
-	faceplayer
-	callnative TradeFix
+	special ChoosePartyMon
+	waitstate
+	special ReverseFixSavePokemon1
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, EcruteakCity_PokemonCenter_EventScript_Link_Fixer_No
 	msgbox EcruteakCity_PokemonCenter1F_Text_Fixer_Yes_Second, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -209,13 +211,10 @@ EcruteakCity_PokemonCenter1F_Text_LinkWoman:
 
 EcruteakCity_PokemonCenter1F_Text_Fixer:
 	.string "I'm the Trading Fixer.\p"
-	.string "I can fix your {COLOR RED}Party{COLOR DARK_GRAY}, meaning {COLOR RED}all six\n"
-	.string "of your current Pokémon{COLOR DARK_GRAY}, if they've ever\l"
+	.string "I can fix your Pokémon if they've ever\n"
 	.string "been placed in Heart & Soul extra\l"
-	.string "Poké Balls.\p"
-	.string "You {COLOR RED}don't need{COLOR DARK_GRAY} to do this if you haven't\n"
-	.string "placed any of your six Pokémon in any of\l"
-	.string "the Heart & Soul extra Poké Balls.\p"
+	.string "Poké Balls or if they show up as\l"
+	.string "BAD EGGS in other games.\p"
 	.string "Continue?$"
 
 EcruteakCity_PokemonCenter1F_Text_Fixer_No:
@@ -223,16 +222,13 @@ EcruteakCity_PokemonCenter1F_Text_Fixer_No:
 
 EcruteakCity_PokemonCenter1F_Text_Fixer_Yes_First:
 	.string "Are you sure you want to fix your\n"
-	.string "{COLOR RED}whole{COLOR DARK_GRAY} party?\l"
-	.string "Pokémon on the PC are not affected.\p"
-	.string "They will be placed in a normal Poké Ball\n"
-	.string "again, if it's necessary.\p"
+	.string "Pokémon?\p"
+	.string "Pokémon on the PC are not affected.\n"
+	.string "The selected Pokémon will be placed in a\l"
+	.string "common Poké Ball again.\p"
 	.string "Just making sure you're absolutely sure\n"
-	.string "about this operation. {COLOR RED}Don't{COLOR DARK_GRAY} press yes if\l"
-	.string "you still have Pokémon that haven't\l"
-	.string "been placed in the Poké Balls that the\l"
-	.string "the woman at the entrance hasn't\l"
-	.string "mentioned.$"
+	.string "about this operation.\l"
+	.string "{COLOR RED}Don't{COLOR DARK_GRAY} press yes if you aren't sure.$"
 
 EcruteakCity_PokemonCenter1F_Text_Fixer_Yes_Second:
 	.string "Done.$"
