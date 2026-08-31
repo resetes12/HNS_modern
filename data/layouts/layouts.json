@@ -3926,7 +3926,7 @@
       "name": "UnionRoom_Layout",
       "width": 15,
       "height": 12,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_Kanto_Building",
       "secondary_tileset": "gTileset_UnionRoom",
       "border_filepath": "data/layouts/UnionRoom/border.bin",
       "blockdata_filepath": "data/layouts/UnionRoom/map.bin"
