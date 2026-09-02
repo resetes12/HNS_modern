@@ -173,6 +173,22 @@
 
 static EWRAM_DATA bool8 sStartedPokeBallTask = 0;
 static EWRAM_DATA u16 sCurrItemAndOptionMenuCheck = 0;
+static EWRAM_DATA u16 sOakIntroSpecies = 0;
+
+static u16 GetOakIntroSpecies(void)
+{
+    static u16 species; 
+    species = Random() % 4;
+
+    if (species == 1)
+        return SPECIES_WOOPER;
+    else if (species == 2)
+        return SPECIES_PICHU;
+    else if (species == 3)
+        return SPECIES_CLEFFA;
+    else
+        return SPECIES_MARILL;
+}
 
 static u8 sBirchSpeechMainTaskId;
 
@@ -1339,6 +1355,7 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     ResetSpriteData();
     FreeAllSpritePalettes();
     ResetAllPicSprites();
+    sOakIntroSpecies = GetOakIntroSpecies();
     AddBirchSpeechObjects(taskId);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
     gTasks[taskId].tBG1HOFS = 0;
@@ -1430,7 +1447,7 @@ static void Task_NewGameBirchSpeechSub_InitPokeBall(u8 taskId)
     gSprites[spriteId].invisible = FALSE;
     gSprites[spriteId].data[0] = 0;
 
-    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_WOOPER, BALL_POKE);
+    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, sOakIntroSpecies, BALL_POKE);
     gTasks[taskId].func = Task_NewGameBirchSpeechSub_WaitForLotad;
     gTasks[sBirchSpeechMainTaskId].tTimer = 0;
 }
@@ -2124,7 +2141,7 @@ static void SpriteCB_MovePlayerDownWhileShrinking(struct Sprite *sprite)
 
 static u8 NewGameBirchSpeech_CreateLotadSprite(u8 x, u8 y)
 {
-    return CreateMonPicSprite_Affine(SPECIES_WOOPER, Random32(), Random32(), MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    return CreateMonPicSprite_Affine(sOakIntroSpecies, Random32(), Random32(), MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
 }
 
 static void AddBirchSpeechObjects(u8 taskId)
