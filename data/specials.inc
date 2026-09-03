@@ -600,3 +600,4 @@ gSpecials::
 	def_special Special_MomOpenWithdrawInput	@ mom_savings
 	def_special Special_OpenChallengeViewer
 	def_special ReverseFixSavePokemon1
+	def_special PlayerHasMESpeciesOrItem

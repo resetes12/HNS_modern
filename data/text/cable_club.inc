@@ -164,8 +164,20 @@ CableClub_Text_YouHaveAMonThatCantBeTaken:
 	.string "was changed to a standard Poké Ball,\l"
 	.string "it also can't be traded.\p"
 	.string "If you want to trade them, or if you\n"
-	.string "see a bad egg, talk to the Trading\l"
-	.string "Fixer to fix your party.$"
+	.string "see a {COLOR RED}BAD EGG{COLOR DARK_GRAY}, talk to the Trading\l"
+	.string "Fixer to fix your Pokémon.$"
+
+CableClub_Text_YouHaveMESpeciesOrItems:
+	.string "You have at least one Pokémon or item\n"
+	.string "that isn't available in any of the\l"
+	.string "original Pokémon games.\p"
+	.string "If you plan on trading with those games,\n"
+	.string "please remove any post Generation III\l"
+	.string "Pokémon species or any of these items:\l"
+	.string "{COLOR BLUE}Growth Mulch, Big Nugget, Exp. Share S,\l"
+	.string "Fairy Gem, Rage Candy Bar, and all Mints{COLOR DARK_GRAY}.\p"
+	.string "Otherwise, the other player might see\n"
+	.string "a {COLOR RED}BAD EGG{COLOR DARK_GRAY}.$"
 
 RecordCorner_Text_TakeSeatAndWait:
 	.string "Please take your seat and wait.$"
