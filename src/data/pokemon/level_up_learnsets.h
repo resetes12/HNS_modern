@@ -3954,10 +3954,16 @@ static const u16 sOctilleryLevelUpLearnset[] = {
     LEVEL_UP_END};
 
 static const u16 sDelibirdLevelUpLearnset[] = {
-    LEVEL_UP_MOVE(1, MOVE_PRESENT),
-    LEVEL_UP_MOVE(1, MOVE_AIR_SLASH),
+    LEVEL_UP_MOVE( 1, MOVE_PRESENT),
+    LEVEL_UP_MOVE( 5, MOVE_HELPING_HAND),
+    LEVEL_UP_MOVE(10, MOVE_METRONOME),
+    LEVEL_UP_MOVE(15, MOVE_ICY_WIND),
     LEVEL_UP_MOVE(25, MOVE_DRILL_PECK),
-    LEVEL_UP_END};
+    LEVEL_UP_MOVE(30, MOVE_STEEL_WING),
+    LEVEL_UP_MOVE(40, MOVE_AIR_SLASH),
+    LEVEL_UP_MOVE(50, MOVE_WEATHER_BALL),
+    LEVEL_UP_END
+};
 
 static const u16 sMantineLevelUpLearnset[] = {
     LEVEL_UP_MOVE(0, MOVE_WING_ATTACK),
