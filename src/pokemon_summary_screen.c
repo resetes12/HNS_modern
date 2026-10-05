@@ -1914,7 +1914,7 @@ static void Task_OpenPokedexFromSummary(u8 taskId)
 static void CB2_ShowPokedexEntryFromSummary(void)
 {
     // Only open Pokedex if not an egg and player has Pokedex
-    if (!sMonSummaryScreen->summary.isEgg && FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
+    if (!sMonSummaryScreen->summary.isEgg && FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
     {
         // Begin fade out and set task to open Pokedex after cleanup
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
@@ -1973,7 +1973,9 @@ static void Task_HandleInput(u8 taskId)
             {
                 if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
                 {
-                    if (!sMonSummaryScreen->summary.isEgg && FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
+                    if (!sMonSummaryScreen->summary.isEgg 
+                        && FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE 
+                        && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
                     {
                         StopPokemonAnimations();
                         PlaySE(SE_SELECT);
@@ -3335,7 +3337,7 @@ static void PrintPageNamesAndStats(void)
     PrintTextOnWindow(PSS_LABEL_WINDOW_CONTEST_MOVES_TITLE, gText_ContestMoves, 2, 1, 0, 1);
 
     // Show POKéDEX if not an egg and player has Pokedex, otherwise show CANCEL
-    if (!sMonSummaryScreen->summary.isEgg && FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
+    if (!sMonSummaryScreen->summary.isEgg && FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
     {
         stringXPos = GetStringRightAlignXOffset(FONT_NORMAL, gText_MenuPokedex, 62);
         iconXPos = stringXPos - 16;
@@ -3409,7 +3411,7 @@ static void PrintPokedexOrCancel(void)
     int iconXPos;
 
     FillWindowPixelBuffer(PSS_LABEL_WINDOW_PROMPT_CANCEL, PIXEL_FILL(0));
-    if (!sMonSummaryScreen->summary.isEgg && FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
+    if (!sMonSummaryScreen->summary.isEgg && FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
     {
         stringXPos = GetStringRightAlignXOffset(FONT_NORMAL, gText_MenuPokedex, 62);
         iconXPos = stringXPos - 16;
