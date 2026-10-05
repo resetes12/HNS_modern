@@ -138,6 +138,19 @@ MearaTheDigger · Kingofrocks · Ferropexola · Scarred-Healer13 · ShigyNinja �
     - [Day/Night system / Followers](https://github.com/aarant/pokeemerald/tree/followers-expanded-id), from aarant's repo
     - [PHY/SP new icons and Stab indicator](https://github.com/worpbane/pokeemerald-worped/commits/battle-ui-rework/), from worpbane's repo
 
+# AI disclosure
+- Code: 
+    - Modern Emerald code is AI free except one commit (check commit [bd4b18c](https://github.com/resetes12/pokeemerald/commit/bd4b18c50c5b1b4d2c972aead8603934bb5711d6))
+        - Contributor commits do not count towards this percentage. I do not control or limit any Modern Emerald contributor.
+    - Heart and Soul (up to 1.2.1) is not my code and may or may not contain AI code. That's not up to me.
+    - *Modern* Heart and Soul [Trading fix code](https://github.com/resetes12/HNS_modern/commit/cdfcd4bb02f47b1239274fa3dcc81dc2ff8e898e) has been asssisted by AI.
+- Text: 
+    - Some Modern Emerald text strings have been corrected or had their wording improved using AI tools.
+    - Heart and Soul 1.2.1 has been decaped using AI tools.
+- Graphics:
+    - No AI usage at all.
+- Music:
+    - No AI usage at all.
 
 # For Developers
 - This project is not yet compatible with Porymap 6. Use Porymap 5 instead.
