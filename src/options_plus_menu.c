@@ -39,6 +39,7 @@ enum
     MENUITEM_MAIN_FOLLOWER,
     MENUITEM_MAIN_LARGE_FOLLOWER,
     //MENUITEM_MAIN_MATCHCALL,
+    MENUITEM_MAIN_OVERWORLD_SPEED,
     MENUITEM_MAIN_AUTORUN,
     MENUITEM_MAIN_AUTORUN_SURF,
     //MENUITEM_MAIN_AUTORUN_DIVE,
@@ -236,6 +237,7 @@ static void DrawChoices_Font(int selection, int y);
 static void DrawChoices_CursorMemory(int selection, int y);
 static void DrawChoices_BattleSpeed(int selection, int y);
 static void DrawChoices_BrighterNights(int selection, int y);
+static void DrawChoices_OverworldSpeed(int selection, int y);
 static void DrawBgWindowFrames(void);
 
 // EWRAM vars
@@ -285,6 +287,7 @@ struct // MENU_MAIN
     [MENUITEM_MAIN_BRIGHTER_NIGHTS]         = {DrawChoices_BrighterNights,   ProcessInput_Options_Two},
     [MENUITEM_MAIN_FRAMETYPE]               = {DrawChoices_FrameType,        ProcessInput_FrameType},
     [MENUITEM_MAIN_SHOW_INTRO_MSG]          = {DrawChoices_ShowIntroMsg,     ProcessInput_Options_Two},
+    [MENUITEM_MAIN_OVERWORLD_SPEED]         = {DrawChoices_OverworldSpeed,   ProcessInput_Options_Two},
 };
 
 struct // MENU_BATTLE
@@ -344,6 +347,7 @@ static const u8 sText_AutorunEnable_Dive[]        = _("AUTORUN (DIVE)");
 static const u8 sText_IntroMsg[]                  = _("SHOW INTRO MSG");
 static const u8 sText_FontType[]                  = _("FONT TYPE");
 static const u8 sText_BrighterNights[]            = _("BRIGHT NIGHTS");
+static const u8 sText_OverworldSpeed[]            = _("OW SPEED");
 static const u8 *const sOptionMenuItemsNamesMain[MENUITEM_MAIN_COUNT] =
 {
     [MENUITEM_MAIN_TEXTSPEED]           = gText_TextSpeed,
@@ -363,6 +367,7 @@ static const u8 *const sOptionMenuItemsNamesMain[MENUITEM_MAIN_COUNT] =
     [MENUITEM_MAIN_BRIGHTER_NIGHTS]     = sText_BrighterNights,
     [MENUITEM_MAIN_SHOW_INTRO_MSG]      = sText_IntroMsg,
     [MENUITEM_MAIN_FRAMETYPE]           = gText_Frame,
+    [MENUITEM_MAIN_OVERWORLD_SPEED]     = sText_OverworldSpeed,
 };
 
 static const u8 sText_CursorMemory[]              = _("CURSOR MEMORY");
@@ -437,6 +442,7 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_MAIN_SHOW_INTRO_MSG:    return TRUE;
         //case MENUITEM_MAIN_SKIP_INTRO:        return TRUE;
         case MENUITEM_MAIN_UNIT_TYPE:         return TRUE;
+        case MENUITEM_MAIN_OVERWORLD_SPEED:   return TRUE;
         case MENUITEM_MAIN_BRIGHTER_NIGHTS:   return TRUE;
         }
     case MENU_BATTLE:
@@ -509,6 +515,8 @@ static const u8 sText_Desc_IntroMsg_On[]           = _("Bug reports {COLOR 7}{CO
 static const u8 sText_Desc_IntroMsg_Off[]          = _("Report issues at\n{COLOR 9}{COLOR 10}github.com/resetes12/HNS{UNDERSCORE}modern");
 static const u8 sText_Desc_BrighterNightsOn[]           = _("Night shading is less dark.\nEasier to see at night.");
 static const u8 sText_Desc_BrighterNightsOff[]          = _("Night shading at full darkness.\nOriginal intensity.");
+static const u8 sText_Desc_OWSpeed_x1[]                 = _("Normal overworld speed.");
+static const u8 sText_Desc_OWSpeed_x2[]                 = _("Similar to an emulator speed-up.\nCan affect performance.");
 static const u8 *const sOptionMenuItemDescriptionsMain[MENUITEM_MAIN_COUNT][3] =
 {
     [MENUITEM_MAIN_TEXTSPEED]   = {sText_Desc_TextSpeed,            sText_Empty,                  sText_Empty},
@@ -528,6 +536,7 @@ static const u8 *const sOptionMenuItemDescriptionsMain[MENUITEM_MAIN_COUNT][3] =
     [MENUITEM_MAIN_UNIT_TYPE]        = {sText_Desc_Units_Metric,           sText_Desc_Units_Imperial},
     [MENUITEM_MAIN_BRIGHTER_NIGHTS]   = {sText_Desc_BrighterNightsOff,     sText_Desc_BrighterNightsOn},
     [MENUITEM_MAIN_SHOW_INTRO_MSG]   = {sText_Desc_IntroMsg_On,            sText_Desc_IntroMsg_Off},
+    [MENUITEM_MAIN_OVERWORLD_SPEED]   = {sText_Desc_OWSpeed_x1,            sText_Desc_OWSpeed_x2},
 };
 
 // Custom {PKMN}
@@ -916,6 +925,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel[MENUITEM_MAIN_UNIT_TYPE]           = gSaveBlock2Ptr->optionsUnitSystem;
         sOptions->sel[MENUITEM_MAIN_SHOW_INTRO_MSG]      = gSaveBlock2Ptr->ModernMessage;
         sOptions->sel[MENUITEM_MAIN_BRIGHTER_NIGHTS]     = gSaveBlock2Ptr->optionsBrighterNights;
+        sOptions->sel[MENUITEM_MAIN_OVERWORLD_SPEED]     = gSaveBlock2Ptr->optionsOWSpeed;
 
         sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE]       = gSaveBlock2Ptr->optionsBattleSceneOff;
         sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE]       = gSaveBlock2Ptr->optionsBattleStyle;
@@ -1160,6 +1170,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsUnitSystem            = sOptions->sel[MENUITEM_MAIN_UNIT_TYPE];
     gSaveBlock2Ptr->ModernMessage                = sOptions->sel[MENUITEM_MAIN_SHOW_INTRO_MSG];
     gSaveBlock2Ptr->optionsBrighterNights        = sOptions->sel[MENUITEM_MAIN_BRIGHTER_NIGHTS];
+    gSaveBlock2Ptr->optionsOWSpeed               = sOptions->sel[MENUITEM_MAIN_OVERWORLD_SPEED];
 
     gSaveBlock2Ptr->optionsBattleSceneOff   = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE];
     gSaveBlock2Ptr->optionsBattleStyle      = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE]; 
@@ -2253,6 +2264,25 @@ static void DrawChoices_BrighterNights(int selection, int y)
 
     DrawOptionMenuChoice(gText_BattleSceneOff, 104, y, styles[0], active);
     DrawOptionMenuChoice(gText_BattleSceneOn, GetStringRightAlignXOffset(1, gText_BattleSceneOn, 198), y, styles[1], active);
+}
+
+static void DrawChoices_OverworldSpeed(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_MAIN_OVERWORLD_SPEED);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    if (selection == 0)
+    {
+        gSaveBlock2Ptr->optionsOWSpeed = 0; //x1
+    }
+    else
+    {
+        gSaveBlock2Ptr->optionsOWSpeed = 1; //x2
+    }
+
+    DrawOptionMenuChoice(sText_BattleSpeed1x, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_BattleSpeed2x, GetStringRightAlignXOffset(1, sText_BattleSpeed2x, 198), y, styles[1], active);
 }
 
 // Background tilemap

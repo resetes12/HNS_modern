@@ -191,6 +191,7 @@ void ClearLinkPlayerObjectEvents(void);
 u8 NuzlockeGetCurrentRegionMapSectionId(void); //tx_randomizer_and_challenges
 u8 GetLastUsedWarpMapSectionId(void);
 u8 GetDestinationWarpMapSectionId(void);
+u8 OverworldSpeedup_AdditionalIterations(u16 speed, bool32 overworld);
 
 
 #endif // GUARD_OVERWORLD_H

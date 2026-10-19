@@ -579,6 +579,7 @@ struct SaveBlock2
               u16 optionsBrighterNights:1; // 0 = normal darkness, 1 = brighter nights
               u8 shinySeen[NUM_DEX_FLAG_BYTES]; // Tracks whether trainer has ever seen/caught a shiny of each species. Stays the last one in case of
                                                 // overflow.
+              u8 optionsOWSpeed:1;
 }; // sizeof=0xF2C + NUM_DEX_FLAG_BYTES
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
