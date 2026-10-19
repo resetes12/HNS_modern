@@ -109,7 +109,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionTypeEffective = 0;
     gSaveBlock2Ptr->optionsFishing = 1;
     gSaveBlock2Ptr->optionsFastIntro = 1;
-    gSaveBlock2Ptr->optionsFastBattle = 0;
+    gSaveBlock2Ptr->optionsSkipDelays = 1;
     gSaveBlock2Ptr->optionsBikeMusic = 0;
     gSaveBlock2Ptr->optionsEvenFasterJoy = 1;
     gSaveBlock2Ptr->optionsSurfMusic = 0;

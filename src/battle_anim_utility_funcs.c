@@ -542,8 +542,7 @@ static void StatsChangeAnimation_Step2(u8 taskId)
     {
         gTasks[taskId].tVelocity = 3;
     }
-
-    if (gSaveBlock2Ptr->optionsFastBattle == 0)
+    if (gSaveBlock2Ptr->optionsSkipDelays == 0)
     {
         if (!sAnimStatsChangeData->aSharply)
         {
