@@ -138,6 +138,8 @@ Debug_Script_7::
 	end
 
 Debug_Script_8::
+	fadescreen FADE_TO_BLACK
+	fadescreen FADE_FROM_BLACK
 	end
 
 Debug_CheckSaveBlock::
