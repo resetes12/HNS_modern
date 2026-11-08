@@ -199,7 +199,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .weight = 18,
         .description = gPidgeyPokedexText,
         .pokemonScale = 508,
-        .pokemonOffset = -3,
+        .pokemonOffset = 20,
         .trainerScale = 256,
         .trainerOffset = 0,
     },
