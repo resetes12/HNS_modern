@@ -355,17 +355,17 @@ BattleFrontier_Lounge9_EV_SetZeroProceed::
 
 BattleFrontier_Lounge9_EV_SetZeroText:
     .string "Greetings, Trainer. My name is Evan,\n"
-    .string "though I am commonly referred to as\n"
+    .string "though I am commonly referred to as\l"
     .string "EV-Man.\p"
-    .string "I am the owner of this Dojo,\n"
-    .string "where I conduct training alongside my\n"
+    .string "I am the owner of this Dojo, where\n"
+    .string "I conduct training alongside my\l"
     .string "brother, Ivan.\p"
     .string "Should you wish to reset a Pokémon's\n"
     .string "EVs entirely, please speak to me.$"
 
 BattleFrontier_Lounge9_EV_SetZeroTextNoIntro:
-    .string "EV-Man: Welcome back.\n"
-    .string "Would you like me to reset all your\l"
+    .string "Welcome back.\p"
+    .string "Would you like me to reset all your\n"
     .string "Pokémon's Effort Values?$"
 
 BattleFrontier_Lounge9_EV_SetZeroText2:
@@ -1027,19 +1027,19 @@ BattleFrontier_Lounge9_IV_TextFirstTime:
     .string "long ago!\p"
     .string "I'm Ivan, but you can call me\n"
     .string "IV-Man!\p"
-    .string "Yes, I'm the brother of EV-Man.\n"
+    .string "Yes, I'm the brother of EV-Man,\n"
     .string "no surprise there.\p"
     .string "And you…\p"
     .string "You're {PLAYER}, the one who\n"
     .string "recently won the Pokémon League!\p"
     .string "Your last battle was amazing.\n"
-    .string "I learned so much from watching you\n"
+    .string "I learned so much from watching you\l"
     .string "that I joined your Fan Club!\p"
     .string "After that, I decided to get\n"
-    .string "stronger myself, so I created the\n"
+    .string "stronger myself, so I created the\l"
     .string "ultimate training routine.\p"
     .string "For Pokémon, of course!\n"
-    .string "If you want, we can train together to\n"
+    .string "If you want, we can train together to\l"
     .string "maximize your Pokémon's potential.\p"
     .string "But… to endure this training, a\n"
     .string "Pokémon must be fully prepared.\p"
@@ -1051,7 +1051,7 @@ BattleFrontier_Lounge9_IV_TextFirstTime:
     .string "Just tell me when you're ready!$"
 
 BattleFrontier_Lounge9_IV_Text1:
-	.string "IV-Man: Hi! Are you here for the ultimate\n"
+	.string "Hi! Are you here for the ultimate\n"
 	.string "training routine in all of Johto?\p"
 	.string "It costs 100.000¥, but it's worth it!\n"
 	.string "Shall we begin?$"
